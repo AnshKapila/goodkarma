@@ -5,29 +5,40 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-32 pb-32 w-full">
       
-      {/* 1. Hero Section (Oreva style: Immersive, spacious, elegant) */}
-      <section className="px-6 pt-12 md:pt-20 max-w-[1400px] mx-auto w-full flex flex-col items-center text-center">
-        <div className="max-w-[800px] flex flex-col items-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          <h1 className="font-editorial italic text-5xl md:text-7xl text-ink leading-[1.1] tracking-tight mb-6">
-            Innerwear that cares <br className="hidden md:block"/> for your skin.
-          </h1>
-          <p className="text-muted-foreground text-lg md:text-xl mb-10 max-w-[560px] leading-relaxed">
-            Crafted with 100% GOTS certified organic cotton and naturally dyed using the earth's ingredients. Pure comfort, backed by science.
-          </p>
-          <div className="flex gap-4">
-            <Button className="bg-marigold text-white hover:bg-marigold/90 rounded-full px-8 py-6 text-base shadow-sm">
+      {/* 1. Hero Section (Oreva style: Full-bleed immersive visual with overlaid text) */}
+      <section className="relative w-full h-[90vh] md:h-[95vh] min-h-[600px] flex flex-col justify-between p-6 md:p-12 overflow-hidden">
+        {/* Background Visual Placeholder */}
+        <div className="absolute inset-0 bg-ink">
+          {/* Replace this div with a real <img /> or <video /> later */}
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-60 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+        </div>
+
+        {/* Top spacer for header if needed, or leave empty to push content down */}
+        <div className="relative z-10 flex justify-between items-start w-full max-w-[1400px] mx-auto text-white/80 text-sm font-medium uppercase tracking-widest">
+          <span>Good Karma</span>
+          <span>Be good. Wear good.</span>
+        </div>
+
+        {/* Content overlaid at the bottom/center */}
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+          <div className="max-w-[700px]">
+            <h1 className="font-editorial italic text-6xl md:text-8xl text-white leading-[1] tracking-tight mb-6 drop-shadow-sm">
+              Innerwear that cares for your skin.
+            </h1>
+            <p className="text-white/80 text-lg md:text-xl max-w-[500px] leading-relaxed">
+              Crafted with 100% GOTS certified organic cotton and naturally dyed using the earth's ingredients.
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+            <Button className="bg-white text-ink hover:bg-white/90 rounded-full px-8 py-6 text-base font-medium shadow-sm transition-transform hover:scale-105">
               Shop the Collection
             </Button>
-            <Button variant="outline" className="rounded-full px-8 py-6 text-base border-border text-ink">
+            <Button variant="outline" className="rounded-full px-8 py-6 text-base border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
               Discover the Science
             </Button>
           </div>
-        </div>
-        
-        {/* Immersive Hero Image */}
-        <div className="w-full aspect-[4/3] md:aspect-[21/9] bg-paper rounded-3xl flex items-center justify-center border border-border/50 overflow-hidden relative shadow-sm">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-ink/5" />
-          <span className="text-muted-foreground text-sm z-10">[ Immersive, calm lifestyle photography — e.g. morning light, comfortable setting ]</span>
         </div>
       </section>
 
@@ -164,7 +175,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Footer */}
+      {/* 7. Short Content (Recent thoughts / Blog) */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full">
+        <h2 className="font-editorial italic text-3xl md:text-4xl text-ink mb-8">Recent thoughts</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          {[
+            { title: "Why natural dye matters for sensitive skin", cat: "Skin Science" },
+            { title: "The reality of 'synthetic stretch' in modern wear", cat: "Materials" },
+            { title: "GOTS certification and what it actually means", cat: "Standards" }
+          ].map((article, i) => (
+            <div key={i} className="group cursor-pointer flex flex-col">
+              <div className="aspect-[3/2] bg-paper rounded-2xl mb-6 flex items-center justify-center border border-border/50 overflow-hidden relative">
+                <span className="text-muted-foreground text-sm">[ Article Thumbnail ]</span>
+                <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+              <span className="text-marigold font-bold text-[10px] uppercase tracking-widest mb-2 block">{article.cat}</span>
+              <h3 className="font-medium text-lg text-ink leading-tight mb-2 group-hover:text-marigold transition-colors">{article.title}</h3>
+              <p className="text-sm text-muted-foreground flex items-center gap-2">
+                Read article <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 8. Footer (Includes Newsletter) */}
       <footer className="px-6 max-w-[1400px] mx-auto w-full pt-16 border-t border-border/50">
         <div className="grid md:grid-cols-12 gap-12 mb-20">
           <div className="md:col-span-5">
