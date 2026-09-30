@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Public_Sans, Baloo_2, Lora } from "next/font/google";
 import "./globals.css";
 
@@ -36,11 +37,22 @@ export default function RootLayout({
       <body className="min-h-[100dvh] flex flex-col font-sans">
         {/* Simple Header */}
         <header className="flex items-center justify-between px-6 py-6 max-w-[1400px] w-full mx-auto">
-          <div className="font-display text-3xl tracking-tight text-marigold">good karma</div>
+          <Link href="/" className="font-display text-3xl tracking-tight text-marigold">good karma</Link>
           <nav className="hidden md:flex gap-8 text-sm font-medium items-center">
-            <a href="#" className="hover:text-marigold transition-colors">Products</a>
-            <a href="#" className="hover:text-marigold transition-colors">Educate</a>
-            <a href="#" className="hover:text-marigold transition-colors">Contact</a>
+            <Link href="/products" className="hover:text-marigold transition-colors">Products</Link>
+            <div className="relative group">
+              <Link href="/educate/skin-science" className="hover:text-marigold transition-colors flex items-center gap-1">
+                Educate
+              </Link>
+              <div className="absolute top-full left-0 pt-4 hidden group-hover:block z-50">
+                <div className="bg-white border border-border/50 rounded-xl p-4 flex flex-col gap-3 shadow-lg min-w-[200px]">
+                  <Link href="/educate/skin-science" className="hover:text-marigold">Skin Science</Link>
+                  <Link href="/educate/natural-dyeing" className="hover:text-marigold">Natural Dyeing</Link>
+                  <Link href="/educate/for-doctors" className="hover:text-marigold">For Doctors</Link>
+                </div>
+              </div>
+            </div>
+            <Link href="/contact" className="hover:text-marigold transition-colors">Contact</Link>
             
             {/* E-commerce controls */}
             <div className="flex items-center gap-4 ml-4 border-l border-border pl-8">

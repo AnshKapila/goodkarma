@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -215,25 +216,25 @@ export default function Home() {
           <div className="md:col-span-2 md:col-start-8">
             <h4 className="font-medium text-ink mb-6">Shop</h4>
             <ul className="space-y-4 text-muted-foreground">
-              <li><a href="#" className="hover:text-marigold transition-colors">All Products</a></li>
-              <li><a href="#" className="hover:text-marigold transition-colors">By Concern</a></li>
-              <li><a href="#" className="hover:text-marigold transition-colors">Size Guide</a></li>
+              <li><Link href="/products" className="hover:text-marigold transition-colors">All Products</Link></li>
+              <li><Link href="/products" className="hover:text-marigold transition-colors">By Concern</Link></li>
+              <li><Link href="/products" className="hover:text-marigold transition-colors">Size Guide</Link></li>
             </ul>
           </div>
           <div className="md:col-span-2">
             <h4 className="font-medium text-ink mb-6">Educate</h4>
             <ul className="space-y-4 text-muted-foreground">
-              <li><a href="#" className="hover:text-marigold transition-colors">Skin Science</a></li>
-              <li><a href="#" className="hover:text-marigold transition-colors">Natural Dyeing</a></li>
-              <li><a href="#" className="hover:text-marigold transition-colors">For Doctors</a></li>
+              <li><Link href="/educate/skin-science" className="hover:text-marigold transition-colors">Skin Science</Link></li>
+              <li><Link href="/educate/natural-dyeing" className="hover:text-marigold transition-colors">Natural Dyeing</Link></li>
+              <li><Link href="/educate/for-doctors" className="hover:text-marigold transition-colors">For Doctors</Link></li>
             </ul>
           </div>
           <div className="md:col-span-2">
             <h4 className="font-medium text-ink mb-6">About</h4>
             <ul className="space-y-4 text-muted-foreground">
-              <li><a href="#" className="hover:text-marigold transition-colors">Our Story</a></li>
-              <li><a href="#" className="hover:text-marigold transition-colors">Contact</a></li>
-              <li><a href="#" className="hover:text-marigold transition-colors">Blog</a></li>
+              <li><Link href="/our-story" className="hover:text-marigold transition-colors">Our Story</Link></li>
+              <li><Link href="/contact" className="hover:text-marigold transition-colors">Contact</Link></li>
+              <li><Link href="#" className="hover:text-marigold transition-colors">Blog</Link></li>
             </ul>
           </div>
         </div>
