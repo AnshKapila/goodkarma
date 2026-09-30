@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Good Karma — Brand Guidelines</title>
+<style>
+:root {
+  --marigold:#C98637; --mauve:#A4777E; --sage:#5A6056;
+  --black:#111111; --grey:#555; --lightgrey:#F7F7F7;
+}
+* { box-sizing: border-box; }
+body { font-family: 'Poppins', -apple-system, sans-serif; color:var(--black); margin:0; background:#fff; line-height:1.6; }
+.wrap { max-width: 980px; margin:0 auto; padding: 40px 28px 90px 28px; }
+.eyebrow { color:var(--marigold); font-weight:700; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; }
+h1.display, h2.display { font-family: Georgia, serif; font-style:italic; font-weight:400; margin:0 0 8px 0; }
+h1.display { font-size:38px; }
+h2.display { font-size:24px; }
+.rule { border:none; border-top:2px solid var(--black); margin:14px 0 24px 0; }
+.tag { display:inline-block; background:var(--black); color:#fff; font-size:11px; font-weight:700; letter-spacing:1px; padding:6px 14px; border-radius:4px; margin-bottom:18px; }
+.cover-sub { font-size:15px; color:var(--grey); max-width:620px; margin-top:12px; }
+.cover-foot { font-size:11px; color:#999; margin-top:20px; }
+section { margin-top: 56px; }
+
+/* logo */
+.logo-block { background: var(--marigold); border-radius: 12px; padding: 50px 30px; text-align:center; margin-top:18px; }
+.logo-word { font-family: 'Baloo 2', 'Poppins', sans-serif; font-weight: 800; font-size: 44px; color:#fff; letter-spacing: -0.5px; }
+.logo-tag { font-family: 'Baloo 2', 'Poppins', sans-serif; font-size: 15px; color:#fff; margin-top: 6px; }
+.logo-rules { display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:18px; }
+.rule-card { border:1px solid #eee; border-radius:8px; padding:14px 16px; font-size:12.5px; }
+.rule-card b { display:block; font-size:13px; margin-bottom:4px; }
+
+/* colors */
+.color-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-top:18px; }
+.swatch-card { border-radius:10px; overflow:hidden; border:1px solid #eee; }
+.swatch { height:90px; }
+.swatch-info { padding:10px 12px; font-size:11.5px; }
+.swatch-info .name { font-weight:700; font-size:12.5px; }
+.swatch-info .hex { color:var(--grey); font-family: monospace; }
+.swatch-info .role { color: var(--marigold); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; margin-top:3px; }
+
+.range-grid { display:grid; grid-template-columns: repeat(5,1fr); gap:0; border-radius:10px; overflow:hidden; margin-top:16px; border:1px solid #eee; }
+.range-swatch { height: 70px; }
+.range-label { font-size:9px; text-align:center; padding:6px 2px; color:var(--grey); }
+
+/* type */
+.type-sample { border:1px solid #eee; border-radius:10px; padding:20px 24px; margin-top:14px; }
+.type-role { font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--marigold); margin-bottom:6px; }
+.type-word { font-size: 34px; margin-bottom: 4px; }
+.type-word.baloo { font-family:'Baloo 2','Poppins',sans-serif; font-weight:700; }
+.type-word.inter { font-family:'Inter','Poppins',sans-serif; font-weight:500; font-size: 18px; }
+.type-word.lora { font-family:'Lora',Georgia,serif; font-style:italic; font-weight:400; }
+.type-note { font-size:12px; color:var(--grey); }
+
+/* voice */
+.box { background:var(--lightgrey); border-left:3px solid var(--marigold); padding:14px 16px; margin-bottom:14px; border-radius:3px; font-size:13.5px; }
+.box.black { border-left-color: var(--black); }
+.box-label { font-size:10.5px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--marigold); margin-bottom:6px; }
+.box.black .box-label { color: var(--black); }
+.grid2 { display:flex; gap:18px; flex-wrap:wrap; margin-top:14px; }
+.col { flex:1; min-width:240px; }
+
+.dodont { display:flex; gap:16px; flex-wrap:wrap; margin-top:16px; }
+.dodont .do, .dodont .dont { flex:1; min-width:240px; border-radius:8px; padding:16px 18px; font-size:13px; }
+.dodont .do { background:#F1F7EC; border:1px solid #cfe3bd; }
+.dodont .dont { background:#FBEAEA; border:1px solid #f0c2c2; }
+.dodont b { display:block; margin-bottom:8px; font-size:13.5px; }
+.dodont ul { margin:0; padding-left:18px; }
+.dodont li { margin-bottom:5px; }
+
+footer.doc-footer { margin-top:70px; padding-top:20px; border-top:1px solid #eee; font-size:11px; color:#999; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="tag">GOOD KARMA · BRAND GUIDELINES</div>
+<h1 class="display">A Trusted Friend, Backed By Science</h1>
+<div class="cover-sub">How Good Karma looks, sounds, and feels — across the website, packaging, blog, and any advertisement or poster carrying the name. This guides tone and visuals; it doesn't replace judgment on any single piece.</div>
+<div class="cover-foot">Prepared by Intent Studios for Good Karma · September 2026</div>
+
+<!-- LOGO -->
+<section>
+  <div class="eyebrow">Logo &amp; Identity</div>
+  <h2 class="display">The Mark</h2>
+  <hr class="rule">
+  <div class="logo-block">
+    <div class="logo-word">good karma</div>
+    <div class="logo-tag">Be Good. Wear Good.</div>
+  </div>
+  <div class="logo-rules">
+    <div class="rule-card"><b>Always lowercase</b>The wordmark is never capitalized in the primary lockup.</div>
+    <div class="rule-card"><b>White on color</b>Displays in white on Marigold, Mauve, or Sage backgrounds — never a busy photo behind it directly.</div>
+    <div class="rule-card"><b>No Livbio pairing</b>Never shown alongside the Livbio mark or name, on any Good Karma material, per the client's direction.</div>
+    <div class="rule-card"><b>Clear space</b>Keep space around the mark roughly equal to the height of the lowercase letters — don't crowd it with copy or other elements.</div>
+  </div>
+</section>
+
+<!-- COLORS -->
+<section>
+  <div class="eyebrow">Color</div>
+  <h2 class="display">Core Palette</h2>
+  <hr class="rule">
+  <p style="font-size:13.5px;max-width:620px;">Marigold leads everywhere — it's the primary brand color. Mauve and Sage are supporting colors, used for variation and depth, never competing with Marigold for attention.</p>
+  <div class="color-grid">
+    <div class="swatch-card"><div class="swatch" style="background:#C98637;"></div><div class="swatch-info"><div class="name">Marigold</div><div class="hex">#C98637</div><div class="role">Primary — CTAs, logo, key accents</div></div></div>
+    <div class="swatch-card"><div class="swatch" style="background:#A4777E;"></div><div class="swatch-info"><div class="name">Mauve</div><div class="hex">#A4777E</div><div class="role">Secondary — warmth, backgrounds</div></div></div>
+    <div class="swatch-card"><div class="swatch" style="background:#5A6056;"></div><div class="swatch-info"><div class="name">Sage</div><div class="hex">#5A6056</div><div class="role">Secondary — grounding, footer/dark sections</div></div></div>
+    <div class="swatch-card"><div class="swatch" style="background:#111111;"></div><div class="swatch-info"><div class="name">Ink</div><div class="hex">#111111</div><div class="role">Body text</div></div></div>
+    <div class="swatch-card"><div class="swatch" style="background:#F7F7F7;border:1px solid #eee;"></div><div class="swatch-info"><div class="name">Paper</div><div class="hex">#F7F7F7</div><div class="role">Light backgrounds, cards</div></div></div>
+  </div>
+
+  <h2 class="display" style="margin-top:40px;">Range Palette</h2>
+  <p style="font-size:13.5px;max-width:620px;">These ten muted tones represent the actual product color range — used on product pages, the Natural Dyeing page's dye library, and swatch selectors. Not for primary UI (buttons, nav, CTAs) — that stays in the core palette above.</p>
+  <div class="range-grid">
+    <div class="range-swatch" style="background:#C6D1E3;"></div>
+    <div class="range-swatch" style="background:#BEC2CD;"></div>
+    <div class="range-swatch" style="background:#BFC2D5;"></div>
+    <div class="range-swatch" style="background:#C5AABC;"></div>
+    <div class="range-swatch" style="background:#E8E8DE;"></div>
+    <div class="range-swatch" style="background:#E17E9A;"></div>
+    <div class="range-swatch" style="background:#817E7E;"></div>
+    <div class="range-swatch" style="background:#CD9B9E;"></div>
+    <div class="range-swatch" style="background:#CBB9B9;"></div>
+    <div class="range-swatch" style="background:#FFFFFF;border-left:1px solid #eee;"></div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section>
+  <div class="eyebrow">Typography</div>
+  <h2 class="display">Three Voices, Three Jobs</h2>
+  <hr class="rule">
+  <div class="type-sample">
+    <div class="type-role">Display / Logo Moments</div>
+    <div class="type-word baloo">good karma</div>
+    <div class="type-note">Baloo 2 (or Fredoka) — rounded and warm, matching the logotype. Used sparingly: the logo itself, playful UI accents. Never for body copy or medical/science content.</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-role">Body &amp; Trust-Bearing Content</div>
+    <div class="type-word inter">The science behind why fabric touches health.</div>
+    <div class="type-note">Inter — clean, highly legible, used for all body copy, product info, certifications, and anything doctor-facing. This is where credibility lives.</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-role">Editorial / Storytelling</div>
+    <div class="type-word lora">Why we started Good Karma.</div>
+    <div class="type-note">Lora Italic — warm serif for Our Story, founder notes, and section headings across the site. The emotional register between the playful logo and the clinical body text.</div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section>
+  <div class="eyebrow">Voice &amp; Tone</div>
+  <h2 class="display">Trusted Friend, Backed by Science</h2>
+  <hr class="rule">
+  <div class="grid2">
+    <div class="col">
+      <div class="box">
+        <div class="box-label">Always</div>
+        Warm, hopeful, forward-looking. Talks about a better future and real health benefits. Never assumes the reader already knows why this matters — explains gently, like a friend would.
+      </div>
+    </div>
+    <div class="col">
+      <div class="box black">
+        <div class="box-label">Every claim, backed</div>
+        Every health or science claim traces back to something real — a certification, a named test, a citable mechanism. Warmth in tone never means looseness in fact.
+      </div>
+    </div>
+  </div>
+  <div class="dodont">
+    <div class="do"><b>Do</b><ul>
+      <li>Speak plainly, the way you'd explain something to a friend</li>
+      <li>Lead with hope and a better tomorrow, not fear</li>
+      <li>Name real certifications and standards precisely</li>
+      <li>Let the science support the warmth, not replace it</li>
+    </ul></div>
+    <div class="dont"><b>Don't</b><ul>
+      <li>Use fear-based or negative framing to drive urgency</li>
+      <li>Claim "medically tested" without a specific, real test behind it</li>
+      <li>Mention Livbio anywhere on Good Karma material</li>
+      <li>Let the tone go so clinical it stops sounding like a friend</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- IMAGERY -->
+<section>
+  <div class="eyebrow">Imagery</div>
+  <h2 class="display">Real First, AI Where It Has To Be</h2>
+  <hr class="rule">
+  <div class="grid2">
+    <div class="col">
+      <div class="box">
+        <div class="box-label">Real photography</div>
+        Products, manufacturing process, the existing model photoshoot, and founder photos/video — used wherever available, prioritized over generated imagery.
+      </div>
+    </div>
+    <div class="col">
+      <div class="box black">
+        <div class="box-label">AI-generated, used deliberately</div>
+        Reserved for what can't be photographed realistically — skin-science close-ups, illustrative diagrams. Kept realistic in style, not stylized or cartoonish, so it sits naturally next to real photography.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="doc-footer">Intent Studios · Good Karma · Brand Guidelines v1</footer>
+
+</div>
+</body>
+</html>

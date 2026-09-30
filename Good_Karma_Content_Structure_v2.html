@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Good Karma — Content Structure (Updated)</title>
+<style>
+:root { --orange:#F24E1E; --black:#111111; --grey:#555; --lightgrey:#F7F7F7; }
+* { box-sizing: border-box; }
+body { font-family: -apple-system,'Segoe UI',sans-serif; color:var(--black); margin:0; background:#fff; line-height:1.6; }
+.wrap { max-width: 1050px; margin:0 auto; padding: 40px 28px 90px 28px; }
+.eyebrow { color:var(--orange); font-weight:700; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; }
+h1.display, h2.display { font-family: Georgia, serif; font-style:italic; font-weight:400; margin:0 0 8px 0; }
+h1.display { font-size:34px; line-height:1.2; }
+h2.display { font-size:23px; }
+.rule { border:none; border-top:2px solid var(--black); margin:14px 0 24px 0; }
+.tag { display:inline-block; background:var(--black); color:#fff; font-size:11px; font-weight:700; letter-spacing:1px; padding:6px 14px; border-radius:4px; margin-bottom:16px; }
+.tag.v2 { background: var(--orange); }
+.cover-sub { font-size:15px; color:var(--grey); max-width:640px; margin-top:12px; }
+.note-box { background:#FFF7ED; border:1px solid #F5C99B; border-radius:6px; padding:14px 16px; font-size:13px; color:#7a4a10; margin-top:16px; max-width:660px; }
+.note-box b { color:var(--orange); }
+.cover-foot { font-size:11px; color:#999; margin-top:20px; }
+section { margin-top: 56px; }
+p { font-size: 14px; }
+
+.source-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap:12px; margin-top:16px; }
+.source-card { border:1px solid #eee; border-radius:6px; padding:12px 14px; }
+.source-name { font-weight:700; font-size:13px; margin-bottom:4px; }
+.source-note { font-size:12px; color:var(--grey); }
+.source-tag { display:inline-block; font-size:9px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; padding:2px 8px; border-radius:3px; margin-bottom:6px; }
+.source-tag.client { background:#FDEDE8; color:var(--orange); }
+
+/* Flowchart tree (kept from previous version, extended) */
+.flow-scroll { overflow-x:auto; padding: 16px 0; }
+.tree { text-align:center; }
+.tree ul.branch { padding-top:26px; position:relative; display:flex; justify-content:center; list-style:none; margin:0; }
+.tree ul.branch > li { display:flex; flex-direction:column; align-items:center; list-style:none; position:relative; padding:26px 10px 0 10px; }
+.tree ul.branch > li::before, .tree ul.branch > li::after { content:''; position:absolute; top:0; right:50%; border-top:2px solid #ccc; width:50%; height:26px; }
+.tree ul.branch > li::after { right:auto; left:50%; border-left:2px solid #ccc; }
+.tree ul.branch > li:only-child::after, .tree ul.branch > li:only-child::before { display:none; }
+.tree ul.branch > li:only-child { padding-top:0; }
+.tree ul.branch > li:first-child::before, .tree ul.branch > li:last-child::after { border:0 none; }
+.tree ul.branch > li:last-child::before { border-right:2px solid #ccc; border-radius:0 6px 0 0; }
+.tree ul.branch > li:first-child::after { border-radius:6px 0 0 0; }
+.tree ul.branch ul.branch::before { content:''; position:absolute; top:0; left:50%; border-left:2px solid #ccc; width:0; height:26px; }
+.tree > ul.branch > li::before, .tree > ul.branch > li::after, .tree > ul.branch::before { border-color: var(--black); }
+.node { display:inline-block; text-align:left; min-width:140px; max-width:170px; background:#fff; border:1.5px solid var(--black); border-radius:8px; padding:9px 11px; }
+.node.root { background:var(--black); border-color:var(--black); color:#fff; }
+.node.root .node-title { color:#fff; }
+.node.nav { border-color: var(--orange); }
+.node.footer-link { border-style:dashed; border-color:#bbb; background:#fafafa; }
+.node-kicker { font-size:8px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--orange); margin-bottom:3px; }
+.node.root .node-kicker { color:#ffd8cc; }
+.node-title { font-family:Georgia, serif; font-style:italic; font-size:13px; margin-bottom:3px; }
+.node ul.content { margin:0; padding-left:12px; font-size:9px; color:#444; }
+.node.root ul.content, .node.root .node-title { color:#fff; }
+.node ul.content li { margin-bottom:1px; }
+.footer-branch { margin-top:34px; padding-top:20px; border-top:1px dashed #ddd; }
+.footer-branch-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:#999; margin-bottom:12px; text-align:center; }
+.footer-row { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+.legend { display:flex; gap:16px; flex-wrap:wrap; margin-top:20px; font-size:11px; color:var(--grey); justify-content:center; }
+.legend-item { display:flex; align-items:center; gap:6px; }
+.swatch { width:13px; height:13px; border-radius:3px; display:inline-block; }
+
+/* Detailed page cards */
+.page-card {
+  border: 1px solid #e2e2e2; border-radius: 10px; padding: 22px 24px; margin-bottom: 26px;
+}
+.page-card.emphasis { border: 1.5px solid var(--black); background: var(--lightgrey); }
+.page-head { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:14px; }
+.page-nav-loc { font-size:9.5px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:#999; }
+.page-title { font-family:Georgia, serif; font-style:italic; font-size:22px; margin-top:2px; }
+.page-purpose { font-size:12.5px; color:var(--grey); max-width:520px; }
+.section-list { list-style:none; margin:0; padding:0; counter-reset: sec; }
+.section-list li { counter-increment: sec; padding: 9px 0 9px 34px; position:relative; border-bottom: 1px solid #eee; font-size:13px; }
+.section-list li:last-child { border-bottom:none; }
+.section-list li::before { content: counter(sec); position:absolute; left:0; top:8px; width:22px; height:22px; border-radius:50%; background:var(--orange); color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.section-list li b { display:block; font-size:13.5px; margin-bottom:2px; }
+.section-list li span { color: var(--grey); font-size:12.5px; }
+.footer-note { margin-top: 14px; background:#fff; border: 1px dashed #ccc; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #777; }
+.footer-note b { color: var(--black); }
+
+.step-list { counter-reset: step; margin-top: 20px; }
+.step { display: flex; gap: 16px; margin-bottom: 18px; }
+.step-num { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--black); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; }
+.step-body { padding-top: 3px; }
+.step-title { font-weight: 700; font-size: 14px; margin-bottom: 3px; }
+.step-desc { font-size: 13px; color: var(--grey); }
+
+footer.doc-footer { margin-top:70px; padding-top:20px; border-top:1px solid #eee; font-size:11px; color:#999; text-align:center; }
+@media (max-width: 700px) { h1.display { font-size:26px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="tag">GOOD KARMA · CONTENT STRUCTURE</div>
+<div class="tag v2">UPDATED VERSION</div>
+<h1 class="display">The Full Site, Section by Section</h1>
+<div class="cover-sub">This is the updated version of the site map, now including the brand references you shared and the new skin-science material. It goes deeper than the first draft — every page now lists its full run of sections, from hero to footer, in plain, rough terms so we can lock the shape of each page before writing the actual words.</div>
+<div class="note-box"><b>What changed from the last version:</b> Shop by Concern is back on the homepage, every page now shows its footer content, and new sections have been added for doctor recognition, skin science, short-form content, and a doctor resource sign-up — all based on your latest notes.</div>
+<div class="cover-foot">Prepared by Intent Studios for Good Karma / Livbio · September 2026</div>
+
+<!-- REFERENCES -->
+<section>
+  <div class="eyebrow">References We're Building From</div>
+  <h2 class="display">What Each Reference Is Actually Guiding</h2>
+  <hr class="rule">
+  <p style="max-width:660px;">Each reference site is guiding one specific thing, not the whole design — so we don't end up with a site that looks like five different brands stitched together.</p>
+  <div class="source-grid">
+    <div class="source-card"><span class="source-tag client">Tone</span><div class="source-name">Patagonia</div><div class="source-note">Positive, hopeful, nature-led brand voice — no fear-based or negative messaging anywhere in the main brand communication</div></div>
+    <div class="source-card"><span class="source-tag client">Page depth</span><div class="source-name">Phitku</div><div class="source-note">Full, deep informational pages — applied here to innerwear the same way Phitku applies it to their category</div></div>
+    <div class="source-card"><span class="source-tag client">Simplicity</span><div class="source-name">Industry of All Nations &amp; Aizome</div><div class="source-note">Simple, minimal product and homepage elements — clean layout, not overloaded with content</div></div>
+    <div class="source-card"><span class="source-tag client">Natural dyeing</span><div class="source-name">Truetone &amp; Colour Ashram</div><div class="source-note">Reference specifically for how the natural dyeing section looks and how much detail it carries</div></div>
+  </div>
+</section>
+
+<!-- FLOWCHART -->
+<section>
+  <div class="eyebrow">The Site Structure</div>
+  <h2 class="display">Top Navigation and Where Everything Leads</h2>
+  <hr class="rule">
+  <p>Solid lines are top navigation. Dashed boxes are footer-only pages — still reachable, just not taking up space in the main menu.</p>
+  <div class="flow-scroll">
+    <div class="tree">
+      <ul class="branch">
+        <li>
+          <div class="node root"><div class="node-kicker">Entry</div><div class="node-title">Home</div>
+            <ul class="content"><li>Hero</li><li>Shop by Concern</li><li>Shop the Collection</li><li>How We're Made</li><li>Certifications</li><li>Skin Science teaser</li><li>Natural Dyeing</li><li>Doctor Trust</li><li>Short Content</li><li>Newsletter/Doctor Sign-up</li><li>Footer</li></ul>
+          </div>
+          <ul class="branch">
+            <li>
+              <div class="node nav"><div class="node-kicker">Top Nav</div><div class="node-title">Products</div>
+                <ul class="content"><li>Concern filters</li><li>Full grid</li><li>Quick-view</li><li>Footer</li></ul>
+              </div>
+              <ul class="branch"><li><div class="node"><div class="node-kicker">Product Page</div><div class="node-title">Product Detail</div><ul class="content"><li>Gallery, size, price</li><li>Science blurb</li><li>Footer</li></ul></div></li></ul>
+            </li>
+            <li>
+              <div class="node nav"><div class="node-kicker">Top Nav</div><div class="node-title">Educate</div>
+                <ul class="content"><li>Routing cards</li><li>Short content strip</li><li>Footer</li></ul>
+              </div>
+              <ul class="branch">
+                <li><div class="node"><div class="node-kicker">Educate hub</div><div class="node-title">Skin Science</div><ul class="content"><li>Research</li><li>Per-audience</li><li>Footer</li></ul></div></li>
+                <li><div class="node"><div class="node-kicker">Educate hub</div><div class="node-title">Natural Dyeing</div><ul class="content"><li>Dye library</li><li>Process</li><li>Footer</li></ul></div></li>
+                <li><div class="node"><div class="node-kicker">Educate hub</div><div class="node-title">For Doctors</div><ul class="content"><li>Recognition</li><li>Resources</li><li>Footer</li></ul></div></li>
+              </ul>
+            </li>
+            <li>
+              <div class="node nav"><div class="node-kicker">Top Nav</div><div class="node-title">Contact</div>
+                <ul class="content"><li>Contact form</li><li>Doctor inquiry</li><li>Footer</li></ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-branch">
+      <div class="footer-branch-label">Footer Only</div>
+      <div class="footer-row">
+        <div class="node footer-link"><div class="node-kicker">Footer</div><div class="node-title">Our Story</div><ul class="content"><li>Founder, origin, Livbio</li></ul></div>
+        <div class="node footer-link"><div class="node-kicker">Footer</div><div class="node-title">Blog</div><ul class="content"><li>SEO articles</li></ul></div>
+      </div>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><span class="swatch" style="background:var(--black);"></span> Site entry</div>
+      <div class="legend-item"><span class="swatch" style="background:#fff;border:1.5px solid var(--orange);"></span> Top nav item</div>
+      <div class="legend-item"><span class="swatch" style="background:#fff;border:1.5px solid var(--black);"></span> Sub-page</div>
+      <div class="legend-item"><span class="swatch" style="background:#fafafa;border:1.5px dashed #bbb;"></span> Footer-only page</div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILED PAGE BREAKDOWNS -->
+<section>
+  <div class="eyebrow">Every Page, In Full</div>
+  <h2 class="display">Hero to Footer — What Goes On Each Page</h2>
+  <hr class="rule">
+  <p style="max-width:680px;">This is the launch pad for the actual copy conversation — rough section names and what each one is doing, not finished wording. Once this shape is agreed, we write the real words together.</p>
+
+  <!-- HOME -->
+  <div class="page-card emphasis">
+    <div class="page-head">
+      <div>
+        <div class="page-nav-loc">Top Nav · Entry Point</div>
+        <div class="page-title">Home</div>
+      </div>
+      <div class="page-purpose">Sets the tone (calm, hopeful, natural), shows what we sell, and opens the door to deeper trust-building content.</div>
+    </div>
+    <ul class="section-list">
+      <li><b>Hero</b><span>Calm, natural lifestyle image — someone living comfortably, product visible but not the whole focus. One line, one button. Tone stays hopeful, never framed around a problem.</span></li>
+      <li><b>Shop by Concern</b><span>A short row of categories people can pick by what they need — comfort, new mothers, fertility &amp; wellness, infant care. Replaces a plain size filter as the first way to browse.</span></li>
+      <li><b>Shop the Collection</b><span>All products shown as real cards with images, price, and a hover view — nothing hidden behind an extra click.</span></li>
+      <li><b>How We're Made</b><span>A short, visual explanation of what makes the fabric different — natural dye, GOTS cotton, no synthetic stretch.</span></li>
+      <li><b>Certifications</b><span>GOTS and OEKO-TEX marks shown simply, so trust is visible at a glance.</span></li>
+      <li><b>Skin Science, Briefly</b><span>A short, curious-toned line — "curious what your clothes are made of?" — linking to the full Skin Science page. Kept light here, not clinical.</span></li>
+      <li><b>Natural Dyeing</b><span>A visual teaser of the dye story — colour, ingredient, and source — styled close to the Truetone/Colour Ashram references.</span></li>
+      <li><b>Doctor Trust</b><span>A short strip showing this is doctor-recommended, building credibility before the ask.</span></li>
+      <li><b>Short Content</b><span>A small strip of short-form content or recent posts, once there's a real content cadence to show.</span></li>
+      <li><b>Newsletter / Doctor Sign-Up</b><span>One field for general visitors to stay updated, and a separate, clearly marked link for doctors to access the full resource library.</span></li>
+      <li><b>Footer</b><span>Quick links (mirrors the nav), shipping &amp; returns, FAQ, privacy policy, socials, and a small link back to Livbio as the parent brand.</span></li>
+    </ul>
+  </div>
+
+  <!-- PRODUCTS (PLP) -->
+  <div class="page-card">
+    <div class="page-head">
+      <div><div class="page-nav-loc">Top Nav</div><div class="page-title">Products</div></div>
+      <div class="page-purpose">The full catalog view, for anyone who wants to browse everything at once.</div>
+    </div>
+    <ul class="section-list">
+      <li><b>Intro Line</b><span>One short sentence framing the small, considered range — not "hundreds of options," a handful done well.</span></li>
+      <li><b>Filter Bar</b><span>Shop by Concern tags plus product type, sitting above the grid.</span></li>
+      <li><b>Product Grid</b><span>Every SKU, hover image change, quick-view popup for size, colour, and certification.</span></li>
+      <li><b>Footer</b><span>Same as homepage — quick links, policies, socials, Livbio link.</span></li>
+    </ul>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <div class="page-card">
+    <div class="page-head">
+      <div><div class="page-nav-loc">Reached from Products</div><div class="page-title">Product Detail</div></div>
+      <div class="page-purpose">Converts a visitor who already has one product in mind.</div>
+    </div>
+    <ul class="section-list">
+      <li><b>Image Gallery</b><span>Product photos, with a lifestyle shot mixed in, not just flat product images.</span></li>
+      <li><b>Product Info</b><span>Name, price, size selector, add-to-cart.</span></li>
+      <li><b>Certification Badges</b><span>GOTS/OEKO-TEX shown right where the decision is being made.</span></li>
+      <li><b>Concern Tags</b><span>Which need(s) this product addresses, shown as small labels.</span></li>
+      <li><b>Why This Matters</b><span>A two-line science note specific to this product, linking to the full Skin Science page for anyone who wants more.</span></li>
+      <li><b>Doctor-Recommended Line</b><span>A short credibility note reinforcing the doctor-channel trust.</span></li>
+      <li><b>You Might Also Like</b><span>A small set of related products.</span></li>
+      <li><b>Footer</b><span>Standard footer.</span></li>
+    </ul>
+  </div>
+
+  <!-- EDUCATE HUB -->
+  <div class="page-card">
+    <div class="page-head">
+      <div><div class="page-nav-loc">Top Nav</div><div class="page-title">Educate</div></div>
+      <div class="page-purpose">A light landing point that routes to the three deeper pages below.</div>
+    </div>
+    <ul class="section-list">
+      <li><b>Intro Line</b><span>Warm, curious framing — an invitation to learn, not a warning.</span></li>
+      <li><b>Three Routing Cards</b><span>Skin Science, Natural Dyeing, For Doctors — each with a one-line teaser.</span></li>
+      <li><b>Short Content Strip</b><span>Latest short-form posts or articles, pulling this hub into the ongoing content engine.</span></li>
+      <li><b>Footer</b><span>Standard footer.</span></li>
+    </ul>
+  </div>
+
+  <!-- SKIN SCIENCE -->
+  <div class="page-card">
+    <div class="page-head">
+      <div><div class="page-nav-loc">Under Educate</div><div class="page-title">Skin Science</div></div>
+      <div class="page-purpose">The real research, written plainly — this is where the depth from the Skin Science reference document lives.</div>
+    </div>
+    <ul class="section-list">
+      <li><b>Intro</b><span>Why what touches your skin matters, in one paragraph.</span></li>
+      <li><b>The Skin Barrier, Briefly</b><span>A simple explainer of what skin does and how fabric affects it.</span></li>
+      <li><b>What The Research Shows</b><span>PFAS, microplastics, and chemical dye findings, summarized plainly with sources shown quietly, not hidden.</span></li>
+      <li><b>For Women / Infants / Men</b><span>The same science, broken into three short sections matching our three personas.</span></li>
+      <li><b>Why Good Karma Is Different</b><span>How natural dye and GOTS cotton directly address what was just explained.</span></li>
+      <li><b>Sources</b><span>A quiet citation list for anyone who wants to check the claims themselves.</span></li>
+      <li><b>Footer</b><span>Standard footer.</span></li>
+    </ul>
+  </div>
+
+  <!-- NATURAL DYEING -->
+  <div class="page-card">
+    <div class="page-head">
+      <div><div class="page-nav-loc">Under Educate</div><div class="page-title">Natural Dyeing</div></div>
+      <div class="page-purpose">The material and craft story — styled closest to the Truetone/Colour Ashram references, heavier on visuals than text.</div>
+    </div>
+    <ul class="section-list">
+      <li><b>Philosophy Intro</b><span>Why natural dyeing is a deliberate choice, not just a spec.</span></li>
+      <li><b>The Dye Library</b><span>Each dye — madder, marigold, pomegranate peel, and others — shown with its source region and the colour it produces.</span></li>
+      <li><b>The Process</b><span>How a raw ingredient becomes a fabric colour, told visually, step by step.</span></li>
+      <li><b>Certifications Explained</b><span>What GOTS and OEKO-TEX actually guarantee, in plain words.</span></li>
+      <li><b>What We Leave Out</b><span>No synthetic dye, no elastane, no chemical fixatives — framed as a choice.</span></li>
+      <li><b>Footer</b><span>Standard footer.</span></li>
+    </ul>
+  </div>
+
+  <!-- FOR DOCTORS -->
+  <div class="page-card">
+    <div class="page-head">
+      <div><div class="page-nav-loc">Under Educate</div><div class="page-title">For Doctors</div></div>
+      <div class="page-purpose">Speaks directly to the clinicians who refer patients here — peer tone, not patient tone.</div>
+    </div>
+    <ul class="section-list">
+      <li><b>Direct Address</b><span>"For the doctors recommending Good Karma" — makes clear this page isn't for patients.</span></li>
+      <li><b>The Clinical Rationale</b><span>The same science as the Skin Science page, written at a level a clinician expects.</span></li>
+      <li><b>Doctor Recognition</b><span>How doctors are recognized for referring patients — framed as private acknowledgment, not a public leaderboard.</span></li>
+      <li><b>How The QR System Works</b><span>What the patient sees at each QR touchpoint, so doctors know exactly what they're handing out.</span></li>
+      <li><b>Get Full Resources</b><span>A downloadable resource pack (patient handouts, product specs, certification documents) behind a simple sign-up.</span></li>
+      <li><b>Doctor Newsletter</b><span>An optional sign-up for updates, separate from the general visitor newsletter.</span></li>
+      <li><b>Partner Inquiry</b><span>A direct contact path for clinics wanting to join.</span></li>
+      <li><b>Footer</b><span>Standard footer.</span></li>
+    </ul>
+  </div>
+
+  <!-- OUR STORY -->
+  <div class="page-card">
+    <div class="page-head">
+      <div><div class="page-nav-loc">Footer Only</div><div class="page-title">Our Story</div></div>
+      <div class="page-purpose">Brand trust and founder credibility.</div>
+    </div>
+    <ul class="section-list">
+      <li><b>Founder Note</b><span>In Kirthish's own words.</span></li>
+      <li><b>Brand Origin</b><span>How Good Karma came to be.</span></li>
+      <li><b>Link to Livbio</b><span>A short, clear explanation of the parent-brand relationship.</span></li>
+      <li><b>Footer</b><span>Standard footer.</span></li>
+    </ul>
+  </div>
+
+  <!-- BLOG -->
+  <div class="page-card">
+    <div class="page-head">
+      <div><div class="page-nav-loc">Footer Only</div><div class="page-title">Blog</div></div>
+      <div class="page-purpose">Ongoing content for search traffic and repeat visits.</div>
+    </div>
+    <ul class="section-list">
+      <li><b>Article Grid</b><span>Regular posts on skin health, sustainability, and process.</span></li>
+      <li><b>Categories</b><span>Simple filtering by topic.</span></li>
+      <li><b>Footer</b><span>Standard footer.</span></li>
+    </ul>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="page-card">
+    <div class="page-head">
+      <div><div class="page-nav-loc">Top Nav</div><div class="page-title">Contact</div></div>
+      <div class="page-purpose">Support and inquiries, general and doctor-specific.</div>
+    </div>
+    <ul class="section-list">
+      <li><b>Contact Form</b><span>General questions and support.</span></li>
+      <li><b>Doctor Inquiry Option</b><span>A separate path for clinics.</span></li>
+      <li><b>Socials &amp; Details</b><span>Support email, phone, social links.</span></li>
+      <li><b>Footer</b><span>Standard footer.</span></li>
+    </ul>
+    <div class="footer-note"><b>Site-wide footer, in full:</b> quick nav links, shipping &amp; returns, size guide, FAQ, privacy policy, social icons, general newsletter sign-up, certification badges, and a link back to Livbio.</div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section>
+  <div class="eyebrow">What Happens Next</div>
+  <h2 class="display">Next Steps</h2>
+  <hr class="rule">
+  <div class="step-list">
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">Your reaction to this shape</div><div class="step-desc">Add, cut, or reorder anything above — this is the launch pad, not the final word.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Media direction per section</div><div class="step-desc">Once the sections are settled, we decide what imagery, video, or graphics each one needs.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">First draft copy</div><div class="step-desc">Real working words for every section listed here, ready to react to together.</div></div></div>
+  </div>
+</section>
+
+<footer class="doc-footer">Intent Studios · Good Karma · Content Structure — Updated Version</footer>
+
+</div>
+</body>
+</html>
