@@ -33,11 +33,11 @@ export default function Home() {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <Button className="bg-white text-ink hover:bg-white/90 rounded-full px-8 py-6 text-base font-medium shadow-sm transition-transform hover:scale-105">
-              Shop the Collection
+            <Button asChild className="bg-white text-ink hover:bg-white/90 rounded-full px-8 py-6 text-base font-medium shadow-sm transition-transform hover:scale-105">
+              <Link href="/products">Shop the Collection</Link>
             </Button>
-            <Button variant="outline" className="rounded-full px-8 py-6 text-base border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-              Discover the Science
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 text-base border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+              <Link href="/educate/skin-science">Discover the Science</Link>
             </Button>
           </div>
         </div>
@@ -56,15 +56,15 @@ export default function Home() {
             { title: "Fertility & Wellness", desc: "Chemical-free support" },
             { title: "Infant Care", desc: "Purest natural fibers" }
           ].map((concern) => (
-            <div key={concern.title} className="group bg-paper p-8 rounded-2xl flex flex-col items-center justify-center min-h-[160px] hover:bg-marigold/5 border border-border/50 transition-all cursor-pointer text-center">
+            <Link href="/products" key={concern.title} className="group bg-paper p-8 rounded-2xl flex flex-col items-center justify-center min-h-[160px] hover:bg-marigold/5 border border-border/50 transition-all cursor-pointer text-center">
               <span className="font-medium text-lg text-ink mb-1">{concern.title}</span>
               <span className="text-sm text-muted-foreground">{concern.desc}</span>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
 
-      {/* 3. About Us / How We're Made (Oreva Style: Split layout, large imagery, clean typography) */}
+      {/* 3. About Us / How We're Made */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
           <div className="aspect-[4/5] bg-paper rounded-3xl flex items-center justify-center border border-border/50 overflow-hidden order-2 md:order-1">
@@ -98,16 +98,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Products (Keeping our own simple UI) */}
+      {/* 4. Products */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="flex justify-between items-end mb-12">
           <div>
             <h2 className="font-editorial italic text-3xl md:text-4xl text-ink mb-2">The Collection</h2>
             <p className="text-muted-foreground">A considered range of everyday essentials.</p>
           </div>
-          <a href="#" className="text-sm font-medium hover:text-marigold flex items-center gap-2 group">
+          <Link href="/products" className="text-sm font-medium hover:text-marigold flex items-center gap-2 group">
             View all <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           {[
@@ -115,7 +115,7 @@ export default function Home() {
             { name: "Comfort Brief", color: "Madder Rose", price: "$32" },
             { name: "Lounge Set", color: "Marigold", price: "$85" }
           ].map((product, i) => (
-            <div key={i} className="group cursor-pointer flex flex-col">
+            <Link href="/products" key={i} className="group cursor-pointer flex flex-col">
               <div className="aspect-[4/5] bg-paper rounded-2xl mb-6 flex items-center justify-center border border-border/50 overflow-hidden relative">
                 <span className="text-muted-foreground text-sm">[ Product Image ]</span>
                 <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -127,12 +127,12 @@ export default function Home() {
                 </div>
                 <span className="font-medium text-ink">{product.price}</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
       
-      {/* 5. "For sight of every new piece" (Oreva Style: Full bleed visual strip for Natural Dyeing) */}
+      {/* 5. "For sight of every new piece" (Natural Dyeing) */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="bg-ink rounded-3xl overflow-hidden text-white flex flex-col md:flex-row items-center">
           <div className="p-12 md:p-20 flex-1">
@@ -143,13 +143,12 @@ export default function Home() {
             <p className="text-white/70 text-lg mb-8 max-w-[400px] leading-relaxed">
               Marigold, Madder root, and Pomegranate. We use real ingredients to create our palette, ensuring no harmful chemicals ever touch your skin.
             </p>
-            <Button className="bg-white text-ink hover:bg-white/90 rounded-full px-8 py-6 text-base">
-              Explore the Dye Library
+            <Button asChild className="bg-white text-ink hover:bg-white/90 rounded-full px-8 py-6 text-base">
+              <Link href="/educate/natural-dyeing">Explore the Dye Library</Link>
             </Button>
           </div>
           <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-[600px] bg-paper flex items-center justify-center relative">
             <span className="text-muted-foreground text-sm z-10">[ Natural dyeing process or macro ingredient shot ]</span>
-            {/* Abstract color hints */}
             <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-[#C98637] to-[#A4777E]" />
           </div>
         </div>
@@ -170,8 +169,8 @@ export default function Home() {
               OEKO-TEX
             </div>
           </div>
-          <Button variant="outline" className="rounded-full px-8 py-6 text-base border-border text-ink">
-            Resources for Doctors
+          <Button asChild variant="outline" className="rounded-full px-8 py-6 text-base border-border text-ink">
+            <Link href="/educate/for-doctors">Resources for Doctors</Link>
           </Button>
         </div>
       </section>
@@ -185,7 +184,7 @@ export default function Home() {
             { title: "The reality of 'synthetic stretch' in modern wear", cat: "Materials" },
             { title: "GOTS certification and what it actually means", cat: "Standards" }
           ].map((article, i) => (
-            <div key={i} className="group cursor-pointer flex flex-col">
+            <Link href="/educate/skin-science" key={i} className="group cursor-pointer flex flex-col">
               <div className="aspect-[3/2] bg-paper rounded-2xl mb-6 flex items-center justify-center border border-border/50 overflow-hidden relative">
                 <span className="text-muted-foreground text-sm">[ Article Thumbnail ]</span>
                 <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -195,7 +194,7 @@ export default function Home() {
               <p className="text-sm text-muted-foreground flex items-center gap-2">
                 Read article <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
