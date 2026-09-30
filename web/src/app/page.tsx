@@ -33,12 +33,12 @@ export default function Home() {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <Button asChild className="bg-white text-ink hover:bg-white/90 rounded-full px-8 py-6 text-base font-medium shadow-sm transition-transform hover:scale-105">
-              <Link href="/products">Shop the Collection</Link>
-            </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 text-base border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-              <Link href="/educate/skin-science">Discover the Science</Link>
-            </Button>
+            <Link href="/products" className="inline-flex items-center justify-center bg-white text-ink hover:bg-white/90 rounded-full px-8 py-6 text-base font-medium shadow-sm transition-transform hover:scale-105">
+              Shop the Collection
+            </Link>
+            <Link href="/educate/skin-science" className="inline-flex items-center justify-center rounded-full px-8 py-6 text-base border border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transition-colors">
+              Discover the Science
+            </Link>
           </div>
         </div>
       </section>
@@ -143,9 +143,9 @@ export default function Home() {
             <p className="text-white/70 text-lg mb-8 max-w-[400px] leading-relaxed">
               Marigold, Madder root, and Pomegranate. We use real ingredients to create our palette, ensuring no harmful chemicals ever touch your skin.
             </p>
-            <Button asChild className="bg-white text-ink hover:bg-white/90 rounded-full px-8 py-6 text-base">
-              <Link href="/educate/natural-dyeing">Explore the Dye Library</Link>
-            </Button>
+            <Link href="/educate/natural-dyeing" className="inline-flex items-center justify-center bg-white text-ink hover:bg-white/90 rounded-full px-8 py-6 text-base font-medium transition-colors">
+              Explore the Dye Library
+            </Link>
           </div>
           <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-[600px] bg-paper flex items-center justify-center relative">
             <span className="text-muted-foreground text-sm z-10">[ Natural dyeing process or macro ingredient shot ]</span>
@@ -169,9 +169,9 @@ export default function Home() {
               OEKO-TEX
             </div>
           </div>
-          <Button asChild variant="outline" className="rounded-full px-8 py-6 text-base border-border text-ink">
-            <Link href="/educate/for-doctors">Resources for Doctors</Link>
-          </Button>
+          <Link href="/educate/for-doctors" className="inline-flex items-center justify-center rounded-full px-8 py-6 text-base border border-border text-ink hover:bg-muted transition-colors font-medium">
+            Resources for Doctors
+          </Link>
         </div>
       </section>
 
