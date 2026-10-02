@@ -43,6 +43,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 1.5 Certifications Strip */}
+      <section className="w-full bg-paper py-8 border-y border-border/50">
+        <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 opacity-70 transition-all">
+          <span className="text-sm font-medium tracking-widest uppercase text-muted-foreground hidden md:block">Backed By</span>
+          <div className="flex gap-8 md:gap-16 items-center justify-center flex-wrap">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-border flex items-center justify-center text-[10px] font-bold text-ink">G</div>
+              <span className="font-medium text-ink">GOTS Organic</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-border flex items-center justify-center text-[10px] font-bold text-ink">O</div>
+              <span className="font-medium text-ink">OEKO-TEX</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-border flex items-center justify-center text-[10px] font-bold text-ink">D</div>
+              <span className="font-medium text-ink">Dermatologically Tested</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 2. Shop by Concern */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="flex flex-col items-center text-center mb-12">
@@ -67,8 +88,7 @@ export default function Home() {
       {/* 3. About Us / How We're Made */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-          <div className="aspect-[4/5] bg-paper rounded-3xl flex items-center justify-center border border-border/50 overflow-hidden order-2 md:order-1">
-            <span className="text-muted-foreground text-sm">[ Close up of natural fabric texture or manufacturing process ]</span>
+          <div className="aspect-[4/5] bg-[url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center rounded-3xl flex items-center justify-center overflow-hidden order-2 md:order-1 shadow-sm">
           </div>
           <div className="max-w-[500px] order-1 md:order-2">
             <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-4 block">The Difference</span>
@@ -111,13 +131,15 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           {[
-            { name: "Organic Cotton Top", color: "Undyed", price: "$45" },
-            { name: "Comfort Brief", color: "Madder Rose", price: "$32" },
-            { name: "Lounge Set", color: "Marigold", price: "$85" }
+            { name: "Organic Cotton Top", color: "Undyed", price: "$45", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=600&auto=format&fit=crop" },
+            { name: "Comfort Brief", color: "Madder Rose", price: "$32", img: "https://images.unsplash.com/photo-1618244972963-cb5bdccba204?q=80&w=600&auto=format&fit=crop" },
+            { name: "Lounge Set", color: "Marigold", price: "$85", img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=600&auto=format&fit=crop" }
           ].map((product, i) => (
             <Link href="/products" key={i} className="group cursor-pointer flex flex-col">
-              <div className="aspect-[4/5] bg-paper rounded-2xl mb-6 flex items-center justify-center border border-border/50 overflow-hidden relative">
-                <span className="text-muted-foreground text-sm">[ Product Image ]</span>
+              <div 
+                className="aspect-[4/5] bg-paper rounded-2xl mb-6 flex items-center justify-center border border-border/50 overflow-hidden relative bg-cover bg-center"
+                style={{ backgroundImage: `url(${product.img})` }}
+              >
                 <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               <div className="flex justify-between items-start">
@@ -147,8 +169,7 @@ export default function Home() {
               Explore the Dye Library
             </Link>
           </div>
-          <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-[600px] bg-paper flex items-center justify-center relative">
-            <span className="text-muted-foreground text-sm z-10">[ Natural dyeing process or macro ingredient shot ]</span>
+          <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-[600px] bg-[url('https://images.unsplash.com/photo-1618361001476-eb96d49925e0?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center flex items-center justify-center relative">
             <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-[#C98637] to-[#A4777E]" />
           </div>
         </div>
@@ -180,13 +201,15 @@ export default function Home() {
         <h2 className="font-editorial italic text-3xl md:text-4xl text-ink mb-8">Recent thoughts</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {[
-            { title: "Why natural dye matters for sensitive skin", cat: "Skin Science" },
-            { title: "The reality of 'synthetic stretch' in modern wear", cat: "Materials" },
-            { title: "GOTS certification and what it actually means", cat: "Standards" }
+            { title: "Why natural dye matters for sensitive skin", cat: "Skin Science", img: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=600&auto=format&fit=crop" },
+            { title: "The reality of 'synthetic stretch' in modern wear", cat: "Materials", img: "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=600&auto=format&fit=crop" },
+            { title: "GOTS certification and what it actually means", cat: "Standards", img: "https://images.unsplash.com/photo-1605289982774-9a6fef564df8?q=80&w=600&auto=format&fit=crop" }
           ].map((article, i) => (
             <Link href="/educate/skin-science" key={i} className="group cursor-pointer flex flex-col">
-              <div className="aspect-[3/2] bg-paper rounded-2xl mb-6 flex items-center justify-center border border-border/50 overflow-hidden relative">
-                <span className="text-muted-foreground text-sm">[ Article Thumbnail ]</span>
+              <div 
+                className="aspect-[3/2] bg-paper rounded-2xl mb-6 flex items-center justify-center border border-border/50 overflow-hidden relative bg-cover bg-center"
+                style={{ backgroundImage: `url(${article.img})` }}
+              >
                 <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               <span className="text-marigold font-bold text-[10px] uppercase tracking-widest mb-2 block">{article.cat}</span>
