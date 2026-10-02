@@ -4,24 +4,20 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-32 pb-32 w-full">
+    <div className="flex flex-col gap-24 md:gap-32 pb-32 w-full">
       
-      {/* 1. Hero Section (Oreva style: Full-bleed immersive visual with overlaid text) */}
+      {/* 1. Hero Section */}
       <section className="relative w-full h-[90vh] md:h-[95vh] min-h-[600px] flex flex-col justify-between p-6 md:p-12 overflow-hidden">
-        {/* Background Visual Placeholder */}
         <div className="absolute inset-0 bg-ink">
-          {/* Replace this div with a real <img /> or <video /> later */}
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-60 mix-blend-overlay" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
         </div>
 
-        {/* Top spacer for header if needed, or leave empty to push content down */}
         <div className="relative z-10 flex justify-between items-start w-full max-w-[1400px] mx-auto text-white/80 text-sm font-medium uppercase tracking-widest">
           <span>Good Karma</span>
           <span>Be good. Wear good.</span>
         </div>
 
-        {/* Content overlaid at the bottom/center */}
         <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
           <div className="max-w-[700px]">
             <h1 className="font-editorial italic text-6xl md:text-8xl text-white leading-[1] tracking-tight mb-6 drop-shadow-sm">
@@ -43,28 +39,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 1.5 Certifications Strip */}
-      <section className="w-full bg-paper py-8 border-y border-border/50">
-        <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 opacity-70 transition-all">
-          <span className="text-sm font-medium tracking-widest uppercase text-muted-foreground hidden md:block">Backed By</span>
-          <div className="flex gap-8 md:gap-16 items-center justify-center flex-wrap">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-border flex items-center justify-center text-[10px] font-bold text-ink">G</div>
-              <span className="font-medium text-ink">GOTS Organic</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-border flex items-center justify-center text-[10px] font-bold text-ink">O</div>
-              <span className="font-medium text-ink">OEKO-TEX</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-border flex items-center justify-center text-[10px] font-bold text-ink">D</div>
-              <span className="font-medium text-ink">Dermatologically Tested</span>
-            </div>
-          </div>
+      {/* 2. NEW The Difference (Problem/Situation) */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full text-center">
+        <div className="max-w-[700px] mx-auto">
+          <h2 className="font-editorial italic text-4xl md:text-5xl text-ink leading-tight mb-6">
+            What touches your skin, shapes your skin.
+          </h2>
+          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-8">
+            Most of us never think twice about what our underwear is made of. But skin reacts to everything it touches, every single day.
+          </p>
+          <p className="text-ink font-medium">
+            Here's what we test for, so you don't have to wonder.
+          </p>
         </div>
       </section>
 
-      {/* 2. Shop by Concern */}
+      {/* 3. Certifications Strip */}
+      <section className="w-full bg-paper py-8 border-y border-border/50">
+        <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 transition-all">
+          <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12 items-center opacity-80 hover:opacity-100 transition-opacity">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-border flex items-center justify-center text-[10px] font-bold text-ink">G</div>
+              <span className="font-medium text-ink text-sm">GOTS Organic</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-border flex items-center justify-center text-[10px] font-bold text-ink">O</div>
+              <span className="font-medium text-ink text-sm">OEKO-TEX</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-border flex items-center justify-center text-[10px] font-bold text-ink">B</div>
+              <span className="font-medium text-ink text-sm">BRSR/NGRBC</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-border flex items-center justify-center text-[10px] font-bold text-ink">V</div>
+              <span className="font-medium text-ink text-sm">Vegan Dye</span>
+            </div>
+          </div>
+          <Link href="/certifications" className="text-sm font-medium hover:text-marigold flex items-center gap-2 group shrink-0">
+            Certified where it counts <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </section>
+
+      {/* 4. Shop by Concern */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="flex flex-col items-center text-center mb-12">
           <h2 className="font-editorial italic text-3xl md:text-4xl mb-4 text-ink">Find your comfort</h2>
@@ -85,40 +102,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. About Us / How We're Made */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-          <div className="aspect-[4/5] bg-[url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center rounded-3xl flex items-center justify-center overflow-hidden order-2 md:order-1 shadow-sm">
-          </div>
-          <div className="max-w-[500px] order-1 md:order-2">
-            <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-4 block">The Difference</span>
-            <h2 className="font-editorial italic text-4xl md:text-5xl text-ink leading-tight mb-6">
-              Why what touches your skin matters.
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Your skin is your body's largest organ, absorbing what it touches day after day. We eliminated synthetic stretch, heavy metals, and chemical fixatives. What's left is pure, GOTS certified organic cotton that lets your body breathe.
-            </p>
-            <ul className="space-y-6">
-              <li className="flex gap-5 items-start">
-                <div className="w-1.5 h-1.5 rounded-full bg-marigold mt-2 shrink-0" />
-                <div>
-                  <strong className="block font-medium text-ink text-lg">100% GOTS Cotton</strong>
-                  <span className="text-muted-foreground leading-relaxed">Cultivated without toxic pesticides, keeping the soil and your skin safe.</span>
-                </div>
-              </li>
-              <li className="flex gap-5 items-start">
-                <div className="w-1.5 h-1.5 rounded-full bg-mauve mt-2 shrink-0" />
-                <div>
-                  <strong className="block font-medium text-ink text-lg">Naturally Dyed</strong>
-                  <span className="text-muted-foreground leading-relaxed">Colours extracted from earth's roots and petals, completely free of synthetic azo dyes.</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Products */}
+      {/* 5. Products */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="flex justify-between items-end mb-12">
           <div>
@@ -153,8 +137,41 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* 6. How We're Made */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full">
+        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+          <div className="aspect-[4/5] bg-[url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center rounded-3xl flex items-center justify-center overflow-hidden order-2 md:order-1 shadow-sm">
+          </div>
+          <div className="max-w-[500px] order-1 md:order-2">
+            <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-4 block">How We're Made</span>
+            <h2 className="font-editorial italic text-4xl md:text-5xl text-ink leading-tight mb-6">
+              Why what touches your skin matters.
+            </h2>
+            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+              Your skin is your body's largest organ, absorbing what it touches day after day. We eliminated synthetic stretch, heavy metals, and chemical fixatives. What's left is pure, GOTS certified organic cotton that lets your body breathe.
+            </p>
+            <ul className="space-y-6">
+              <li className="flex gap-5 items-start">
+                <div className="w-1.5 h-1.5 rounded-full bg-marigold mt-2 shrink-0" />
+                <div>
+                  <strong className="block font-medium text-ink text-lg">100% GOTS Cotton</strong>
+                  <span className="text-muted-foreground leading-relaxed">Cultivated without toxic pesticides, keeping the soil and your skin safe.</span>
+                </div>
+              </li>
+              <li className="flex gap-5 items-start">
+                <div className="w-1.5 h-1.5 rounded-full bg-mauve mt-2 shrink-0" />
+                <div>
+                  <strong className="block font-medium text-ink text-lg">Naturally Dyed</strong>
+                  <span className="text-muted-foreground leading-relaxed">Colours extracted from earth's roots and petals, completely free of synthetic azo dyes.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
       
-      {/* 5. "For sight of every new piece" (Natural Dyeing) */}
+      {/* 7. "For sight of every new piece" (Natural Dyeing) */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="bg-ink rounded-3xl overflow-hidden text-white flex flex-col md:flex-row items-center">
           <div className="p-12 md:p-20 flex-1">
@@ -175,7 +192,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Doctor Trust & Certifications */}
+      {/* 8. Doctor Trust */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="bg-paper border border-border/50 rounded-3xl p-12 md:p-20 text-center flex flex-col items-center">
           <h2 className="font-editorial italic text-3xl md:text-4xl text-ink mb-6">Recommended by practitioners.</h2>
@@ -196,7 +213,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Short Content (Recent thoughts / Blog) */}
+      {/* 9. Short Content (Recent thoughts / Blog) */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <h2 className="font-editorial italic text-3xl md:text-4xl text-ink mb-8">Recent thoughts</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
@@ -222,7 +239,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. Footer (Includes Newsletter) */}
+      {/* 10. Footer (Includes Newsletter) */}
       <footer className="px-6 max-w-[1400px] mx-auto w-full pt-16 border-t border-border/50">
         <div className="grid md:grid-cols-12 gap-12 mb-20">
           <div className="md:col-span-5">
@@ -256,7 +273,7 @@ export default function Home() {
             <ul className="space-y-4 text-muted-foreground">
               <li><Link href="/our-story" className="hover:text-marigold transition-colors">Our Story</Link></li>
               <li><Link href="/contact" className="hover:text-marigold transition-colors">Contact</Link></li>
-              <li><Link href="#" className="hover:text-marigold transition-colors">Blog</Link></li>
+              <li><Link href="/certifications" className="hover:text-marigold transition-colors">Certifications</Link></li>
             </ul>
           </div>
         </div>
