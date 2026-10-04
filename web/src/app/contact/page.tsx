@@ -10,17 +10,17 @@ export default function ContactPage() {
           <ArrowLeft className="w-4 h-4" /> Back to Home
         </Link>
         <div className="max-w-[800px] mb-24 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150 ease-out">
-          <h1 className="font-editorial italic text-5xl md:text-7xl lg:text-8xl text-ink leading-[1.1] mb-8">
+          <h1 className="text-h1 font-editorial italic text-ink mb-8">
             Get in touch.
           </h1>
-          <p className="text-xl text-muted-foreground font-light leading-relaxed">
+          <p className="text-p1 text-muted-foreground font-light">
             Whether you have a question about our natural dyes, need help with sizing, or are a medical practitioner looking to partner, we're here to help.
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           <div className="bg-paper p-10 md:p-16 rounded-[2.5rem] border border-border/40 shadow-sm">
-            <h2 className="text-2xl font-medium text-ink mb-8">Send us a message</h2>
+            <h2 className="text-h2 font-medium text-ink mb-8">Send us a message</h2>
             <form className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-medium text-ink">Name</label>
@@ -42,20 +42,20 @@ export default function ContactPage() {
           
           <div className="flex flex-col gap-12 justify-center">
             <div>
-              <h3 className="text-sm font-bold text-marigold uppercase tracking-widest mb-4">Customer Care</h3>
-              <p className="text-lg text-ink font-light">hello@goodkarma.com</p>
-              <p className="text-muted-foreground mt-2 font-light">Available Monday – Friday, 9am – 5pm EST.</p>
+              <h3 className="text-h3 font-bold text-marigold uppercase tracking-widest mb-4">Customer Care</h3>
+              <p className="text-p1 text-ink font-light">hello@goodkarma.com</p>
+              <p className="text-p2 text-muted-foreground mt-2 font-light">Available Monday – Friday, 9am – 5pm EST.</p>
             </div>
             <div className="w-full h-[1px] bg-border/40" />
             <div>
-              <h3 className="text-sm font-bold text-marigold uppercase tracking-widest mb-4">Medical Partnerships</h3>
-              <p className="text-lg text-ink font-light">doctors@goodkarma.com</p>
-              <p className="text-muted-foreground mt-2 font-light">For clinic samples and patient resources.</p>
+              <h3 className="text-h3 font-bold text-marigold uppercase tracking-widest mb-4">Medical Partnerships</h3>
+              <p className="text-p1 text-ink font-light">doctors@goodkarma.com</p>
+              <p className="text-p2 text-muted-foreground mt-2 font-light">For clinic samples and patient resources.</p>
             </div>
             <div className="w-full h-[1px] bg-border/40" />
             <div>
-              <h3 className="text-sm font-bold text-marigold uppercase tracking-widest mb-4">Press & Wholesale</h3>
-              <p className="text-lg text-ink font-light">press@goodkarma.com</p>
+              <h3 className="text-h3 font-bold text-marigold uppercase tracking-widest mb-4">Press & Wholesale</h3>
+              <p className="text-p1 text-ink font-light">press@goodkarma.com</p>
             </div>
           </div>
         </div>

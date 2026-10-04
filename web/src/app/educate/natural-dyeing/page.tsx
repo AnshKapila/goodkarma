@@ -11,12 +11,12 @@ export default function NaturalDyeingPage() {
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
           <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">Natural Dyeing</span>
-          <h1 className="font-editorial italic text-5xl md:text-7xl lg:text-8xl text-ink leading-[1.1] mb-10">
+          <h1 className="text-h1 font-editorial italic text-ink mb-10">
             Colours drawn directly from nature.
           </h1>
           
           <div className="space-y-8">
-            <p className="text-xl md:text-2xl text-ink font-light leading-relaxed">
+            <p className="text-p1 text-ink font-light">
               Most fabric color today comes from synthetic dye—fast, cheap, and consistent, but not without cost.
             </p>
             
@@ -26,12 +26,12 @@ export default function NaturalDyeingPage() {
               <div className="absolute -top-3 left-6 bg-paper text-mauve text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono shadow-sm border border-mauve/20">
                 DEV: DRAFT COPY (Flexible Length)
               </div>
-              <p className="text-muted-foreground text-lg leading-relaxed pt-2">
+              <p className="text-p1 text-muted-foreground pt-2">
                 Synthetic dyes are typically petroleum-derived, meaning their raw material is a fossil fuel. Many are also tested on animals before approval, and their production is one of the textile industry's largest contributors to water pollution.
               </p>
             </div>
 
-            <p className="text-ink text-lg md:text-xl leading-relaxed font-light">
+            <p className="text-p1 text-ink font-light">
               Good Karma uses nine natural dyes — madder, marigold, pomegranate peel, and others — sourced from Indian farms and food-processing waste. No fossil fuels. No animal testing. No wastewater left behind to treat.
             </p>
           </div>
@@ -40,7 +40,7 @@ export default function NaturalDyeingPage() {
         {/* Dye Library Grid (Descriptive Showcase) */}
         <div className="pt-24 border-t border-border/40">
           <div className="flex justify-between items-end mb-12">
-            <h2 className="font-editorial italic text-4xl md:text-5xl text-ink">The Dye Library</h2>
+            <h2 className="text-h2 font-editorial italic text-ink">The Dye Library</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-10 lg:gap-16">
             
@@ -49,8 +49,8 @@ export default function NaturalDyeingPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50" />
                 <span className="text-marigold font-editorial italic text-3xl z-10">Marigold</span>
               </div>
-              <h3 className="font-medium text-xl text-ink mb-2 group-hover:text-marigold transition-colors">Marigold Flowers</h3>
-              <p className="text-muted-foreground font-light leading-relaxed">Sourced from temple offerings and local farms, yielding warm golden yellows.</p>
+              <h3 className="text-h3 font-medium text-ink mb-2 group-hover:text-marigold transition-colors">Marigold Flowers</h3>
+              <p className="text-p2 text-muted-foreground font-light">Sourced from temple offerings and local farms, yielding warm golden yellows.</p>
             </div>
             
             <div className="flex flex-col group cursor-pointer">
@@ -58,8 +58,8 @@ export default function NaturalDyeingPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50" />
                 <span className="text-mauve font-editorial italic text-3xl z-10">Madder</span>
               </div>
-              <h3 className="font-medium text-xl text-ink mb-2 group-hover:text-mauve transition-colors">Madder Root <span className="italic font-normal text-muted-foreground text-sm">(Rubia cordifolia)</span></h3>
-              <p className="text-muted-foreground font-light leading-relaxed">An ancient dye yielding deep, earthy reds and soothing pinks.</p>
+              <h3 className="text-h3 font-medium text-ink mb-2 group-hover:text-mauve transition-colors">Madder Root <span className="italic font-normal text-muted-foreground text-sm">(Rubia cordifolia)</span></h3>
+              <p className="text-p2 text-muted-foreground font-light">An ancient dye yielding deep, earthy reds and soothing pinks.</p>
             </div>
             
             <div className="flex flex-col group cursor-pointer">
@@ -67,8 +67,8 @@ export default function NaturalDyeingPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50" />
                 <span className="text-sage font-editorial italic text-3xl z-10">Pomegranate</span>
               </div>
-              <h3 className="font-medium text-xl text-ink mb-2 group-hover:text-sage transition-colors">Pomegranate Rinds</h3>
-              <p className="text-muted-foreground font-light leading-relaxed">Reclaimed from juice processing waste, providing rich olive greens and khakis.</p>
+              <h3 className="text-h3 font-medium text-ink mb-2 group-hover:text-sage transition-colors">Pomegranate Rinds</h3>
+              <p className="text-p2 text-muted-foreground font-light">Reclaimed from juice processing waste, providing rich olive greens and khakis.</p>
             </div>
             
           </div>

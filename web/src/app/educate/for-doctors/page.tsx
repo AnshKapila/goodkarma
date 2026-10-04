@@ -10,13 +10,13 @@ export default function ForDoctorsPage() {
         </Link>
         <div className="max-w-[800px] mb-24 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150 ease-out">
           <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">For Practitioners</span>
-          <h1 className="font-editorial italic text-5xl md:text-7xl lg:text-8xl text-ink leading-[1.1] mb-10">
+          <h1 className="text-h1 font-editorial italic text-ink mb-10">
             A trusted ally for sensitive skin.
           </h1>
-          <p className="text-xl md:text-2xl text-ink font-light leading-relaxed mb-6">
+          <p className="text-p1 text-ink font-light mb-6">
             We work closely with dermatologists, urologists, and OB-GYNs to provide clothing solutions that support—rather than agitate—treatment protocols.
           </p>
-          <p className="text-muted-foreground text-lg leading-relaxed font-light">
+          <p className="text-p1 text-muted-foreground font-light">
             When a patient is suffering from chronic irritation, eczema, or contact dermatitis, the barrier function of the skin is compromised. Synthetic fibers and residual finishing chemicals can exacerbate the cycle. Good Karma provides a clean, breathable, GOTS-certified alternative to synthetic stretch innerwear.
           </p>
         </div>
@@ -24,8 +24,8 @@ export default function ForDoctorsPage() {
         <div className="grid md:grid-cols-2 gap-16 pt-24 border-t border-border/40">
           <div className="bg-paper p-12 md:p-16 rounded-[2.5rem] border border-border/40 flex flex-col justify-between shadow-sm">
             <div>
-              <h2 className="text-3xl font-editorial italic text-ink mb-6">Patient Materials</h2>
-              <p className="text-muted-foreground text-lg font-light leading-relaxed mb-10">
+              <h2 className="text-h2 font-editorial italic text-ink mb-6">Patient Materials</h2>
+              <p className="text-p1 text-muted-foreground font-light mb-10">
                 Download our clinical overview sheet detailing the fabric composition, dye mechanisms, and care instructions to share with patients seeking non-irritating alternatives.
               </p>
             </div>
@@ -35,8 +35,8 @@ export default function ForDoctorsPage() {
           </div>
           <div className="bg-paper p-12 md:p-16 rounded-[2.5rem] border border-border/40 flex flex-col justify-between shadow-sm">
             <div>
-              <h2 className="text-3xl font-editorial italic text-ink mb-6">Request Samples</h2>
-              <p className="text-muted-foreground text-lg font-light leading-relaxed mb-10">
+              <h2 className="text-h2 font-editorial italic text-ink mb-6">Request Samples</h2>
+              <p className="text-p1 text-muted-foreground font-light mb-10">
                 We provide physical swatch books and sample garments for clinics and private practices so your patients can feel the difference in fabric breathability.
               </p>
             </div>

@@ -10,10 +10,10 @@ export default function ProductsPage() {
         </Link>
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150 ease-out">
           <div>
-            <h1 className="font-editorial italic text-5xl md:text-7xl text-ink leading-tight mb-4">
+            <h1 className="text-h1 font-editorial italic text-ink mb-4">
               The Collection
             </h1>
-            <p className="text-muted-foreground text-xl max-w-[500px] font-light">
+            <p className="text-p1 text-muted-foreground max-w-[500px] font-light">
               A considered range of everyday essentials, naturally dyed and thoughtfully crafted.
             </p>
           </div>
@@ -25,14 +25,14 @@ export default function ProductsPage() {
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 animate-in fade-in duration-1000 delay-300 fill-mode-both">
           {[
-            { id: 1, name: "Everyday Brief", color: "Undyed", price: "$28", img: "https://images.unsplash.com/photo-1618244972963-cb5bdccba204?q=80&w=600&auto=format&fit=crop" },
-            { id: 2, name: "Comfort Top", color: "Madder Rose", price: "$45", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=600&auto=format&fit=crop" },
-            { id: 3, name: "Lounge Set", color: "Marigold", price: "$85", img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=600&auto=format&fit=crop" },
-            { id: 4, name: "Maternity Support", color: "Pomegranate", price: "$55", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=600&auto=format&fit=crop" },
-            { id: 5, name: "Infant Bodysuit", color: "Undyed", price: "$32", img: "https://images.unsplash.com/photo-1618244972963-cb5bdccba204?q=80&w=600&auto=format&fit=crop" },
-            { id: 6, name: "Boxer Brief", color: "Madder Rose", price: "$35", img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=600&auto=format&fit=crop" },
-            { id: 7, name: "Sleep Shirt", color: "Marigold", price: "$65", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=600&auto=format&fit=crop" },
-            { id: 8, name: "Daily Bralette", color: "Pomegranate", price: "$42", img: "https://images.unsplash.com/photo-1618244972963-cb5bdccba204?q=80&w=600&auto=format&fit=crop" }
+            { id: 1, name: "Everyday Brief", color: "Undyed", price: "$28", img: "/PLACEHOLDER_product.jpg" },
+            { id: 2, name: "Comfort Top", color: "Madder Rose", price: "$45", img: "/PLACEHOLDER_product.jpg" },
+            { id: 3, name: "Lounge Set", color: "Marigold", price: "$85", img: "/PLACEHOLDER_product.jpg" },
+            { id: 4, name: "Maternity Support", color: "Pomegranate", price: "$55", img: "/PLACEHOLDER_product.jpg" },
+            { id: 5, name: "Infant Bodysuit", color: "Undyed", price: "$32", img: "/PLACEHOLDER_product.jpg" },
+            { id: 6, name: "Boxer Brief", color: "Madder Rose", price: "$35", img: "/PLACEHOLDER_product.jpg" },
+            { id: 7, name: "Sleep Shirt", color: "Marigold", price: "$65", img: "/PLACEHOLDER_product.jpg" },
+            { id: 8, name: "Daily Bralette", color: "Pomegranate", price: "$42", img: "/PLACEHOLDER_product.jpg" }
           ].map((product) => (
             <div key={product.id} className="group cursor-pointer flex flex-col">
               <div 
@@ -47,7 +47,7 @@ export default function ProductsPage() {
               </div>
               <div className="px-2">
                 <div className="flex justify-between items-start mb-1">
-                  <h3 className="font-medium text-lg text-ink group-hover:text-marigold transition-colors">{product.name}</h3>
+                  <h3 className="text-h3 font-medium text-ink group-hover:text-marigold transition-colors">{product.name}</h3>
                   <span className="font-medium text-ink">{product.price}</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -56,7 +56,7 @@ export default function ProductsPage() {
                     product.color === 'Madder Rose' ? 'bg-[#A4777E]' : 
                     product.color === 'Marigold' ? 'bg-[#C98637]' : 'bg-[#5A6056]'
                   }`} />
-                  <p className="text-sm text-muted-foreground">{product.color}</p>
+                  <p className="text-p3 text-muted-foreground">{product.color}</p>
                 </div>
               </div>
             </div>

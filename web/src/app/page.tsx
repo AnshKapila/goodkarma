@@ -25,10 +25,10 @@ export default function Home() {
 
         <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-12 mb-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out">
           <div className="max-w-[800px]">
-            <h1 className="font-editorial italic text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white leading-[0.9] tracking-tight mb-8 drop-shadow-lg">
+            <h1 className="text-h1 font-editorial italic text-white tracking-tight mb-8 drop-shadow-lg">
               Innerwear that<br/>cares for your skin.
             </h1>
-            <p className="text-white/90 text-lg md:text-xl max-w-[500px] leading-relaxed font-light">
+            <p className="text-p1 text-white/90 max-w-[500px] font-light">
               Crafted with 100% GOTS certified organic cotton and naturally dyed using the earth's ingredients.
             </p>
           </div>
@@ -47,13 +47,13 @@ export default function Home() {
       {/* 2. NEW The Difference (Problem/Situation) */}
       <section className="px-6 max-w-[1400px] mx-auto w-full text-center">
         <div className="max-w-[700px] mx-auto">
-          <h2 className="font-editorial italic text-4xl md:text-5xl lg:text-6xl text-ink leading-tight mb-8">
+          <h2 className="text-h2 font-editorial italic text-ink mb-8">
             What touches your skin,<br/>shapes your skin.
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-10 font-light">
+          <p className="text-p1 text-muted-foreground mb-10 font-light">
             Most of us never think twice about what our underwear is made of. But skin reacts to everything it touches, every single day.
           </p>
-          <p className="text-ink font-medium text-lg">
+          <p className="text-p1 text-ink font-medium">
             Here's what we test for, so you don't have to wonder.
           </p>
         </div>
@@ -92,8 +92,8 @@ export default function Home() {
       {/* 4. Shop by Concern */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="flex flex-col items-center text-center mb-16">
-          <h2 className="font-editorial italic text-4xl md:text-5xl mb-4 text-ink">Find your comfort</h2>
-          <p className="text-muted-foreground text-lg">Formulated for the specific needs of your body.</p>
+          <h2 className="text-h2 font-editorial italic mb-4 text-ink">Find your comfort</h2>
+          <p className="text-p1 text-muted-foreground">Formulated for the specific needs of your body.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {[
@@ -114,8 +114,8 @@ export default function Home() {
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="flex justify-between items-end mb-12">
           <div>
-            <h2 className="font-editorial italic text-4xl md:text-5xl text-ink mb-3">The Collection</h2>
-            <p className="text-muted-foreground text-lg">A considered range of everyday essentials.</p>
+            <h2 className="text-h2 font-editorial italic text-ink mb-3">The Collection</h2>
+            <p className="text-p1 text-muted-foreground">A considered range of everyday essentials.</p>
           </div>
           <Link href="/products" className="text-sm font-medium hover:text-marigold flex items-center gap-2 group transition-colors">
             View all <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -123,9 +123,9 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           {[
-            { name: "Organic Cotton Top", color: "Undyed", price: "$45", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=600&auto=format&fit=crop" },
-            { name: "Comfort Brief", color: "Madder Rose", price: "$32", img: "https://images.unsplash.com/photo-1618244972963-cb5bdccba204?q=80&w=600&auto=format&fit=crop" },
-            { name: "Lounge Set", color: "Marigold", price: "$85", img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=600&auto=format&fit=crop" }
+            { name: "Organic Cotton Top", color: "Undyed", price: "$45", img: "/PLACEHOLDER_product.jpg" },
+            { name: "Comfort Brief", color: "Madder Rose", price: "$32", img: "/PLACEHOLDER_product.jpg" },
+            { name: "Lounge Set", color: "Marigold", price: "$85", img: "/PLACEHOLDER_product.jpg" }
           ].map((product, i) => (
             <Link href="/products" key={i} className="group cursor-pointer flex flex-col">
               <div 
@@ -140,8 +140,8 @@ export default function Home() {
               </div>
               <div className="flex justify-between items-start px-2">
                 <div>
-                  <h3 className="font-medium text-lg text-ink group-hover:text-marigold transition-colors">{product.name}</h3>
-                  <p className="text-muted-foreground">{product.color}</p>
+                  <h3 className="text-h3 font-medium text-ink group-hover:text-marigold transition-colors">{product.name}</h3>
+                  <p className="text-p2 text-muted-foreground">{product.color}</p>
                 </div>
                 <span className="font-medium text-ink">{product.price}</span>
               </div>
@@ -161,10 +161,10 @@ export default function Home() {
           </div>
           <div className="max-w-[500px] order-1 md:order-2">
             <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">How We're Made</span>
-            <h2 className="font-editorial italic text-4xl md:text-5xl lg:text-6xl text-ink leading-tight mb-8">
+            <h2 className="text-h2 font-editorial italic text-ink mb-8">
               Why what touches your skin matters.
             </h2>
-            <p className="text-muted-foreground text-lg mb-10 leading-relaxed font-light">
+            <p className="text-p1 text-muted-foreground mb-10 font-light">
               Your skin is your body's largest organ, absorbing what it touches day after day. We eliminated synthetic stretch, heavy metals, and chemical fixatives. What's left is pure, GOTS certified organic cotton that lets your body breathe.
             </p>
             <ul className="space-y-8">
@@ -192,10 +192,10 @@ export default function Home() {
         <div className="bg-ink rounded-[2.5rem] overflow-hidden text-white flex flex-col md:flex-row items-center shadow-xl">
           <div className="p-12 md:p-20 lg:p-24 flex-1">
             <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">Our Process</span>
-            <h2 className="font-editorial italic text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight drop-shadow-sm">
+            <h2 className="text-h2 font-editorial italic mb-8 drop-shadow-sm">
               Colours drawn <br /> directly from nature.
             </h2>
-            <p className="text-white/80 text-lg mb-10 max-w-[450px] leading-relaxed font-light">
+            <p className="text-p1 text-white/80 mb-10 max-w-[450px] font-light">
               Marigold, Madder root, and Pomegranate. We use real ingredients to create our palette, ensuring no harmful chemicals ever touch your skin.
             </p>
             <Link href="/educate/natural-dyeing" className="inline-flex items-center justify-center bg-white text-ink hover:bg-paper rounded-full px-8 py-5 text-base font-medium transition-all hover:-translate-y-1 shadow-md">
@@ -215,8 +215,8 @@ export default function Home() {
       {/* 8. Doctor Trust */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="bg-paper/50 border border-border/40 rounded-[2.5rem] p-12 md:p-24 text-center flex flex-col items-center shadow-sm">
-          <h2 className="font-editorial italic text-4xl md:text-5xl lg:text-6xl text-ink mb-6">Recommended by practitioners.</h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-[650px] mb-12 font-light leading-relaxed">
+          <h2 className="text-h2 font-editorial italic text-ink mb-6">Recommended by practitioners.</h2>
+          <p className="text-p1 text-muted-foreground max-w-[650px] mb-12 font-light">
             Trusted by doctors and wellness practitioners for patients who need chemical-free, breathable garments. Backed by the highest global standards.
           </p>
           <div className="flex gap-8 justify-center items-center mb-12">
@@ -235,7 +235,7 @@ export default function Home() {
 
       {/* 9. Short Content (Recent thoughts / Blog) */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
-        <h2 className="font-editorial italic text-4xl md:text-5xl text-ink mb-12 text-center md:text-left">Recent thoughts</h2>
+        <h2 className="text-h2 font-editorial italic text-ink mb-12 text-center md:text-left">Recent thoughts</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {[
             { title: "Why natural dye matters for sensitive skin", cat: "Skin Science", img: "/placeholder_skin_science_diagram.jpg" },
@@ -254,8 +254,8 @@ export default function Home() {
                 <div className="absolute inset-0 bg-ink/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-3 block">{article.cat}</span>
-              <h3 className="font-medium text-xl text-ink leading-tight mb-3 group-hover:text-marigold transition-colors">{article.title}</h3>
-              <p className="text-sm text-muted-foreground flex items-center gap-2 font-medium">
+              <h3 className="text-h3 font-medium text-ink mb-3 group-hover:text-marigold transition-colors">{article.title}</h3>
+              <p className="text-p3 text-muted-foreground flex items-center gap-2 font-medium">
                 Read article <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
               </p>
             </Link>
@@ -268,7 +268,7 @@ export default function Home() {
         <div className="grid md:grid-cols-12 gap-16 md:gap-12 mb-24">
           <div className="md:col-span-5">
             <div className="font-display text-5xl text-marigold mb-6 tracking-tight">good karma</div>
-            <p className="text-muted-foreground text-lg max-w-[340px] mb-10 leading-relaxed font-light">
+            <p className="text-p1 text-muted-foreground max-w-[340px] mb-10 font-light">
               A trusted friend, backed by science. Be good. Wear good.
             </p>
             <div className="flex gap-4 max-w-[380px] bg-paper p-1.5 rounded-full border border-border/60 focus-within:ring-2 focus-within:ring-marigold/30 focus-within:border-marigold/50 transition-all shadow-sm">
