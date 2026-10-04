@@ -1,15 +1,16 @@
 import { ArrowRight, Download } from "lucide-react";
+import Link from "next/link";
 
 export default function CertificationsPage() {
   return (
     <div className="flex flex-col w-full pb-32">
-      <section className="px-6 pt-12 md:pt-24 max-w-[1400px] mx-auto w-full">
-        <div className="max-w-[700px] mb-20">
-          <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-4 block">Our Standards</span>
-          <h1 className="font-editorial italic text-5xl md:text-6xl text-ink leading-tight mb-6">
+      <section className="px-6 pt-16 md:pt-28 max-w-[1400px] mx-auto w-full">
+        <div className="max-w-[800px] mb-24 animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-out">
+          <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">Our Standards</span>
+          <h1 className="font-editorial italic text-6xl md:text-7xl lg:text-8xl text-ink leading-[1.1] mb-8">
             Certified where it counts.
           </h1>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="text-muted-foreground text-xl leading-relaxed font-light">
             We don't just promise purity, we prove it. Every garment we make is backed by the most rigorous global standards for organic textiles, chemical safety, and ethical manufacturing.
           </p>
         </div>
@@ -17,55 +18,55 @@ export default function CertificationsPage() {
         <div className="flex flex-col gap-16 md:gap-24">
           
           {/* GOTS & OEKO-TEX (Prominent) */}
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
-            <div className="bg-paper p-12 rounded-3xl border border-border/50 flex flex-col items-center justify-center text-center">
-              <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center text-xl font-bold text-ink shadow-sm mb-6">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div className="bg-paper p-12 md:p-16 rounded-[2.5rem] border border-border/40 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-500 group">
+              <div className="w-28 h-28 rounded-full bg-white flex items-center justify-center text-2xl font-bold text-ink shadow-sm mb-8 border border-border/20 group-hover:scale-105 transition-transform duration-500">
                 GOTS
               </div>
-              <h2 className="text-2xl font-medium text-ink mb-4">Global Organic Textile Standard</h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
+              <h2 className="text-3xl font-medium text-ink mb-6">Global Organic Textile Standard</h2>
+              <p className="text-muted-foreground leading-relaxed mb-10 font-light text-lg">
                 The worldwide leading textile processing standard for organic fibres. This ensures our cotton is grown without toxic pesticides or synthetic fertilizers, protecting both the soil and your skin.
               </p>
-              <button className="flex items-center gap-2 text-sm font-medium text-ink hover:text-marigold transition-colors">
+              <button className="flex items-center gap-3 px-8 py-4 rounded-full border border-border/60 text-sm font-medium text-ink hover:bg-ink hover:text-white hover:border-ink transition-all duration-300">
                 <Download className="w-4 h-4" /> Download Certificate
               </button>
             </div>
             
-            <div className="bg-paper p-12 rounded-3xl border border-border/50 flex flex-col items-center justify-center text-center">
-              <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center text-xl font-bold text-ink shadow-sm mb-6">
+            <div className="bg-paper p-12 md:p-16 rounded-[2.5rem] border border-border/40 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-500 group">
+              <div className="w-28 h-28 rounded-full bg-white flex items-center justify-center text-2xl font-bold text-ink shadow-sm mb-8 border border-border/20 group-hover:scale-105 transition-transform duration-500">
                 OEKO-TEX
               </div>
-              <h2 className="text-2xl font-medium text-ink mb-4">Standard 100</h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
+              <h2 className="text-3xl font-medium text-ink mb-6">Standard 100</h2>
+              <p className="text-muted-foreground leading-relaxed mb-10 font-light text-lg">
                 Every single component of our garments—from the fabric to the thread—has been rigorously tested for harmful substances and is guaranteed safe in human ecological terms.
               </p>
-              <button className="flex items-center gap-2 text-sm font-medium text-ink hover:text-marigold transition-colors">
+              <button className="flex items-center gap-3 px-8 py-4 rounded-full border border-border/60 text-sm font-medium text-ink hover:bg-ink hover:text-white hover:border-ink transition-all duration-300">
                 <Download className="w-4 h-4" /> Download Certificate
               </button>
             </div>
           </div>
 
           {/* Secondary Certifications */}
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16 pt-16 border-t border-border/50">
-            <div>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-paper flex items-center justify-center font-bold text-ink border border-border/50">B</div>
-                <h3 className="text-xl font-medium text-ink">BRSR / NGRBC</h3>
+          <div className="grid md:grid-cols-2 gap-16 md:gap-24 pt-20 border-t border-border/40">
+            <div className="flex flex-col">
+              <div className="flex items-center gap-5 mb-6">
+                <div className="w-16 h-16 rounded-full bg-paper flex items-center justify-center font-bold text-xl text-ink border border-border/40 shadow-sm">B</div>
+                <h3 className="text-3xl font-medium text-ink">BRSR / NGRBC</h3>
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-6">
+              <p className="text-muted-foreground leading-relaxed mb-10 font-light text-lg">
                 As part of our commitment to transparency, we adhere to the Business Responsibility and Sustainability Reporting (BRSR) framework based on the National Guidelines for Responsible Business Conduct (NGRBC). This is our disclosure standard for responsible business practices, ensuring accountability in our governance and social impact.
               </p>
-              <button className="flex items-center gap-2 text-sm font-medium text-ink hover:text-marigold transition-colors">
-                <Download className="w-4 h-4" /> View Disclosure
-              </button>
+              <Link href="#" className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-border/60 text-sm font-medium text-ink hover:bg-ink hover:text-white hover:border-ink transition-all duration-300 self-start">
+                <ArrowRight className="w-4 h-4" /> View Disclosure
+              </Link>
             </div>
 
-            <div>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-paper flex items-center justify-center font-bold text-ink border border-border/50">V</div>
-                <h3 className="text-xl font-medium text-ink">Cruelty-Free Dyeing</h3>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-5 mb-6">
+                <div className="w-16 h-16 rounded-full bg-paper flex items-center justify-center font-bold text-xl text-ink border border-border/40 shadow-sm">V</div>
+                <h3 className="text-3xl font-medium text-ink">Cruelty-Free Dyeing</h3>
               </div>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed font-light text-lg">
                 Our vegan and no-animal-testing claims are scoped specifically to our natural dye process. While the broader textile industry often uses animal derivatives in dye fixatives or tests chemicals on animals, we guarantee that our 9 natural plant-based dyes are 100% cruelty-free and vegan.
               </p>
             </div>
