@@ -46,8 +46,8 @@ export default function Home() {
       </section>
 
       {/* 2. NEW The Difference (Problem/Situation) */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+      <section className="px-6 max-w-[1400px] mx-auto w-full min-h-[110vh] flex items-center py-20">
+        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center w-full">
           <div className="text-left">
             <h2 className="text-h2 font-editorial italic text-ink mb-8">
               What touches your skin,<br/>shapes your skin.
@@ -55,9 +55,12 @@ export default function Home() {
             <p className="text-p1 text-muted-foreground mb-10 font-light">
               Most of us never think twice about what our underwear is made of. But skin reacts to everything it touches, every single day.
             </p>
-            <p className="text-p1 text-ink font-medium">
+            <p className="text-p1 text-ink font-medium mb-8">
               Here's what we test for, so you don't have to wonder.
             </p>
+            <Link href="/certifications" className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base border border-ink text-ink hover:bg-ink hover:text-white transition-all font-medium">
+              View Our Certifications
+            </Link>
           </div>
           <div className="w-full">
             <ComparisonSlider 
@@ -75,20 +78,16 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10 transition-all">
           <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-16 items-center opacity-70 hover:opacity-100 transition-opacity duration-500">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-xs font-bold text-ink shadow-sm">G</div>
-              <span className="font-medium text-ink text-sm tracking-wide">GOTS Organic</span>
+              <div className="px-5 h-12 rounded-full bg-white border border-border flex items-center justify-center text-sm font-bold text-ink shadow-sm tracking-widest uppercase">GOTS</div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-xs font-bold text-ink shadow-sm">O</div>
-              <span className="font-medium text-ink text-sm tracking-wide">OEKO-TEX</span>
+              <div className="px-5 h-12 rounded-full bg-white border border-border flex items-center justify-center text-sm font-bold text-ink shadow-sm tracking-widest uppercase">OEKO-TEX</div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-xs font-bold text-ink shadow-sm">B</div>
-              <span className="font-medium text-ink text-sm tracking-wide">BRSR/NGRBC</span>
+              <div className="px-5 h-12 rounded-full bg-white border border-border flex items-center justify-center text-sm font-bold text-ink shadow-sm tracking-widest uppercase">BRSR</div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-xs font-bold text-ink shadow-sm">V</div>
-              <span className="font-medium text-ink text-sm tracking-wide">Vegan Dye</span>
+              <div className="px-5 h-12 rounded-full bg-white border border-border flex items-center justify-center text-sm font-bold text-ink shadow-sm tracking-widest uppercase">Vegan Dye</div>
             </div>
           </div>
           <Link href="/certifications" className="text-sm font-medium hover:text-marigold flex items-center gap-2 group shrink-0 transition-colors">
@@ -194,6 +193,30 @@ export default function Home() {
                 </div>
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* 6.5 Skin Science Teaser */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full">
+        <div className="bg-paper rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row items-center shadow-sm border border-border/40">
+          <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-[700px] bg-[url('/placeholder_skin_science_diagram.jpg')] bg-cover bg-center relative order-2 md:order-1">
+            {/* DEV TAG */}
+            <div className="absolute top-4 left-4 bg-marigold text-white text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono z-50 shadow-md border border-white/20">
+              DEV: Swappable Placeholder
+            </div>
+          </div>
+          <div className="p-12 md:p-20 lg:p-24 flex-1 order-1 md:order-2">
+            <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">Skin Science</span>
+            <h2 className="text-h2 font-editorial italic text-ink mb-8">
+              The science of breathing.
+            </h2>
+            <p className="text-p1 text-muted-foreground mb-10 font-light max-w-[450px]">
+              We design for the body's largest organ. Discover exactly how synthetic fabrics interact with your skin compared to pure, unblended organic cotton.
+            </p>
+            <Link href="/educate/skin-science" className="inline-flex items-center justify-center border border-ink text-ink hover:bg-ink hover:text-white rounded-full px-8 py-5 text-base font-medium transition-all hover:-translate-y-1 shadow-sm">
+              Read the Research
+            </Link>
           </div>
         </div>
       </section>

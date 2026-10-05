@@ -56,6 +56,10 @@ export default function CertificationsPage() {
               <p className="text-p1 text-muted-foreground mb-10 font-light">
                 As part of our commitment to transparency, we adhere to the Business Responsibility and Sustainability Reporting (BRSR) framework based on the National Guidelines for Responsible Business Conduct (NGRBC). This is our disclosure standard for responsible business practices, ensuring accountability in our governance and social impact.
               </p>
+              {/* DEV TAG */}
+              <div className="bg-paper text-marigold text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono shadow-sm border border-marigold/20 mb-3 inline-block">
+                DEV: Confirm document letterhead doesn't show Livbio
+              </div>
               <Link href="#" className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-border/60 text-sm font-medium text-ink hover:bg-ink hover:text-white hover:border-ink transition-all duration-300 self-start">
                 <ArrowRight className="w-4 h-4" /> View Disclosure
               </Link>
