@@ -34,7 +34,7 @@ export default function ProductsPage() {
             { id: 7, name: "Sleep Shirt", color: "Marigold", price: "$65", img: "/PLACEHOLDER_product.jpg" },
             { id: 8, name: "Daily Bralette", color: "Pomegranate", price: "$42", img: "/PLACEHOLDER_product.jpg" }
           ].map((product) => (
-            <div key={product.id} className="group cursor-pointer flex flex-col">
+            <Link href={`/products/${product.name.toLowerCase().replace(/ /g, '-')}`} key={product.id} className="group cursor-pointer flex flex-col">
               <div 
                 className="aspect-[4/5] bg-paper rounded-[2rem] mb-6 flex items-center justify-center border border-border/40 relative overflow-hidden bg-cover bg-center shadow-sm group-hover:shadow-lg transition-all duration-500"
                 style={{ backgroundImage: `url(${product.img})` }}
@@ -59,7 +59,7 @@ export default function ProductsPage() {
                   <p className="text-p3 text-muted-foreground">{product.color}</p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { ComparisonSlider } from "@/components/ComparisonSlider";
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-24 md:gap-32 pb-32 w-full">
       
       {/* 1. Hero Section */}
-      <section className="relative w-full h-[90vh] md:h-[95vh] min-h-[600px] flex flex-col justify-between p-6 md:p-12 overflow-hidden rounded-b-[2.5rem]">
+      <section className="relative w-full h-screen min-h-[600px] flex flex-col justify-between p-6 md:p-12 overflow-hidden">
         <div className="absolute inset-0 bg-ink">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-60 mix-blend-overlay" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
@@ -18,7 +19,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative z-10 flex justify-between items-start w-full max-w-[1400px] mx-auto text-white/90 text-sm font-medium uppercase tracking-widest pt-4">
+        <div className="relative z-10 flex justify-between items-start w-full max-w-[1400px] mx-auto text-white/90 text-sm font-medium uppercase tracking-widest pt-32">
           <span className="tracking-[0.2em]">Good Karma</span>
           <span className="tracking-[0.2em] hidden sm:block">Be good. Wear good.</span>
         </div>
@@ -45,17 +46,27 @@ export default function Home() {
       </section>
 
       {/* 2. NEW The Difference (Problem/Situation) */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full text-center">
-        <div className="max-w-[700px] mx-auto">
-          <h2 className="text-h2 font-editorial italic text-ink mb-8">
-            What touches your skin,<br/>shapes your skin.
-          </h2>
-          <p className="text-p1 text-muted-foreground mb-10 font-light">
-            Most of us never think twice about what our underwear is made of. But skin reacts to everything it touches, every single day.
-          </p>
-          <p className="text-p1 text-ink font-medium">
-            Here's what we test for, so you don't have to wonder.
-          </p>
+      <section className="px-6 max-w-[1400px] mx-auto w-full">
+        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+          <div className="text-left">
+            <h2 className="text-h2 font-editorial italic text-ink mb-8">
+              What touches your skin,<br/>shapes your skin.
+            </h2>
+            <p className="text-p1 text-muted-foreground mb-10 font-light">
+              Most of us never think twice about what our underwear is made of. But skin reacts to everything it touches, every single day.
+            </p>
+            <p className="text-p1 text-ink font-medium">
+              Here's what we test for, so you don't have to wonder.
+            </p>
+          </div>
+          <div className="w-full">
+            <ComparisonSlider 
+              beforeImage="/PLACEHOLDER_synthetic_skin.jpg" 
+              afterImage="/PLACEHOLDER_cotton_skin.jpg"
+              beforeLabel="Synthetic (Traps Heat)"
+              afterLabel="100% GOTS Cotton (Breathable)"
+            />
+          </div>
         </div>
       </section>
 
@@ -127,7 +138,7 @@ export default function Home() {
             { name: "Comfort Brief", color: "Madder Rose", price: "$32", img: "/PLACEHOLDER_product.jpg" },
             { name: "Lounge Set", color: "Marigold", price: "$85", img: "/PLACEHOLDER_product.jpg" }
           ].map((product, i) => (
-            <Link href="/products" key={i} className="group cursor-pointer flex flex-col">
+            <Link href={`/products/${product.name.toLowerCase().replace(/ /g, '-')}`} key={i} className="group cursor-pointer flex flex-col">
               <div 
                 className="aspect-[4/5] bg-paper rounded-3xl mb-6 flex items-center justify-center border border-border/40 overflow-hidden relative bg-cover bg-center shadow-sm group-hover:shadow-md transition-all duration-500"
                 style={{ backgroundImage: `url(${product.img})` }}
