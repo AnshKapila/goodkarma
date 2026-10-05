@@ -22,80 +22,63 @@ export default function SkinSciencePage() {
         </div>
       </section>
 
-      {/* 2. The Skin Barrier Explainer (Split Layout) */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full mb-24 md:mb-40">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-          <div className="w-full aspect-[4/3] rounded-[2.5rem] bg-paper overflow-hidden relative shadow-lg bg-[url('/placeholder_skin_science_diagram.jpg')] bg-cover bg-center">
-            {/* DEV TAG */}
-            <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50 shadow-md">
-              DEV: Swappable Placeholder / Video
-            </div>
-          </div>
-          <div className="flex flex-col gap-8">
-            <h2 className="text-h2 font-editorial italic text-ink">The Skin Barrier, Briefly</h2>
-            
-            {/* Draft marked for length changing later */}
+      {/* 2 & 3. Why what touches your skin matters (Bento Grid) */}
+      <section className="px-6 max-w-[1200px] mx-auto w-full mb-24 md:mb-40">
+        <h2 className="text-h2 font-editorial italic text-ink mb-12 text-center md:text-left">Why what touches your skin matters</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
+          
+          {/* Cell 1: The Skin Barrier (Span 2 cols) */}
+          <div className="md:col-span-2 md:row-span-1 bg-paper rounded-[2.5rem] p-10 md:p-14 border border-border/40 shadow-sm flex flex-col justify-center">
+            <h3 className="text-h3 font-editorial italic text-ink mb-4">The Skin Barrier, Briefly</h3>
             <div className="relative pl-6 border-l-2 border-marigold/30">
-              <div className="absolute -top-4 left-6 bg-paper text-marigold text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono shadow-sm border border-marigold/20">
+              <div className="absolute -top-3 left-6 bg-paper text-marigold text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono shadow-sm border border-marigold/20">
                 DEV: DRAFT COPY (Flexible Length)
               </div>
               <p className="text-p1 text-muted-foreground pt-2">
-                Your skin is a highly active barrier. Synthetic fabric traps heat and moisture against the body, creating the kind of warm, damp environment where irritation is more likely to start. When the barrier is compromised by this microclimate, it becomes more permeable.
+                Your skin is a highly active barrier. Synthetic fabric traps heat and moisture against the body, creating a warm, damp environment where irritation is more likely to start. When the barrier is compromised by this microclimate, it becomes more permeable to everything else.
               </p>
             </div>
-            
-            <p className="text-p1 text-muted-foreground font-light">
-              Many synthetic textiles are also treated with chemicals — including PFAS and azo dyes — that research shows can be absorbed directly through skin contact, especially when heat and sweat are involved.
-            </p>
-            
-            <Link href="#research" className="inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-marigold transition-colors w-fit">
-              Explore the research <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
-        </div>
-      </section>
 
-      {/* 3. What The Research Shows (Grid Layout) */}
-      <section id="research" className="py-24 bg-paper mb-24 md:mb-40 border-y border-border/40">
-        <div className="px-6 max-w-[1400px] mx-auto w-full">
-          <div className="max-w-[700px] mb-16 md:mb-24">
-            <h2 className="text-h2 font-editorial italic text-ink mb-6">What The Research Shows</h2>
-            <p className="text-p1 text-muted-foreground font-light">
-              We look at the peer-reviewed evidence regarding common textile finishes and synthetic fibers.
+          {/* Cell 2: Tall Image (Span 1 col, 2 rows) */}
+          <div className="md:col-span-1 md:row-span-2 rounded-[2.5rem] bg-paper relative overflow-hidden shadow-sm min-h-[300px] bg-[url('/placeholder_skin_science_diagram.jpg')] bg-cover bg-center">
+            <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">
+              DEV: Swappable Placeholder
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+          </div>
+
+          {/* Cell 3: PFAS (Span 1 col) */}
+          <div className="md:col-span-1 md:row-span-1 bg-marigold rounded-[2.5rem] p-10 shadow-sm flex flex-col justify-center text-white">
+            <h3 className="text-xl font-medium mb-3">PFAS Absorption</h3>
+            <p className="text-sm font-light leading-relaxed text-white/90">
+              Recent studies confirm that 'forever chemicals' used for stain and water resistance can penetrate the dermal barrier, leading to systemic exposure.
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-10 md:gap-12">
-            <div className="flex flex-col gap-6">
-              <div className="w-full aspect-[4/3] rounded-3xl bg-white border border-border/40 mb-2 flex items-center justify-center relative overflow-hidden bg-[url('/PLACEHOLDER_research_pfas.jpg')] bg-cover bg-center">
-                <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
-              </div>
-              <h3 className="text-h3 font-medium text-ink">PFAS Absorption</h3>
-              <p className="text-p2 text-muted-foreground font-light">
-                Recent studies confirm that 'forever chemicals' used for stain and water resistance can penetrate the dermal barrier, leading to systemic exposure.
+
+          {/* Cell 4: Chemical Dyes (Span 1 col) */}
+          <div className="md:col-span-1 md:row-span-1 bg-ink rounded-[2.5rem] p-10 shadow-md flex flex-col justify-center text-white">
+            <h3 className="text-xl font-medium mb-3">Chemical Dyes</h3>
+            <p className="text-sm font-light leading-relaxed text-white/80">
+              Petrochemical dyes and heavy metal fixatives are known sensitizers, responsible for the majority of textile-induced allergic contact dermatitis cases.
+            </p>
+          </div>
+
+          {/* Cell 5: Microplastics (Span 3 cols) */}
+          <div className="md:col-span-3 md:row-span-1 bg-white rounded-[2.5rem] p-10 md:p-14 border border-border/40 shadow-sm flex flex-col md:flex-row items-center gap-10">
+            <div className="flex-1">
+              <span className="text-sage font-bold text-xs uppercase tracking-widest mb-3 block">Research Focus</span>
+              <h3 className="text-h3 font-editorial italic text-ink mb-4">Microplastic Shedding</h3>
+              <p className="text-p1 text-muted-foreground font-light max-w-[600px]">
+                Synthetic stretch fabrics (elastane/spandex) shed microplastics through friction. When worn close to the skin, these particles can mechanically exacerbate dermatitis, long before chemical absorption is factored in.
               </p>
             </div>
-            
-            <div className="flex flex-col gap-6">
-              <div className="w-full aspect-[4/3] rounded-3xl bg-white border border-border/40 mb-2 flex items-center justify-center relative overflow-hidden bg-[url('/PLACEHOLDER_research_microplastics.jpg')] bg-cover bg-center">
-                <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
-              </div>
-              <h3 className="text-h3 font-medium text-ink">Microplastic Shedding</h3>
-              <p className="text-p2 text-muted-foreground font-light">
-                Synthetic stretch fabrics (elastane/spandex) shed microplastics through friction. When worn close to the skin, these particles can exacerbate dermatitis.
-              </p>
-            </div>
-            
-            <div className="flex flex-col gap-6">
-              <div className="w-full aspect-[4/3] rounded-3xl bg-white border border-border/40 mb-2 flex items-center justify-center relative overflow-hidden bg-[url('/PLACEHOLDER_research_dyes.jpg')] bg-cover bg-center">
-                <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
-              </div>
-              <h3 className="text-h3 font-medium text-ink">Chemical Dyes</h3>
-              <p className="text-p2 text-muted-foreground font-light">
-                Petrochemical dyes and heavy metal fixatives are known sensitizers, responsible for the majority of textile-induced allergic contact dermatitis cases.
-              </p>
+            <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-3xl bg-paper relative overflow-hidden bg-[url('/PLACEHOLDER_research_microplastics.jpg')] bg-cover bg-center border border-border/30">
+               <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING</div>
             </div>
           </div>
+
         </div>
       </section>
 
