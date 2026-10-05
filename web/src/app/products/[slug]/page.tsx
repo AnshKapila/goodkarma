@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function ProductDisplayPage({ params }: { params: { slug: string } }) {
-  // Mock data based on slug. In real app, fetch this.
-  const name = params.slug.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+export default async function ProductDisplayPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const name = resolvedParams.slug.split("-").map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
   
   return (
     <div className="flex flex-col w-full pb-32">
