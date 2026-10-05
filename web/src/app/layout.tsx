@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Public_Sans, Baloo_2, Lora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 const publicSans = Public_Sans({
   variable: "--font-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({
         <main className="flex-1">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
