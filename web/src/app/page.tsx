@@ -160,40 +160,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. How We're Made */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-          <div className="aspect-[4/5] relative bg-[url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center rounded-[2.5rem] overflow-hidden order-2 md:order-1 shadow-lg">
-            {/* DEV TAG */}
-            <div className="absolute top-4 left-4 bg-marigold text-white text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono z-50 shadow-md border border-white/20">
-              DEV: REAL ASSET PENDING (Manufacturing)
-            </div>
-          </div>
-          <div className="max-w-[500px] order-1 md:order-2">
-            <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">How We're Made</span>
-            <h2 className="text-h2 font-editorial italic text-ink mb-8">
+      {/* 6. How We're Made (Bento Grid) */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
+          
+          {/* Cell 1: Intro Text (Col span 2, Row span 1) */}
+          <div className="md:col-span-2 md:row-span-1 bg-paper rounded-[2.5rem] p-10 flex flex-col justify-center border border-border/40 shadow-sm">
+            <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-4 block">How We're Made</span>
+            <h2 className="text-h2 font-editorial italic text-ink mb-4 leading-tight">
               Why what touches your skin matters.
             </h2>
-            <p className="text-p1 text-muted-foreground mb-10 font-light">
-              Your skin is your body's largest organ, absorbing what it touches day after day. We eliminated synthetic stretch, heavy metals, and chemical fixatives. What's left is pure, GOTS certified organic cotton that lets your body breathe.
+            <p className="text-p1 text-muted-foreground font-light max-w-[500px]">
+              Your skin is your body's largest organ, absorbing what it touches day after day. We eliminated synthetic stretch, heavy metals, and chemical fixatives.
             </p>
-            <ul className="space-y-8">
-              <li className="flex gap-6 items-start">
-                <div className="w-2 h-2 rounded-full bg-marigold mt-2.5 shrink-0 shadow-sm" />
-                <div>
-                  <strong className="block font-medium text-ink text-xl mb-1">100% GOTS Cotton</strong>
-                  <span className="text-muted-foreground leading-relaxed">Cultivated without toxic pesticides, keeping the soil and your skin safe.</span>
-                </div>
-              </li>
-              <li className="flex gap-6 items-start">
-                <div className="w-2 h-2 rounded-full bg-mauve mt-2.5 shrink-0 shadow-sm" />
-                <div>
-                  <strong className="block font-medium text-ink text-xl mb-1">Naturally Dyed</strong>
-                  <span className="text-muted-foreground leading-relaxed">Colours extracted from earth's roots and petals, completely free of synthetic azo dyes.</span>
-                </div>
-              </li>
-            </ul>
           </div>
+
+          {/* Cell 2: GOTS Cotton (Col span 1, Row span 1) */}
+          <div className="md:col-span-1 md:row-span-1 bg-marigold text-white rounded-[2.5rem] p-8 flex flex-col justify-center shadow-sm">
+            <h3 className="text-2xl font-medium mb-3">100% GOTS Cotton</h3>
+            <p className="text-sm font-light leading-relaxed text-white/90">
+              Cultivated without toxic pesticides, keeping the soil and your skin safe. What's left is pure, organic cotton that lets your body breathe.
+            </p>
+          </div>
+
+          {/* Cell 3: Tall Image (Col span 1, Row span 2) */}
+          <div className="md:col-span-1 md:row-span-2 rounded-[2.5rem] bg-[url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center relative overflow-hidden shadow-sm">
+            {/* DEV TAG */}
+            <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">
+              DEV: REAL ASSET PENDING
+            </div>
+          </div>
+
+          {/* Cell 4: Wide Image (Col span 2, Row span 1) */}
+          <div className="md:col-span-2 md:row-span-1 rounded-[2.5rem] bg-paper relative overflow-hidden shadow-sm border border-border/40 bg-[url('/PLACEHOLDER_cotton_skin.jpg')] bg-cover bg-center">
+            <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">
+              DEV: Swappable Placeholder
+            </div>
+            <div className="absolute inset-0 bg-ink/10" />
+            <div className="absolute bottom-6 left-8">
+               <h3 className="text-xl font-medium text-white drop-shadow-md">Connecting Skin & Nature</h3>
+            </div>
+          </div>
+
+          {/* Cell 5: Naturally Dyed (Col span 1, Row span 1) */}
+          <div className="md:col-span-1 md:row-span-1 bg-mauve text-white rounded-[2.5rem] p-8 flex flex-col justify-center shadow-sm">
+            <h3 className="text-2xl font-medium mb-3">Naturally Dyed</h3>
+            <p className="text-sm font-light leading-relaxed text-white/90">
+              Colours extracted from earth's roots and petals, completely free of synthetic azo dyes.
+            </p>
+          </div>
+
         </div>
       </section>
 
