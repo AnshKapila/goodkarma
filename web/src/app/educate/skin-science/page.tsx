@@ -1,106 +1,248 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function SkinSciencePage() {
   return (
-    <div className="flex flex-col w-full pb-32">
-      <section className="px-6 pt-16 md:pt-24 max-w-[1400px] mx-auto w-full">
-        {/* Intro */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 mb-24">
-          <div className="max-w-[700px] animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-out">
-            <Link href="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-ink transition-colors mb-12">
-              <ArrowLeft className="w-4 h-4" /> Back to Home
-            </Link>
-            <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">Skin Science</span>
-            <h1 className="text-h1 font-editorial italic text-ink mb-10">
-              The largest organ of your body.
-            </h1>
-            
-            <div className="space-y-8">
-              <p className="text-p1 text-ink font-light">
-                Most of us never think twice about what our underwear is made of. But skin reacts to everything it touches, every single day.
-              </p>
-              
-              {/* Draft marked for length changing later */}
-              <div className="relative pl-6 border-l-2 border-marigold/30">
-                {/* DEV TAG */}
-                <div className="absolute -top-3 left-6 bg-paper text-marigold text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono shadow-sm border border-marigold/20">
-                  DEV: DRAFT COPY (Flexible Length)
-                </div>
-                <p className="text-p1 text-muted-foreground pt-2">
-                  Synthetic fabric traps heat and moisture against the body, creating the kind of warm, damp environment where irritation is more likely to start. Many synthetic textiles are also treated with chemicals — including PFAS, the so-called 'forever chemicals' — that research shows can be absorbed directly through skin contact.
-                </p>
-              </div>
-              
-              <p className="text-p1 text-ink font-light">
-                Good Karma is made from 100% GOTS-certified cotton, naturally dyed, with no elastane and no chemical finishing. It's built to breathe — because the first step to caring for your skin is choosing what you put against it.
-              </p>
+    <div className="flex flex-col w-full pb-32 bg-background">
+      
+      {/* 1. Hero Section */}
+      <section className="px-6 pt-16 md:pt-24 max-w-[1400px] mx-auto w-full mb-20 md:mb-32">
+        <Link href="/educate" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-ink transition-colors mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-out">
+          <ArrowLeft className="w-4 h-4" /> Back to Educate
+        </Link>
+        <div className="max-w-[900px] animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150 ease-out text-center md:text-left">
+          <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">Skin Science</span>
+          <h1 className="text-h1 font-editorial italic text-ink mb-10 leading-tight">
+            The largest organ of your body.
+          </h1>
+          <p className="text-p1 text-ink font-light max-w-[700px] md:pr-12 md:mx-0 mx-auto">
+            Most of us never think twice about what our underwear is made of. But skin reacts to everything it touches, every single day. The real research behind what touches your skin, written plainly.
+          </p>
+        </div>
+      </section>
+
+      {/* 2. The Skin Barrier Explainer (Split Layout) */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full mb-24 md:mb-40">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+          <div className="w-full aspect-[4/3] rounded-[2.5rem] bg-paper overflow-hidden relative shadow-lg bg-[url('/placeholder_skin_science_diagram.jpg')] bg-cover bg-center">
+            {/* DEV TAG */}
+            <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50 shadow-md">
+              DEV: Swappable Placeholder / Video
             </div>
           </div>
-          <div className="flex items-center justify-center lg:justify-end">
-            <div className="w-full max-w-[600px] aspect-square rounded-[2.5rem] bg-paper border border-border/40 overflow-hidden relative shadow-lg bg-[url('/placeholder_skin_science_diagram.jpg')] bg-cover bg-center">
-              {/* DEV TAG */}
-              <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono z-50 shadow-md">
-                DEV: Swappable Placeholder
+          <div className="flex flex-col gap-8">
+            <h2 className="text-h2 font-editorial italic text-ink">The Skin Barrier, Briefly</h2>
+            
+            {/* Draft marked for length changing later */}
+            <div className="relative pl-6 border-l-2 border-marigold/30">
+              <div className="absolute -top-4 left-6 bg-paper text-marigold text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono shadow-sm border border-marigold/20">
+                DEV: DRAFT COPY (Flexible Length)
               </div>
+              <p className="text-p1 text-muted-foreground pt-2">
+                Your skin is a highly active barrier. Synthetic fabric traps heat and moisture against the body, creating the kind of warm, damp environment where irritation is more likely to start. When the barrier is compromised by this microclimate, it becomes more permeable.
+              </p>
             </div>
+            
+            <p className="text-p1 text-muted-foreground font-light">
+              Many synthetic textiles are also treated with chemicals — including PFAS and azo dyes — that research shows can be absorbed directly through skin contact, especially when heat and sweat are involved.
+            </p>
+            
+            <Link href="#research" className="inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-marigold transition-colors w-fit">
+              Explore the research <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
-        
-        {/* Deep Dives */}
-        <div className="grid md:grid-cols-3 gap-10 lg:gap-16 pt-24 border-t border-border/40">
-          {/* For Women */}
-          <div className="flex flex-col gap-6">
-            <h2 className="text-h2 font-editorial italic text-ink mb-2">For Women</h2>
-            <div className="bg-paper p-8 rounded-[2rem] border border-border/40 shadow-sm">
-              <strong className="block text-xs font-bold text-marigold uppercase tracking-widest mb-3">The Issue</strong>
-              <p className="text-p1 text-muted-foreground font-light">Recurring irritation is common, and rarely connected to what's being worn.</p>
-            </div>
-            <div className="bg-paper p-8 rounded-[2rem] border border-border/40 shadow-sm">
-              <strong className="block text-xs font-bold text-mauve uppercase tracking-widest mb-3">The Situation</strong>
-              <p className="text-p1 text-muted-foreground font-light">Heat and moisture retention from synthetic fabric is a well-documented contributor to irritation and infection risk.</p>
-            </div>
-            <div className="bg-ink p-8 rounded-[2rem] shadow-lg">
-              <strong className="block text-xs font-bold text-white/50 uppercase tracking-widest mb-3">The Solution</strong>
-              <p className="text-p1 text-white font-light">Breathable, natural cotton addresses the root cause, not just the symptom.</p>
-            </div>
-          </div>
+      </section>
 
-          {/* For Infants */}
-          <div className="flex flex-col gap-6">
-            <h2 className="text-h2 font-editorial italic text-ink mb-2">For Infants</h2>
-            <div className="bg-paper p-8 rounded-[2rem] border border-border/40 shadow-sm">
-              <strong className="block text-xs font-bold text-marigold uppercase tracking-widest mb-3">The Issue</strong>
-              <p className="text-p1 text-muted-foreground font-light">A baby's skin is still learning to protect itself.</p>
-            </div>
-            <div className="bg-paper p-8 rounded-[2rem] border border-border/40 shadow-sm">
-              <strong className="block text-xs font-bold text-mauve uppercase tracking-widest mb-3">The Situation</strong>
-              <p className="text-p1 text-muted-foreground font-light">An infant's skin barrier is thinner and more easily irritated by synthetic fibers and dye residue than adult skin.</p>
-            </div>
-            <div className="bg-ink p-8 rounded-[2rem] shadow-lg">
-              <strong className="block text-xs font-bold text-white/50 uppercase tracking-widest mb-3">The Solution</strong>
-              <p className="text-p1 text-white font-light">Natural dye and certified cotton mean nothing unnecessary ever touches it.</p>
-            </div>
+      {/* 3. What The Research Shows (Grid Layout) */}
+      <section id="research" className="py-24 bg-paper mb-24 md:mb-40 border-y border-border/40">
+        <div className="px-6 max-w-[1400px] mx-auto w-full">
+          <div className="max-w-[700px] mb-16 md:mb-24">
+            <h2 className="text-h2 font-editorial italic text-ink mb-6">What The Research Shows</h2>
+            <p className="text-p1 text-muted-foreground font-light">
+              We look at the peer-reviewed evidence regarding common textile finishes and synthetic fibers.
+            </p>
           </div>
-
-          {/* For Men */}
-          <div className="flex flex-col gap-6">
-            <h2 className="text-h2 font-editorial italic text-ink mb-2">For Men</h2>
-            <div className="bg-paper p-8 rounded-[2rem] border border-border/40 shadow-sm">
-              <strong className="block text-xs font-bold text-marigold uppercase tracking-widest mb-3">The Issue</strong>
-              <p className="text-p1 text-muted-foreground font-light">Comfort and fertility rarely enter the same conversation, until they should.</p>
+          
+          <div className="grid md:grid-cols-3 gap-10 md:gap-12">
+            <div className="flex flex-col gap-6">
+              <div className="w-full aspect-[4/3] rounded-3xl bg-white border border-border/40 mb-2 flex items-center justify-center relative overflow-hidden bg-[url('/PLACEHOLDER_research_pfas.jpg')] bg-cover bg-center">
+                <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
+              </div>
+              <h3 className="text-h3 font-medium text-ink">PFAS Absorption</h3>
+              <p className="text-p2 text-muted-foreground font-light">
+                Recent studies confirm that 'forever chemicals' used for stain and water resistance can penetrate the dermal barrier, leading to systemic exposure.
+              </p>
             </div>
-            <div className="bg-paper p-8 rounded-[2rem] border border-border/40 shadow-sm">
-              <strong className="block text-xs font-bold text-mauve uppercase tracking-widest mb-3">The Situation</strong>
-              <p className="text-p1 text-muted-foreground font-light">Elevated heat from synthetic, tight-fitting fabric is a recognized factor in sperm quality, a connection well-established in urology.</p>
+            
+            <div className="flex flex-col gap-6">
+              <div className="w-full aspect-[4/3] rounded-3xl bg-white border border-border/40 mb-2 flex items-center justify-center relative overflow-hidden bg-[url('/PLACEHOLDER_research_microplastics.jpg')] bg-cover bg-center">
+                <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
+              </div>
+              <h3 className="text-h3 font-medium text-ink">Microplastic Shedding</h3>
+              <p className="text-p2 text-muted-foreground font-light">
+                Synthetic stretch fabrics (elastane/spandex) shed microplastics through friction. When worn close to the skin, these particles can exacerbate dermatitis.
+              </p>
             </div>
-            <div className="bg-ink p-8 rounded-[2rem] shadow-lg">
-              <strong className="block text-xs font-bold text-white/50 uppercase tracking-widest mb-3">The Solution</strong>
-              <p className="text-p1 text-white font-light">Breathable cotton keeps things cooler, simply by design.</p>
+            
+            <div className="flex flex-col gap-6">
+              <div className="w-full aspect-[4/3] rounded-3xl bg-white border border-border/40 mb-2 flex items-center justify-center relative overflow-hidden bg-[url('/PLACEHOLDER_research_dyes.jpg')] bg-cover bg-center">
+                <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
+              </div>
+              <h3 className="text-h3 font-medium text-ink">Chemical Dyes</h3>
+              <p className="text-p2 text-muted-foreground font-light">
+                Petrochemical dyes and heavy metal fixatives are known sensitizers, responsible for the majority of textile-induced allergic contact dermatitis cases.
+              </p>
             </div>
           </div>
         </div>
       </section>
+
+      {/* 4. Audience Breakdown (Feature Blocks) */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full mb-24 md:mb-40">
+        <h2 className="text-h2 font-editorial italic text-ink mb-16 md:mb-24 text-center">Formulated for real needs.</h2>
+        
+        <div className="flex flex-col gap-20 md:gap-32">
+          {/* For Women (Image Left) */}
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div className="order-2 md:order-1 w-full aspect-square md:aspect-[4/5] rounded-[2.5rem] bg-paper relative overflow-hidden bg-[url('/PLACEHOLDER_audience_women.jpg')] bg-cover bg-center">
+               <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
+            </div>
+            <div className="order-1 md:order-2 flex flex-col gap-10">
+              <div>
+                <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-4 block">For Women</span>
+                <h3 className="text-h2 font-editorial italic text-ink mb-6">Restoring balance.</h3>
+              </div>
+              
+              <div className="flex flex-col gap-8">
+                <div className="pl-6 border-l-2 border-border">
+                  <strong className="block text-sm font-medium text-ink mb-2">The Situation</strong>
+                  <p className="text-p2 text-muted-foreground font-light">Recurring irritation is common, and rarely connected to what's being worn. Heat and moisture retention from synthetic fabric is a well-documented contributor to infection risk.</p>
+                </div>
+                <div className="pl-6 border-l-2 border-marigold">
+                  <strong className="block text-sm font-medium text-ink mb-2">The Solution</strong>
+                  <p className="text-p2 text-ink font-medium">Breathable, natural cotton addresses the root cause, not just the symptom.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* For Infants (Image Right) */}
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div className="flex flex-col gap-10">
+              <div>
+                <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-4 block">For Infants</span>
+                <h3 className="text-h2 font-editorial italic text-ink mb-6">Protecting early barriers.</h3>
+              </div>
+              
+              <div className="flex flex-col gap-8">
+                <div className="pl-6 border-l-2 border-border">
+                  <strong className="block text-sm font-medium text-ink mb-2">The Situation</strong>
+                  <p className="text-p2 text-muted-foreground font-light">An infant's skin barrier is thinner and more easily irritated by synthetic fibers and dye residue than adult skin. A baby's skin is still learning to protect itself.</p>
+                </div>
+                <div className="pl-6 border-l-2 border-mauve">
+                  <strong className="block text-sm font-medium text-ink mb-2">The Solution</strong>
+                  <p className="text-p2 text-ink font-medium">Natural dye and certified cotton mean nothing unnecessary ever touches it.</p>
+                </div>
+              </div>
+            </div>
+            <div className="w-full aspect-square md:aspect-[4/5] rounded-[2.5rem] bg-paper relative overflow-hidden bg-[url('/PLACEHOLDER_audience_infants.jpg')] bg-cover bg-center">
+               <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
+            </div>
+          </div>
+
+          {/* For Men (Image Left) */}
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div className="order-2 md:order-1 w-full aspect-square md:aspect-[4/5] rounded-[2.5rem] bg-paper relative overflow-hidden bg-[url('/PLACEHOLDER_audience_men.jpg')] bg-cover bg-center">
+               <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
+            </div>
+            <div className="order-1 md:order-2 flex flex-col gap-10">
+              <div>
+                <span className="text-sage font-bold text-xs uppercase tracking-widest mb-4 block">For Men</span>
+                <h3 className="text-h2 font-editorial italic text-ink mb-6">Cooler by design.</h3>
+              </div>
+              
+              <div className="flex flex-col gap-8">
+                <div className="pl-6 border-l-2 border-border">
+                  <strong className="block text-sm font-medium text-ink mb-2">The Situation</strong>
+                  <p className="text-p2 text-muted-foreground font-light">Comfort and fertility rarely enter the same conversation, until they should. Elevated heat from synthetic, tight-fitting fabric is a recognized factor in sperm quality, a connection well-established in urology.</p>
+                </div>
+                <div className="pl-6 border-l-2 border-sage">
+                  <strong className="block text-sm font-medium text-ink mb-2">The Solution</strong>
+                  <p className="text-p2 text-ink font-medium">Breathable cotton keeps things cooler, simply by design.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      {/* 5. Why Good Karma Is Different */}
+      <section className="px-6 max-w-[1000px] mx-auto w-full mb-24 md:mb-32 text-center">
+        <h2 className="text-h2 font-editorial italic text-ink mb-8">Why Good Karma Is Different</h2>
+        <p className="text-p1 text-muted-foreground font-light mb-12 max-w-[800px] mx-auto">
+          Good Karma is made from 100% GOTS-certified cotton, naturally dyed, with no elastane and no chemical finishing. It's built to breathe — because the first step to caring for your skin is choosing what you put against it.
+        </p>
+        <Link href="/certifications" className="inline-flex items-center gap-3 px-8 py-5 rounded-full bg-ink text-white hover:bg-ink/90 transition-colors text-base font-medium mx-auto">
+          View Our Certifications
+        </Link>
+      </section>
+      
+      {/* 6. CTA / Product Grid */}
+      <section className="bg-paper py-24 md:py-32">
+        <div className="px-6 max-w-[1400px] mx-auto w-full">
+          <div className="flex flex-col items-center text-center mb-16">
+            <h2 className="text-h2 font-editorial italic text-ink mb-4">Try Good Karma Today</h2>
+            <p className="text-p1 text-muted-foreground font-light">
+              Experience the difference of purely natural fibers.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-6">
+            {[1, 2, 3, 4].map((i) => (
+              <Link href="/products/essential-brief" key={i} className="group flex flex-col gap-4">
+                <div className="w-full aspect-[4/5] bg-white rounded-3xl overflow-hidden relative border border-border/40 group-hover:border-marigold/30 transition-colors bg-[url('/PLACEHOLDER_product.jpg')] bg-cover bg-center">
+                  <div className="absolute top-3 left-3 bg-marigold text-white text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING</div>
+                </div>
+                <div>
+                  <h4 className="text-sm font-medium text-ink group-hover:text-marigold transition-colors">Essential Brief</h4>
+                  <p className="text-sm text-muted-foreground">$24</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          
+          <div className="mt-16 text-center">
+            <Link href="/products" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-ink text-ink hover:bg-ink hover:text-white transition-all text-sm font-medium">
+              Shop All Products
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Sources */}
+      <section className="px-6 max-w-[1000px] mx-auto w-full pt-16">
+        <div className="border-t border-border/40 pt-16">
+          <h4 className="text-sm font-bold text-ink uppercase tracking-widest mb-8">Clinical Sources</h4>
+          <ul className="flex flex-col gap-4 text-xs text-muted-foreground font-light">
+            <li className="flex items-start gap-3">
+              <span className="text-marigold font-mono">01</span>
+              <span>"Dermal absorption of per- and polyfluoroalkyl substances (PFAS) through human skin." Environmental Health Perspectives, 2022. <a href="#" className="underline decoration-border hover:text-ink inline-flex items-center gap-1">View Study <ExternalLink className="w-3 h-3" /></a></span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-marigold font-mono">02</span>
+              <span>"Textile contact dermatitis: A review of sensitizing dyes and finishing resins." Journal of Clinical and Aesthetic Dermatology, 2020. <a href="#" className="underline decoration-border hover:text-ink inline-flex items-center gap-1">View Study <ExternalLink className="w-3 h-3" /></a></span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-marigold font-mono">03</span>
+              <span>"Impact of scrotal hyperthermia on spermatogenesis and sperm quality." Human Reproduction Update, 2018. <a href="#" className="underline decoration-border hover:text-ink inline-flex items-center gap-1">View Study <ExternalLink className="w-3 h-3" /></a></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
     </div>
   );
 }
