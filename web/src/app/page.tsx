@@ -244,6 +244,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 8.5 In Motion (Short Content) */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full">
+        <div className="flex justify-between items-end mb-12">
+          <h2 className="text-h2 font-editorial italic text-ink">In Motion</h2>
+          <Link href="#" className="text-sm font-medium hover:text-marigold flex items-center gap-2 group transition-colors">
+            Follow our journey <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+        
+        {/* Horizontal scroll on mobile, grid on desktop */}
+        <div className="flex overflow-x-auto md:grid md:grid-cols-4 gap-6 pb-6 -mx-6 px-6 md:mx-0 md:px-0 snap-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {[
+            "Breathability Test: Cotton vs Synthetic",
+            "How we dye with Marigold",
+            "Why your skin needs a break",
+            "Behind the scenes: Spinning the yarn"
+          ].map((title, i) => (
+            <div key={i} className="min-w-[280px] w-[75vw] sm:w-[50vw] md:w-auto md:min-w-0 aspect-[9/16] rounded-3xl relative overflow-hidden group cursor-pointer snap-center bg-paper flex-shrink-0 shadow-sm hover:shadow-lg transition-all duration-500">
+              <div 
+                className="absolute inset-0 bg-[url('/PLACEHOLDER_reel.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+              
+              {/* DEV TAG */}
+              <div className="absolute top-4 left-4 bg-marigold text-white text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono z-50 shadow-md border border-white/20">
+                DEV: VIDEO PENDING
+              </div>
+              
+              <div className="absolute inset-0 flex flex-col justify-between p-6">
+                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 text-white self-end group-hover:bg-white group-hover:text-ink transition-colors duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="ml-1"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </div>
+                <h3 className="text-h3 font-medium text-white leading-[1.2] drop-shadow-md group-hover:text-marigold transition-colors duration-300">{title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* 9. Short Content (Recent thoughts / Blog) */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <h2 className="text-h2 font-editorial italic text-ink mb-12 text-center md:text-left">Recent thoughts</h2>
