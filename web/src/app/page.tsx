@@ -73,29 +73,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Certifications Strip */}
-      <section className="w-full bg-paper py-10 border-y border-border/30">
-        <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10 transition-all">
-          <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-16 items-center opacity-70 hover:opacity-100 transition-opacity duration-500">
-            <div className="flex items-center gap-3">
-              <div className="px-5 h-12 rounded-full bg-white border border-border flex items-center justify-center text-sm font-bold text-ink shadow-sm tracking-widest uppercase">GOTS</div>
+      {/* 3. Certifications Strip (Compact Bento) */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 auto-rows-[120px]">
+          
+          <Link href="/certifications" className="col-span-2 bg-ink text-white rounded-3xl p-8 flex flex-col justify-center shadow-sm hover:bg-ink/90 transition-colors group relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-6">
+              <ArrowRight className="w-6 h-6 text-marigold group-hover:translate-x-1 transition-transform" />
             </div>
-            <div className="flex items-center gap-3">
-              <div className="px-5 h-12 rounded-full bg-white border border-border flex items-center justify-center text-sm font-bold text-ink shadow-sm tracking-widest uppercase">OEKO-TEX</div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="px-5 h-12 rounded-full bg-white border border-border flex items-center justify-center text-sm font-bold text-ink shadow-sm tracking-widest uppercase">BRSR</div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="px-5 h-12 rounded-full bg-white border border-border flex items-center justify-center text-sm font-bold text-ink shadow-sm tracking-widest uppercase">Vegan Dye</div>
-            </div>
-          </div>
-          <Link href="/certifications" className="text-sm font-medium hover:text-marigold flex items-center gap-2 group shrink-0 transition-colors">
-            Certified where it counts 
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-border/50 group-hover:bg-marigold/10 group-hover:border-marigold/30 transition-all">
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </div>
+            <h3 className="text-xl font-medium mb-1 z-10">Certified where it counts</h3>
+            <p className="text-xs text-white/70 font-light z-10 uppercase tracking-widest">View All Standards</p>
           </Link>
+          
+          <div className="col-span-1 bg-paper rounded-3xl border border-border/40 flex items-center justify-center font-bold text-ink shadow-sm text-lg tracking-widest uppercase hover:border-marigold/30 transition-colors">
+            GOTS
+          </div>
+          
+          <div className="col-span-1 bg-paper rounded-3xl border border-border/40 flex items-center justify-center font-bold text-ink shadow-sm text-lg tracking-widest uppercase hover:border-marigold/30 transition-colors">
+            OEKO-TEX
+          </div>
+          
+          <div className="col-span-1 bg-paper rounded-3xl border border-border/40 flex items-center justify-center font-bold text-ink shadow-sm text-lg tracking-widest uppercase hover:border-marigold/30 transition-colors">
+            BRSR
+          </div>
+          
+          <div className="col-span-1 bg-paper rounded-3xl border border-border/40 flex items-center justify-center font-bold text-ink shadow-sm text-sm tracking-widest uppercase text-center leading-tight px-4 hover:border-marigold/30 transition-colors">
+            Vegan Dye
+          </div>
+          
         </div>
       </section>
 
@@ -262,24 +267,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. Doctor Trust */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full">
-        <div className="bg-paper/50 border border-border/40 rounded-[2.5rem] p-12 md:p-24 text-center flex flex-col items-center shadow-sm">
-          <h2 className="text-h2 font-editorial italic text-ink mb-6">Recommended by practitioners.</h2>
-          <p className="text-p1 text-muted-foreground max-w-[650px] mb-12 font-light">
-            Trusted by doctors and wellness practitioners for patients who need chemical-free, breathable garments. Backed by the highest global standards.
-          </p>
-          <div className="flex gap-8 justify-center items-center mb-12">
-            <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-md border border-border/20 text-base font-bold text-ink hover:scale-105 transition-transform duration-300">
-              GOTS
-            </div>
-            <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-md border border-border/20 text-base font-bold text-ink hover:scale-105 transition-transform duration-300">
-              OEKO-TEX
-            </div>
+      {/* 8. Doctor Trust (Compact Bento) */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
+          
+          <div className="md:col-span-2 bg-paper rounded-[2.5rem] border border-border/40 p-10 md:p-14 flex flex-col justify-center shadow-sm">
+            <h2 className="text-h2 font-editorial italic text-ink mb-4">Recommended by practitioners.</h2>
+            <p className="text-p1 text-muted-foreground font-light max-w-[500px]">
+              Trusted by doctors and wellness practitioners for patients who need chemical-free, breathable garments. Backed by the highest global standards.
+            </p>
           </div>
-          <Link href="/educate/for-doctors" className="inline-flex items-center justify-center rounded-full px-8 py-5 text-base border-2 border-ink text-ink hover:bg-ink hover:text-white transition-all font-medium">
-            Resources for Doctors
-          </Link>
+
+          <div className="md:col-span-1 bg-white rounded-[2.5rem] border border-border/40 p-10 flex flex-col items-center justify-center text-center shadow-sm hover:border-marigold/30 transition-colors">
+            <div className="w-20 h-20 rounded-full bg-paper flex items-center justify-center shadow-sm border border-border/20 font-bold text-ink mb-4 tracking-widest text-sm">GOTS</div>
+            <span className="text-xs text-muted-foreground uppercase tracking-widest font-medium">Global Organic</span>
+          </div>
+
+          <div className="md:col-span-1 bg-ink text-white rounded-[2.5rem] p-10 flex flex-col justify-center shadow-sm hover:bg-ink/90 transition-colors">
+            <h3 className="text-xl font-medium mb-3">Clinical Resources</h3>
+            <p className="text-sm font-light text-white/80 mb-6">Patient handouts and clinical rationale for your practice.</p>
+            <Link href="/educate/for-doctors" className="inline-flex items-center gap-2 text-marigold hover:text-white transition-colors text-sm font-medium w-fit">
+              View Portal <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
         </div>
       </section>
 

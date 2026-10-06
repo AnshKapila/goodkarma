@@ -48,6 +48,7 @@ export function Header() {
                 <Link href="/educate/skin-science" className="hover:text-marigold">Skin Science</Link>
                 <Link href="/educate/natural-dyeing" className="hover:text-marigold">Natural Dyeing</Link>
                 <Link href="/educate/for-doctors" className="hover:text-marigold">For Doctors</Link>
+                <Link href="/certifications" className="hover:text-marigold">Certifications</Link>
               </div>
             </div>
           </div>
