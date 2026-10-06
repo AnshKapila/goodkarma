@@ -125,47 +125,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Products */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full">
-        <div className="flex justify-between items-end mb-12">
-          <div>
-            <h2 className="text-h2 font-editorial italic text-ink mb-3">The Collection</h2>
-            <p className="text-p1 text-muted-foreground">A considered range of everyday essentials.</p>
-          </div>
-          <Link href="/products" className="text-sm font-medium hover:text-marigold flex items-center gap-2 group transition-colors">
-            View all <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-          {[
-            { name: "Organic Cotton Top", color: "Undyed", price: "$45", img: "/PLACEHOLDER_product.jpg" },
-            { name: "Comfort Brief", color: "Madder Rose", price: "$32", img: "/PLACEHOLDER_product.jpg" },
-            { name: "Lounge Set", color: "Marigold", price: "$85", img: "/PLACEHOLDER_product.jpg" }
-          ].map((product, i) => (
-            <Link href={`/products/${product.name.toLowerCase().replace(/ /g, '-')}`} key={i} className="group cursor-pointer flex flex-col">
-              <div 
-                className="aspect-[4/5] bg-paper rounded-3xl mb-6 flex items-center justify-center border border-border/40 overflow-hidden relative bg-cover bg-center shadow-sm group-hover:shadow-md transition-all duration-500"
-                style={{ backgroundImage: `url(${product.img})` }}
-              >
-                {/* DEV TAG */}
-                <div className="absolute top-4 left-4 bg-marigold text-white text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono z-50 shadow-md border border-white/20">
-                  DEV: REAL ASSET PENDING
-                </div>
-                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <div className="flex justify-between items-start px-2">
-                <div>
-                  <h3 className="text-h3 font-medium text-ink group-hover:text-marigold transition-colors">{product.name}</h3>
-                  <p className="text-p2 text-muted-foreground">{product.color}</p>
-                </div>
-                <span className="font-medium text-ink">{product.price}</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* 6. How We're Made (Bento Grid) */}
+      {/* 5. How We're Made (Bento Grid) */}
       <section className="px-6 max-w-[1400px] mx-auto w-full mb-32">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
           
@@ -218,24 +178,64 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 6. Products (The Collection) */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full mb-32">
+        <div className="flex justify-between items-end mb-12">
+          <div>
+            <h2 className="text-h2 font-editorial italic text-ink mb-3">The Collection</h2>
+            <p className="text-p1 text-muted-foreground">A considered range of everyday essentials.</p>
+          </div>
+          <Link href="/products" className="text-sm font-medium hover:text-marigold flex items-center gap-2 group transition-colors">
+            View all <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+          {[
+            { name: "Organic Cotton Top", color: "Undyed", price: "$45", img: "/PLACEHOLDER_product.jpg" },
+            { name: "Comfort Brief", color: "Madder Rose", price: "$32", img: "/PLACEHOLDER_product.jpg" },
+            { name: "Lounge Set", color: "Marigold", price: "$85", img: "/PLACEHOLDER_product.jpg" }
+          ].map((product, i) => (
+            <Link href={`/products/${product.name.toLowerCase().replace(/ /g, '-')}`} key={i} className="group cursor-pointer flex flex-col">
+              <div 
+                className="aspect-[4/5] bg-paper rounded-3xl mb-6 flex items-center justify-center border border-border/40 overflow-hidden relative bg-cover bg-center shadow-sm group-hover:shadow-md transition-all duration-500"
+                style={{ backgroundImage: `url(${product.img})` }}
+              >
+                {/* DEV TAG */}
+                <div className="absolute top-4 left-4 bg-marigold text-white text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono z-50 shadow-md border border-white/20">
+                  DEV: REAL ASSET PENDING
+                </div>
+                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+              <div className="flex justify-between items-start px-2">
+                <div>
+                  <h3 className="text-h3 font-medium text-ink group-hover:text-marigold transition-colors">{product.name}</h3>
+                  <p className="text-p2 text-muted-foreground">{product.color}</p>
+                </div>
+                <span className="font-medium text-ink">{product.price}</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+      
       {/* 6.5 Skin Science Teaser */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full">
-        <div className="bg-paper rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row items-center shadow-sm border border-border/40">
+      <section className="w-full bg-mauve text-white">
+        <div className="w-full flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-[700px] bg-[url('/placeholder_skin_science_diagram.jpg')] bg-cover bg-center relative order-2 md:order-1">
             {/* DEV TAG */}
             <div className="absolute top-4 left-4 bg-marigold text-white text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono z-50 shadow-md border border-white/20">
               DEV: Swappable Placeholder
             </div>
           </div>
-          <div className="p-12 md:p-20 lg:p-24 flex-1 order-1 md:order-2">
-            <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">Skin Science</span>
-            <h2 className="text-h2 font-editorial italic text-ink mb-8">
+          <div className="w-full md:w-1/2 p-12 md:p-20 lg:p-24 flex-1 order-1 md:order-2 flex flex-col justify-center max-w-[700px] mx-auto">
+            <span className="text-white/80 font-bold text-xs uppercase tracking-widest mb-6 block">Skin Science</span>
+            <h2 className="text-h2 font-editorial italic text-white mb-8">
               The science of breathing.
             </h2>
-            <p className="text-p1 text-muted-foreground mb-10 font-light max-w-[450px]">
+            <p className="text-p1 text-white/90 mb-10 font-light max-w-[450px]">
               We design for the body's largest organ. Discover exactly how synthetic fabrics interact with your skin compared to pure, unblended organic cotton.
             </p>
-            <Link href="/educate/skin-science" className="inline-flex items-center justify-center border border-ink text-ink hover:bg-ink hover:text-white rounded-full px-8 py-5 text-base font-medium transition-all hover:-translate-y-1 shadow-sm">
+            <Link href="/educate/skin-science" className="inline-flex items-center justify-center border border-white text-white hover:bg-white hover:text-mauve rounded-full px-8 py-5 text-base font-medium transition-all hover:-translate-y-1 shadow-sm w-fit">
               Read the Research
             </Link>
           </div>
