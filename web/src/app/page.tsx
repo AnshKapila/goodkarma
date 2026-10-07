@@ -15,10 +15,7 @@ export default function Home() {
           
         </div>
 
-        <div className="relative z-10 flex justify-between items-start w-full max-w-[1400px] mx-auto text-white/90 text-sm font-medium uppercase tracking-widest pt-32">
-          <span className="tracking-[0.2em]">Good Karma</span>
-          <span className="tracking-[0.2em] hidden sm:block">Be good. Wear good.</span>
-        </div>
+
 
         <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-12 mb-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out">
           <div className="max-w-[800px]">
@@ -108,14 +105,18 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { title: "Daily Comfort", desc: "Breathable basics" },
-            { title: "New Mothers", desc: "Gentle on sensitive skin" },
-            { title: "Fertility & Wellness", desc: "Chemical-free support" },
-            { title: "Infant Care", desc: "Purest natural fibers" }
+            { title: "Daily Comfort", desc: "Breathable basics", img: "https://images.unsplash.com/photo-1616012879555-523cce01874b?q=80&w=800&auto=format&fit=crop" },
+            { title: "New Mothers", desc: "Gentle on sensitive skin", img: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=800&auto=format&fit=crop" },
+            { title: "Fertility & Wellness", desc: "Chemical-free support", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" },
+            { title: "Infant Care", desc: "Purest natural fibers", img: "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800&auto=format&fit=crop" }
           ].map((concern) => (
-            <Link href="/products" key={concern.title} className="group bg-paper p-10 rounded-xl flex flex-col items-center justify-center min-h-[200px] hover:bg-marigold/5 border border-border/40 hover:border-marigold/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer text-center">
-              <span className="font-medium text-xl text-ink mb-2 group-hover:text-marigold transition-colors">{concern.title}</span>
-              <span className="text-sm text-muted-foreground group-hover:text-ink/70 transition-colors">{concern.desc}</span>
+            <Link href="/products" key={concern.title} className="group relative rounded-xl flex flex-col items-center justify-center min-h-[200px] border border-border/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer text-center overflow-hidden">
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${concern.img})` }} />
+              <div className="absolute inset-0 bg-ink/50 group-hover:bg-ink/60 transition-colors" />
+              <div className="relative z-10 p-10 flex flex-col items-center">
+                <span className="font-medium text-xl text-white mb-2">{concern.title}</span>
+                <span className="text-sm text-white/90">{concern.desc}</span>
+              </div>
             </Link>
           ))}
         </div>
@@ -137,15 +138,23 @@ export default function Home() {
           </div>
 
           {/* Cell 2: GOTS Cotton (Col span 1, Row span 1) */}
-          <div className="md:col-span-1 md:row-span-1 bg-marigold text-white rounded-xl p-8 flex flex-col justify-center shadow-sm">
-            <h3 className="text-2xl font-medium mb-3">100% GOTS Cotton</h3>
-            <p className="text-sm font-light leading-relaxed text-white/90">
-              Cultivated without toxic pesticides, keeping the soil and your skin safe. What's left is pure, organic cotton that lets your body breathe.
-            </p>
+          <div className="md:col-span-1 md:row-span-1 bg-marigold text-white rounded-xl p-8 flex flex-col justify-center shadow-sm relative overflow-hidden">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1598466858925-502a90105eec?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center mix-blend-multiply opacity-50" />
+            <div className="relative z-10">
+              <h3 className="text-2xl font-medium mb-3">100% GOTS Cotton</h3>
+              <p className="text-sm font-light leading-relaxed text-white/90">
+                Cultivated without toxic pesticides, keeping the soil and your skin safe. What's left is pure, organic cotton that lets your body breathe.
+              </p>
+            </div>
           </div>
 
           {/* Cell 3: Tall Image (Col span 1, Row span 2) */}
-          <div className="md:col-span-1 md:row-span-2 rounded-xl bg-[url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center relative overflow-hidden shadow-sm">
+          <div className="md:col-span-1 md:row-span-2 rounded-xl bg-[url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center relative overflow-hidden shadow-sm flex flex-col justify-end p-8">
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
+            <div className="relative z-10 text-white">
+              <h3 className="text-xl font-medium mb-2">Designed for the Body</h3>
+              <p className="text-sm font-light text-white/90">Supporting your natural microclimate all day.</p>
+            </div>
           </div>
 
           {/* Cell 4: Wide Image (Col span 2, Row span 1) */}
@@ -157,11 +166,14 @@ export default function Home() {
           </div>
 
           {/* Cell 5: Naturally Dyed (Col span 1, Row span 1) */}
-          <div className="md:col-span-1 md:row-span-1 bg-mauve text-white rounded-xl p-8 flex flex-col justify-center shadow-sm">
-            <h3 className="text-2xl font-medium mb-3">Naturally Dyed</h3>
-            <p className="text-sm font-light leading-relaxed text-white/90">
-              Colours extracted from earth's roots and petals, completely free of synthetic azo dyes.
-            </p>
+          <div className="md:col-span-1 md:row-span-1 bg-mauve text-white rounded-xl p-8 flex flex-col justify-center shadow-sm relative overflow-hidden">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618361001476-eb96d49925e0?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center mix-blend-multiply opacity-60" />
+            <div className="relative z-10">
+              <h3 className="text-2xl font-medium mb-3">Naturally Dyed</h3>
+              <p className="text-sm font-light leading-relaxed text-white/90">
+                Colours extracted from earth's roots and petals, completely free of synthetic azo dyes.
+              </p>
+            </div>
           </div>
 
         </div>
