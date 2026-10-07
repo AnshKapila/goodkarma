@@ -8,7 +8,7 @@ export default function Home() {
     <div className="flex flex-col gap-24 md:gap-32 pb-32 w-full">
       
       {/* 1. Hero Section */}
-      <section className="relative w-full h-screen min-h-[600px] flex flex-col justify-between p-6 md:p-12 overflow-hidden">
+      <section className="relative w-full h-screen min-h-[600px] flex flex-col justify-end p-6 md:p-12 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-ink">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-60 mix-blend-overlay" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
