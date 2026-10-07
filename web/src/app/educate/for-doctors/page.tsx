@@ -24,7 +24,7 @@ export default function ForDoctorsPage() {
 
       {/* 2. The Clinical Rationale */}
       <section className="px-6 max-w-[1400px] mx-auto w-full mb-24 md:mb-40">
-        <div className="bg-paper p-10 md:p-16 rounded-[2.5rem] border border-border/40 shadow-sm">
+        <div className="bg-paper p-10 md:p-16 rounded-xl border border-border/40 shadow-sm">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 rounded-full bg-ink text-white flex items-center justify-center">
               <Stethoscope className="w-6 h-6" />
@@ -41,7 +41,7 @@ export default function ForDoctorsPage() {
                 Our garments eliminate synthetic stretch, heavy metals, and petrochemical dyes entirely. What remains is 100% organic cotton, naturally dyed, providing an optimal microclimate for skin recovery.
               </p>
             </div>
-            <div className="bg-white p-8 rounded-3xl border border-border/40 flex flex-col justify-center">
+            <div className="bg-white p-8 rounded-xl border border-border/40 flex flex-col justify-center">
               <h3 className="text-lg font-medium text-ink mb-4">The Mechanism</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
@@ -62,7 +62,7 @@ export default function ForDoctorsPage() {
       <section className="px-6 max-w-[1400px] mx-auto w-full mb-24 md:mb-40">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-fr">
           
-          <div className="bg-paper p-10 md:p-14 rounded-[2.5rem] border border-border/40 shadow-sm flex flex-col justify-between">
+          <div className="bg-paper p-10 md:p-14 rounded-xl border border-border/40 shadow-sm flex flex-col justify-between">
             <div>
               <h2 className="text-h2 font-editorial italic text-ink mb-6">Doctor Recognition</h2>
               <p className="text-p1 text-muted-foreground font-light mb-8">
@@ -74,7 +74,7 @@ export default function ForDoctorsPage() {
             </div>
           </div>
           
-          <div className="bg-ink p-10 md:p-14 rounded-[2.5rem] shadow-sm text-white flex flex-col justify-between">
+          <div className="bg-ink p-10 md:p-14 rounded-xl shadow-sm text-white flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <QrCode className="w-8 h-8 text-white/80" />
@@ -111,7 +111,7 @@ export default function ForDoctorsPage() {
         <div className="grid md:grid-cols-2 gap-12 md:gap-20">
           
           {/* Resource Pack Sign-up */}
-          <div className="bg-paper p-10 md:p-14 rounded-[2.5rem] border border-border/40 shadow-sm flex flex-col">
+          <div className="bg-paper p-10 md:p-14 rounded-xl border border-border/40 shadow-sm flex flex-col">
             <div className="mb-8">
               <FileText className="w-8 h-8 text-ink mb-6" />
               <h2 className="text-h2 font-editorial italic text-ink mb-4">Get Full Resources</h2>
@@ -135,7 +135,7 @@ export default function ForDoctorsPage() {
           
           <div className="flex flex-col gap-8">
             {/* Newsletter */}
-            <div className="bg-marigold text-white p-10 md:p-14 rounded-[2.5rem] shadow-sm flex flex-col justify-center">
+            <div className="bg-marigold text-white p-10 md:p-14 rounded-xl shadow-sm flex flex-col justify-center">
               <Mail className="w-8 h-8 mb-6 text-white/80" />
               <h3 className="text-h2 font-editorial italic mb-4">Doctor Newsletter</h3>
               <p className="text-p2 font-light text-white/90 mb-8">
@@ -148,7 +148,7 @@ export default function ForDoctorsPage() {
             </div>
             
             {/* Partner Inquiry */}
-            <div className="bg-white p-10 md:p-12 rounded-[2.5rem] border border-border/40 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="bg-white p-10 md:p-12 rounded-xl border border-border/40 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
               <div>
                 <h3 className="text-xl font-medium text-ink mb-2">Become a Partner Clinic</h3>
                 <p className="text-sm text-muted-foreground font-light">Interested in integrating Good Karma into your practice?</p>

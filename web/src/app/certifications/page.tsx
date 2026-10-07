@@ -18,7 +18,7 @@ export default function CertificationsPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[350px]">
           
           {/* GOTS (Lead position, 2x2) */}
-          <div className="md:col-span-2 md:row-span-2 bg-paper p-10 md:p-14 rounded-[2.5rem] border border-border/40 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-500 group relative overflow-hidden">
+          <div className="md:col-span-2 md:row-span-2 bg-paper p-10 md:p-14 rounded-xl border border-border/40 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-500 group relative overflow-hidden">
             <div>
               <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center text-xl font-bold text-ink shadow-sm mb-8 border border-border/20 group-hover:scale-105 transition-transform duration-500">
                 GOTS
@@ -34,7 +34,7 @@ export default function CertificationsPage() {
           </div>
           
           {/* OEKO-TEX (Lead position, wide 2x1) */}
-          <div className="md:col-span-2 md:row-span-1 bg-paper p-10 rounded-[2.5rem] border border-border/40 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow duration-500 group">
+          <div className="md:col-span-2 md:row-span-1 bg-paper p-10 rounded-xl border border-border/40 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow duration-500 group">
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-col">
                 <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center font-bold text-ink shadow-sm mb-6 border border-border/20 group-hover:scale-105 transition-transform duration-500">
@@ -52,16 +52,14 @@ export default function CertificationsPage() {
           </div>
 
           {/* BRSR / NGRBC (Supporting cell, 1x1) */}
-          <div className="md:col-span-1 md:row-span-1 bg-white p-8 rounded-[2.5rem] border border-border/40 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-500">
+          <div className="md:col-span-1 md:row-span-1 bg-white p-8 rounded-xl border border-border/40 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-500">
             <div>
               <div className="w-12 h-12 rounded-full bg-paper flex items-center justify-center font-bold text-ink shadow-sm border border-border/20 mb-6">B</div>
               <h3 className="text-xl font-medium text-ink mb-3">BRSR / NGRBC</h3>
               <p className="text-sm text-muted-foreground font-light mb-4">
                 Our disclosure standard for responsible business practices, ensuring accountability in governance and social impact.
               </p>
-              {/* DEV TAG */}
               <div className="bg-paper text-marigold text-[9px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono shadow-sm border border-marigold/20 mb-6 inline-block">
-                DEV: Confirm document letterhead
               </div>
             </div>
             <Link href="#" className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full border border-border/60 text-xs font-medium text-ink hover:bg-ink hover:text-white hover:border-ink transition-all duration-300">
@@ -70,7 +68,7 @@ export default function CertificationsPage() {
           </div>
 
           {/* Vegan (Supporting cell, 1x1) */}
-          <div className="md:col-span-1 md:row-span-1 bg-white p-8 rounded-[2.5rem] border border-border/40 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-500">
+          <div className="md:col-span-1 md:row-span-1 bg-white p-8 rounded-xl border border-border/40 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-500">
             <div>
               <div className="w-12 h-12 rounded-full bg-paper flex items-center justify-center font-bold text-ink shadow-sm border border-border/20 mb-6">V</div>
               <h3 className="text-xl font-medium text-ink mb-3">Cruelty-Free Dyeing</h3>

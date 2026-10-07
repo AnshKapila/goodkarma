@@ -59,7 +59,7 @@ export function ComparisonSlider({ beforeImage, afterImage, beforeLabel = "Synth
   return (
     <div 
       ref={containerRef}
-      className="relative w-full aspect-square md:aspect-[4/5] rounded-[2.5rem] overflow-hidden select-none cursor-ew-resize bg-paper shadow-lg border border-border/40"
+      className="relative w-full aspect-square md:aspect-[4/5] rounded-xl overflow-hidden select-none cursor-ew-resize bg-paper shadow-lg border border-border/40"
       onMouseDown={(e) => {
         setIsDragging(true);
         handleMove(e.clientX);
@@ -69,10 +69,6 @@ export function ComparisonSlider({ beforeImage, afterImage, beforeLabel = "Synth
         handleMove(e.touches[0].clientX);
       }}
     >
-      {/* DEV TAG */}
-      <div className="absolute top-4 right-4 bg-marigold text-white text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono z-50 shadow-md border border-white/20 pointer-events-none">
-        DEV: Swappable AI Placeholders
-      </div>
 
       {/* After Image (Background) */}
       <div 

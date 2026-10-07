@@ -25,24 +25,20 @@ export default function ProductsPage() {
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 animate-in fade-in duration-1000 delay-300 fill-mode-both">
           {[
-            { id: 1, name: "Everyday Brief", color: "Undyed", price: "$28", img: "/PLACEHOLDER_product.jpg" },
-            { id: 2, name: "Comfort Top", color: "Madder Rose", price: "$45", img: "/PLACEHOLDER_product.jpg" },
-            { id: 3, name: "Lounge Set", color: "Marigold", price: "$85", img: "/PLACEHOLDER_product.jpg" },
-            { id: 4, name: "Maternity Support", color: "Pomegranate", price: "$55", img: "/PLACEHOLDER_product.jpg" },
-            { id: 5, name: "Infant Bodysuit", color: "Undyed", price: "$32", img: "/PLACEHOLDER_product.jpg" },
-            { id: 6, name: "Boxer Brief", color: "Madder Rose", price: "$35", img: "/PLACEHOLDER_product.jpg" },
-            { id: 7, name: "Sleep Shirt", color: "Marigold", price: "$65", img: "/PLACEHOLDER_product.jpg" },
-            { id: 8, name: "Daily Bralette", color: "Pomegranate", price: "$42", img: "/PLACEHOLDER_product.jpg" }
+            { id: 1, name: "Everyday Brief", color: "Undyed", price: "$28", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
+            { id: 2, name: "Comfort Top", color: "Madder Rose", price: "$45", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
+            { id: 3, name: "Lounge Set", color: "Marigold", price: "$85", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
+            { id: 4, name: "Maternity Support", color: "Pomegranate", price: "$55", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
+            { id: 5, name: "Infant Bodysuit", color: "Undyed", price: "$32", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
+            { id: 6, name: "Boxer Brief", color: "Madder Rose", price: "$35", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
+            { id: 7, name: "Sleep Shirt", color: "Marigold", price: "$65", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
+            { id: 8, name: "Daily Bralette", color: "Pomegranate", price: "$42", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" }
           ].map((product) => (
             <Link href={`/products/${product.name.toLowerCase().replace(/ /g, '-')}`} key={product.id} className="group cursor-pointer flex flex-col">
               <div 
-                className="aspect-[4/5] bg-paper rounded-[2rem] mb-6 flex items-center justify-center border border-border/40 relative overflow-hidden bg-cover bg-center shadow-sm group-hover:shadow-lg transition-all duration-500"
+                className="aspect-[4/5] bg-paper rounded-xl mb-6 flex items-center justify-center border border-border/40 relative overflow-hidden bg-cover bg-center shadow-sm group-hover:shadow-lg transition-all duration-500"
                 style={{ backgroundImage: `url(${product.img})` }}
               >
-                {/* DEV TAG */}
-                <div className="absolute top-4 left-4 bg-marigold text-white text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono z-50 shadow-md border border-white/20">
-                  DEV: REAL ASSET PENDING
-                </div>
                 <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               <div className="px-2">

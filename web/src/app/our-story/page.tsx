@@ -28,11 +28,7 @@ export default function OurStoryPage() {
             </div>
           </div>
           <div className="flex items-center justify-center lg:justify-end">
-            <div className="w-full max-w-[600px] aspect-[4/5] rounded-[2.5rem] bg-paper border border-border/40 overflow-hidden relative shadow-lg bg-[url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center">
-              {/* DEV TAG */}
-              <div className="absolute top-4 right-4 bg-marigold text-white text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono z-50 shadow-md border border-white/20">
-                DEV: REAL ASSET PENDING (Founder / Origin)
-              </div>
+            <div className="w-full max-w-[600px] aspect-[4/5] rounded-xl bg-paper border border-border/40 overflow-hidden relative shadow-lg bg-[url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center">
             </div>
           </div>
         </div>

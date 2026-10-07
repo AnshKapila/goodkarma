@@ -19,7 +19,7 @@ export default function ContactPage() {
         </div>
         
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-          <div className="bg-paper p-10 md:p-16 rounded-[2.5rem] border border-border/40 shadow-sm">
+          <div className="bg-paper p-10 md:p-16 rounded-xl border border-border/40 shadow-sm">
             <h2 className="text-h2 font-medium text-ink mb-8">Send us a message</h2>
             <form className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">

@@ -24,9 +24,6 @@ export default function NaturalDyeingPage() {
             </div>
             
             <div className="relative pl-6 border-l-2 border-mauve/30">
-              <div className="absolute -top-3 left-6 bg-paper text-mauve text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono shadow-sm border border-mauve/20">
-                DEV: DRAFT COPY (Flexible Length)
-              </div>
               <strong className="block text-sm font-medium text-ink mb-2 pt-2">The Situation</strong>
               <p className="text-p1 text-muted-foreground font-light">
                 Synthetic dyes are typically petroleum-derived, meaning their raw material is a fossil fuel. Many are also tested on animals before approval, and their production is one of the textile industry's largest contributors to water pollution.
@@ -63,7 +60,7 @@ export default function NaturalDyeingPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
             {/* Cell 1: Madder (2x2) */}
-            <div className="md:col-span-2 md:row-span-2 bg-[#A4777E]/10 rounded-[2.5rem] p-10 md:p-14 border border-[#A4777E]/20 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden">
+            <div className="md:col-span-2 md:row-span-2 bg-[#A4777E]/10 rounded-xl p-10 md:p-14 border border-[#A4777E]/20 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-transparent opacity-50" />
               <div className="relative z-10">
                 <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-4 block">Himalayan Belt / Rajasthan / Gujarat</span>
@@ -76,7 +73,7 @@ export default function NaturalDyeingPage() {
             </div>
 
             {/* Cell 2: Marigold (1x2) */}
-            <div className="md:col-span-1 md:row-span-2 bg-[#C98637]/10 rounded-[2.5rem] p-10 border border-[#C98637]/20 flex flex-col justify-end shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden">
+            <div className="md:col-span-1 md:row-span-2 bg-[#C98637]/10 rounded-xl p-10 border border-[#C98637]/20 flex flex-col justify-end shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent opacity-50" />
               <div className="relative z-10">
                 <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-3 block">Nationwide (Temple Waste)</span>
@@ -89,7 +86,7 @@ export default function NaturalDyeingPage() {
             </div>
 
             {/* Cell 3: Pomegranate (1x1) */}
-            <div className="md:col-span-1 md:row-span-1 bg-[#5A6056]/10 rounded-[2.5rem] p-8 border border-[#5A6056]/20 flex flex-col justify-center shadow-sm group">
+            <div className="md:col-span-1 md:row-span-1 bg-[#5A6056]/10 rounded-xl p-8 border border-[#5A6056]/20 flex flex-col justify-center shadow-sm group">
               <span className="text-sage font-bold text-[10px] uppercase tracking-widest mb-2 block">Maharashtra / Gujarat</span>
               <h3 className="text-2xl font-editorial italic text-ink mb-1 group-hover:text-sage transition-colors">Pomegranate Peel</h3>
               <p className="text-xs font-mono text-muted-foreground mb-3">Punica granatum</p>
@@ -99,7 +96,7 @@ export default function NaturalDyeingPage() {
             </div>
 
             {/* Cell 4: Cutch (1x1) */}
-            <div className="md:col-span-1 md:row-span-1 bg-[#8B5A2B]/10 rounded-[2.5rem] p-8 border border-[#8B5A2B]/20 flex flex-col justify-center shadow-sm group">
+            <div className="md:col-span-1 md:row-span-1 bg-[#8B5A2B]/10 rounded-xl p-8 border border-[#8B5A2B]/20 flex flex-col justify-center shadow-sm group">
               <span className="text-[#8B5A2B] font-bold text-[10px] uppercase tracking-widest mb-2 block">UP / Bihar / HP</span>
               <h3 className="text-2xl font-editorial italic text-ink mb-1 group-hover:text-[#8B5A2B] transition-colors">Acacia Catechu</h3>
               <p className="text-xs font-mono text-muted-foreground mb-3">Khair</p>
@@ -109,7 +106,7 @@ export default function NaturalDyeingPage() {
             </div>
 
             {/* Cell 5: Onion Skin (2x1) */}
-            <div className="md:col-span-2 md:row-span-1 bg-[#E3C16F]/10 rounded-[2.5rem] p-10 border border-[#E3C16F]/20 flex flex-col justify-center shadow-sm group">
+            <div className="md:col-span-2 md:row-span-1 bg-[#E3C16F]/10 rounded-xl p-10 border border-[#E3C16F]/20 flex flex-col justify-center shadow-sm group">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                   <span className="text-[#B89645] font-bold text-[10px] uppercase tracking-widest mb-2 block">Maharashtra / MP / Karnataka</span>
@@ -123,7 +120,7 @@ export default function NaturalDyeingPage() {
             </div>
 
             {/* Cell 6: Turmeric (2x1) */}
-            <div className="md:col-span-2 md:row-span-1 bg-[#F4C430]/10 rounded-[2.5rem] p-10 border border-[#F4C430]/20 flex flex-col justify-center shadow-sm group">
+            <div className="md:col-span-2 md:row-span-1 bg-[#F4C430]/10 rounded-xl p-10 border border-[#F4C430]/20 flex flex-col justify-center shadow-sm group">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                   <span className="text-[#D4A017] font-bold text-[10px] uppercase tracking-widest mb-2 block">Telangana / Tamil Nadu</span>
@@ -150,8 +147,7 @@ export default function NaturalDyeingPage() {
       {/* 4. Sourcing & Economic Story */}
       <section className="px-6 max-w-[1400px] mx-auto w-full mb-24 md:mb-40">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-          <div className="order-2 md:order-1 w-full aspect-square md:aspect-[4/5] rounded-[2.5rem] bg-paper relative overflow-hidden bg-[url('/PLACEHOLDER_sourcing_farmers.jpg')] bg-cover bg-center shadow-sm">
-             <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
+          <div className="order-2 md:order-1 w-full aspect-square md:aspect-[4/5] rounded-xl bg-paper relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1598466858925-502a90105eec?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center shadow-sm">
           </div>
           <div className="order-1 md:order-2 flex flex-col gap-8">
             <h2 className="text-h2 font-editorial italic text-ink">An economy of reuse.</h2>
@@ -161,7 +157,7 @@ export default function NaturalDyeingPage() {
             <p className="text-p1 text-muted-foreground font-light">
               Remarkably, several of our key dyes—like pomegranate peel, onion skin, and marigold—are byproducts recovered directly from food processing or ritual temple waste. They are not grown solely for dye. 
             </p>
-            <div className="bg-paper p-8 rounded-3xl border border-border/40 mt-4">
+            <div className="bg-paper p-8 rounded-xl border border-border/40 mt-4">
               <strong className="block text-ink font-medium mb-2">The Impact</strong>
               <p className="text-sm text-muted-foreground font-light">
                 By purchasing these byproducts, we provide farmers and vendors with an additional income stream for organic material they would otherwise discard. 100% of our materials are sourced within India.
@@ -176,8 +172,7 @@ export default function NaturalDyeingPage() {
         <h2 className="text-h2 font-editorial italic text-ink mb-16 text-center">How it becomes color.</h2>
         <div className="grid md:grid-cols-4 gap-6">
           <div className="flex flex-col gap-6 text-center items-center">
-            <div className="w-full aspect-square rounded-[2rem] bg-paper border border-border/40 flex items-center justify-center relative overflow-hidden bg-[url('/PLACEHOLDER_process_1.jpg')] bg-cover bg-center">
-              <div className="absolute top-3 left-3 bg-black/80 text-white text-[10px] px-2 py-1 rounded-sm uppercase font-mono z-50">DEV: IMG</div>
+            <div className="w-full aspect-square rounded-xl bg-paper border border-border/40 flex items-center justify-center relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1618361001476-eb96d49925e0?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center">
             </div>
             <div>
               <span className="w-8 h-8 rounded-full bg-ink text-white flex items-center justify-center text-xs font-bold mx-auto mb-4">1</span>
@@ -187,8 +182,7 @@ export default function NaturalDyeingPage() {
           </div>
           
           <div className="flex flex-col gap-6 text-center items-center">
-            <div className="w-full aspect-square rounded-[2rem] bg-paper border border-border/40 flex items-center justify-center relative overflow-hidden bg-[url('/PLACEHOLDER_process_2.jpg')] bg-cover bg-center">
-              <div className="absolute top-3 left-3 bg-black/80 text-white text-[10px] px-2 py-1 rounded-sm uppercase font-mono z-50">DEV: IMG</div>
+            <div className="w-full aspect-square rounded-xl bg-paper border border-border/40 flex items-center justify-center relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1618361001476-eb96d49925e0?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center">
             </div>
             <div>
               <span className="w-8 h-8 rounded-full bg-ink text-white flex items-center justify-center text-xs font-bold mx-auto mb-4">2</span>
@@ -198,8 +192,7 @@ export default function NaturalDyeingPage() {
           </div>
           
           <div className="flex flex-col gap-6 text-center items-center">
-            <div className="w-full aspect-square rounded-[2rem] bg-paper border border-border/40 flex items-center justify-center relative overflow-hidden bg-[url('/PLACEHOLDER_process_3.jpg')] bg-cover bg-center">
-              <div className="absolute top-3 left-3 bg-black/80 text-white text-[10px] px-2 py-1 rounded-sm uppercase font-mono z-50">DEV: IMG</div>
+            <div className="w-full aspect-square rounded-xl bg-paper border border-border/40 flex items-center justify-center relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1618361001476-eb96d49925e0?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center">
             </div>
             <div>
               <span className="w-8 h-8 rounded-full bg-ink text-white flex items-center justify-center text-xs font-bold mx-auto mb-4">3</span>
@@ -209,8 +202,7 @@ export default function NaturalDyeingPage() {
           </div>
           
           <div className="flex flex-col gap-6 text-center items-center">
-            <div className="w-full aspect-square rounded-[2rem] bg-paper border border-border/40 flex items-center justify-center relative overflow-hidden bg-[url('/PLACEHOLDER_process_4.jpg')] bg-cover bg-center">
-              <div className="absolute top-3 left-3 bg-black/80 text-white text-[10px] px-2 py-1 rounded-sm uppercase font-mono z-50">DEV: IMG</div>
+            <div className="w-full aspect-square rounded-xl bg-paper border border-border/40 flex items-center justify-center relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1618361001476-eb96d49925e0?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center">
             </div>
             <div>
               <span className="w-8 h-8 rounded-full bg-ink text-white flex items-center justify-center text-xs font-bold mx-auto mb-4">4</span>
@@ -224,7 +216,7 @@ export default function NaturalDyeingPage() {
       {/* 6. Certifications & 7. What We Leave Out */}
       <section className="px-6 max-w-[1400px] mx-auto w-full mb-24">
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-paper p-12 rounded-[2.5rem] border border-border/40 shadow-sm flex flex-col justify-between">
+          <div className="bg-paper p-12 rounded-xl border border-border/40 shadow-sm flex flex-col justify-between">
             <div>
               <h3 className="text-2xl font-medium text-ink mb-6">Certified Purity</h3>
               <p className="text-p1 text-muted-foreground font-light mb-10">
@@ -236,7 +228,7 @@ export default function NaturalDyeingPage() {
             </Link>
           </div>
           
-          <div className="bg-ink p-12 rounded-[2.5rem] shadow-sm flex flex-col justify-between text-white">
+          <div className="bg-ink p-12 rounded-xl shadow-sm flex flex-col justify-between text-white">
             <div>
               <h3 className="text-2xl font-medium mb-6">What We Leave Out</h3>
               <ul className="space-y-6">

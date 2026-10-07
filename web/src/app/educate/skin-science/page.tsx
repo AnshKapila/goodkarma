@@ -32,7 +32,7 @@ export default function SkinSciencePage() {
             </p>
           </div>
           
-          <div className="bg-paper p-10 rounded-[2.5rem] border border-border/40 shadow-sm flex flex-col gap-6">
+          <div className="bg-paper p-10 rounded-xl border border-border/40 shadow-sm flex flex-col gap-6">
             <div className="flex items-start gap-4">
               <div className="w-8 h-8 rounded-full bg-marigold text-white flex items-center justify-center font-bold text-sm shrink-0">1</div>
               <div>
@@ -64,13 +64,13 @@ export default function SkinSciencePage() {
       <section className="px-6 max-w-[1400px] mx-auto w-full mb-24 md:mb-40">
         <h2 className="text-h2 font-editorial italic text-ink mb-12 text-center">The Two Separate Issues</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-paper p-12 md:p-16 rounded-[2.5rem] border border-border/40 shadow-sm">
+          <div className="bg-paper p-12 md:p-16 rounded-xl border border-border/40 shadow-sm">
             <h3 className="text-2xl font-medium text-ink mb-6">Heat & Moisture Retention</h3>
             <p className="text-p1 text-muted-foreground font-light">
               Synthetic fibers don't breathe like cotton. By trapping heat and sweat against the body, they create the exact conditions where yeast and bacteria multiply more easily, leading to chronic irritation and discomfort.
             </p>
           </div>
-          <div className="bg-paper p-12 md:p-16 rounded-[2.5rem] border border-border/40 shadow-sm">
+          <div className="bg-paper p-12 md:p-16 rounded-xl border border-border/40 shadow-sm">
             <h3 className="text-2xl font-medium text-ink mb-6">Chemical Residue</h3>
             <p className="text-p1 text-muted-foreground font-light">
               PFAS "forever chemicals" used for water/stain resistance, along with synthetic azo dyes, leave lingering chemical residues. Recent research from the University of Birmingham shows PFAS can penetrate the skin directly—not just through inhalation or ingestion as previously assumed.
@@ -87,7 +87,7 @@ export default function SkinSciencePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
             
             {/* Cell 1: Univ Birmingham (Large) */}
-            <div className="md:col-span-2 md:row-span-1 bg-white p-10 rounded-[2.5rem] border border-border/40 shadow-sm flex flex-col justify-center">
+            <div className="md:col-span-2 md:row-span-1 bg-white p-10 rounded-xl border border-border/40 shadow-sm flex flex-col justify-center">
               <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-4 block">University of Birmingham</span>
               <h3 className="text-xl font-medium text-ink mb-3">PFAS Skin Absorption</h3>
               <p className="text-p2 text-muted-foreground font-light max-w-[500px]">
@@ -96,7 +96,7 @@ export default function SkinSciencePage() {
             </div>
 
             {/* Cell 2: Aalto Univ (Small) */}
-            <div className="md:col-span-1 md:row-span-1 bg-ink p-10 rounded-[2.5rem] shadow-sm flex flex-col justify-center text-white">
+            <div className="md:col-span-1 md:row-span-1 bg-ink p-10 rounded-xl shadow-sm flex flex-col justify-center text-white">
               <span className="text-white/60 font-bold text-xs uppercase tracking-widest mb-4 block">Aalto University, Finland</span>
               <h3 className="text-xl font-medium mb-3">Microplastic Shedding</h3>
               <p className="text-sm font-light text-white/80">
@@ -105,7 +105,7 @@ export default function SkinSciencePage() {
             </div>
 
             {/* Cell 3: EEA (Small) */}
-            <div className="md:col-span-1 md:row-span-1 bg-marigold p-10 rounded-[2.5rem] shadow-sm flex flex-col justify-center text-white">
+            <div className="md:col-span-1 md:row-span-1 bg-marigold p-10 rounded-xl shadow-sm flex flex-col justify-center text-white">
               <span className="text-white/80 font-bold text-xs uppercase tracking-widest mb-4 block">European Environment Agency</span>
               <h3 className="text-xl font-medium mb-3">The Pollution Chain</h3>
               <p className="text-sm font-light text-white/90">
@@ -114,7 +114,7 @@ export default function SkinSciencePage() {
             </div>
 
             {/* Cell 4: Alden Wicker (Large) */}
-            <div className="md:col-span-2 md:row-span-1 bg-white p-10 rounded-[2.5rem] border border-border/40 shadow-sm flex flex-col justify-center">
+            <div className="md:col-span-2 md:row-span-1 bg-white p-10 rounded-xl border border-border/40 shadow-sm flex flex-col justify-center">
               <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-4 block">Reporting: "To Dye For"</span>
               <h3 className="text-xl font-medium text-ink mb-3">Daily Exposure Links</h3>
               <p className="text-p2 text-muted-foreground font-light max-w-[500px]">
@@ -133,8 +133,7 @@ export default function SkinSciencePage() {
         <div className="flex flex-col gap-20 md:gap-32">
           {/* For Women (Image Left) */}
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div className="order-2 md:order-1 w-full aspect-square md:aspect-[4/5] rounded-[2.5rem] bg-paper relative overflow-hidden bg-[url('/PLACEHOLDER_audience_women.jpg')] bg-cover bg-center shadow-sm">
-               <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
+            <div className="order-2 md:order-1 w-full aspect-square md:aspect-[4/5] rounded-xl bg-paper relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center shadow-sm">
             </div>
             <div className="order-1 md:order-2 flex flex-col gap-10">
               <div>
@@ -182,15 +181,13 @@ export default function SkinSciencePage() {
                 </div>
               </div>
             </div>
-            <div className="w-full aspect-square md:aspect-[4/5] rounded-[2.5rem] bg-paper relative overflow-hidden bg-[url('/PLACEHOLDER_audience_infants.jpg')] bg-cover bg-center shadow-sm">
-               <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
+            <div className="w-full aspect-square md:aspect-[4/5] rounded-xl bg-paper relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center shadow-sm">
             </div>
           </div>
 
           {/* For Men (Image Left) */}
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div className="order-2 md:order-1 w-full aspect-square md:aspect-[4/5] rounded-[2.5rem] bg-paper relative overflow-hidden bg-[url('/PLACEHOLDER_audience_men.jpg')] bg-cover bg-center shadow-sm">
-               <div className="absolute top-4 left-4 bg-black/80 text-white text-[10px] px-3 py-1.5 rounded-sm uppercase tracking-wider font-mono z-50">DEV: PENDING IMAGE</div>
+            <div className="order-2 md:order-1 w-full aspect-square md:aspect-[4/5] rounded-xl bg-paper relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center shadow-sm">
             </div>
             <div className="order-1 md:order-2 flex flex-col gap-10">
               <div>
@@ -222,19 +219,19 @@ export default function SkinSciencePage() {
       <section className="px-6 max-w-[1400px] mx-auto w-full mb-32">
         <h2 className="text-h2 font-editorial italic text-ink mb-12 text-center">Why Good Karma Is Different</h2>
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-paper p-10 rounded-[2.5rem] border border-border/40 shadow-sm text-center">
+          <div className="bg-paper p-10 rounded-xl border border-border/40 shadow-sm text-center">
             <h3 className="text-xl font-medium text-ink mb-4">Breathable by Nature</h3>
             <p className="text-sm text-muted-foreground font-light">
               GOTS certified organic cotton allows natural airflow that synthetic blends simply don't, preventing the heat and moisture trap.
             </p>
           </div>
-          <div className="bg-paper p-10 rounded-[2.5rem] border border-border/40 shadow-sm text-center">
+          <div className="bg-paper p-10 rounded-xl border border-border/40 shadow-sm text-center">
             <h3 className="text-xl font-medium text-ink mb-4">No Synthetic Dye Residue</h3>
             <p className="text-sm text-muted-foreground font-light">
               Our 9 natural dyes completely replace azo dyes and petrochemical colorants, meaning zero synthetic residue against your skin.
             </p>
           </div>
-          <div className="bg-paper p-10 rounded-[2.5rem] border border-border/40 shadow-sm text-center">
+          <div className="bg-paper p-10 rounded-xl border border-border/40 shadow-sm text-center">
             <h3 className="text-xl font-medium text-ink mb-4">No Elastane or PFAS</h3>
             <p className="text-sm text-muted-foreground font-light">
               We eliminated synthetic stretch and water-resistant chemical treatments. No 'forever chemicals' and no microplastic shedding.
