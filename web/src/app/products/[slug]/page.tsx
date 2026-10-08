@@ -70,9 +70,7 @@ export default async function ProductDisplayPage({ params }: { params: Promise<{
               </div>
             </div>
 
-            <Button className="w-full bg-ink text-white rounded-full py-7 text-base font-medium shadow-md hover:bg-ink/90 transition-all hover:-translate-y-1">
-              Add to Bag
-            </Button>
+            <Button variant="primary" icon="bag" fullWidthMobile={true}>Add to Bag</Button>
 
             {/* Certifications & Features */}
             <div className="mt-12 flex flex-col gap-5 border-t border-border/40 pt-10">

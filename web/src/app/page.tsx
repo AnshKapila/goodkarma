@@ -27,13 +27,13 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-            <Link href="/products" className="inline-flex items-center justify-center bg-white text-ink hover:bg-paper rounded-full px-8 py-5 text-base font-medium shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 duration-300">
+          <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto">
+            <Button href="/products" variant="primary" fullWidthMobile={true}>
               Shop the Collection
-            </Link>
-            <Link href="/educate/skin-science" className="inline-flex items-center justify-center rounded-full px-8 py-5 text-base border border-white/40 text-white hover:bg-white/10 backdrop-blur-md transition-all hover:-translate-y-1 duration-300">
+            </Button>
+            <Button href="/educate/skin-science" variant="secondary" fullWidthMobile={true}>
               Discover the Science
-            </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -51,9 +51,9 @@ export default function Home() {
             <p className="text-p1 text-ink font-medium mb-8">
               Here's what we test for, so you don't have to wonder.
             </p>
-            <Link href="/certifications" className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base border border-ink text-ink hover:bg-ink hover:text-white transition-all font-medium w-fit">
+            <Button href="/certifications" variant="secondary" fullWidthMobile={true}>
               View Our Certifications
-            </Link>
+            </Button>
           </div>
           <div className="w-full h-full flex flex-col">
             <ComparisonSlider 
@@ -187,9 +187,9 @@ export default function Home() {
             <h2 className="text-h2 font-editorial italic text-ink mb-3">The Collection</h2>
             <p className="text-p1 text-muted-foreground">A considered range of everyday essentials.</p>
           </div>
-          <Link href="/products" className="text-sm font-medium hover:text-marigold flex items-center gap-2 group transition-colors">
-            View all <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <Button href="/products" variant="tertiary">
+            View all
+          </Button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           {[
@@ -229,9 +229,9 @@ export default function Home() {
             <p className="text-p1 text-white/90 mb-10 font-light max-w-[450px]">
               We design for the body's largest organ. Discover exactly how synthetic fabrics interact with your skin compared to pure, unblended organic cotton.
             </p>
-            <Link href="/educate/skin-science" className="inline-flex items-center justify-center border border-white text-white hover:bg-white hover:text-mauve rounded-full px-8 py-5 text-base font-medium transition-all hover:-translate-y-1 shadow-sm w-fit">
+            <Button href="/educate/skin-science" variant="primary" fullWidthMobile={true}>
               Read the Research
-            </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -247,9 +247,9 @@ export default function Home() {
             <p className="text-p1 text-white/80 mb-10 max-w-[450px] font-light">
               Marigold, Madder root, and Pomegranate. We use real ingredients to create our palette, ensuring no harmful chemicals ever touch your skin.
             </p>
-            <Link href="/educate/natural-dyeing" className="inline-flex items-center justify-center bg-white text-ink hover:bg-paper rounded-full px-8 py-5 text-base font-medium transition-all hover:-translate-y-1 shadow-md">
+            <Button href="/educate/natural-dyeing" variant="primary" fullWidthMobile={true}>
               Explore the Dye Library
-            </Link>
+            </Button>
           </div>
           <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-[700px] bg-[url('https://images.unsplash.com/photo-1618361001476-eb96d49925e0?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center relative">
             <div className="absolute inset-0 opacity-30 bg-gradient-to-br from-[#C98637] to-[#A4777E] mix-blend-multiply" />
@@ -276,9 +276,9 @@ export default function Home() {
           <div className="md:col-span-1 bg-ink text-white rounded-xl p-10 flex flex-col justify-center shadow-sm hover:bg-ink/90 transition-colors">
             <h3 className="text-xl font-medium mb-3">Clinical Resources</h3>
             <p className="text-sm font-light text-white/80 mb-6">Patient handouts and clinical rationale for your practice.</p>
-            <Link href="/educate/for-doctors" className="inline-flex items-center gap-2 text-marigold hover:text-white transition-colors text-sm font-medium w-fit">
-              View Portal <ArrowRight className="w-4 h-4" />
-            </Link>
+            <Button href="/educate/for-doctors" variant="tertiary" className="text-marigold hover:text-white justify-start">
+              View Portal
+            </Button>
           </div>
 
         </div>
@@ -288,9 +288,9 @@ export default function Home() {
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="flex justify-between items-end mb-12">
           <h2 className="text-h2 font-editorial italic text-ink">In Motion</h2>
-          <Link href="#" className="text-sm font-medium hover:text-marigold flex items-center gap-2 group transition-colors">
-            Follow our journey <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <Button href="#" variant="tertiary">
+            Follow our journey
+          </Button>
         </div>
         
         {/* Horizontal scroll on mobile, grid on desktop */}

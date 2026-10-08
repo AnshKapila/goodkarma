@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft, SlidersHorizontal } from "lucide-react";
 
@@ -17,9 +18,7 @@ export default function ProductsPage() {
               A considered range of everyday essentials, naturally dyed and thoughtfully crafted.
             </p>
           </div>
-          <button className="flex items-center gap-3 px-6 py-3 rounded-full border border-border text-ink hover:bg-paper transition-colors font-medium">
-            <SlidersHorizontal className="w-4 h-4" /> Filter
-          </button>
+          <Button variant="secondary" icon="none"><SlidersHorizontal className="w-[18px] h-[18px]" /> Filter</Button>
         </div>
         
         {/* Product Grid */}

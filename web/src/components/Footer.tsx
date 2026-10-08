@@ -10,9 +10,9 @@ export function Footer() {
           <p className="text-p1 text-muted-foreground max-w-[340px] mb-10 font-light">
             A trusted friend, backed by science. Be good. Wear good.
           </p>
-          <div className="flex gap-4 max-w-[380px] bg-paper p-1.5 rounded-full border border-border/60 focus-within:ring-2 focus-within:ring-marigold/30 focus-within:border-marigold/50 transition-all shadow-sm">
+          <div className="flex gap-4 max-w-[380px] bg-paper p-1.5 rounded-[20px] border border-border/60 focus-within:ring-2 focus-within:ring-marigold/30 focus-within:border-marigold/50 transition-all shadow-sm">
             <input type="email" placeholder="Email address" className="flex-1 bg-transparent px-5 py-3 text-sm focus:outline-none text-ink placeholder:text-muted-foreground" />
-            <Button className="bg-ink hover:bg-ink/90 text-white rounded-full px-8 font-medium transition-colors">Subscribe</Button>
+            <Button variant="primary" icon="arrow">Subscribe</Button>
           </div>
         </div>
         <div className="md:col-span-2 md:col-start-8">

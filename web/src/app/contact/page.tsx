@@ -34,7 +34,7 @@ export default function ContactPage() {
                 <label className="text-sm font-medium text-ink">Message</label>
                 <textarea rows={5} className="bg-white border border-border/60 rounded-xl px-5 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-marigold/30 focus:border-marigold/50 transition-all resize-none" placeholder="How can we help?" />
               </div>
-              <Button className="bg-ink hover:bg-ink/90 text-white rounded-full px-8 py-6 mt-4 text-base font-medium transition-colors">
+              <Button variant="primary" fullWidthMobile={true}>
                 Submit Request
               </Button>
             </form>

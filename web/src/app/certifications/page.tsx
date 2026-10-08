@@ -1,5 +1,6 @@
-import { ArrowRight, Download } from "lucide-react";
-import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
+
 
 export default function CertificationsPage() {
   return (
@@ -28,9 +29,7 @@ export default function CertificationsPage() {
                 The worldwide leading textile processing standard for organic fibres. This ensures our cotton is grown without toxic pesticides or synthetic fertilizers, protecting both the soil and your skin.
               </p>
             </div>
-            <button className="flex items-center justify-center gap-3 w-fit px-8 py-4 rounded-full border border-border/60 text-sm font-medium text-ink hover:bg-ink hover:text-white hover:border-ink transition-all duration-300">
-              <Download className="w-4 h-4" /> Download Certificate
-            </button>
+            <Button variant="secondary" icon="download" href="#">Download Certificate</Button>
           </div>
           
           {/* OEKO-TEX (Lead position, wide 2x1) */}
@@ -46,9 +45,7 @@ export default function CertificationsPage() {
                 </p>
               </div>
             </div>
-            <button className="flex items-center justify-center gap-3 w-fit px-8 py-4 rounded-full border border-border/60 text-sm font-medium text-ink hover:bg-ink hover:text-white hover:border-ink transition-all duration-300">
-              <Download className="w-4 h-4" /> Download Certificate
-            </button>
+            <Button variant="secondary" icon="download" href="#">Download Certificate</Button>
           </div>
 
           {/* BRSR / NGRBC (Supporting cell, 1x1) */}
@@ -62,9 +59,7 @@ export default function CertificationsPage() {
               <div className="bg-paper text-marigold text-[9px] px-2 py-1 rounded-sm uppercase tracking-wider font-mono shadow-sm border border-marigold/20 mb-6 inline-block">
               </div>
             </div>
-            <Link href="#" className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full border border-border/60 text-xs font-medium text-ink hover:bg-ink hover:text-white hover:border-ink transition-all duration-300">
-              <Download className="w-3 h-3" /> View Disclosure
-            </Link>
+            <Button variant="secondary" icon="download" href="#" fullWidthMobile={true}>View Disclosure</Button>
           </div>
 
           {/* Vegan (Supporting cell, 1x1) */}
@@ -76,9 +71,7 @@ export default function CertificationsPage() {
                 Our 9 natural plant-based dyes are 100% cruelty-free. Our dye process requires absolutely no animal testing or derivatives.
               </p>
             </div>
-            <Link href="#" className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full border border-border/60 text-xs font-medium text-ink hover:bg-ink hover:text-white hover:border-ink transition-all duration-300">
-              <Download className="w-3 h-3" /> Download Doc
-            </Link>
+            <Button variant="secondary" icon="download" href="#" fullWidthMobile={true}>Download Doc</Button>
           </div>
           
         </div>

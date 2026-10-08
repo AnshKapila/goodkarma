@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Download, Mail, Stethoscope, QrCode, FileText } from "lucide-react";
 
@@ -153,9 +154,7 @@ export default function ForDoctorsPage() {
                 <h3 className="text-xl font-medium text-ink mb-2">Become a Partner Clinic</h3>
                 <p className="text-sm text-muted-foreground font-light">Interested in integrating Good Karma into your practice?</p>
               </div>
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink text-ink hover:bg-ink hover:text-white px-8 py-4 font-medium transition-colors shrink-0">
-                Partner Inquiry <ArrowRight className="w-4 h-4" />
-              </Link>
+              <Button variant="primary" href="/contact">Get in Touch</Button>
             </div>
           </div>
           
