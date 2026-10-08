@@ -7,9 +7,10 @@ interface ComparisonSliderProps {
   afterImage: string;
   beforeLabel?: string;
   afterLabel?: string;
+  className?: string;
 }
 
-export function ComparisonSlider({ beforeImage, afterImage, beforeLabel = "Synthetic", afterLabel = "Organic Cotton" }: ComparisonSliderProps) {
+export function ComparisonSlider({ beforeImage, afterImage, beforeLabel = "Synthetic", afterLabel = "Organic Cotton", className = "" }: ComparisonSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -59,7 +60,7 @@ export function ComparisonSlider({ beforeImage, afterImage, beforeLabel = "Synth
   return (
     <div 
       ref={containerRef}
-      className="relative w-full aspect-square md:aspect-[4/5] rounded-xl overflow-hidden select-none cursor-ew-resize bg-paper shadow-lg border border-border/40"
+      className={`relative w-full rounded-xl overflow-hidden select-none cursor-ew-resize bg-paper shadow-lg border border-border/40 ${className || 'aspect-square md:aspect-[4/5]'}`}
       onMouseDown={(e) => {
         setIsDragging(true);
         handleMove(e.clientX);

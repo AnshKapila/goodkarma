@@ -40,8 +40,8 @@ export default function Home() {
 
       {/* 2. NEW The Difference (Problem/Situation) */}
       <section className="px-6 max-w-[1400px] mx-auto w-full min-h-[110vh] flex items-center py-20">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center w-full">
-          <div className="text-left">
+        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-stretch w-full">
+          <div className="text-left flex flex-col justify-center">
             <h2 className="text-h2 font-editorial italic text-ink mb-8">
               What touches your skin,<br/>shapes your skin.
             </h2>
@@ -51,16 +51,17 @@ export default function Home() {
             <p className="text-p1 text-ink font-medium mb-8">
               Here's what we test for, so you don't have to wonder.
             </p>
-            <Link href="/certifications" className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base border border-ink text-ink hover:bg-ink hover:text-white transition-all font-medium">
+            <Link href="/certifications" className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base border border-ink text-ink hover:bg-ink hover:text-white transition-all font-medium w-fit">
               View Our Certifications
             </Link>
           </div>
-          <div className="w-full">
+          <div className="w-full h-full flex flex-col">
             <ComparisonSlider 
               beforeImage="https://images.unsplash.com/photo-1606902965551-dce093cda6e7?q=80&w=800&auto=format&fit=crop" 
               afterImage="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=800&auto=format&fit=crop"
               beforeLabel="Synthetic (Traps Heat)"
               afterLabel="100% GOTS Cotton (Breathable)"
+              className="aspect-square md:aspect-auto md:h-full md:flex-1 min-h-[400px]"
             />
           </div>
         </div>
