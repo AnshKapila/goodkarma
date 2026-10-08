@@ -140,7 +140,7 @@ export default function Home() {
 
           {/* Cell 2: GOTS Cotton (Col span 1, Row span 1) */}
           <div className="md:col-span-1 md:row-span-1 bg-marigold text-white rounded-xl p-8 flex flex-col justify-center shadow-sm relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1598466858925-502a90105eec?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center mix-blend-multiply opacity-50" />
+            <div className="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-50" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1598466858925-502a90105eec?q=80&w=800&auto=format&fit=crop')" }} />
             <div className="relative z-10">
               <h3 className="text-2xl font-medium mb-3">100% GOTS Cotton</h3>
               <p className="text-sm font-light leading-relaxed text-white/90">
@@ -150,7 +150,7 @@ export default function Home() {
           </div>
 
           {/* Cell 3: Tall Image (Col span 1, Row span 2) */}
-          <div className="md:col-span-1 md:row-span-2 rounded-xl bg-[url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center relative overflow-hidden shadow-sm flex flex-col justify-end p-8">
+          <div className="md:col-span-1 md:row-span-2 rounded-xl bg-cover bg-center relative overflow-hidden shadow-sm flex flex-col justify-end p-8" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')" }}>
             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
             <div className="relative z-10 text-white">
               <h3 className="text-xl font-medium mb-2">Designed for the Body</h3>
@@ -159,7 +159,7 @@ export default function Home() {
           </div>
 
           {/* Cell 4: Wide Image (Col span 2, Row span 1) */}
-          <div className="md:col-span-2 md:row-span-1 rounded-xl bg-paper relative overflow-hidden shadow-sm border border-border/40 bg-[url('https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center">
+          <div className="md:col-span-2 md:row-span-1 rounded-xl bg-paper relative overflow-hidden shadow-sm border border-border/40 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=800&auto=format&fit=crop')" }}>
             <div className="absolute inset-0 bg-ink/10" />
             <div className="absolute bottom-6 left-8">
                <h3 className="text-xl font-medium text-white drop-shadow-md">Connecting Skin & Nature</h3>
@@ -168,7 +168,7 @@ export default function Home() {
 
           {/* Cell 5: Naturally Dyed (Col span 1, Row span 1) */}
           <div className="md:col-span-1 md:row-span-1 bg-mauve text-white rounded-xl p-8 flex flex-col justify-center shadow-sm relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618361001476-eb96d49925e0?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center mix-blend-multiply opacity-60" />
+            <div className="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-60" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1618361001476-eb96d49925e0?q=80&w=800&auto=format&fit=crop')" }} />
             <div className="relative z-10">
               <h3 className="text-2xl font-medium mb-3">Naturally Dyed</h3>
               <p className="text-sm font-light leading-relaxed text-white/90">
