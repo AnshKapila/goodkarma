@@ -67,34 +67,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Certifications Strip (Compact Bento) */}
+      {/* 3. Certifications Strip (Inline List) */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 auto-rows-[120px]">
-          
-          <Link href="/certifications" className="col-span-2 bg-ink text-white rounded-xl p-8 flex flex-col justify-center shadow-sm hover:bg-ink/90 transition-colors group relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-6">
-              <ArrowRight className="w-6 h-6 text-marigold group-hover:translate-x-1 transition-transform" />
+        <div className="flex flex-col items-center gap-10 bg-paper py-12 px-6 rounded-[20px] border border-border/40">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full justify-center">
+            <span className="text-xl md:text-2xl font-editorial italic text-ink shrink-0">
+              Certified where it counts:
+            </span>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale">
+              <div className="font-bold text-ink text-lg tracking-widest uppercase flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-ink/10 flex items-center justify-center text-xs">G</div>
+                GOTS
+              </div>
+              <div className="font-bold text-ink text-lg tracking-widest uppercase flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-ink/10 flex items-center justify-center text-xs">O</div>
+                OEKO-TEX
+              </div>
+              <div className="font-bold text-ink text-lg tracking-widest uppercase flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-ink/10 flex items-center justify-center text-xs">B</div>
+                BRSR
+              </div>
+              <div className="font-bold text-ink text-lg tracking-widest uppercase flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-ink/10 flex items-center justify-center text-xs">V</div>
+                Vegan Dye
+              </div>
             </div>
-            <h3 className="text-xl font-medium mb-1 z-10">Certified where it counts</h3>
-            <p className="text-xs text-white/70 font-light z-10 uppercase tracking-widest">View All Standards</p>
-          </Link>
-          
-          <div className="col-span-1 bg-paper rounded-xl border border-border/40 flex items-center justify-center font-bold text-ink shadow-sm text-lg tracking-widest uppercase hover:border-marigold/30 transition-colors">
-            GOTS
           </div>
-          
-          <div className="col-span-1 bg-paper rounded-xl border border-border/40 flex items-center justify-center font-bold text-ink shadow-sm text-lg tracking-widest uppercase hover:border-marigold/30 transition-colors">
-            OEKO-TEX
-          </div>
-          
-          <div className="col-span-1 bg-paper rounded-xl border border-border/40 flex items-center justify-center font-bold text-ink shadow-sm text-lg tracking-widest uppercase hover:border-marigold/30 transition-colors">
-            BRSR
-          </div>
-          
-          <div className="col-span-1 bg-paper rounded-xl border border-border/40 flex items-center justify-center font-bold text-ink shadow-sm text-sm tracking-widest uppercase text-center leading-tight px-4 hover:border-marigold/30 transition-colors">
-            Vegan Dye
-          </div>
-          
+          <Button href="/certifications" variant="secondary">
+            View All Standards
+          </Button>
         </div>
       </section>
 
