@@ -5,7 +5,7 @@ import { ComparisonSlider } from "@/components/ComparisonSlider";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-8 pb-8 w-full">
+    <div className="flex flex-col gap-16 pb-16 w-full">
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-screen min-h-[600px] flex flex-col justify-end p-6 md:p-12 md:pb-16 overflow-hidden">
