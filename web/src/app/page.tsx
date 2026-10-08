@@ -111,11 +111,11 @@ export default function Home() {
             { title: "Fertility & Wellness", desc: "Chemical-free support", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" },
             { title: "Infant Care", desc: "Purest natural fibers", img: "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800&auto=format&fit=crop" }
           ].map((concern) => (
-            <Link href="/products" key={concern.title} className="group relative rounded-xl flex flex-col items-center justify-center min-h-[200px] border border-border/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer text-center overflow-hidden">
+            <Link href="/products" key={concern.title} className="group relative rounded-xl aspect-[3/4] flex flex-col justify-end items-start border border-border/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer text-left overflow-hidden">
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${concern.img})` }} />
-              <div className="absolute inset-0 bg-ink/50 group-hover:bg-ink/60 transition-colors" />
-              <div className="relative z-10 p-10 flex flex-col items-center">
-                <span className="font-medium text-xl text-white mb-2">{concern.title}</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10 p-8 w-full">
+                <span className="font-medium text-xl text-white mb-2 block">{concern.title}</span>
                 <span className="text-sm text-white/90">{concern.desc}</span>
               </div>
             </Link>
