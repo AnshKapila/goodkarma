@@ -5,7 +5,7 @@ import { ComparisonSlider } from "@/components/ComparisonSlider";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-24 md:gap-32 pb-32 w-full">
+    <div className="flex flex-col gap-8 pb-8 w-full">
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-screen min-h-[600px] flex flex-col justify-end p-6 md:p-12 md:pb-16 overflow-hidden">
@@ -39,7 +39,7 @@ export default function Home() {
       </section>
 
       {/* 2. NEW The Difference (Problem/Situation) */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full min-h-[110vh] flex items-center py-20">
+      <section className="px-6 max-w-[1400px] mx-auto w-full min-h-[110vh] flex items-center py-8">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-stretch w-full">
           <div className="text-left flex flex-col justify-center">
             <h2 className="text-h2 font-editorial italic text-ink mb-8">
@@ -68,7 +68,7 @@ export default function Home() {
       </section>
 
       {/* 3. Certifications Strip (Compact Bento) */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full mb-12">
+      <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 auto-rows-[120px]">
           
           <Link href="/certifications" className="col-span-2 bg-ink text-white rounded-xl p-8 flex flex-col justify-center shadow-sm hover:bg-ink/90 transition-colors group relative overflow-hidden">
@@ -124,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* 5. How We're Made (Bento Grid) */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full mb-32">
+      <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
           
           {/* Cell 1: Intro Text (Col span 2, Row span 1) */}
@@ -181,7 +181,7 @@ export default function Home() {
       </section>
 
       {/* 6. Products (The Collection) */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full mb-32">
+      <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="flex justify-between items-end mb-12">
           <div>
             <h2 className="text-h2 font-editorial italic text-ink mb-3">The Collection</h2>
@@ -258,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* 8. Doctor Trust (Compact Bento) */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full mb-24">
+      <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
           
           <div className="md:col-span-2 bg-paper rounded-xl border border-border/40 p-10 md:p-14 flex flex-col justify-center shadow-sm">
