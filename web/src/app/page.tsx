@@ -69,7 +69,7 @@ export default function Home() {
 
       {/* 3. Certifications Strip (Inline List) */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
-        <div className="flex flex-col items-center gap-10 bg-paper py-12 px-6 rounded-[20px] border border-border/40">
+        <div className="flex flex-col items-center gap-8 py-4">
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full justify-center">
             <span className="text-xl md:text-2xl font-editorial italic text-ink shrink-0">
               Certified where it counts:
