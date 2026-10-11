@@ -171,8 +171,12 @@ export default function Home() {
           </div>
 
           {/* Cell 3: Tall Image (Col span 1, Row span 2) */}
-          <div className="md:col-span-1 md:row-span-2 rounded-xl bg-cover bg-center relative overflow-hidden shadow-sm flex flex-col justify-end p-8" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')" }}>
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
+          <div className="md:col-span-1 md:row-span-2 rounded-xl bg-paper relative overflow-hidden shadow-sm flex flex-col justify-end p-8 group">
+            <div 
+              className="absolute inset-0 bg-cover bg-center scale-110 transition-transform duration-700 group-hover:scale-[1.18]" 
+              style={{ backgroundImage: "url('/images/designed-for-body.jpg')" }} 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent" />
             <div className="relative z-10 text-white">
               <h3 className="text-xl font-medium mb-2">Designed for the Body</h3>
               <p className="text-sm font-light text-white/90">Supporting your natural microclimate all day.</p>
