@@ -110,7 +110,8 @@ export default function Home() {
             { 
               title: "Daily Comfort", 
               desc: "Breathable cotton that stays cool and comfortable from morning to night.", 
-              img: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1000&auto=format&fit=crop" 
+              img: "/images/daily-comfort.jpg",
+              position: "bg-top"
             },
             { 
               title: "New Mothers", 
@@ -130,7 +131,7 @@ export default function Home() {
             }
           ].map((concern) => (
             <Link href="/products" key={concern.title} className="group relative rounded-xl aspect-[3/4] flex flex-col justify-end items-start border border-border/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer text-left overflow-hidden">
-              <div className={`absolute inset-0 bg-cover bg-center transition-transform duration-700 ${concern.scale || "group-hover:scale-105"}`} style={{ backgroundImage: `url(${concern.img})` }} />
+              <div className={`absolute inset-0 bg-cover ${concern.position || "bg-center"} transition-transform duration-700 ${concern.scale || "group-hover:scale-105"}`} style={{ backgroundImage: `url(${concern.img})` }} />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
               <div className="relative z-10 p-6 md:p-8 w-full">
                 <span className="font-medium text-xl text-white mb-2 block">{concern.title}</span>
