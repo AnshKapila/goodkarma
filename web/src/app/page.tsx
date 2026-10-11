@@ -128,7 +128,8 @@ export default function Home() {
             { 
               title: "Little Ones", 
               desc: "Soft natural cotton for babies and growing kids with sensitive skin.", 
-              img: "https://images.unsplash.com/photo-1505377059067-e285a7bac49b?q=80&w=1000&auto=format&fit=crop" 
+              img: "/images/little-ones.jpg",
+              position: "bg-center"
             }
           ].map((concern) => (
             <Link href="/products" key={concern.title} className="group relative rounded-xl aspect-[3/4] flex flex-col justify-end items-start border border-border/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer text-left overflow-hidden">
