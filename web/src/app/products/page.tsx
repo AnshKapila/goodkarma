@@ -21,6 +21,22 @@ export default function ProductsPage() {
           <Button variant="secondary" icon="none"><SlidersHorizontal className="w-[18px] h-[18px]" /> Filter</Button>
         </div>
         
+                {/* Concern Filter Pills */}
+        <div className="flex items-center gap-3 overflow-x-auto pb-4 mb-12 scrollbar-none animate-in fade-in duration-1000 delay-200">
+          {["All Collection", "Daily Comfort", "New Mothers", "Fertility & Wellness", "Little Ones"].map((cat, i) => (
+            <button 
+              key={cat} 
+              className={`rounded-full px-5 py-2.5 text-sm font-medium transition-all whitespace-nowrap ${
+                i === 0 
+                  ? "bg-ink text-white shadow-sm" 
+                  : "bg-paper text-ink/80 hover:bg-ink/10 border border-border/50"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 animate-in fade-in duration-1000 delay-300 fill-mode-both">
           {[
@@ -28,7 +44,7 @@ export default function ProductsPage() {
             { id: 2, name: "Comfort Top", color: "Madder Rose", price: "$45", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
             { id: 3, name: "Lounge Set", color: "Marigold", price: "$85", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
             { id: 4, name: "Maternity Support", color: "Pomegranate", price: "$55", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
-            { id: 5, name: "Infant Bodysuit", color: "Undyed", price: "$32", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
+            { id: 5, name: "Little Ones Bodysuit", color: "Undyed", price: "$32", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
             { id: 6, name: "Boxer Brief", color: "Madder Rose", price: "$35", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
             { id: 7, name: "Sleep Shirt", color: "Marigold", price: "$65", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" },
             { id: 8, name: "Daily Bralette", color: "Pomegranate", price: "$42", img: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?q=80&w=800&auto=format&fit=crop" }

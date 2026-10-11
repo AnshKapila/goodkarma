@@ -105,19 +105,35 @@ export default function Home() {
           <h2 className="text-h2 font-editorial italic mb-4 text-ink">Find your comfort</h2>
           <p className="text-p1 text-muted-foreground">Formulated for the specific needs of your body.</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { title: "Daily Comfort", desc: "Breathable basics", img: "https://images.unsplash.com/photo-1616012879555-523cce01874b?q=80&w=800&auto=format&fit=crop" },
-            { title: "New Mothers", desc: "Gentle on sensitive skin", img: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=800&auto=format&fit=crop" },
-            { title: "Fertility & Wellness", desc: "Chemical-free support", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" },
-            { title: "Infant Care", desc: "Purest natural fibers", img: "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800&auto=format&fit=crop" }
+            { 
+              title: "Daily Comfort", 
+              desc: "Breathable cotton that stays cool and comfortable from morning to night.", 
+              img: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1000&auto=format&fit=crop" 
+            },
+            { 
+              title: "New Mothers", 
+              desc: "Soft, breathable cotton for sensitive skin in the months after birth.", 
+              img: "https://images.unsplash.com/photo-1544126592-807ade215a0b?q=80&w=1000&auto=format&fit=crop" 
+            },
+            { 
+              title: "Fertility & Wellness", 
+              desc: "Breathable cotton for him and for her, as you start or grow your family.", 
+              img: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1000&auto=format&fit=crop" 
+            },
+            { 
+              title: "Little Ones", 
+              desc: "Soft natural cotton for babies and growing kids with sensitive skin.", 
+              img: "https://images.unsplash.com/photo-1505377059067-e285a7bac49b?q=80&w=1000&auto=format&fit=crop" 
+            }
           ].map((concern) => (
             <Link href="/products" key={concern.title} className="group relative rounded-xl aspect-[3/4] flex flex-col justify-end items-start border border-border/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer text-left overflow-hidden">
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${concern.img})` }} />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10 p-8 w-full">
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+              <div className="relative z-10 p-6 md:p-8 w-full">
                 <span className="font-medium text-xl text-white mb-2 block">{concern.title}</span>
-                <span className="text-sm text-white/90">{concern.desc}</span>
+                <span className="text-sm text-white/90 leading-relaxed font-light block">{concern.desc}</span>
               </div>
             </Link>
           ))}

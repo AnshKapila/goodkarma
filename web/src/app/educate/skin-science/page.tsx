@@ -162,32 +162,32 @@ export default function SkinSciencePage() {
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="flex flex-col gap-10">
               <div>
-                <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-4 block">For Infants</span>
+                <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-4 block">For Little Ones</span>
                 <h3 className="text-h2 font-editorial italic text-ink mb-6">Protecting early barriers.</h3>
               </div>
               
               <div className="flex flex-col gap-8">
                 <div className="pl-6 border-l-2 border-border">
                   <strong className="block text-sm font-medium text-ink mb-2">The Problem</strong>
-                  <p className="text-p2 text-muted-foreground font-light">A baby's skin is still learning to protect itself.</p>
+                  <p className="text-p2 text-muted-foreground font-light">A baby or growing child's skin is still learning to protect itself.</p>
                 </div>
                 <div className="pl-6 border-l-2 border-border">
                   <strong className="block text-sm font-medium text-ink mb-2">The Situation</strong>
-                  <p className="text-p2 text-muted-foreground font-light">An infant's skin barrier is thinner and more easily irritated by synthetic fibers and dye residue than adult skin.</p>
+                  <p className="text-p2 text-muted-foreground font-light">An infant or young child's skin barrier is thinner and more easily irritated by synthetic fibers and chemical dye residue than adult skin.</p>
                 </div>
                 <div className="pl-6 border-l-2 border-mauve">
                   <strong className="block text-sm font-medium text-ink mb-2">The Solution</strong>
-                  <p className="text-p2 text-ink font-medium">Natural dye and certified cotton mean nothing unnecessary ever touches it.</p>
+                  <p className="text-p2 text-ink font-medium">Soft natural cotton and gentle botanical dyeing ensure nothing unnecessary or irritating ever touches delicate skin.</p>
                 </div>
               </div>
             </div>
-            <div className="w-full aspect-square md:aspect-[4/5] rounded-xl bg-paper relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center shadow-sm">
+            <div className="w-full aspect-square md:aspect-[4/5] rounded-xl bg-paper relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1505377059067-e285a7bac49b?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center shadow-sm">
             </div>
           </div>
 
           {/* For Men (Image Left) */}
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div className="order-2 md:order-1 w-full aspect-square md:aspect-[4/5] rounded-xl bg-paper relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center shadow-sm">
+            <div className="order-2 md:order-1 w-full aspect-square md:aspect-[4/5] rounded-xl bg-paper relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center shadow-sm">
             </div>
             <div className="order-1 md:order-2 flex flex-col gap-10">
               <div>
