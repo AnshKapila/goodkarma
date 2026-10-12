@@ -287,28 +287,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. Doctor Trust (Compact Bento) */}
+      {/* 8. Doctor Trust (Continuous Creative Banner) */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
+        <div className="bg-[#485646] rounded-xl overflow-hidden text-white flex flex-col md:flex-row items-stretch justify-between shadow-xl relative min-h-[460px]">
           
-          <div className="md:col-span-2 bg-paper rounded-xl border border-border/40 p-10 md:p-14 flex flex-col justify-center shadow-sm">
-            <h2 className="text-h2 font-editorial italic text-ink mb-4">Recommended by practitioners.</h2>
-            <p className="text-p1 text-muted-foreground font-light max-w-[500px]">
+          {/* Left: Content */}
+          <div className="p-8 md:p-14 lg:p-20 flex-1 z-10 flex flex-col justify-center max-w-[650px]">
+            <span className="text-white/80 font-bold text-xs uppercase tracking-widest mb-4 block">
+              Clinical Partnership
+            </span>
+            <h2 className="text-h2 font-editorial italic text-white mb-6 leading-tight drop-shadow-sm">
+              Recommended by practitioners.
+            </h2>
+            <p className="text-p1 text-white/90 mb-10 max-w-[500px] font-light leading-relaxed">
               Trusted by doctors and wellness practitioners for patients who need chemical-free, breathable garments. Backed by the highest global standards.
             </p>
+            <div>
+              <Button href="/educate/for-doctors" variant="primary" fullWidthMobile={true}>
+                Explore Clinical Resources
+              </Button>
+            </div>
           </div>
 
-          <div className="md:col-span-1 bg-white rounded-xl border border-border/40 p-10 flex flex-col items-center justify-center text-center shadow-sm hover:border-marigold/30 transition-colors">
-            <div className="w-20 h-20 rounded-full bg-paper flex items-center justify-center shadow-sm border border-border/20 font-bold text-ink mb-4 tracking-widest text-sm">GOTS</div>
-            <span className="text-xs text-muted-foreground uppercase tracking-widest font-medium">Global Organic</span>
-          </div>
+          {/* Right: Creative Visual & Script Element */}
+          <div className="w-full md:w-1/2 relative flex items-end justify-center md:justify-end self-stretch min-h-[380px] md:min-h-full overflow-hidden">
+            {/* Script Text Accent (matching Image 2's delicate handwritten aesthetic) */}
+            <div className="absolute top-6 right-6 md:top-8 md:right-10 z-20 pointer-events-none">
+              <span className="font-editorial italic text-xl md:text-2xl text-white/90 drop-shadow-sm block">
+                Pure science, proven on skin ♡
+              </span>
+            </div>
 
-          <div className="md:col-span-1 bg-ink text-white rounded-xl p-10 flex flex-col justify-center shadow-sm hover:bg-ink/90 transition-colors">
-            <h3 className="text-xl font-medium mb-3">Clinical Resources</h3>
-            <p className="text-sm font-light text-white/80 mb-6">Patient handouts and clinical rationale for your practice.</p>
-            <Button href="/educate/for-doctors" variant="tertiary" className="text-marigold hover:text-white justify-start">
-              View Portal
-            </Button>
+            {/* Doctor Portrait Image */}
+            <div 
+              className="w-full h-full min-h-[380px] md:min-h-[480px] bg-cover bg-[center_top] relative"
+              style={{ backgroundImage: "url('/images/doctor-trust.jpg')" }}
+            >
+              {/* Seamless feathering gradient into the continuous card background */}
+              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#485646] via-[#485646]/20 to-transparent opacity-90 md:opacity-60" />
+            </div>
           </div>
 
         </div>
