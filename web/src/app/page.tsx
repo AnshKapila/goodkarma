@@ -57,10 +57,11 @@ export default function Home() {
           </div>
           <div className="w-full h-full flex flex-col">
             <ComparisonSlider 
-              beforeImage="https://images.unsplash.com/photo-1606902965551-dce093cda6e7?q=80&w=800&auto=format&fit=crop" 
-              afterImage="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=800&auto=format&fit=crop"
-              beforeLabel="Synthetic (Traps Heat)"
-              afterLabel="100% GOTS Cotton (Breathable)"
+              leftImage="/images/cotton-hand.png" 
+              rightImage="/images/synthetic-hand.jpg"
+              leftLabel="100% GOTS Cotton (Breathable)"
+              rightLabel="Synthetic (Traps Heat)"
+              zoom={1.13}
               className="aspect-square md:aspect-auto md:h-full md:flex-1 min-h-[400px]"
             />
           </div>
