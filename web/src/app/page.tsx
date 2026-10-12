@@ -267,9 +267,9 @@ export default function Home() {
       </section>
       
       {/* 7. "For sight of every new piece" (Natural Dyeing) */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full">
-        <div className="bg-ink rounded-xl overflow-hidden text-white flex flex-col md:flex-row items-center shadow-xl">
-          <div className="p-12 md:p-20 lg:p-24 flex-1">
+      <section className="px-6 py-6 max-w-[1400px] mx-auto w-full">
+        <div className="bg-ink rounded-xl overflow-hidden text-white flex flex-col md:flex-row items-stretch shadow-xl">
+          <div className="p-8 md:p-14 lg:p-20 flex-1 flex flex-col justify-center">
             <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">Our Process</span>
             <h2 className="text-h2 font-editorial italic mb-8 drop-shadow-sm">
               Colours drawn <br /> directly from nature.
@@ -281,8 +281,8 @@ export default function Home() {
               Explore the Dye Library
             </Button>
           </div>
-          <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-[700px] bg-[url('https://images.unsplash.com/photo-1618361001476-eb96d49925e0?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center relative">
-            <div className="absolute inset-0 opacity-30 bg-gradient-to-br from-[#C98637] to-[#A4777E] mix-blend-multiply" />
+          <div className="w-full md:w-1/2 min-h-[420px] md:min-h-full aspect-square md:aspect-auto relative overflow-hidden bg-cover bg-center" style={{ backgroundImage: "url('/images/natural-dye-stack.jpg')" }}>
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-ink via-ink/20 to-transparent opacity-80 md:opacity-50" />
           </div>
         </div>
       </section>
