@@ -342,7 +342,7 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 text-white self-end group-hover:bg-white group-hover:text-ink transition-colors duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="ml-1"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                 </div>
-                <h3 className="text-h3 font-medium text-white leading-[1.2] drop-shadow-md group-hover:text-marigold transition-colors duration-300">{title}</h3>
+                <h3 className="text-p2 font-medium text-white leading-snug drop-shadow-md group-hover:text-marigold transition-colors duration-300">{title}</h3>
               </div>
             </div>
           ))}
