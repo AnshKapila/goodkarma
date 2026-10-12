@@ -34,8 +34,17 @@ export function Header() {
       }`}
     >
       <div className="flex items-center justify-between px-6 max-w-[1400px] w-full mx-auto">
-        <Link href="/" className={`font-display text-3xl tracking-tight ${scrolled ? "text-marigold" : "text-white"}`}>
-          good karma
+        <Link href="/" className="inline-flex items-center group relative h-8 md:h-9" aria-label="Good Karma Home">
+          <img 
+            src="/images/logo-white.png" 
+            alt="Good Karma - Be Good, Wear Good." 
+            className={`h-7 md:h-8 w-auto object-contain transition-opacity duration-300 ${scrolled ? "opacity-0 pointer-events-none absolute" : "opacity-100"}`} 
+          />
+          <img 
+            src="/images/logo-dark.png" 
+            alt="Good Karma - Be Good, Wear Good." 
+            className={`h-7 md:h-8 w-auto object-contain transition-opacity duration-300 ${scrolled ? "opacity-100" : "opacity-0 pointer-events-none absolute"}`} 
+          />
         </Link>
         <nav className="hidden md:flex gap-8 text-sm font-medium items-center">
           <Link href="/products" className={`hover:text-marigold transition-colors ${!scrolled && "text-white/90 hover:text-white"}`}>Products</Link>

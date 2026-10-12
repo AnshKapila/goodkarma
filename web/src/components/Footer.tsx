@@ -6,9 +6,15 @@ export function Footer() {
     <footer className="px-6 max-w-[1400px] mx-auto w-full pt-20 border-t border-border/40 mt-auto">
       <div className="grid md:grid-cols-12 gap-16 md:gap-12 mb-24">
         <div className="md:col-span-5">
-          <div className="font-display text-5xl text-marigold mb-6 tracking-tight">good karma</div>
+          <Link href="/" className="inline-block mb-6" aria-label="Good Karma Home">
+            <img 
+              src="/images/logo-dark.png" 
+              alt="Good Karma - Be Good, Wear Good." 
+              className="h-10 md:h-11 w-auto object-contain" 
+            />
+          </Link>
           <p className="text-p1 text-muted-foreground max-w-[340px] mb-10 font-light">
-            A trusted friend, backed by science. Be good. Wear good.
+            A trusted friend, backed by science.
           </p>
           <div className="flex gap-4 max-w-[380px] bg-paper p-1.5 rounded-[20px] border border-border/60 focus-within:ring-2 focus-within:ring-marigold/30 focus-within:border-marigold/50 transition-all shadow-sm">
             <input type="email" placeholder="Email address" className="flex-1 bg-transparent px-5 py-3 text-sm focus:outline-none text-ink placeholder:text-muted-foreground" />
