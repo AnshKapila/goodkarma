@@ -51,7 +51,7 @@ export default function Home() {
             <p className="text-p1 text-ink font-medium mb-8">
               Here's what we test for, so you don't have to wonder.
             </p>
-            <Button href="/certifications" variant="secondary" fullWidthMobile={true}>
+            <Button href="/educate/certifications" variant="secondary" fullWidthMobile={true}>
               View Our Certifications
             </Button>
           </div>
@@ -94,7 +94,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <Button href="/certifications" variant="secondary">
+          <Button href="/educate/certifications" variant="secondary">
             View All Standards
           </Button>
         </div>

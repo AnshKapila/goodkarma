@@ -32,9 +32,11 @@ export function Footer() {
         <div className="md:col-span-2">
           <h4 className="font-medium text-ink mb-8 tracking-wide">Educate</h4>
           <ul className="space-y-5 text-muted-foreground">
+            <li><Link href="/educate" className="hover:text-marigold transition-colors">Our Impact</Link></li>
             <li><Link href="/educate/skin-science" className="hover:text-marigold transition-colors">Skin Science</Link></li>
             <li><Link href="/educate/natural-dyeing" className="hover:text-marigold transition-colors">Natural Dyeing</Link></li>
             <li><Link href="/educate/for-doctors" className="hover:text-marigold transition-colors">For Doctors</Link></li>
+            <li><Link href="/educate/certifications" className="hover:text-marigold transition-colors">Certifications</Link></li>
           </ul>
         </div>
         <div className="md:col-span-2">
@@ -42,7 +44,7 @@ export function Footer() {
           <ul className="space-y-5 text-muted-foreground">
             <li><Link href="/our-story" className="hover:text-marigold transition-colors">Our Story</Link></li>
             <li><Link href="/contact" className="hover:text-marigold transition-colors">Contact</Link></li>
-            <li><Link href="/certifications" className="hover:text-marigold transition-colors">Certifications</Link></li>
+            <li><Link href="/educate/certifications" className="hover:text-marigold transition-colors">Certifications</Link></li>
           </ul>
         </div>
       </div>
@@ -51,7 +53,7 @@ export function Footer() {
         <div className="flex gap-8 mt-6 md:mt-0">
           <a href="#" className="hover:text-ink transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-ink transition-colors">Terms of Service</a>
-          <span>Part of the Livbio family.</span>
+          
         </div>
       </div>
     </footer>

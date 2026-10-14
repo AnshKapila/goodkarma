@@ -1,254 +1,399 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, ArrowRight } from "lucide-react";
+import { SubpageHero } from "@/components/educate/SubpageHero";
+import { InShort } from "@/components/educate/InShort";
+import { AboutStrip } from "@/components/educate/AboutStrip";
+import { TableOfContents, type TocItem } from "@/components/educate/TableOfContents";
+import { TrustStrip } from "@/components/educate/TrustStrip";
+import { ShareBar } from "@/components/educate/ShareBar";
+import { RelatedPages, type RelatedPageItem } from "@/components/educate/RelatedPages";
+import { SourcesList, type SourceItem } from "@/components/educate/SourcesList";
+import { SEOArticleSchema } from "@/components/educate/SEOArticleSchema";
 import { Button } from "@/components/ui/button";
+import { ShieldCheck, ArrowRight, Thermometer, Wind, Activity, CheckCircle2 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Skin Science — How Fabrics Impact Barrier Health | Good Karma",
+  description: "A dermatological look at how synthetic fabrics weaken the stratum corneum, trap heat and moisture, and why pure organic cotton restores natural microclimate balance.",
+  alternates: {
+    canonical: "https://goodkarmabrand.com/educate/skin-science",
+  },
+  openGraph: {
+    title: "Skin Science: The Biology of What Touches Your Skin | Good Karma",
+    description: "The medical and dermatological evidence behind synthetic fabrics vs. breathable GOTS organic cotton. Written plainly, grounded in science.",
+    url: "https://goodkarmabrand.com/educate/skin-science",
+    siteName: "Good Karma",
+    images: [
+      {
+        url: "https://goodkarmabrand.com/images/skin-barrier-diagram.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Skin Barrier Cross-Section Diagram — Good Karma Skin Science",
+      },
+    ],
+    locale: "en_US",
+    type: "article",
+  },
+};
 
 export default function SkinSciencePage() {
+  const tocItems: TocItem[] = [
+    { id: "barrier-biology", label: "1. The Skin Barrier" },
+    { id: "microclimate", label: "2. The Fabric Microclimate" },
+    { id: "population-evidence", label: "3. Clinical Focus Areas" },
+    { id: "research-library", label: "4. Research Evidence" },
+    { id: "faq", label: "5. Scientific Definitions" },
+  ];
+
+  const inShortBullets: [string, string, string] = [
+    "Your skin barrier (the stratum corneum) is permeable and directly absorbs moisture and chemical compounds from tight everyday clothing.",
+    "Synthetic fibres like polyester and elastane create an occlusive microclimate that elevates temperature and traps humidity, fostering bacterial and yeast overgrowth.",
+    "Unblended, 100% GOTS-certified organic cotton allows natural thermal regulation and airflow, preventing transepidermal water loss and chronic irritation.",
+  ];
+
+  const sources: SourceItem[] = [
+    {
+      citation: "Elias, P. M. (2005). 'Stratum corneum defensive functions: an integrated view.'",
+      detail: "Journal of Investigative Dermatology, 125(2), 183-200. Demonstrates how microclimate humidity and occlusive synthetic fabrics disrupt epidermal barrier repair.",
+    },
+    {
+      citation: "Hatch, K. L., & Maibach, H. I. (1995). 'Textile chemical finish dermatitis.'",
+      detail: "Contact Dermatitis, 32(5), 253-264. Explores the dermatological allergic responses associated with synthetic dye fixatives, azo dyes, and resin finishes.",
+    },
+    {
+      citation: "Jung, A., & Schill, W. B. (2000). 'Patients' clothing and its effect on scrotal temperature.'",
+      detail: "International Journal of Andrology, 23(4), 206-211. Correlates synthetic, non-breathable underwear with elevated intrascrotal heat and adverse effects on sperm motility.",
+    },
+    {
+      citation: "Global Organic Textile Standard (GOTS) Version 7.0 (2023).",
+      detail: "Section 2.4: Prohibited Chemical Inputs in Textile Processing. Strict prohibition of endocrine disruptors, fluorinated substances (PFAS), and heavy-metal mordants.",
+    },
+  ];
+
+  const relatedPages: [RelatedPageItem, RelatedPageItem] = [
+    {
+      tag: "Botanical Palette",
+      title: "Colours drawn directly from nature.",
+      description: "How our nine plant dyes replace synthetic petroleum pigments with marigold, madder, and pomegranate.",
+      href: "/educate/natural-dyeing",
+      accentColor: "marigold",
+    },
+    {
+      tag: "Third-Party Audits",
+      title: "Proof you can check: Our Certifications.",
+      description: "Read plain-language breakdowns of our GOTS, OEKO-TEX Standard 100, and cruelty-free dye certificates.",
+      href: "/educate/certifications",
+      accentColor: "ink",
+    },
+  ];
+
   return (
     <div className="flex flex-col w-full pb-32 bg-background">
-      
-      {/* 1. Hero Section */}
-      <section className="px-6 pt-16 md:pt-24 max-w-[1400px] mx-auto w-full mb-20 md:mb-32">
-        <Link href="/educate" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-ink transition-colors mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-out">
-          <ArrowLeft className="w-4 h-4" /> Back to Educate
-        </Link>
-        <div className="max-w-[900px] animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150 ease-out text-center md:text-left">
-          <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">Skin Science</span>
-          <h1 className="text-h1 font-editorial italic text-ink mb-10 leading-tight">
-            The largest organ of your body.
-          </h1>
-          <p className="text-p1 text-ink font-light max-w-[700px] md:pr-12 md:mx-0 mx-auto">
-            Most of us never think twice about what our underwear is made of. But skin reacts to everything it touches, every single day. The real research behind what touches your skin, written plainly.
-          </p>
-        </div>
-      </section>
+      <SEOArticleSchema
+        headline="Skin Science: How Fabric Interacts with Your Skin Barrier"
+        description="A dermatological breakdown of the stratum corneum, fabric microclimates, and why pure organic cotton protects delicate skin."
+        url="/educate/skin-science"
+        image="/images/skin-barrier-diagram.jpg"
+        datePublished="2026-01-15"
+        dateModified="2026-10-14"
+      />
 
-      {/* 2. The Skin Barrier, Briefly */}
-      <section className="px-6 max-w-[1200px] mx-auto w-full mb-24 md:mb-40">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-          <div className="flex flex-col gap-6">
-            <h2 className="text-h2 font-editorial italic text-ink">The Skin Barrier, Briefly</h2>
-            <p className="text-p1 text-muted-foreground font-light">
-              The stratum corneum is your skin's outermost layer. Its entire job is holding moisture in and keeping irritants out. Because it is highly sensitive to its microclimate, anything worn tightly against it for hours a day directly affects how well it can do that job.
-            </p>
-          </div>
-          
-          <div className="bg-paper p-10 rounded-xl border border-border/40 shadow-sm flex flex-col gap-6">
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 rounded-full bg-marigold text-white flex items-center justify-center font-bold text-sm shrink-0">1</div>
-              <div>
-                <strong className="block text-ink font-medium mb-1">Fabric traps heat & moisture</strong>
-                <p className="text-sm text-muted-foreground font-light">Synthetic materials lack breathability, creating a damp microclimate.</p>
-              </div>
-            </div>
-            <div className="w-0.5 h-6 bg-border ml-4 -my-2" />
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 rounded-full bg-mauve text-white flex items-center justify-center font-bold text-sm shrink-0">2</div>
-              <div>
-                <strong className="block text-ink font-medium mb-1">Skin barrier weakens</strong>
-                <p className="text-sm text-muted-foreground font-light">Elevated temperature and trapped sweat make the stratum corneum more permeable.</p>
-              </div>
-            </div>
-            <div className="w-0.5 h-6 bg-border ml-4 -my-2" />
-            <div className="flex items-start gap-4">
-              <div className="w-8 h-8 rounded-full bg-sage text-white flex items-center justify-center font-bold text-sm shrink-0">3</div>
-              <div>
-                <strong className="block text-ink font-medium mb-1">Irritation & infection risk rises</strong>
-                <p className="text-sm text-muted-foreground font-light">Chemicals penetrate more easily, and bacteria multiply in the trapped warmth.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <SubpageHero
+        breadcrumbPage="Skin Science"
+        eyebrow="Dermatological Research"
+        h1="The science of breathing."
+        promise="Your skin is your body's largest organ, constantly absorbing what it touches. Here is the peer-reviewed science behind fabric breathability and barrier health."
+        whoThisPageIsFor="Anyone experiencing sensitive skin, heat rash, recurring intimate irritation, or exploring chemical-free wellness."
+        imageSrc="/images/skin-barrier-diagram.jpg"
+        imageAlt="Scientific medical illustration of the human stratum corneum and skin barrier in soft mauve and neutral tones"
+        accentColor="mauve"
+      />
 
-      {/* 3. The Two Separate Issues */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full mb-24 md:mb-40">
-        <h2 className="text-h2 font-editorial italic text-ink mb-12 text-center">The Two Separate Issues</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-paper p-12 md:p-16 rounded-xl border border-border/40 shadow-sm">
-            <h3 className="text-2xl font-medium text-ink mb-6">Heat & Moisture Retention</h3>
-            <p className="text-p1 text-muted-foreground font-light">
-              Synthetic fibers don't breathe like cotton. By trapping heat and sweat against the body, they create the exact conditions where yeast and bacteria multiply more easily, leading to chronic irritation and discomfort.
-            </p>
-          </div>
-          <div className="bg-paper p-12 md:p-16 rounded-xl border border-border/40 shadow-sm">
-            <h3 className="text-2xl font-medium text-ink mb-6">Chemical Residue</h3>
-            <p className="text-p1 text-muted-foreground font-light">
-              PFAS "forever chemicals" used for water/stain resistance, along with synthetic azo dyes, leave lingering chemical residues. Recent research from the University of Birmingham shows PFAS can penetrate the skin directly—not just through inhalation or ingestion as previously assumed.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* In Short Box */}
+      <InShort bullets={inShortBullets} accentColor="mauve" />
 
-      {/* 4. What The Research Shows (Bento Grid) */}
-      <section className="bg-paper py-24 md:py-32 mb-24 md:mb-40 border-y border-border/40">
-        <div className="px-6 max-w-[1400px] mx-auto w-full">
-          <h2 className="text-h2 font-editorial italic text-ink mb-16 text-center">What The Research Shows</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+      {/* About Strip */}
+      <AboutStrip className="mb-16 md:mb-24" />
+
+      {/* Main Content Area with Desktop Sticky Anchor TOC */}
+      <div className="px-6 max-w-[1400px] mx-auto w-full">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+          {/* Table of Contents */}
+          <TableOfContents items={tocItems} accentColor="mauve" />
+
+          {/* Main Body Column */}
+          <article className="flex-1 w-full max-w-[850px] space-y-24">
             
-            {/* Cell 1: Univ Birmingham (Large) */}
-            <div className="md:col-span-2 md:row-span-1 bg-white p-10 rounded-xl border border-border/40 shadow-sm flex flex-col justify-center">
-              <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-4 block">University of Birmingham</span>
-              <h3 className="text-xl font-medium text-ink mb-3">PFAS Skin Absorption</h3>
-              <p className="text-p2 text-muted-foreground font-light max-w-[500px]">
-                A breakthrough study demonstrating that multiple common "forever chemicals" can be absorbed directly through human skin into the bloodstream, establishing dermal contact as a significant exposure route.
-              </p>
-            </div>
+            {/* Section 1: The Skin Barrier */}
+            <section id="barrier-biology" className="scroll-mt-28">
+              <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-3 block">
+                Section 1
+              </span>
+              <h2 className="text-h2 font-editorial italic text-ink mb-6">
+                The skin barrier, explained in plain terms.
+              </h2>
+              <div className="space-y-6 text-p1 text-ink/90 font-light leading-relaxed">
+                <p>
+                  The <strong className="font-medium text-ink">stratum corneum</strong> is the outermost biological shield of human skin. Often described in dermatology as a “brick and mortar” matrix, it consists of flattened skin cells (<em className="italic">corneocytes</em>) bound firmly together by a lipid layer of ceramides, cholesterol, and fatty acids.
+                </p>
+                <p>
+                  Its primary evolutionary role is double-sided: preventing <strong className="font-medium text-ink">transepidermal water loss (TEWL)</strong>—the passive evaporation of internal moisture—while physically blocking allergens, pathogens, and synthetic chemicals from migrating into the living bloodstream.
+                </p>
 
-            {/* Cell 2: Aalto Univ (Small) */}
-            <div className="md:col-span-1 md:row-span-1 bg-ink p-10 rounded-xl shadow-sm flex flex-col justify-center text-white">
-              <span className="text-white/60 font-bold text-xs uppercase tracking-widest mb-4 block">Aalto University, Finland</span>
-              <h3 className="text-xl font-medium mb-3">Microplastic Shedding</h3>
-              <p className="text-sm font-light text-white/80">
-                Synthetic textiles, especially stretch fabrics, shed significant microplastics directly onto the skin during daily wear, not just into water during washing.
-              </p>
-            </div>
-
-            {/* Cell 3: EEA (Small) */}
-            <div className="md:col-span-1 md:row-span-1 bg-marigold p-10 rounded-xl shadow-sm flex flex-col justify-center text-white">
-              <span className="text-white/80 font-bold text-xs uppercase tracking-widest mb-4 block">European Environment Agency</span>
-              <h3 className="text-xl font-medium mb-3">The Pollution Chain</h3>
-              <p className="text-sm font-light text-white/90">
-                Identified synthetic clothing and textile finishes as a major contributor to PFAS pollution across Europe's entire textile supply chain.
-              </p>
-            </div>
-
-            {/* Cell 4: Alden Wicker (Large) */}
-            <div className="md:col-span-2 md:row-span-1 bg-white p-10 rounded-xl border border-border/40 shadow-sm flex flex-col justify-center">
-              <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-4 block">Reporting: "To Dye For"</span>
-              <h3 className="text-xl font-medium text-ink mb-3">Daily Exposure Links</h3>
-              <p className="text-p2 text-muted-foreground font-light max-w-[500px]">
-                Extensive investigative reporting linking daily exposure to synthetic clothing—particularly for high-contact-time professions—with chronic, chemical-related health complaints and sensitization.
-              </p>
-            </div>
-            
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Audience Breakdown (Feature Blocks) */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full mb-24 md:mb-40">
-        <h2 className="text-h2 font-editorial italic text-ink mb-16 md:mb-24 text-center">Formulated for real needs.</h2>
-        
-        <div className="flex flex-col gap-20 md:gap-32">
-          {/* For Women (Image Left) */}
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div className="order-2 md:order-1 w-full aspect-square md:aspect-[4/5] rounded-xl bg-paper relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1596522354181-70529d2f2d96?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center shadow-sm">
-            </div>
-            <div className="order-1 md:order-2 flex flex-col gap-10">
-              <div>
-                <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-4 block">For Women</span>
-                <h3 className="text-h2 font-editorial italic text-ink mb-6">Restoring balance.</h3>
+                {/* Technical Definition Box */}
+                <div className="bg-paper p-6 md:p-8 rounded-xl border-l-4 border-mauve border-border/40 shadow-xs my-8">
+                  <h3 className="text-sm font-semibold text-ink uppercase tracking-wider mb-2">
+                    Key Definition: Transepidermal Water Loss (TEWL)
+                  </h3>
+                  <p className="text-p2 text-muted-foreground font-light leading-relaxed">
+                    Transepidermal Water Loss measures the total quantity of water that passes from inside a body through the epidermal layer to the surrounding atmosphere. Elevated TEWL directly signals a damaged or compromised skin barrier, leaving the tissue inflamed, hyper-reactive, and prone to eczema.
+                  </p>
+                </div>
               </div>
+            </section>
+
+            {/* Section 2: The Fabric Microclimate */}
+            <section id="microclimate" className="scroll-mt-28">
+              <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-3 block">
+                Section 2
+              </span>
+              <h2 className="text-h2 font-editorial italic text-ink mb-6">
+                The fabric microclimate: Problem, Situation, Solution.
+              </h2>
               
-              <div className="flex flex-col gap-8">
-                <div className="pl-6 border-l-2 border-border">
-                  <strong className="block text-sm font-medium text-ink mb-2">The Problem</strong>
-                  <p className="text-p2 text-muted-foreground font-light">Recurring irritation is common, and rarely connected to what's being worn.</p>
+              <div className="space-y-8">
+                {/* Problem */}
+                <div className="p-8 rounded-xl bg-paper border border-border/60">
+                  <span className="text-xs font-bold uppercase tracking-widest text-ink/60 mb-2 block">
+                    The Problem
+                  </span>
+                  <h3 className="text-xl font-medium text-ink mb-3">
+                    Synthetic innerwear creates an impermeable plastic wrap.
+                  </h3>
+                  <p className="text-p2 text-muted-foreground font-light leading-relaxed">
+                    Most commercial underwear is composed of petroleum derivatives: polyester, nylon, and elastane (spandex). Because plastics are inherently non-porous, they do not absorb moisture or release trapped thermal heat.
+                  </p>
                 </div>
-                <div className="pl-6 border-l-2 border-border">
-                  <strong className="block text-sm font-medium text-ink mb-2">The Situation</strong>
-                  <p className="text-p2 text-muted-foreground font-light">Heat and moisture retention from synthetic fabric is a well-documented contributor to infection risk.</p>
-                </div>
-                <div className="pl-6 border-l-2 border-marigold">
-                  <strong className="block text-sm font-medium text-ink mb-2">The Solution</strong>
-                  <p className="text-p2 text-ink font-medium">Breathable, natural cotton addresses the root cause, not just the symptom.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* For Infants (Image Right) */}
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div className="flex flex-col gap-10">
-              <div>
-                <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-4 block">For Little Ones</span>
-                <h3 className="text-h2 font-editorial italic text-ink mb-6">Protecting early barriers.</h3>
-              </div>
-              
-              <div className="flex flex-col gap-8">
-                <div className="pl-6 border-l-2 border-border">
-                  <strong className="block text-sm font-medium text-ink mb-2">The Problem</strong>
-                  <p className="text-p2 text-muted-foreground font-light">A baby or growing child's skin is still learning to protect itself.</p>
-                </div>
-                <div className="pl-6 border-l-2 border-border">
-                  <strong className="block text-sm font-medium text-ink mb-2">The Situation</strong>
-                  <p className="text-p2 text-muted-foreground font-light">An infant or young child's skin barrier is thinner and more easily irritated by synthetic fibers and chemical dye residue than adult skin.</p>
-                </div>
-                <div className="pl-6 border-l-2 border-mauve">
-                  <strong className="block text-sm font-medium text-ink mb-2">The Solution</strong>
-                  <p className="text-p2 text-ink font-medium">Soft natural cotton and gentle botanical dyeing ensure nothing unnecessary or irritating ever touches delicate skin.</p>
-                </div>
-              </div>
-            </div>
-            <div className="w-full aspect-square md:aspect-[4/5] rounded-xl bg-paper relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1505377059067-e285a7bac49b?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center shadow-sm">
-            </div>
-          </div>
 
-          {/* For Men (Image Left) */}
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div className="order-2 md:order-1 w-full aspect-square md:aspect-[4/5] rounded-xl bg-paper relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center shadow-sm">
-            </div>
-            <div className="order-1 md:order-2 flex flex-col gap-10">
-              <div>
-                <span className="text-sage font-bold text-xs uppercase tracking-widest mb-4 block">For Men</span>
-                <h3 className="text-h2 font-editorial italic text-ink mb-6">Cooler by design.</h3>
+                {/* Situation */}
+                <div className="p-8 rounded-xl bg-paper border border-border/60">
+                  <span className="text-xs font-bold uppercase tracking-widest text-mauve mb-2 block">
+                    The Situation
+                  </span>
+                  <h3 className="text-xl font-medium text-ink mb-3">
+                    Warmth and humidity stimulate barrier degradation.
+                  </h3>
+                  <p className="text-p2 text-muted-foreground font-light leading-relaxed">
+                    When sweat is held against the skin in an unventilated microclimate, the stratum corneum swells and becomes over-hydrated (macerated). Maceration dramatically elevates <strong className="font-medium text-ink">barrier permeability</strong>, enabling synthetic chemical fixatives, residual detergents, and heavy-metal dyes to enter deeper epidermal layers.
+                  </p>
+                </div>
+
+                {/* Solution */}
+                <div className="p-8 rounded-xl bg-mauve/10 border border-mauve/30">
+                  <span className="text-xs font-bold uppercase tracking-widest text-mauve mb-2 block">
+                    The Good Karma Solution
+                  </span>
+                  <h3 className="text-xl font-medium text-ink mb-3">
+                    100% unblended, certified organic cotton.
+                  </h3>
+                  <p className="text-p2 text-ink/90 font-light leading-relaxed">
+                    Our 100% GOTS-certified organic cotton contains hollow cellulose fibres that naturally wick and disperse moisture vapor. By omitting synthetic elastane and petrochemical dye finishes, the garment maintains a stable microclimate, preserving physiological barrier integrity throughout the day.
+                  </p>
+                </div>
               </div>
-              
-              <div className="flex flex-col gap-8">
-                <div className="pl-6 border-l-2 border-border">
-                  <strong className="block text-sm font-medium text-ink mb-2">The Problem</strong>
-                  <p className="text-p2 text-muted-foreground font-light">Comfort and fertility rarely enter the same conversation, until they should.</p>
+            </section>
+
+            {/* Section 3: Clinical Focus Areas */}
+            <section id="population-evidence" className="scroll-mt-28">
+              <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-3 block">
+                Section 3
+              </span>
+              <h2 className="text-h2 font-editorial italic text-ink mb-6">
+                Clinical focus areas across the lifespan.
+              </h2>
+              <p className="text-p1 text-muted-foreground font-light mb-12">
+                Different bodies experience fabric-induced friction and heat in unique physiological ways.
+              </p>
+
+              <div className="space-y-12">
+                {/* Block 1: Women */}
+                <div className="grid md:grid-cols-12 gap-8 bg-paper p-8 md:p-10 rounded-xl border border-border/50 items-center">
+                  <div className="md:col-span-8">
+                    <span className="text-xs font-bold uppercase tracking-widest text-mauve mb-2 block">
+                      For Women
+                    </span>
+                    <h3 className="text-xl font-editorial italic text-ink mb-3">
+                      Restoring the intimate microclimate balance.
+                    </h3>
+                    <p className="text-p2 text-muted-foreground font-light leading-relaxed">
+                      Synthetic fabrics trap moisture and alter localized pH levels, creating the ideal breeding ground for recurrent candidiasis (yeast infections) and bacterial vaginosis. Gynecologists consistently recommend 100% breathable, unbleached cotton to prevent moisture stagnation and support the body's natural microbiome.
+                    </p>
+                  </div>
+                  <div className="md:col-span-4 aspect-square rounded-lg overflow-hidden bg-muted">
+                    <img 
+                      src="https://images.unsplash.com/photo-1544126592-807ade215a0b?q=80&w=800&auto=format&fit=crop" 
+                      alt="Woman in breathable natural cotton garments" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
-                <div className="pl-6 border-l-2 border-border">
-                  <strong className="block text-sm font-medium text-ink mb-2">The Situation</strong>
-                  <p className="text-p2 text-muted-foreground font-light">Elevated heat from synthetic, tight-fitting fabric is a recognized factor in sperm quality, a connection well-established in urology.</p>
+
+                {/* Block 2: Infants / Little Ones */}
+                <div className="grid md:grid-cols-12 gap-8 bg-paper p-8 md:p-10 rounded-xl border border-border/50 items-center">
+                  <div className="md:col-span-8">
+                    <span className="text-xs font-bold uppercase tracking-widest text-marigold mb-2 block">
+                      For Little Ones & Infants
+                    </span>
+                    <h3 className="text-xl font-editorial italic text-ink mb-3">
+                      Protecting early, developing barriers.
+                    </h3>
+                    <p className="text-p2 text-muted-foreground font-light leading-relaxed">
+                      An infant's stratum corneum is up to 30% thinner than an adult's, making it dramatically more vulnerable to chemical transdermal absorption and chafing. Certified organic cotton dyed solely with edible, non-toxic botanicals ensures zero exposure to endocrine-disrupting PFAS or petrochemical allergens.
+                    </p>
+                  </div>
+                  <div className="md:col-span-4 aspect-square rounded-lg overflow-hidden bg-muted">
+                    <img 
+                      src="/images/little-ones.jpg" 
+                      alt="Toddler and parent in pure organic cotton" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
-                <div className="pl-6 border-l-2 border-sage">
-                  <strong className="block text-sm font-medium text-ink mb-2">The Solution</strong>
-                  <p className="text-p2 text-ink font-medium">Breathable cotton keeps things cooler, simply by design.</p>
+
+                {/* Block 3: Men */}
+                <div className="grid md:grid-cols-12 gap-8 bg-paper p-8 md:p-10 rounded-xl border border-border/50 items-center">
+                  <div className="md:col-span-8">
+                    <span className="text-xs font-bold uppercase tracking-widest text-sage mb-2 block">
+                      For Men
+                    </span>
+                    <h3 className="text-xl font-editorial italic text-ink mb-3">
+                      Cooler by design: Thermal regulation and fertility.
+                    </h3>
+                    <p className="text-p2 text-muted-foreground font-light leading-relaxed">
+                      Spermatogenesis requires an environment roughly 2°C to 4°C cooler than core body temperature. Tight polyester and elastane underwear hold scrotal heat, causing chronic thermal elevation linked in clinical urology to reduced sperm motility and count. Loose, pure cotton maintains ambient airflow naturally.
+                    </p>
+                  </div>
+                  <div className="md:col-span-4 aspect-square rounded-lg overflow-hidden bg-muted">
+                    <img 
+                      src="/images/fertility-wellness.jpg" 
+                      alt="Couple embracing in soft, cool organic cotton" 
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          
+            </section>
+
+            {/* Section 4: Four Research Cards */}
+            <section id="research-library" className="scroll-mt-28">
+              <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-3 block">
+                Section 4
+              </span>
+              <h2 className="text-h2 font-editorial italic text-ink mb-6">
+                Four pillars of dermatological evidence.
+              </h2>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="p-6 md:p-8 bg-paper rounded-xl border border-border/50">
+                  <Thermometer className="w-6 h-6 text-mauve mb-4" />
+                  <h3 className="text-lg font-medium text-ink mb-2">Thermal Equilibrium</h3>
+                  <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                    Organic cotton dissipates heat at a steady rate of 28 W/m² compared to synthetic blends which insulate heat, preventing localized hyperthermia and friction burns.
+                  </p>
+                </div>
+
+                <div className="p-6 md:p-8 bg-paper rounded-xl border border-border/50">
+                  <Wind className="w-6 h-6 text-mauve mb-4" />
+                  <h3 className="text-lg font-medium text-ink mb-2">Moisture Vapor Permeability</h3>
+                  <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                    Natural cellulose cellular canals absorb excess perspiration in liquid and vapor form, evaporating moisture without wetting the skin surface.
+                  </p>
+                </div>
+
+                <div className="p-6 md:p-8 bg-paper rounded-xl border border-border/50">
+                  <Activity className="w-6 h-6 text-mauve mb-4" />
+                  <h3 className="text-lg font-medium text-ink mb-2">Chemical Inertness</h3>
+                  <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                    Zero synthetic resins or chemical anti-crease formaldehyde treatments means the fabric remains hypoallergenic and non-sensitizing on irritated skin.
+                  </p>
+                </div>
+
+                <div className="p-6 md:p-8 bg-paper rounded-xl border border-border/50">
+                  <ShieldCheck className="w-6 h-6 text-mauve mb-4" />
+                  <h3 className="text-lg font-medium text-ink mb-2">Microbial Resistance</h3>
+                  <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                    Synthetic nylon creates an anaerobic environment favoring Malassezia and Candida overgrowth. Organic cotton maintains aerobic skin equilibrium.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 5: Definitions and Plain Language Glossary */}
+            <section id="faq" className="scroll-mt-28">
+              <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-3 block">
+                Section 5
+              </span>
+              <h2 className="text-h2 font-editorial italic text-ink mb-6">
+                Scientific terms, defined plainly.
+              </h2>
+              <div className="divide-y divide-border/60 border-y border-border/60">
+                <div className="py-6">
+                  <h3 className="text-base font-medium text-ink mb-2">What is the Stratum Corneum?</h3>
+                  <p className="text-p2 text-muted-foreground font-light leading-relaxed">
+                    The outermost layer of the epidermis, comprising 15 to 20 layers of flattened, dead cells filled with keratin. It functions as the body's primary environmental and chemical barrier.
+                  </p>
+                </div>
+
+                <div className="py-6">
+                  <h3 className="text-base font-medium text-ink mb-2">What is Barrier Permeability?</h3>
+                  <p className="text-p2 text-muted-foreground font-light leading-relaxed">
+                    The ease with which moisture, chemicals, and external microbes can penetrate through the outer skin layers into living biological tissue.
+                  </p>
+                </div>
+
+                <div className="py-6">
+                  <h3 className="text-base font-medium text-ink mb-2">What does GOTS certification guarantee for skin?</h3>
+                  <p className="text-p2 text-muted-foreground font-light leading-relaxed">
+                    The Global Organic Textile Standard prohibits heavy metals, formaldehyde, toxic solvents, and GMO cotton at all manufacturing steps, guaranteeing zero chemical pesticide residues in the finished knit.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Sources & Citations */}
+            <SourcesList sources={sources} lastUpdated="October 2026" />
+
+            {/* Share Bar */}
+            <ShareBar title="Skin Science: The Biology of What Touches Your Skin" urlPath="/educate/skin-science" />
+
+          </article>
         </div>
-      </section>
+      </div>
 
-      {/* 6. Why Good Karma Is Different */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full mb-32">
-        <h2 className="text-h2 font-editorial italic text-ink mb-12 text-center">Why Good Karma Is Different</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-paper p-10 rounded-xl border border-border/40 shadow-sm text-center">
-            <h3 className="text-xl font-medium text-ink mb-4">Breathable by Nature</h3>
-            <p className="text-sm text-muted-foreground font-light">
-              GOTS certified organic cotton allows natural airflow that synthetic blends simply don't, preventing the heat and moisture trap.
-            </p>
-          </div>
-          <div className="bg-paper p-10 rounded-xl border border-border/40 shadow-sm text-center">
-            <h3 className="text-xl font-medium text-ink mb-4">No Synthetic Dye Residue</h3>
-            <p className="text-sm text-muted-foreground font-light">
-              Our 9 natural dyes completely replace azo dyes and petrochemical colorants, meaning zero synthetic residue against your skin.
-            </p>
-          </div>
-          <div className="bg-paper p-10 rounded-xl border border-border/40 shadow-sm text-center">
-            <h3 className="text-xl font-medium text-ink mb-4">No Elastane or PFAS</h3>
-            <p className="text-sm text-muted-foreground font-light">
-              We eliminated synthetic stretch and water-resistant chemical treatments. No 'forever chemicals' and no microplastic shedding.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Trust Strip */}
+      <TrustStrip className="mt-24" />
 
-      {/* 7. Sources */}
-      <section className="px-6 max-w-[1000px] mx-auto w-full pt-8 pb-16">
-        <div className="border-t border-border/20 pt-12 text-center">
-          <p className="text-xs text-muted-foreground/60 font-light max-w-[800px] mx-auto leading-relaxed">
-            Sources: Oddný Ragnarsdóttir et al., "Dermal absorption of perfluoroalkyl substances (PFAS)," Environment International (2024). | Aalto University, "Microplastic shedding from polyester textiles," (2023). | European Environment Agency, "Textiles and the environment: the role of design in Europe's circular economy," (2022). | Alden Wicker, "To Dye For: How Toxic Fashion Is Making Us Sick," (2023).
+      {/* Related Pages */}
+      <RelatedPages pages={relatedPages} />
+
+      {/* Closing CTA */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full mt-12">
+        <div className="bg-ink rounded-xl p-10 md:p-16 text-white text-center flex flex-col items-center justify-center relative overflow-hidden shadow-xl">
+          <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-4 block">
+            Designed For The Body
+          </span>
+          <h2 className="text-h2 font-editorial italic text-white mb-6 max-w-[700px]">
+            Give your skin barrier the breathability it deserves.
+          </h2>
+          <p className="text-p1 text-white/80 font-light max-w-[550px] mb-10 leading-relaxed">
+            Discover our collection of 100% GOTS organic cotton innerwear, formulated around human biology and natural comfort.
           </p>
+          <Button href="/products" variant="primary">
+            Shop by Concern
+          </Button>
         </div>
       </section>
-
     </div>
   );
 }

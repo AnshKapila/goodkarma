@@ -49,7 +49,7 @@ export function Header() {
         <nav className="hidden md:flex gap-8 text-sm font-medium items-center">
           <Link href="/products" className={`hover:text-marigold transition-colors ${!scrolled && "text-white/90 hover:text-white"}`}>Products</Link>
           <div className="relative group">
-            <Link href="/educate/skin-science" className={`hover:text-marigold transition-colors flex items-center gap-1 ${!scrolled && "text-white/90 hover:text-white"}`}>
+            <Link href="/educate" className={`hover:text-marigold transition-colors flex items-center gap-1 ${!scrolled && "text-white/90 hover:text-white"}`}>
               Educate
             </Link>
             <div className="absolute top-full left-0 pt-4 hidden group-hover:block z-50">
@@ -57,7 +57,7 @@ export function Header() {
                 <Link href="/educate/skin-science" className="hover:text-marigold">Skin Science</Link>
                 <Link href="/educate/natural-dyeing" className="hover:text-marigold">Natural Dyeing</Link>
                 <Link href="/educate/for-doctors" className="hover:text-marigold">For Doctors</Link>
-                <Link href="/certifications" className="hover:text-marigold">Certifications</Link>
+                <Link href="/educate/certifications" className="hover:text-marigold">Certifications</Link>
               </div>
             </div>
           </div>
