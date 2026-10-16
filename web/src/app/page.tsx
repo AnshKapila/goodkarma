@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ComparisonSlider } from "@/components/ComparisonSlider";
+import { SHOW_OEKO_TEX } from "@/config/features";
 
 export default function Home() {
   return (
@@ -80,10 +81,12 @@ export default function Home() {
                 <div className="w-8 h-8 rounded-full bg-ink/10 flex items-center justify-center text-xs">G</div>
                 GOTS
               </div>
-              <div className="font-bold text-ink text-lg tracking-widest uppercase flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-ink/10 flex items-center justify-center text-xs">O</div>
-                OEKO-TEX
-              </div>
+              {SHOW_OEKO_TEX && (
+                <div className="font-bold text-ink text-lg tracking-widest uppercase flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-ink/10 flex items-center justify-center text-xs">O</div>
+                  OEKO-TEX
+                </div>
+              )}
               <div className="font-bold text-ink text-lg tracking-widest uppercase flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-ink/10 flex items-center justify-center text-xs">B</div>
                 BRSR
@@ -147,32 +150,51 @@ export default function Home() {
 
       {/* 5. How We're Made (Bento Grid) */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
+        <div className="mb-10 max-w-[800px]">
+          <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-3 block">
+            How We're Made
+          </span>
+          <h2 className="text-h2 font-editorial italic text-ink leading-tight">
+            Look closer at what’s in your innerwear.
+          </h2>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
           
-          {/* Cell 1: Intro Text (Col span 2, Row span 1) */}
-          <div className="md:col-span-2 md:row-span-1 bg-paper rounded-xl p-10 flex flex-col justify-center border border-border/40 shadow-sm">
-            <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-4 block">How We're Made</span>
-            <h2 className="text-h2 font-editorial italic text-ink mb-4 leading-tight">
-              Why what touches your skin matters.
-            </h2>
-            <p className="text-p1 text-muted-foreground font-light max-w-[500px]">
-              Your skin is your body's largest organ, absorbing what it touches day after day. We eliminated synthetic stretch, heavy metals, and chemical fixatives.
-            </p>
-          </div>
-
-          {/* Cell 2: GOTS Cotton (Col span 1, Row span 1) */}
-          <div className="md:col-span-1 md:row-span-1 bg-marigold text-white rounded-xl p-8 flex flex-col justify-center shadow-sm relative overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-50" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1598466858925-502a90105eec?q=80&w=800&auto=format&fit=crop')" }} />
-            <div className="relative z-10">
-              <h3 className="text-2xl font-medium mb-3">100% GOTS Cotton</h3>
-              <p className="text-sm font-light leading-relaxed text-white/90">
-                Cultivated without toxic pesticides, keeping the soil and your skin safe. What's left is pure, organic cotton that lets your body breathe.
+          {/* Tile 1: Intimate comfort (Text Tile 1 - Col span 1, Row span 1) */}
+          <div className="md:col-span-1 md:row-span-1 bg-paper rounded-xl p-8 flex flex-col justify-between border border-border/40 shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-mauve block mb-2">Comfort</span>
+              <h3 className="text-xl font-editorial italic text-ink mb-3">Intimate comfort</h3>
+              <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                Skin in the intimate area is easily irritated and spends all day under fabric. Breathable cotton is commonly advised by clinicians to help manage heat and moisture.
               </p>
+            </div>
+            <div className="pt-3">
+              <Button href="/educate/skin-science#intimate-comfort" variant="tertiary">
+                Learn more &rarr;
+              </Button>
             </div>
           </div>
 
-          {/* Cell 3: Tall Image (Col span 1, Row span 2) */}
-          <div className="md:col-span-1 md:row-span-2 rounded-xl bg-paper relative overflow-hidden shadow-sm flex flex-col justify-end p-8 group">
+          {/* Tile 2: What’s in conventional fabric (Text Tile 2 - Col span 1, Row span 1) */}
+          <div className="md:col-span-1 md:row-span-1 bg-paper rounded-xl p-8 flex flex-col justify-between border border-border/40 shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-marigold block mb-2">Textile Chemistry</span>
+              <h3 className="text-xl font-editorial italic text-ink mb-3">What’s in conventional fabric</h3>
+              <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                Synthetic and conventionally finished textiles can carry azo and disperse dyes, formaldehyde-based finishes, PFAS and trace metals. We aim to lower how much of this touches you every day.
+              </p>
+            </div>
+            <div className="pt-3">
+              <Button href="/educate/skin-science#conventional-fabric" variant="tertiary">
+                Learn more &rarr;
+              </Button>
+            </div>
+          </div>
+
+          {/* Tile 3: Tall Image (Image Tile 1 - Col span 1, Row span 2) */}
+          <div className="md:col-span-1 md:row-span-2 rounded-xl bg-paper relative overflow-hidden shadow-sm flex flex-col justify-end p-8 group border border-border/40">
             <div 
               className="absolute inset-0 bg-cover bg-center scale-110 transition-transform duration-700 group-hover:scale-[1.18]" 
               style={{ backgroundImage: "url('/images/designed-for-body.jpg')" }} 
@@ -184,7 +206,23 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Cell 4: Wide Image (Col span 2, Row span 1) */}
+          {/* Tile 4: Microplastics and nanoplastics (Text Tile 3 - Col span 1, Row span 1) */}
+          <div className="md:col-span-1 md:row-span-1 bg-paper rounded-xl p-8 flex flex-col justify-between border border-border/40 shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-ink/60 block mb-2">Emerging Science</span>
+              <h3 className="text-xl font-editorial italic text-ink mb-3">Microplastics and nanoplastics</h3>
+              <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                Break a plastic bottle into pieces and you get microplastics. Grind them much finer and you reach nanoplastics: same material, far smaller. Synthetic fabrics shed both, and research on what that means for skin is still emerging.
+              </p>
+            </div>
+            <div className="pt-3">
+              <Button href="/educate/skin-science#microplastics-nanoplastics" variant="tertiary">
+                Learn more &rarr;
+              </Button>
+            </div>
+          </div>
+
+          {/* Tile 5: Wide Image (Image Tile 2 - Col span 2, Row span 1) */}
           <div className="md:col-span-2 md:row-span-1 rounded-xl bg-paper relative overflow-hidden shadow-sm border border-border/40 group">
             <div 
               className="absolute inset-0 bg-cover bg-center scale-110 transition-transform duration-700 group-hover:scale-[1.18]" 
@@ -196,14 +234,19 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Cell 5: Naturally Dyed (Col span 1, Row span 1) */}
-          <div className="md:col-span-1 md:row-span-1 bg-mauve text-white rounded-xl p-8 flex flex-col justify-center shadow-sm relative overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-60" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1618361001476-eb96d49925e0?q=80&w=800&auto=format&fit=crop')" }} />
-            <div className="relative z-10">
-              <h3 className="text-2xl font-medium mb-3">Naturally Dyed</h3>
-              <p className="text-sm font-light leading-relaxed text-white/90">
-                Colours extracted from earth's roots and petals, completely free of synthetic azo dyes.
+          {/* Tile 6: Lower your exposure (Text Tile 4 - Col span 1, Row span 1) */}
+          <div className="md:col-span-1 md:row-span-1 bg-paper rounded-xl p-8 flex flex-col justify-between border border-border/40 shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-sage block mb-2">Purity</span>
+              <h3 className="text-xl font-editorial italic text-ink mb-3">Lower your exposure</h3>
+              <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                Certified organic cotton, plant-based dyes and natural fixatives (alum and iron) mean fewer synthetic dyes and finishes against your skin. Our elastic contains natural rubber latex, and every material is listed on the box. {/* CONFIRM_WITH_CLIENT: latex */}
               </p>
+            </div>
+            <div className="pt-3">
+              <Button href="/educate/skin-science#lower-exposure" variant="tertiary">
+                Learn more &rarr;
+              </Button>
             </div>
           </div>
 
@@ -297,10 +340,10 @@ export default function Home() {
               Clinical Partnership
             </span>
             <h2 className="text-h2 font-editorial italic text-white mb-6 leading-tight drop-shadow-sm">
-              Recommended by practitioners.
+              In dialogue with clinicians.
             </h2>
             <p className="text-p1 text-white/90 mb-10 max-w-[500px] font-light leading-relaxed">
-              Trusted by doctors and wellness practitioners for patients who need chemical-free, breathable garments. Backed by the highest global standards.
+              Valued by doctors and wellness practitioners for patients who benefit from unblended, breathable organic cotton. Backed by verified global standards.
             </p>
             <div>
               <Button href="/educate/for-doctors" variant="primary" fullWidthMobile={true}>
@@ -314,7 +357,7 @@ export default function Home() {
             {/* Script Text Accent (matching Image 2's delicate handwritten aesthetic) */}
             <div className="absolute top-6 right-6 md:top-8 md:right-10 z-20 pointer-events-none">
               <span className="font-editorial italic text-xl md:text-2xl text-white/90 drop-shadow-sm block">
-                Pure science, proven on skin ♡
+                Pure science, gentle on skin ♡
               </span>
             </div>
 

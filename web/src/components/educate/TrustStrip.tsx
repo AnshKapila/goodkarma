@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ShieldCheck } from "lucide-react";
+import { SHOW_OEKO_TEX } from "@/config/features";
 
 interface TrustStripProps {
   className?: string;
@@ -10,7 +11,7 @@ export function TrustStrip({
   className = "",
   subtitle = "Independently verified and third-party certified at every step."
 }: TrustStripProps) {
-  const badges = [
+  const allBadges = [
     {
       code: "GOTS",
       name: "Global Organic Textile Standard",
@@ -36,6 +37,10 @@ export function TrustStrip({
       href: "/educate/certifications#vegan"
     }
   ];
+
+  const badges = SHOW_OEKO_TEX 
+    ? allBadges 
+    : allBadges.filter(b => b.code !== "OEKO-TEX");
 
   return (
     <section className={`px-6 max-w-[1400px] mx-auto w-full py-12 md:py-16 ${className}`}>

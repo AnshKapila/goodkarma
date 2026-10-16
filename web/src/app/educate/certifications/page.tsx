@@ -10,18 +10,25 @@ import { ShareBar } from "@/components/educate/ShareBar";
 import { RelatedPages, type RelatedPageItem } from "@/components/educate/RelatedPages";
 import { SourcesList, type SourceItem } from "@/components/educate/SourcesList";
 import { SEOArticleSchema } from "@/components/educate/SEOArticleSchema";
+import { FAQSection } from "@/components/educate/FAQSection";
+import { FAQS_DATA } from "@/data/faqs";
 import { Button } from "@/components/ui/button";
+import { SHOW_OEKO_TEX } from "@/config/features";
 import { ShieldCheck, BookOpen, CheckCircle2, Search, HelpCircle, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Proof You Can Check — GOTS & OEKO-TEX Certifications | Good Karma",
-  description: "Explore Good Karma's verified textile credentials. Download third-party certificates for 100% GOTS organic cotton, OEKO-TEX Standard 100, and cruelty-free botanical dyeing.",
+  title: SHOW_OEKO_TEX 
+    ? "Proof You Can Check — GOTS & OEKO-TEX Certifications | Good Karma"
+    : "Proof You Can Check — GOTS & Verified Standards | Good Karma",
+  description: SHOW_OEKO_TEX
+    ? "Explore Good Karma's verified textile credentials. Download third-party certificates for 100% GOTS organic cotton, OEKO-TEX Standard 100, and cruelty-free botanical dyeing."
+    : "Explore Good Karma's verified textile credentials. Review third-party documentation for 100% GOTS organic cotton, BRSR disclosure, and cruelty-free botanical dyeing.",
   alternates: {
     canonical: "https://goodkarmabrand.com/educate/certifications",
   },
   openGraph: {
-    title: "Proof You Can Check: Verified Organic & Chemical Safety Standards | Good Karma",
-    description: "We don't ask you to take our word for it. Review plain-language breakdowns of our GOTS, OEKO-TEX Standard 100, and BRSR disclosures.",
+    title: "Proof You Can Check: Verified Organic & Standards Disclosure | Good Karma",
+    description: "We don't ask you to take our word for it. Review plain-language breakdowns of our GOTS, BRSR disclosures, and plant-based dyeing standards.",
     url: "https://goodkarmabrand.com/educate/certifications",
     siteName: "Good Karma",
     images: [
@@ -38,19 +45,20 @@ export const metadata: Metadata = {
 };
 
 export default function CertificationsPage() {
-  const tocItems: TocItem[] = [
+  const allTocItems: TocItem[] = [
     { id: "gots", label: "1. GOTS (Organic Cotton)" },
-    { id: "oeko-tex", label: "2. OEKO-TEX (Chemical Safety)" },
-    { id: "brsr-ngrbc", label: "3. BRSR / NGRBC (ESG Disclosure)" },
-    { id: "vegan", label: "4. Cruelty-Free Botanical Dyeing" },
-    { id: "definitions", label: "5. Standards Glossary" },
-    { id: "verification-guide", label: "6. How to Verify Audits" },
+    ...(SHOW_OEKO_TEX ? [{ id: "oeko-tex", label: "2. OEKO-TEX (Chemical Safety)" }] : []),
+    { id: "brsr-ngrbc", label: SHOW_OEKO_TEX ? "3. BRSR / NGRBC (ESG Disclosure)" : "2. BRSR / NGRBC (ESG Disclosure)" },
+    { id: "vegan", label: SHOW_OEKO_TEX ? "4. Cruelty-Free Botanical Dyeing" : "3. Cruelty-Free Botanical Dyeing" },
+    { id: "definitions", label: SHOW_OEKO_TEX ? "5. Standards Glossary" : "4. Standards Glossary" },
+    { id: "verification-guide", label: SHOW_OEKO_TEX ? "6. How to Verify Audits" : "5. How to Verify Audits" },
+    { id: "faq", label: SHOW_OEKO_TEX ? "7. Frequently Asked Questions" : "6. Frequently Asked Questions" },
   ];
 
   const inShortBullets: [string, string, string] = [
     "100% GOTS-certified organic cotton guarantees that zero toxic pesticides, synthetic nitrogen fertilisers, or GMO seeds enter the soil or fabric.",
-    "OEKO-TEX Standard 100 independently tests every thread, seam, and pigment for 300+ toxic chemicals, ensuring absolute safety next to intimate skin.",
-    "Our cruelty-free natural dye protocol is 100% plant-based and requires zero animal derivatives or testing, documented under transparent Indian ESG disclosure standards.",
+    "Our cruelty-free natural dye protocol is 100% plant-based and requires zero animal derivatives or testing, documented under transparent Indian standards.",
+    "BRSR corporate disclosure ensures open accountability for fair living wages, environmental emissions, and stakeholder governance.",
   ];
 
   const sources: SourceItem[] = [
@@ -59,11 +67,11 @@ export default function CertificationsPage() {
       detail: "Manual for the Implementation of GOTS. Section 2.4: Environmental and Social Criteria. Enforces bans on endocrine disruptors, GMOs, and toxic heavy-metal mordants across the entire supply chain.",
       url: "https://global-standard.org",
     },
-    {
+    ...(SHOW_OEKO_TEX ? [{
       citation: "OEKO-TEX® Association (2024).",
       detail: "Standard 100 by OEKO-TEX® Criteria Catalogue and Limit Values. Zurich, Switzerland. Regulates thresholds for aromatic amines, formaldehyde, extractable heavy metals, and perfluorinated chemicals (PFAS).",
       url: "https://www.oeko-tex.com/en/our-standards/standard-100-by-oeko-tex",
-    },
+    }] : []),
     {
       citation: "Ministry of Corporate Affairs (MCA), Government of India (2019).",
       detail: "National Guidelines on Responsible Business Conduct (NGRBC). Establishes 9 core principles for businesses to uphold human rights, fair wages, and environmental responsibility.",
@@ -83,7 +91,7 @@ export default function CertificationsPage() {
     {
       tag: "Dermatological Health",
       title: "The science of breathing: Skin Science.",
-      description: "How synthetic fabrics disrupt the stratum corneum barrier and why pure organic cotton restores natural cutaneous balance.",
+      description: "How synthetic fabrics affect the stratum corneum barrier and why pure organic cotton supports natural cutaneous balance.",
       href: "/educate/skin-science",
       accentColor: "mauve",
     },
@@ -99,12 +107,12 @@ export default function CertificationsPage() {
   return (
     <div className="flex flex-col w-full pb-32 bg-background">
       <SEOArticleSchema
-        headline="Proof You Can Check: Verified Organic & Chemical Safety Standards"
-        description="Comprehensive third-party certification breakdown for Good Karma: GOTS, OEKO-TEX Standard 100, BRSR disclosure, and cruelty-free botanical dyeing."
+        headline="Proof You Can Check: Verified Organic & Standards Disclosure"
+        description="Comprehensive third-party certification breakdown for Good Karma: GOTS, BRSR disclosure, and cruelty-free botanical dyeing."
         url="/educate/certifications"
         image="/images/certifications-hero.jpg"
         datePublished="2026-01-20"
-        dateModified="2026-10-14"
+        dateModified="2026-10-16"
       />
 
       {/* 1. Hero */}
@@ -122,7 +130,7 @@ export default function CertificationsPage() {
       {/* 2. In Short Box */}
       <InShort bullets={inShortBullets} accentColor="marigold" />
 
-      {/* 3. About Strip (Strictly Good Karma, zero Livbio) */}
+      {/* 3. About Strip */}
       <AboutStrip className="mb-16 md:mb-24" />
 
       {/* 4. Main Body with Sticky Desktop TOC & Collapsible Mobile TOC */}
@@ -132,7 +140,7 @@ export default function CertificationsPage() {
           {/* Left Column: Table of Contents */}
           <aside className="lg:col-span-3">
             <TableOfContents 
-              items={tocItems} 
+              items={allTocItems} 
               accentColor="marigold" 
               className="lg:sticky lg:top-28"
             />
@@ -141,7 +149,7 @@ export default function CertificationsPage() {
           {/* Right Column: Bento Cards & Content Sections */}
           <main className="lg:col-span-9 space-y-16 md:space-y-24">
             
-            {/* Bento Grid with Lead GOTS & OEKO-TEX, plus Supporting BRSR & Vegan */}
+            {/* Bento Grid with Lead GOTS, plus Supporting BRSR & Vegan */}
             <div>
               <div className="mb-8">
                 <span className="text-marigold font-bold text-xs uppercase tracking-widest block mb-2">
@@ -158,7 +166,7 @@ export default function CertificationsPage() {
               <CertificationsBento />
             </div>
 
-            {/* Section 5: Standards Glossary / Plain Definitions */}
+            {/* Section: Standards Glossary / Plain Definitions */}
             <section id="definitions" className="scroll-mt-28">
               <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-3 block">
                 Plain-Language Reference
@@ -185,18 +193,20 @@ export default function CertificationsPage() {
                   </p>
                 </div>
 
-                {/* Definition 2: OEKO-TEX Standard 100 */}
-                <div className="bg-paper p-6 rounded-xl border border-border/60">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-marigold" />
-                    <h3 className="text-base font-semibold text-ink">
-                      OEKO-TEX® Standard 100
-                    </h3>
+                {/* Definition 2: OEKO-TEX Standard 100 (conditional) */}
+                {SHOW_OEKO_TEX && (
+                  <div className="bg-paper p-6 rounded-xl border border-border/60">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-marigold" />
+                      <h3 className="text-base font-semibold text-ink">
+                        OEKO-TEX® Standard 100
+                      </h3>
+                    </div>
+                    <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                      An independent laboratory testing system based in Switzerland and Germany. It assesses every finished component—fabric, threads, labels, and botanical pigments—for over 300 harmful chemical substances, ensuring zero toxic residues touch sensitive skin.
+                    </p>
                   </div>
-                  <p className="text-xs text-muted-foreground font-light leading-relaxed">
-                    An independent laboratory testing system based in Switzerland and Germany. It assesses every finished component—fabric, threads, labels, and botanical pigments—for over 300 harmful chemical substances, ensuring zero toxic residues touch sensitive skin.
-                  </p>
-                </div>
+                )}
 
                 {/* Definition 3: PFAS */}
                 <div className="bg-paper p-6 rounded-xl border border-border/60">
@@ -253,7 +263,7 @@ export default function CertificationsPage() {
               </div>
             </section>
 
-            {/* Section 6: Verification Guide / How to Verify */}
+            {/* Section: Verification Guide / How to Verify */}
             <section id="verification-guide" className="scroll-mt-28">
               <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-3 block">
                 Independent Verification
@@ -267,7 +277,7 @@ export default function CertificationsPage() {
                   Real transparency means anyone can verify a claim directly through official public registries without relying on marketing statements.
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className={`grid grid-cols-1 ${SHOW_OEKO_TEX ? "sm:grid-cols-2" : "sm:grid-cols-1 max-w-[600px]"} gap-6`}>
                   
                   <div className="p-5 rounded-lg bg-paper border border-border/50">
                     <div className="flex items-center gap-2 text-ink font-medium text-sm mb-2">
@@ -287,27 +297,38 @@ export default function CertificationsPage() {
                     </a>
                   </div>
 
-                  <div className="p-5 rounded-lg bg-paper border border-border/50">
-                    <div className="flex items-center gap-2 text-ink font-medium text-sm mb-2">
-                      <Search className="w-4 h-4 text-marigold" />
-                      <span>Verifying OEKO-TEX Standard 100</span>
+                  {SHOW_OEKO_TEX && (
+                    <div className="p-5 rounded-lg bg-paper border border-border/50">
+                      <div className="flex items-center gap-2 text-ink font-medium text-sm mb-2">
+                        <Search className="w-4 h-4 text-marigold" />
+                        <span>Verifying OEKO-TEX Standard 100</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground font-light leading-relaxed mb-4">
+                        Use the OEKO-TEX Label Check tool. Enter the certificate number to instantly verify that the test report is valid and covers Product Class II (direct skin contact).
+                      </p>
+                      <a 
+                        href="https://www.oeko-tex.com/en/label-check"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-semibold text-marigold hover:underline inline-flex items-center gap-1"
+                      >
+                        <span>Open OEKO-TEX Label Check &rarr;</span>
+                      </a>
                     </div>
-                    <p className="text-xs text-muted-foreground font-light leading-relaxed mb-4">
-                      Use the OEKO-TEX Label Check tool. Enter the certificate number to instantly verify that the test report is valid and covers Product Class II (direct skin contact).
-                    </p>
-                    <a 
-                      href="https://www.oeko-tex.com/en/label-check"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-semibold text-marigold hover:underline inline-flex items-center gap-1"
-                    >
-                      <span>Open OEKO-TEX Label Check &rarr;</span>
-                    </a>
-                  </div>
+                  )}
 
                 </div>
               </div>
             </section>
+
+            {/* Section: FAQ Accordion */}
+            <FAQSection
+              id="faq"
+              items={FAQS_DATA["certifications"]}
+              accentColor="marigold"
+              title="Frequently asked questions about certifications."
+              subtitle="Plain-language explanations of textile standards, audit scopes, and how to verify them."
+            />
 
             {/* Sources & Citations */}
             <SourcesList sources={sources} lastUpdated="October 2026" />
@@ -341,7 +362,7 @@ export default function CertificationsPage() {
             Experience certified purity on your skin.
           </h2>
           <p className="text-p1 text-muted-foreground font-light max-w-[550px] mb-8">
-            Innerwear made from 100% GOTS-certified organic cotton, dyed exclusively with natural plants, and tested free from harmful chemicals.
+            Innerwear made from 100% GOTS-certified organic cotton, dyed exclusively with natural plants, and verified free from harmful chemicals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="primary" icon="arrow" href="/products">

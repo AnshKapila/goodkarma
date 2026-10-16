@@ -151,3 +151,50 @@ export function DoctorConsultationForm() {
     </form>
   );
 }
+
+export function DoctorNewsletterForm() {
+  const [subscribed, setSubscribed] = useState(false);
+  const [email, setEmail] = useState("");
+  const [specialty, setSpecialty] = useState("");
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setSubscribed(true);
+  };
+
+  if (subscribed) {
+    return (
+      <div className="bg-sage/10 border border-sage/30 rounded-xl p-6 text-center">
+        <CheckCircle2 className="w-8 h-8 text-sage mx-auto mb-2" />
+        <h4 className="text-sm font-semibold text-ink mb-1">Subscribed to Clinical Briefings</h4>
+        <p className="text-xs text-muted-foreground font-light">
+          Thank you. Quarterly textile dermatology research will be delivered to <strong className="text-ink">{email}</strong>.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+      <input 
+        type="text" 
+        placeholder="Specialty (e.g. Dermatology)" 
+        value={specialty}
+        onChange={(e) => setSpecialty(e.target.value)}
+        className="px-4 py-2.5 rounded-lg border border-border bg-white text-xs text-ink focus:outline-none focus:border-sage sm:w-1/3"
+      />
+      <input 
+        type="email" 
+        placeholder="doctor@clinic.com" 
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required 
+        className="px-4 py-2.5 rounded-lg border border-border bg-white text-xs text-ink focus:outline-none focus:border-sage flex-1"
+      />
+      <Button variant="primary" icon="arrow">
+        Subscribe to Briefings
+      </Button>
+    </form>
+  );
+}

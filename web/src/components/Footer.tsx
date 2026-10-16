@@ -43,6 +43,7 @@ export function Footer() {
           <h4 className="font-medium text-ink mb-8 tracking-wide">About</h4>
           <ul className="space-y-5 text-muted-foreground">
             <li><Link href="/our-story" className="hover:text-marigold transition-colors">Our Story</Link></li>
+            <li><Link href="/blog" className="hover:text-marigold transition-colors">Journal & Blog</Link></li>
             <li><Link href="/contact" className="hover:text-marigold transition-colors">Contact</Link></li>
             <li><Link href="/educate/certifications" className="hover:text-marigold transition-colors">Certifications</Link></li>
           </ul>
@@ -53,7 +54,6 @@ export function Footer() {
         <div className="flex gap-8 mt-6 md:mt-0">
           <a href="#" className="hover:text-ink transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-ink transition-colors">Terms of Service</a>
-          
         </div>
       </div>
     </footer>

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowDown, Sparkles, Sprout, ShieldCheck, HeartPulse, Shield, Leaf, Factory, Scissors, UserCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FAQSection } from "@/components/educate/FAQSection";
+import { FAQS_DATA } from "@/data/faqs";
+import { SHOW_OEKO_TEX } from "@/config/features";
 
 export const metadata: Metadata = {
   title: "Our Impact — Field to Skin | Good Karma",
@@ -227,7 +230,7 @@ export default function EducateHubPage() {
                 Proof you can check
               </h3>
               <p className="text-p2 text-muted-foreground font-light leading-relaxed">
-                Full plain-language breakdown of what GOTS, OEKO-TEX Standard 100, BRSR corporate conduct, and vegan dye standards cover—and what they don't.
+                Full plain-language breakdown of what GOTS, ${SHOW_OEKO_TEX ? "OEKO-TEX Standard 100, " : ""}BRSR corporate conduct, and vegan dye standards cover—and what they don't.
               </p>
             </div>
             <div className="pt-6 mt-6 border-t border-border/40 text-sm font-medium text-ink group-hover:text-marigold flex items-center gap-2">
@@ -422,6 +425,17 @@ export default function EducateHubPage() {
             </Link>
           ))}
         </div>
+      </section>
+
+      {/* 5.5 FAQ Accordion */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full my-16">
+        <FAQSection
+          id="faq"
+          items={FAQS_DATA["impact"]}
+          accentColor="marigold"
+          title="Frequently asked questions about our impact."
+          subtitle="How our materials, natural dyes, and supply chain care for your skin and the planet."
+        />
       </section>
 
       {/* 6. Closing CTA: Shop by Concern */}

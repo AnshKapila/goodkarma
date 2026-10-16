@@ -47,6 +47,7 @@ export function Header() {
           />
         </Link>
         <nav className="hidden md:flex gap-8 text-sm font-medium items-center">
+          <Link href="/" className={`hover:text-marigold transition-colors ${!scrolled && "text-white/90 hover:text-white"}`}>Home</Link>
           <Link href="/products" className={`hover:text-marigold transition-colors ${!scrolled && "text-white/90 hover:text-white"}`}>Products</Link>
           <div className="relative group">
             <Link href="/educate" className={`hover:text-marigold transition-colors flex items-center gap-1 ${!scrolled && "text-white/90 hover:text-white"}`}>
@@ -61,6 +62,7 @@ export function Header() {
               </div>
             </div>
           </div>
+          <Link href="/blog" className={`hover:text-marigold transition-colors ${!scrolled && "text-white/90 hover:text-white"}`}>Blog</Link>
           <Link href="/contact" className={`hover:text-marigold transition-colors ${!scrolled && "text-white/90 hover:text-white"}`}>Contact</Link>
           
           {/* E-commerce controls */}

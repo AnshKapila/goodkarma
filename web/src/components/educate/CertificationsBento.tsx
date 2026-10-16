@@ -14,6 +14,7 @@ import {
   Check
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SHOW_OEKO_TEX } from "@/config/features";
 
 interface CertModalData {
   id: string;
@@ -217,76 +218,78 @@ export function CertificationsBento() {
           </div>
         </section>
 
-        {/* 2. OEKO-TEX (Lead position, wide 2x1, large card) */}
-        <section 
-          id="oeko-tex"
-          className="md:col-span-2 md:row-span-1 bg-paper p-8 sm:p-10 rounded-xl border border-border/70 flex flex-col justify-between shadow-xs hover:border-marigold/40 transition-all duration-300 group scroll-mt-28"
-        >
-          <div>
-            <div className="flex items-start justify-between gap-4 mb-6">
-              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center font-bold text-ink shadow-sm border border-border/30 group-hover:scale-105 transition-transform duration-300">
-                <span className="tracking-tight text-ink text-sm">OEKO</span>
-              </div>
-              <div className="text-right">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold">
-                  <ShieldCheck className="w-3.5 h-3.5" /> Product Class II
-                </span>
-                <span className="block text-[11px] text-muted-foreground mt-1 font-mono">
-                  Laboratory Screened
-                </span>
-              </div>
-            </div>
-
+        {/* 2. OEKO-TEX (Lead position, wide 2x1, large card - conditional on SHOW_OEKO_TEX) */}
+        {SHOW_OEKO_TEX && (
+          <section 
+            id="oeko-tex"
+            className="md:col-span-2 md:row-span-1 bg-paper p-8 sm:p-10 rounded-xl border border-border/70 flex flex-col justify-between shadow-xs hover:border-marigold/40 transition-all duration-300 group scroll-mt-28"
+          >
             <div>
-              <span className="text-marigold font-bold text-xs uppercase tracking-widest block mb-1">
-                Chemical Safety & Toxicology
+              <div className="flex items-start justify-between gap-4 mb-6">
+                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center font-bold text-ink shadow-sm border border-border/30 group-hover:scale-105 transition-transform duration-300">
+                  <span className="tracking-tight text-ink text-sm">OEKO</span>
+                </div>
+                <div className="text-right">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold">
+                    <ShieldCheck className="w-3.5 h-3.5" /> Product Class II
+                  </span>
+                  <span className="block text-[11px] text-muted-foreground mt-1 font-mono">
+                    Laboratory Screened
+                  </span>
+                </div>
+              </div>
+
+              <div>
+                <span className="text-marigold font-bold text-xs uppercase tracking-widest block mb-1">
+                  Chemical Safety & Toxicology
+                </span>
+                <h2 className="text-h3 font-editorial italic text-ink mb-3">
+                  OEKO-TEX® Standard 100
+                </h2>
+                <p className="text-p2 text-ink/80 font-light leading-relaxed mb-6">
+                  Every single component of our garments—cotton threads, binding seams, labels, and natural pigments—has been laboratory tested and verified free from harmful levels of over 300 hazardous chemicals.
+                </p>
+              </div>
+
+              {/* What it covers vs what it doesn't cover */}
+              <div className="space-y-3 mb-6">
+                <div className="p-4 rounded-lg bg-white/90 border border-blue-200/60">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-900 mb-1">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <span>What OEKO-TEX covers:</span>
+                  </div>
+                  <p className="text-xs text-ink/85 font-light leading-relaxed">
+                    Rigorous chemical testing of finished yarns, threads, and dyes against 300+ toxic substances including carcinogenic azo colorants, phthalates, nickel, formaldehyde, and PFAS.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-lg bg-stone-50/80 border border-border/60">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                    <XCircle className="w-3.5 h-3.5 text-stone-500 shrink-0" />
+                    <span>What it doesn't cover:</span>
+                  </div>
+                  <p className="text-xs text-stone-600 font-light leading-relaxed">
+                    Does not verify organic field agriculture (certified by GOTS) or corporate corporate governance metrics.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-border/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <span className="text-xs text-muted-foreground font-mono">
+                Ref: GK-OEKO-100-24
               </span>
-              <h2 className="text-h3 font-editorial italic text-ink mb-3">
-                OEKO-TEX® Standard 100
-              </h2>
-              <p className="text-p2 text-ink/80 font-light leading-relaxed mb-6">
-                Every single component of our garments—cotton threads, binding seams, labels, and natural pigments—has been laboratory tested and verified free from harmful levels of over 300 hazardous chemicals.
-              </p>
+              <button
+                type="button"
+                onClick={() => openCertificate("oeko-tex")}
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-button text-[14px] font-medium border-[1.5px] border-marigold text-marigold bg-white hover:bg-marigold/10 transition-colors shadow-2xs cursor-pointer"
+              >
+                <Download className="w-4 h-4" />
+                <span>Download Certificate</span>
+              </button>
             </div>
-
-            {/* What it covers vs what it doesn't cover */}
-            <div className="space-y-3 mb-6">
-              <div className="p-4 rounded-lg bg-white/90 border border-blue-200/60">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-900 mb-1">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                  <span>What OEKO-TEX covers:</span>
-                </div>
-                <p className="text-xs text-ink/85 font-light leading-relaxed">
-                  Rigorous chemical testing of finished yarns, threads, and dyes against 300+ toxic substances including carcinogenic azo colorants, phthalates, nickel, formaldehyde, and PFAS.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-lg bg-stone-50/80 border border-border/60">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
-                  <XCircle className="w-3.5 h-3.5 text-stone-500 shrink-0" />
-                  <span>What it doesn't cover:</span>
-                </div>
-                <p className="text-xs text-stone-600 font-light leading-relaxed">
-                  Does not verify organic field agriculture (certified by GOTS) or corporate corporate governance metrics.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-4 border-t border-border/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <span className="text-xs text-muted-foreground font-mono">
-              Ref: GK-OEKO-100-24
-            </span>
-            <button
-              type="button"
-              onClick={() => openCertificate("oeko-tex")}
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-button text-[14px] font-medium border-[1.5px] border-marigold text-marigold bg-white hover:bg-marigold/10 transition-colors shadow-2xs cursor-pointer"
-            >
-              <Download className="w-4 h-4" />
-              <span>Download Certificate</span>
-            </button>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* 3. BRSR / NGRBC (Supporting cell, 1x1, lighter disclosure treatment) */}
         <section 
