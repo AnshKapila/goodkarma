@@ -187,16 +187,24 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Tile 2: What’s in conventional fabric (Text Tile 2 - Col span 1, Row span 1) */}
-          <div className="md:col-span-1 md:row-span-1 bg-paper rounded-xl p-8 flex flex-col justify-between border border-border/40 shadow-sm hover:shadow-md transition-shadow">
-            <div>
+          {/* Tile 2: What’s in conventional fabric (Text Tile with Background Image - Col span 1, Row span 1) */}
+          <div className="md:col-span-1 md:row-span-1 rounded-xl p-8 flex flex-col justify-between border border-border/40 shadow-sm hover:shadow-md transition-all relative overflow-hidden group bg-paper">
+            {/* Background Illustration: Polyester fabric and skin contact */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-35"
+              style={{ backgroundImage: "url('/images/polyester-skin-contact.jpg')" }} 
+            />
+            {/* Soft paper gradient overlay ensuring crisp typography */}
+            <div className="absolute inset-0 bg-gradient-to-t from-paper/95 via-paper/85 to-paper/60" />
+
+            <div className="relative z-10">
               <span className="text-[11px] font-bold uppercase tracking-wider text-marigold block mb-2">Textile Chemistry</span>
               <h3 className="text-xl font-editorial italic text-ink mb-3">What’s in conventional fabric</h3>
-              <p className="text-xs text-muted-foreground font-light leading-relaxed">
-                Synthetic and conventionally finished textiles can carry azo and disperse dyes, formaldehyde-based finishes, PFAS and trace metals. We aim to lower how much of this touches you every day.
+              <p className="text-xs text-ink/80 font-light leading-relaxed">
+                Conventional textiles may carry azo dyes, formaldehyde resins, and PFAS. We aim to lower your daily exposure.
               </p>
             </div>
-            <div className="pt-3">
+            <div className="pt-3 relative z-10">
               <Button href="/educate/skin-science#conventional-fabric" variant="tertiary">
                 Learn more &rarr;
               </Button>

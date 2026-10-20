@@ -268,6 +268,16 @@ export default function SkinSciencePage() {
                   <h3 className="text-2xl font-editorial italic text-ink mb-4">
                     What conventional textiles can contain.
                   </h3>
+                  <div className="w-full h-48 sm:h-64 rounded-xl overflow-hidden mb-6 border border-border/50 relative">
+                    <img 
+                      src="/images/polyester-skin-contact.jpg" 
+                      alt="Ultrarealistic macro illustration of synthetic polyester fabric in direct contact with skin barrier" 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-3 left-3 bg-ink/80 backdrop-blur-xs text-white text-[10px] font-mono px-2.5 py-1 rounded">
+                      Fig 2.1 — Synthetic polyester weave & epidermal contact interface
+                    </div>
+                  </div>
                   <p className="text-p2 text-ink/85 font-light leading-relaxed mb-4">
                     Synthetic and conventionally processed garments often rely on extensive chemical processing to achieve softness, anti-wrinkle performance, and vibrant coloration. These treatments can introduce disperse and azo dyes, formaldehyde-releasing resins, per- and polyfluoroalkyl substances (PFAS) for stain resistance, and trace heavy-metal mordants. While international regulatory frameworks establish statutory limit values for individual substances, chemical residues may remain adhered to synthetic fibres. Under physiological conditions involving skin warmth and perspiration, research indicates these residues can migrate toward the epidermis. Good Karma eliminates synthetic finishes and petrochemical azo pigments entirely, aiming to lower the cumulative chemical load in direct contact with your skin every day.
                   </p>
