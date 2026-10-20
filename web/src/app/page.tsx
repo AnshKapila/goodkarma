@@ -20,23 +20,23 @@ export default function Home() {
 
 
 
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-12 mb-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out">
-          <div className="max-w-[800px]">
-            <h1 className="text-h1 font-editorial italic text-white tracking-tight mb-8 drop-shadow-lg">
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto mb-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out">
+          <div className="max-w-[800px] flex flex-col items-start">
+            <h1 className="text-h1 font-editorial italic text-white tracking-tight mb-6 drop-shadow-lg">
               Innerwear that<br/>cares for your skin.
             </h1>
-            <p className="text-p1 text-white/90 max-w-[500px] font-light">
+            <p className="text-p1 text-white/90 max-w-[500px] font-light leading-relaxed mb-8">
               Crafted with 100% GOTS certified organic cotton and naturally dyed using the earth's ingredients.
             </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto">
-            <Button href="/products" variant="primary" fullWidthMobile={true}>
-              Shop the Collection
-            </Button>
-            <Button href="/educate/skin-science" variant="secondary" fullWidthMobile={true}>
-              Discover the Science
-            </Button>
+            
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <Button href="/products" variant="primary" fullWidthMobile={true}>
+                Shop the Collection
+              </Button>
+              <Button href="/educate/skin-science" variant="secondary" fullWidthMobile={true}>
+                Discover the Science
+              </Button>
+            </div>
           </div>
         </div>
       </section>
