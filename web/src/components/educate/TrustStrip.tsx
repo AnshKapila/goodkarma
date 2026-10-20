@@ -16,25 +16,29 @@ export function TrustStrip({
       code: "GOTS",
       name: "Global Organic Textile Standard",
       detail: "100% Organic Fibres • Zero Toxic Chemicals",
-      href: "/educate/certifications#gots"
+      href: "/educate/certifications#gots",
+      logoUrl: "/images/certifications/gots-logo.png"
     },
     {
       code: "OEKO-TEX",
       name: "Standard 100",
       detail: "Tested for Harmful Substances • Skin Safe",
-      href: "/educate/certifications#oeko-tex"
+      href: "/educate/certifications#oeko-tex",
+      logoUrl: undefined
     },
     {
       code: "BRSR",
       name: "Corporate ESG Disclosure",
       detail: "National Guidelines on Responsible Conduct",
-      href: "/educate/certifications#brsr-ngrbc"
+      href: "/educate/certifications#brsr-ngrbc",
+      logoUrl: "/images/certifications/brsr-logo.png"
     },
     {
       code: "VEGAN",
       name: "Cruelty-Free Dyeing",
       detail: "100% Botanical Colours • Zero Animal Tests",
-      href: "/educate/certifications#vegan"
+      href: "/educate/certifications#vegan",
+      logoUrl: "/images/certifications/vegan-mark.png"
     }
   ];
 
@@ -58,6 +62,7 @@ export function TrustStrip({
               {subtitle}
             </p>
           </div>
+
           <Link 
             href="/educate/certifications"
             className="inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-marigold transition-colors group shrink-0"
@@ -75,8 +80,12 @@ export function TrustStrip({
               className="bg-white p-6 rounded-xl border border-border/50 flex flex-col justify-between hover:border-marigold/40 hover:shadow-sm transition-all group duration-200"
             >
               <div>
-                <div className="w-12 h-12 rounded-full bg-paper flex items-center justify-center font-bold text-xs text-ink mb-4 border border-border/30 group-hover:bg-marigold/10 group-hover:text-marigold transition-colors">
-                  {badge.code}
+                <div className="w-14 h-14 rounded-full bg-paper flex items-center justify-center font-bold text-xs text-ink mb-4 border border-border/30 group-hover:border-marigold/40 group-hover:shadow-xs transition-all p-1 overflow-hidden">
+                  {badge.logoUrl ? (
+                    <img src={badge.logoUrl} alt={badge.name} className="w-full h-full object-contain rounded-full" />
+                  ) : (
+                    <span>{badge.code}</span>
+                  )}
                 </div>
                 <h3 className="text-base font-medium text-ink mb-1 group-hover:text-marigold transition-colors">
                   {badge.name}

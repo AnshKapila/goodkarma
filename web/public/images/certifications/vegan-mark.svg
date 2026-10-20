@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <!-- Filter for subtle depth if rendered in isolation -->
+    <filter id="badgeShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Outer background circle -->
+  <circle cx="250" cy="250" r="242" fill="#1b7a38" />
+
+  <!-- Outer concentric ring -->
+  <circle cx="250" cy="250" r="230" fill="none" stroke="#ffffff" stroke-width="4.5" />
+
+  <!-- Inner circle enclosing center leaves -->
+  <circle cx="250" cy="250" r="142" fill="none" stroke="#ffffff" stroke-width="5" />
+
+  <!-- Left & Right Separator Marks -->
+  <g fill="#ffffff">
+    <circle cx="68" cy="250" r="4.5" />
+    <path d="M 60 250 L 52 250" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+    <path d="M 76 250 L 84 250" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+
+    <circle cx="432" cy="250" r="4.5" />
+    <path d="M 424 250 L 416 250" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+    <path d="M 440 250 L 448 250" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- Top Text: VEGAN -->
+  <!-- Letters distributed around top arc at radius ~186 -->
+  <g fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="44" text-anchor="middle" dominant-baseline="central">
+    <text transform="translate(250, 250) rotate(-28) translate(0, -186)">V</text>
+    <text transform="translate(250, 250) rotate(-14) translate(0, -186)">E</text>
+    <text transform="translate(250, 250) rotate(0) translate(0, -186)">G</text>
+    <text transform="translate(250, 250) rotate(14) translate(0, -186)">A</text>
+    <text transform="translate(250, 250) rotate(28) translate(0, -186)">N</text>
+  </g>
+
+  <!-- Bottom Text: FRIENDLY -->
+  <!-- Letters distributed around bottom arc at radius ~186 -->
+  <g fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="33" text-anchor="middle" dominant-baseline="central">
+    <text transform="translate(250, 250) rotate(-42) translate(0, 186) rotate(180)">F</text>
+    <text transform="translate(250, 250) rotate(-30) translate(0, 186) rotate(180)">R</text>
+    <text transform="translate(250, 250) rotate(-18) translate(0, 186) rotate(180)">I</text>
+    <text transform="translate(250, 250) rotate(-6) translate(0, 186) rotate(180)">E</text>
+    <text transform="translate(250, 250) rotate(6) translate(0, 186) rotate(180)">N</text>
+    <text transform="translate(250, 250) rotate(18) translate(0, 186) rotate(180)">D</text>
+    <text transform="translate(250, 250) rotate(30) translate(0, 186) rotate(180)">L</text>
+    <text transform="translate(250, 250) rotate(42) translate(0, 186) rotate(180)">Y</text>
+  </g>
+
+  <!-- Central Botanical 3-Leaf Emblem -->
+  <g fill="#ffffff">
+    <!-- Center Upright Leaf -->
+    <path d="M 250 312 C 228 282 216 242 216 195 C 216 156 234 130 250 114 C 266 130 284 156 284 195 C 284 242 272 282 250 312 Z" />
+    <!-- Center Leaf Delicate Internal Vein Line -->
+    <path d="M 250 302 L 250 148" stroke="#1b7a38" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Left Curved Leaf -->
+    <path d="M 245 306 C 212 296 174 268 152 226 C 142 201 144 182 154 172 C 172 184 200 210 222 246 C 236 272 242 296 245 306 Z" />
+    <!-- Left Leaf Internal Vein Arc -->
+    <path d="M 238 298 C 212 280 182 244 163 182" stroke="#1b7a38" stroke-width="2.8" stroke-linecap="round" fill="none" />
+
+    <!-- Right Curved Leaf -->
+    <path d="M 255 306 C 288 296 326 268 348 226 C 358 201 356 182 346 172 C 328 184 300 210 278 246 C 264 272 258 296 255 306 Z" />
+    <!-- Right Leaf Internal Vein Arc -->
+    <path d="M 262 298 C 288 280 318 244 337 182" stroke="#1b7a38" stroke-width="2.8" stroke-linecap="round" fill="none" />
+
+    <!-- Base Stem Node -->
+    <circle cx="250" cy="314" r="5" fill="#ffffff" />
+  </g>
+</svg>

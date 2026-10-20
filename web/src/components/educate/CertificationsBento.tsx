@@ -19,6 +19,7 @@ import { SHOW_OEKO_TEX } from "@/config/features";
 interface CertModalData {
   id: string;
   badge: string;
+  logoUrl?: string;
   title: string;
   subtitle: string;
   certNumber: string;
@@ -35,6 +36,7 @@ const CERT_DATA: Record<string, CertModalData> = {
   gots: {
     id: "gots",
     badge: "GOTS",
+    logoUrl: "/images/certifications/gots-logo.png",
     title: "Global Organic Textile Standard",
     subtitle: "Scope Certificate for 100% Organic Cotton Textile Processing",
     certNumber: "GK-GOTS-2026-V7-08492",
@@ -80,6 +82,7 @@ const CERT_DATA: Record<string, CertModalData> = {
   "brsr-ngrbc": {
     id: "brsr-ngrbc",
     badge: "BRSR",
+    logoUrl: "/images/certifications/brsr-logo.png",
     title: "BRSR / NGRBC ESG Disclosure",
     subtitle: "Business Responsibility and Sustainability Reporting Standard",
     certNumber: "GK-ESG-BRSR-2025-26-PUB",
@@ -102,6 +105,7 @@ const CERT_DATA: Record<string, CertModalData> = {
   vegan: {
     id: "vegan",
     badge: "VEGAN",
+    logoUrl: "/images/certifications/vegan-mark.png",
     title: "Cruelty-Free Botanical Dyeing Protocol",
     subtitle: "Plant-Derived Colorant & Cruelty-Free Processing Declaration",
     certNumber: "GK-BOTANICAL-DYE-2026-V2",
@@ -154,8 +158,8 @@ export function CertificationsBento() {
         >
           <div>
             <div className="flex items-start justify-between gap-4 mb-8">
-              <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center text-xl font-bold text-ink shadow-sm border border-border/30 group-hover:scale-105 transition-transform duration-300">
-                <span className="tracking-tight text-marigold">GOTS</span>
+              <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center p-1.5 shadow-sm border border-border/30 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+                <img src="/images/certifications/gots-logo.png" alt="Global Organic Textile Standard" className="w-full h-full object-contain" />
               </div>
               <div className="text-right">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
@@ -298,8 +302,8 @@ export function CertificationsBento() {
         >
           <div>
             <div className="flex items-center justify-between gap-2 mb-6">
-              <div className="w-12 h-12 rounded-full bg-paper flex items-center justify-center font-bold text-ink shadow-2xs border border-border/30">
-                <span className="text-xs">BRSR</span>
+              <div className="w-14 h-14 rounded-full bg-paper flex items-center justify-center p-1 shadow-2xs border border-border/30 overflow-hidden">
+                <img src="/images/certifications/brsr-logo.png" alt="BRSR / NGRBC" className="w-full h-full object-contain rounded-full" />
               </div>
               <span className="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-paper text-ink/70 border border-border/50">
                 Disclosure Standard
@@ -350,8 +354,8 @@ export function CertificationsBento() {
         >
           <div>
             <div className="flex items-center justify-between gap-2 mb-6">
-              <div className="w-12 h-12 rounded-full bg-paper flex items-center justify-center font-bold text-ink shadow-2xs border border-border/30">
-                <span className="text-xs text-emerald-800">VEGAN</span>
+              <div className="w-14 h-14 rounded-full bg-paper flex items-center justify-center p-1 shadow-2xs border border-border/30 overflow-hidden">
+                <img src="/images/certifications/vegan-mark.png" alt="Cruelty-Free Botanical Dyeing" className="w-full h-full object-contain" />
               </div>
               <span className="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
                 Dye Process
@@ -410,8 +414,12 @@ export function CertificationsBento() {
             {/* Modal Header */}
             <div className="flex items-start justify-between gap-4 pb-6 border-b border-border/60">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full bg-paper flex items-center justify-center font-bold text-base text-ink border border-border/40 shrink-0">
-                  {activeCert.badge}
+                <div className="w-14 h-14 rounded-full bg-paper flex items-center justify-center font-bold text-base text-ink border border-border/40 shrink-0 p-1 overflow-hidden">
+                  {activeCert.logoUrl ? (
+                    <img src={activeCert.logoUrl} alt={activeCert.title} className="w-full h-full object-contain rounded-full" />
+                  ) : (
+                    activeCert.badge
+                  )}
                 </div>
                 <div>
                   <span className="text-[11px] uppercase tracking-widest font-bold text-marigold block">

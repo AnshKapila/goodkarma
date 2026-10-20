@@ -78,24 +78,32 @@ export default function Home() {
             <span className="text-xl md:text-2xl font-editorial italic text-ink shrink-0">
               Certified where it counts:
             </span>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale">
-              <div className="font-bold text-ink text-lg tracking-widest uppercase flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-ink/10 flex items-center justify-center text-xs">G</div>
-                GOTS
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14 opacity-90">
+              <div className="font-bold text-ink text-base md:text-lg tracking-widest uppercase flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-full bg-paper border border-border/40 p-1 flex items-center justify-center overflow-hidden shadow-2xs group-hover:scale-105 transition-transform">
+                  <img src="/images/certifications/gots-logo.png" alt="GOTS Certified" className="w-full h-full object-contain" />
+                </div>
+                <span>GOTS</span>
               </div>
               {SHOW_OEKO_TEX && (
-                <div className="font-bold text-ink text-lg tracking-widest uppercase flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-ink/10 flex items-center justify-center text-xs">O</div>
-                  OEKO-TEX
+                <div className="font-bold text-ink text-base md:text-lg tracking-widest uppercase flex items-center gap-3 group">
+                  <div className="w-10 h-10 rounded-full bg-paper border border-border/40 p-1 flex items-center justify-center overflow-hidden shadow-2xs">
+                    <span className="text-xs font-bold">O</span>
+                  </div>
+                  <span>OEKO-TEX</span>
                 </div>
               )}
-              <div className="font-bold text-ink text-lg tracking-widest uppercase flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-ink/10 flex items-center justify-center text-xs">B</div>
-                BRSR
+              <div className="font-bold text-ink text-base md:text-lg tracking-widest uppercase flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-full bg-paper border border-border/40 p-1 flex items-center justify-center overflow-hidden shadow-2xs group-hover:scale-105 transition-transform">
+                  <img src="/images/certifications/brsr-logo.png" alt="BRSR Reporting" className="w-full h-full object-contain rounded-full" />
+                </div>
+                <span>BRSR</span>
               </div>
-              <div className="font-bold text-ink text-lg tracking-widest uppercase flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-ink/10 flex items-center justify-center text-xs">V</div>
-                Vegan Dye
+              <div className="font-bold text-ink text-base md:text-lg tracking-widest uppercase flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-full bg-paper border border-border/40 p-1 flex items-center justify-center overflow-hidden shadow-2xs group-hover:scale-105 transition-transform">
+                  <img src="/images/certifications/vegan-mark.png" alt="Vegan Dye Certified" className="w-full h-full object-contain" />
+                </div>
+                <span>Vegan Dye</span>
               </div>
             </div>
           </div>
