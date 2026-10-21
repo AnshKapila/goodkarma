@@ -156,31 +156,18 @@ const MANIFESTO_ACCORDION_CARDS: ManifestoAccordionCard[] = [
 ];
 
 export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxViewProps) {
-  // 1. Hero Scroll Reveal / Inset Effect
-  const heroImageRef = useRef<HTMLDivElement>(null);
-  const [heroClipProgress, setHeroClipProgress] = useState(0);
-
-  // 2. Manifesto Scroll Word Reveal
+  // 1. Manifesto Scroll Word Reveal
   const manifestoRef = useRef<HTMLDivElement>(null);
   const [manifestoProgress, setManifestoProgress] = useState(0);
   const [expandedManifestoIndex, setExpandedManifestoIndex] = useState<number | null>(null);
 
-  // 3. Horizontal Pinned Scroll Track
+  // 2. Horizontal Pinned Scroll Track
   const pinSectionRef = useRef<HTMLElement>(null);
   const pinTrackRef = useRef<HTMLDivElement>(null);
   const [activeTopicIndex, setActiveTopicIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Hero clip progress
-      if (heroImageRef.current) {
-        const rect = heroImageRef.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        // As image approaches center/top, calculate progress 0 to 1
-        const progress = Math.min(Math.max((windowHeight - rect.top) / (windowHeight * 1.2), 0), 1);
-        setHeroClipProgress(progress);
-      }
-
       // Manifesto word reveal progress
       if (manifestoRef.current) {
         const rect = manifestoRef.current.getBoundingClientRect();
@@ -219,11 +206,11 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
     <div className="flex flex-col w-full bg-white text-ink overflow-x-clip selection:bg-mauve/20">
 
       {/* ========================================================================= */}
-      {/* 1. HERO HEADER: Giant Flux-Style Display Typography */}
+      {/* 1. HERO SECTION: Clean Integrated Skin Science Hero Banner */}
       {/* ========================================================================= */}
-      <section className="relative w-full pt-28 md:pt-40 lg:pt-48 pb-10 px-6 lg:px-12 max-w-[1440px] mx-auto">
-        {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="mb-8 flex items-center text-xs text-muted-foreground font-light">
+      <section className="relative w-full pt-28 md:pt-36 lg:pt-40 pb-8 px-4 sm:px-6 lg:px-10 max-w-[1440px] mx-auto">
+        {/* Breadcrumb Navigation */}
+        <nav aria-label="Breadcrumb" className="mb-6 flex items-center text-xs text-muted-foreground font-light">
           <Link href="/" className="hover:text-ink transition-colors">Home</Link>
           <ChevronRight className="w-3.5 h-3.5 mx-2 text-border" />
           <Link href="/educate" className="hover:text-ink transition-colors">Educate</Link>
@@ -231,59 +218,17 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
           <span className="text-ink font-medium">Skin Science</span>
         </nav>
 
-        <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-8 pb-6 border-b border-border/40">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-mauve block mb-4">
-              Dermatological Research · Cutaneous Barrier Science
-            </span>
-            <h1 className="font-editorial italic font-semibold text-ink uppercase leading-[0.88] tracking-[-0.04em] text-[clamp(2.75rem,8vw,7.5rem)]">
-              <span className="block">The Science</span>
-              <span className="block text-ink/90">Of Breathing.</span>
-            </h1>
-          </div>
+        {/* Screen-reader accessible semantic heading without duplicate visual text */}
+        <h1 className="sr-only">Skin Science — Cutaneous Barrier Biology & Cotton Comfort</h1>
 
-          <div className="max-w-[420px] lg:text-left lg:pb-2">
-            <p className="text-p1 text-muted-foreground font-light leading-relaxed mb-6">
-              Your skin is your body's largest organ, continuously interacting with the microclimate of your clothes. Grounded in peer-reviewed dermatology and textile science.
-            </p>
-            <div className="flex items-center gap-2 text-xs font-mono text-ink/70 bg-paper px-3.5 py-1.5 rounded-full border border-border/50 self-start inline-flex">
-              <span className="w-2 h-2 rounded-full bg-mauve animate-pulse" />
-              <span>GOTS Grade 1 Unblended Cotton</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* 2. HERO MEDIA: Widescreen Visual with Dynamic Scroll-Inset Reveal */}
-      {/* ========================================================================= */}
-      <section className="relative w-full bg-white px-4 lg:px-10 mb-20 md:mb-32">
-        <div 
-          ref={heroImageRef}
-          className="w-full h-[65svh] md:h-[80svh] lg:aspect-[3928/2212] lg:h-auto overflow-hidden rounded-2xl relative shadow-md transition-all duration-300"
-          style={{
-            clipPath: `inset(0px ${Math.max(0, (1 - heroClipProgress) * 24)}px 0px ${Math.max(0, (1 - heroClipProgress) * 24)}px)`
-          }}
-        >
+        {/* Hero Banner Container */}
+        <div className="w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-sm border border-border/40 bg-paper">
           <img 
-            src="/images/skin-barrier-diagram.jpg" 
-            alt="Scientific medical diagram of human skin stratum corneum and lipid bilayer" 
-            className="w-full h-full object-cover object-center transform transition-transform duration-1000 scale-105 hover:scale-100"
+            src="/images/skin-science-hero.jpg" 
+            alt="Microscopic human skin barrier cross-section and organic cotton textile with callouts: Your Skin - a delicate living barrier that works hard every day, and Our Cotton - naturally breathable and gentle on skin" 
+            className="w-full h-auto aspect-[16/9] object-cover object-center block"
+            loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-          
-          {/* Scientific badge on bottom-left */}
-          <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-10 text-white max-w-[500px]">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-white/80 block mb-1.5">
-              Plate 1.0 · Epidermal Micro-Architecture
-            </span>
-            <h3 className="text-xl md:text-2xl font-editorial italic text-white drop-shadow-md">
-              Stratum corneum “brick & mortar” matrix.
-            </h3>
-            <p className="text-xs text-white/80 font-light mt-1 hidden sm:block">
-              Corneocytes sealed by a lipid bilayer. Non-breathable synthetics trap moisture, accelerating maceration and barrier disruption.
-            </p>
-          </div>
         </div>
       </section>
 

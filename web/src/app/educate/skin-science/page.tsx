@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     siteName: "Good Karma",
     images: [
       {
-        url: "https://goodkarmabrand.com/images/skin-barrier-diagram.jpg",
+        url: "https://goodkarmabrand.com/images/skin-science-hero.jpg",
         width: 1200,
         height: 630,
-        alt: "Skin Barrier Cross-Section Diagram — Good Karma Skin Science",
+        alt: "Skin Science and Organic Cotton Barrier Banner — Good Karma",
       },
     ],
     locale: "en_US",
@@ -93,7 +93,7 @@ export default function SkinSciencePage() {
         headline="Skin Science: How Fabric Interacts with Your Skin Barrier"
         description="A dermatological breakdown of the stratum corneum, fabric microclimates, and why pure organic cotton protects delicate skin."
         url="/educate/skin-science"
-        image="/images/skin-barrier-diagram.jpg"
+        image="/images/skin-science-hero.jpg"
         datePublished="2026-01-15"
         dateModified="2026-10-21"
       />
