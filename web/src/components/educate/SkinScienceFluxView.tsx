@@ -111,8 +111,8 @@ interface ManifestoAccordionCard {
   detail: string;
   image: string;
   accent: "mauve" | "marigold" | "sage";
+  bgClass: string;
   plate: string;
-  metric: string;
   tag: string;
 }
 
@@ -125,8 +125,8 @@ const MANIFESTO_ACCORDION_CARDS: ManifestoAccordionCard[] = [
     detail: "Non-breathable synthetic textiles trap humidity next to the skin, destabilizing the stratum corneum gradient and leaving the barrier susceptible to irritation.",
     image: "/images/tewl-diffusion.jpg",
     accent: "mauve",
+    bgClass: "bg-[#7B535B]",
     plate: "Plate 2.1 — Stratum Corneum Moisture Evaporation",
-    metric: "Diffusion Gradient Dynamics",
     tag: "Epidermal moisture evaporation & stratum corneum permeability"
   },
   {
@@ -137,8 +137,8 @@ const MANIFESTO_ACCORDION_CARDS: ManifestoAccordionCard[] = [
     detail: "When perspiration remains trapped against delicate tissue, corneocytes swell and soften. Everyday mechanical friction then shears the protective lipid matrix.",
     image: "/images/epidermal-maceration.jpg",
     accent: "marigold",
+    bgClass: "bg-[#B06B1E]",
     plate: "Plate 2.2 — Corneocyte Swelling & Lipid Shear",
-    metric: "Occlusive Microclimate Stress",
     tag: "Occluded sweat micro-droplets & swollen corneal cell shear"
   },
   {
@@ -149,8 +149,8 @@ const MANIFESTO_ACCORDION_CARDS: ManifestoAccordionCard[] = [
     detail: "Natural cotton fibers feature hollow internal lumens that passively absorb moisture vapor while allowing ambient convective airflow, preserving natural barrier equilibrium.",
     image: "/images/cellulose-breathability.jpg",
     accent: "sage",
+    bgClass: "bg-[#4D5749]",
     plate: "Plate 2.3 — Hollow Cellulose Lumen Air Exchange",
-    metric: "Passive Thermal Equilibrium",
     tag: "Hollow natural cotton lumen & passive convective airflow"
   }
 ];
@@ -337,103 +337,75 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
           </h2>
         </div>
 
-        {/* Full Viewport-Width Section: 3 Expandable / Collapsible Horizontal Hover Accordion Cards */}
+        {/* Full Viewport-Width Section: 3 Expandable / Collapsible Horizontal Hover Accordion Cards (Continuous Brand-Colored Banner) */}
         <div 
           className="w-full px-4 sm:px-6 lg:px-10"
           onMouseLeave={() => setExpandedManifestoIndex(null)}
         >
-          <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full items-stretch min-h-[460px] lg:h-[500px]">
+          <div className="w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row items-stretch min-h-[480px] lg:h-[520px]">
             {MANIFESTO_ACCORDION_CARDS.map((card, idx) => {
               const isExpanded = expandedManifestoIndex === idx;
               const isAnyExpanded = expandedManifestoIndex !== null;
               const isCollapsed = isAnyExpanded && !isExpanded;
 
-              const accentBadgeClass = {
-                mauve: "bg-mauve/15 text-mauve border-mauve/30",
-                marigold: "bg-marigold/15 text-marigold border-marigold/30",
-                sage: "bg-sage/15 text-sage border-sage/30",
-              }[card.accent];
-
-              const accentTextClass = {
-                mauve: "text-mauve",
-                marigold: "text-marigold",
-                sage: "text-sage",
-              }[card.accent];
-
-              const accentBorderClass = {
-                mauve: "border-mauve/50",
-                marigold: "border-marigold/50",
-                sage: "border-sage/50",
-              }[card.accent];
-
-              const accentDotBg = {
-                mauve: "bg-mauve",
-                marigold: "bg-marigold",
-                sage: "bg-sage",
-              }[card.accent];
-
               return (
                 <div
                   key={card.number}
                   onMouseEnter={() => setExpandedManifestoIndex(idx)}
-                  onClick={() => setExpandedManifestoIndex(isExpanded ? null : idx)}
-                  className={`group relative rounded-2xl overflow-hidden border transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer flex flex-col justify-between ${
+                  className={`group relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-between ${card.bgClass} text-white ${
                     isExpanded
-                      ? `lg:flex-[2.8] bg-white ${accentBorderClass} shadow-xl ring-1 ring-black/5`
+                      ? "lg:flex-[2.6]"
                       : isCollapsed
-                        ? "lg:flex-[0.7] bg-paper/70 border-border/50 hover:bg-paper"
-                        : "lg:flex-1 bg-paper border-border/70 hover:border-border shadow-2xs"
+                        ? "lg:flex-[0.7]"
+                        : "lg:flex-1"
                   }`}
                 >
                   <div className="flex flex-col lg:flex-row h-full w-full">
                     
                     {/* Left Info Panel */}
                     <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-between transition-all duration-500 ${
-                      isExpanded ? "lg:w-[48%] shrink-0" : "w-full"
+                      isExpanded ? "lg:w-[50%] shrink-0" : "w-full"
                     }`}>
                       <div>
-                        {/* Badge & Metric */}
-                        <div className="flex items-center justify-between gap-3 mb-5">
-                          <span className={`text-[11px] font-mono uppercase tracking-widest font-semibold px-3 py-1 rounded-full border ${accentBadgeClass}`}>
+                        {/* Clean unboxed category & number label without pills */}
+                        <div className="mb-4">
+                          <span className="text-[11px] font-mono uppercase tracking-[0.2em] font-semibold text-white/80 block">
                             {card.category} {card.number}
-                          </span>
-                          <span className="text-xs font-mono text-muted-foreground/70 hidden sm:block">
-                            {card.metric}
                           </span>
                         </div>
 
                         {/* Title */}
-                        <h3 className={`font-editorial italic font-semibold text-ink mb-3 transition-all duration-300 ${
+                        <h3 className={`font-editorial italic font-semibold text-white mb-3 transition-all duration-300 ${
                           isExpanded 
-                            ? "text-2xl sm:text-3xl lg:text-[32px] leading-tight" 
+                            ? "text-2xl sm:text-3xl lg:text-[30px] leading-tight" 
                             : "text-xl sm:text-2xl leading-snug"
                         }`}>
                           {card.title}
                         </h3>
 
                         {/* Main text content (preserved word-for-word) */}
-                        <p className="text-sm sm:text-base text-muted-foreground font-light leading-relaxed mb-4">
+                        <p className="text-sm sm:text-base text-white/90 font-light leading-relaxed mb-4">
                           {card.text}
                         </p>
 
                         {/* Extra deep biological rationale revealed on expansion */}
                         <div className={`overflow-hidden transition-all duration-500 ease-out ${
-                          isExpanded ? "max-h-40 opacity-100 mt-3 pt-3 border-t border-border/50" : "max-h-0 opacity-0"
+                          isExpanded ? "max-h-40 opacity-100 mt-3 pt-3 border-t border-white/20" : "max-h-0 opacity-0"
                         }`}>
-                          <p className="text-xs sm:text-sm text-ink/80 font-light leading-relaxed">
+                          <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
                             {card.detail}
                           </p>
                         </div>
                       </div>
 
                       {/* Card Bottom Indicator */}
-                      <div className="pt-5 mt-5 border-t border-border/40 flex items-center justify-between">
-                        <span className={`text-xs font-mono uppercase tracking-wider font-medium flex items-center gap-2 ${accentTextClass}`}>
-                          <span className={`w-2 h-2 rounded-full ${accentDotBg} ${isExpanded ? "animate-ping" : ""}`} />
-                          <span>{isExpanded ? "Active Clinical View" : "Hover to expand"}</span>
+                      <div className="pt-4 mt-4 border-t border-white/20 flex items-center justify-between">
+                        <span className="text-xs font-mono uppercase tracking-wider font-medium flex items-center gap-2 text-white/90">
+                          <span className={`w-2 h-2 rounded-full bg-white ${isExpanded ? "animate-ping" : "opacity-75"}`} />
+                          <span>{isExpanded ? "Active Clinical View" : "Hover to explore"}</span>
                         </span>
-                        <div className={`w-8 h-8 rounded-full border border-border/60 flex items-center justify-center transition-all duration-500 ${
-                          isExpanded ? "rotate-90 bg-ink text-white" : "group-hover:translate-x-1 text-ink bg-white shadow-2xs"
+                        <div className={`w-8 h-8 rounded-full border border-white/30 flex items-center justify-center transition-all duration-500 ${
+                          isExpanded ? "rotate-90 bg-white text-ink" : "text-white bg-white/10"
                         }`}>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </div>
@@ -443,7 +415,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                     {/* Right Image Accordion Panel (expands in width horizontally on hover) */}
                     <div className={`relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                       isExpanded
-                        ? "h-[260px] lg:h-full lg:w-[52%] opacity-100 visible"
+                        ? "h-[240px] lg:h-full lg:w-[50%] opacity-100 visible"
                         : "h-0 lg:h-full lg:w-0 opacity-0 overflow-hidden invisible pointer-events-none"
                     }`}>
                       <img
@@ -451,7 +423,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                         alt={card.title}
                         className="w-full h-full object-cover object-center transform transition-transform duration-1000 scale-100 hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
                       
                       {/* Image Caption Label */}
                       <div className="absolute bottom-5 left-5 right-5 text-white z-10">
