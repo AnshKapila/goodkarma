@@ -103,6 +103,58 @@ const DEEP_TOPICS: DeepTopic[] = [
   }
 ];
 
+interface ManifestoAccordionCard {
+  number: string;
+  category: string;
+  title: string;
+  text: string;
+  detail: string;
+  image: string;
+  accent: "mauve" | "marigold" | "sage";
+  plate: string;
+  metric: string;
+  tag: string;
+}
+
+const MANIFESTO_ACCORDION_CARDS: ManifestoAccordionCard[] = [
+  {
+    number: "01",
+    category: "Definition",
+    title: "Transepidermal Water Loss (TEWL)",
+    text: "The continuous physiological diffusion of water from the dermis into ambient air. Elevated TEWL correlates with barrier permeability and contact vulnerability.",
+    detail: "Non-breathable synthetic textiles trap humidity next to the skin, destabilizing the stratum corneum gradient and leaving the barrier susceptible to irritation.",
+    image: "/images/tewl-diffusion.jpg",
+    accent: "mauve",
+    plate: "Plate 2.1 — Stratum Corneum Moisture Evaporation",
+    metric: "Diffusion Gradient Dynamics",
+    tag: "Epidermal moisture evaporation & stratum corneum permeability"
+  },
+  {
+    number: "02",
+    category: "Mechanism",
+    title: "Epidermal Maceration",
+    text: "Prolonged exposure to non-ventilated sweat causes corneal cells to over-hydrate and soften, allowing friction to compromise protective lipid bilayers.",
+    detail: "When perspiration remains trapped against delicate tissue, corneocytes swell and soften. Everyday mechanical friction then shears the protective lipid matrix.",
+    image: "/images/epidermal-maceration.jpg",
+    accent: "marigold",
+    plate: "Plate 2.2 — Corneocyte Swelling & Lipid Shear",
+    metric: "Occlusive Microclimate Stress",
+    tag: "Occluded sweat micro-droplets & swollen corneal cell shear"
+  },
+  {
+    number: "03",
+    category: "Solution",
+    title: "Cellulose Breathability",
+    text: "Hollow organic cotton fibers facilitate convective air exchange, wicking humidity and maintaining a stable microclimate equilibrium.",
+    detail: "Natural cotton fibers feature hollow internal lumens that passively absorb moisture vapor while allowing ambient convective airflow, preserving natural barrier equilibrium.",
+    image: "/images/cellulose-breathability.jpg",
+    accent: "sage",
+    plate: "Plate 2.3 — Hollow Cellulose Lumen Air Exchange",
+    metric: "Passive Thermal Equilibrium",
+    tag: "Hollow natural cotton lumen & passive convective airflow"
+  }
+];
+
 export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxViewProps) {
   // 1. Hero Scroll Reveal / Inset Effect
   const heroImageRef = useRef<HTMLDivElement>(null);
@@ -111,6 +163,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
   // 2. Manifesto Scroll Word Reveal
   const manifestoRef = useRef<HTMLDivElement>(null);
   const [manifestoProgress, setManifestoProgress] = useState(0);
+  const [expandedManifestoIndex, setExpandedManifestoIndex] = useState<number | null>(null);
 
   // 3. Horizontal Pinned Scroll Track
   const pinSectionRef = useRef<HTMLElement>(null);
@@ -239,84 +292,182 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
       {/* ========================================================================= */}
       <section 
         ref={manifestoRef}
-        className="relative w-full bg-white px-6 lg:px-12 py-16 md:py-28 max-w-[1440px] mx-auto border-t border-border/40"
+        className="relative w-full bg-white pt-16 md:pt-28 pb-16 md:pb-24 border-t border-border/40 overflow-hidden"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        {/* Full-width Manifesto Statement Header */}
+        <div className="px-6 lg:px-12 max-w-[1440px] mx-auto mb-14 md:mb-20">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-mauve block mb-6">
+            01 · Cutaneous Manifesto
+          </span>
           
-          {/* Left Column: Huge Animated Text Reveal */}
-          <div className="lg:col-span-8">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-mauve block mb-6">
-              01 · Cutaneous Manifesto
+          <h2 className="text-[clamp(26px,3.4vw,50px)] font-medium leading-[1.2] tracking-[-0.03em] text-ink max-w-[1150px]">
+            <span className="block mb-6">
+              {words1.map((w, i) => {
+                const wordThreshold = i / totalWords;
+                const isLit = manifestoProgress >= wordThreshold;
+                return (
+                  <span 
+                    key={i} 
+                    className={`inline-block mr-2 transition-opacity duration-300 ${
+                      isLit ? "opacity-100 text-ink" : "opacity-25 text-black"
+                    }`}
+                  >
+                    {w}
+                  </span>
+                );
+              })}
             </span>
-            
-            <h2 className="text-[clamp(26px,3.2vw,48px)] font-medium leading-[1.18] tracking-[-0.03em] text-ink">
-              <span className="block mb-6">
-                {words1.map((w, i) => {
-                  const wordThreshold = i / totalWords;
-                  const isLit = manifestoProgress >= wordThreshold;
-                  return (
-                    <span 
-                      key={i} 
-                      className={`inline-block mr-2 transition-opacity duration-300 ${
-                        isLit ? "opacity-100 text-ink" : "opacity-25 text-black"
-                      }`}
-                    >
-                      {w}
-                    </span>
-                  );
-                })}
-              </span>
 
-              <span className="block">
-                {words2.map((w, i) => {
-                  const wordThreshold = (words1.length + i) / totalWords;
-                  const isLit = manifestoProgress >= wordThreshold;
-                  return (
-                    <span 
-                      key={i} 
-                      className={`inline-block mr-2 transition-opacity duration-300 ${
-                        isLit ? "opacity-100 text-mauve font-semibold" : "opacity-25 text-black"
-                      }`}
-                    >
-                      {w}
-                    </span>
-                  );
-                })}
-              </span>
-            </h2>
-          </div>
+            <span className="block">
+              {words2.map((w, i) => {
+                const wordThreshold = (words1.length + i) / totalWords;
+                const isLit = manifestoProgress >= wordThreshold;
+                return (
+                  <span 
+                    key={i} 
+                    className={`inline-block mr-2 transition-opacity duration-300 ${
+                      isLit ? "opacity-100 text-mauve font-semibold" : "opacity-25 text-black"
+                    }`}
+                  >
+                    {w}
+                  </span>
+                );
+              })}
+            </span>
+          </h2>
+        </div>
 
-          {/* Right Column: Staggered Micro-Annotation Notes */}
-          <div className="lg:col-span-4 space-y-6 pt-2">
-            <div className="p-6 rounded-2xl bg-paper border border-border/60 shadow-2xs hover:border-mauve/40 transition-colors">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-mauve block mb-1">
-                Definition 01
-              </span>
-              <h4 className="text-base font-medium text-ink mb-1.5">Transepidermal Water Loss (TEWL)</h4>
-              <p className="text-xs text-muted-foreground font-light leading-relaxed">
-                The continuous physiological diffusion of water from the dermis into ambient air. Elevated TEWL correlates with barrier permeability and contact vulnerability.
-              </p>
-            </div>
+        {/* Full Viewport-Width Section: 3 Expandable / Collapsible Horizontal Hover Accordion Cards */}
+        <div 
+          className="w-full px-4 sm:px-6 lg:px-10"
+          onMouseLeave={() => setExpandedManifestoIndex(null)}
+        >
+          <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full items-stretch min-h-[460px] lg:h-[500px]">
+            {MANIFESTO_ACCORDION_CARDS.map((card, idx) => {
+              const isExpanded = expandedManifestoIndex === idx;
+              const isAnyExpanded = expandedManifestoIndex !== null;
+              const isCollapsed = isAnyExpanded && !isExpanded;
 
-            <div className="p-6 rounded-2xl bg-paper border border-border/60 shadow-2xs hover:border-mauve/40 transition-colors">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-marigold block mb-1">
-                Mechanism 02
-              </span>
-              <h4 className="text-base font-medium text-ink mb-1.5">Epidermal Maceration</h4>
-              <p className="text-xs text-muted-foreground font-light leading-relaxed">
-                Prolonged exposure to non-ventilated sweat causes corneal cells to over-hydrate and soften, allowing friction to compromise protective lipid bilayers.
-              </p>
-            </div>
+              const accentBadgeClass = {
+                mauve: "bg-mauve/15 text-mauve border-mauve/30",
+                marigold: "bg-marigold/15 text-marigold border-marigold/30",
+                sage: "bg-sage/15 text-sage border-sage/30",
+              }[card.accent];
 
-            <div className="p-6 rounded-2xl bg-paper border border-border/60 shadow-2xs hover:border-mauve/40 transition-colors">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-sage block mb-1">
-                Solution 03
-              </span>
-              <h4 className="text-base font-medium text-ink mb-1.5">Cellulose Breathability</h4>
-              <p className="text-xs text-muted-foreground font-light leading-relaxed">
-                Hollow organic cotton fibers facilitate convective air exchange, wicking humidity and maintaining a stable microclimate equilibrium.
-              </p>
-            </div>
+              const accentTextClass = {
+                mauve: "text-mauve",
+                marigold: "text-marigold",
+                sage: "text-sage",
+              }[card.accent];
+
+              const accentBorderClass = {
+                mauve: "border-mauve/50",
+                marigold: "border-marigold/50",
+                sage: "border-sage/50",
+              }[card.accent];
+
+              const accentDotBg = {
+                mauve: "bg-mauve",
+                marigold: "bg-marigold",
+                sage: "bg-sage",
+              }[card.accent];
+
+              return (
+                <div
+                  key={card.number}
+                  onMouseEnter={() => setExpandedManifestoIndex(idx)}
+                  onClick={() => setExpandedManifestoIndex(isExpanded ? null : idx)}
+                  className={`group relative rounded-2xl overflow-hidden border transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer flex flex-col justify-between ${
+                    isExpanded
+                      ? `lg:flex-[2.8] bg-white ${accentBorderClass} shadow-xl ring-1 ring-black/5`
+                      : isCollapsed
+                        ? "lg:flex-[0.7] bg-paper/70 border-border/50 hover:bg-paper"
+                        : "lg:flex-1 bg-paper border-border/70 hover:border-border shadow-2xs"
+                  }`}
+                >
+                  <div className="flex flex-col lg:flex-row h-full w-full">
+                    
+                    {/* Left Info Panel */}
+                    <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-between transition-all duration-500 ${
+                      isExpanded ? "lg:w-[48%] shrink-0" : "w-full"
+                    }`}>
+                      <div>
+                        {/* Badge & Metric */}
+                        <div className="flex items-center justify-between gap-3 mb-5">
+                          <span className={`text-[11px] font-mono uppercase tracking-widest font-semibold px-3 py-1 rounded-full border ${accentBadgeClass}`}>
+                            {card.category} {card.number}
+                          </span>
+                          <span className="text-xs font-mono text-muted-foreground/70 hidden sm:block">
+                            {card.metric}
+                          </span>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className={`font-editorial italic font-semibold text-ink mb-3 transition-all duration-300 ${
+                          isExpanded 
+                            ? "text-2xl sm:text-3xl lg:text-[32px] leading-tight" 
+                            : "text-xl sm:text-2xl leading-snug"
+                        }`}>
+                          {card.title}
+                        </h3>
+
+                        {/* Main text content (preserved word-for-word) */}
+                        <p className="text-sm sm:text-base text-muted-foreground font-light leading-relaxed mb-4">
+                          {card.text}
+                        </p>
+
+                        {/* Extra deep biological rationale revealed on expansion */}
+                        <div className={`overflow-hidden transition-all duration-500 ease-out ${
+                          isExpanded ? "max-h-40 opacity-100 mt-3 pt-3 border-t border-border/50" : "max-h-0 opacity-0"
+                        }`}>
+                          <p className="text-xs sm:text-sm text-ink/80 font-light leading-relaxed">
+                            {card.detail}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Card Bottom Indicator */}
+                      <div className="pt-5 mt-5 border-t border-border/40 flex items-center justify-between">
+                        <span className={`text-xs font-mono uppercase tracking-wider font-medium flex items-center gap-2 ${accentTextClass}`}>
+                          <span className={`w-2 h-2 rounded-full ${accentDotBg} ${isExpanded ? "animate-ping" : ""}`} />
+                          <span>{isExpanded ? "Active Clinical View" : "Hover to expand"}</span>
+                        </span>
+                        <div className={`w-8 h-8 rounded-full border border-border/60 flex items-center justify-center transition-all duration-500 ${
+                          isExpanded ? "rotate-90 bg-ink text-white" : "group-hover:translate-x-1 text-ink bg-white shadow-2xs"
+                        }`}>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right Image Accordion Panel (expands in width horizontally on hover) */}
+                    <div className={`relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      isExpanded
+                        ? "h-[260px] lg:h-full lg:w-[52%] opacity-100 visible"
+                        : "h-0 lg:h-full lg:w-0 opacity-0 overflow-hidden invisible pointer-events-none"
+                    }`}>
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        className="w-full h-full object-cover object-center transform transition-transform duration-1000 scale-100 hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent pointer-events-none" />
+                      
+                      {/* Image Caption Label */}
+                      <div className="absolute bottom-5 left-5 right-5 text-white z-10">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-white/80 block mb-1">
+                          {card.plate}
+                        </span>
+                        <p className="text-xs sm:text-sm font-editorial italic text-white drop-shadow-sm">
+                          {card.tag}
+                        </p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
