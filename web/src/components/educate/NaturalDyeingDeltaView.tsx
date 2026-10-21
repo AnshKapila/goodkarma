@@ -16,7 +16,6 @@ import {
   Leaf, 
   Ban, 
   CheckCircle2, 
-  ArrowRight, 
   ChevronRight, 
   ChevronDown, 
   Layers, 
@@ -74,7 +73,6 @@ interface ProcessStep {
   title: string;
   tagline: string;
   description: string;
-  metric: string;
   image: string;
 }
 
@@ -84,7 +82,6 @@ const PROCESS_STEPS: ProcessStep[] = [
     title: "Gentle Water Extraction",
     tagline: "Decoction: 60°C – 80°C",
     description: "Sun-dried flowers, roots, and fruit rinds are simmered in filtered water at low temperatures, gently releasing active botanical colorants without petroleum solvents or chemical carriers.",
-    metric: "Zero petrochemical carrier solvents",
     image: "/images/marigold-extraction.jpg"
   },
   {
@@ -92,7 +89,6 @@ const PROCESS_STEPS: ProcessStep[] = [
     title: "Clean Mineral Binding",
     tagline: "Alum & Iron Mordanting",
     description: "We use food-grade mineral salts—specifically natural Alum and Iron—to create permanent molecular bonds between botanical pigments and cotton cellulose, avoiding synthetic resin binders.",
-    metric: "Food-safe minerals · Zero toxic heavy metals",
     image: "/images/madder-roots-alum.jpg"
   },
   {
@@ -100,7 +96,6 @@ const PROCESS_STEPS: ProcessStep[] = [
     title: "Responsible Biological Effluent",
     tagline: "Circular Water Stewardship",
     description: "Because our dye baths consist solely of organic plant residues and safe mineral salts, process water undergoes multi-stage biological oxygen filtration before clean re-use or safe discharge.",
-    metric: "Closed-loop filtration · Zero synthetic sludge",
     image: "/images/natural-dye-hero.jpg"
   }
 ];
@@ -299,14 +294,9 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
                 Colours drawn directly from nature.
               </h1>
 
-              <p className="text-p1 text-ink/80 font-light max-w-[580px] leading-relaxed mb-6">
+              <p className="text-p1 text-ink/80 font-light max-w-[580px] leading-relaxed mb-8">
                 Marigold blossoms, wild madder roots, and sun-dried pomegranate peels. We replace petroleum aniline colorants with living plant pigments, ensuring non-sensitizing textile chemistry touches your skin.
               </p>
-
-              {/* Who This Page Is For Pill */}
-              <div className="inline-flex items-center text-xs font-medium text-muted-foreground bg-paper border border-border/70 rounded-full px-4 py-2 mb-8">
-                Who this page is for: <strong className="ml-1 text-ink font-medium">Conscious dressers, sensitive skin, and transparent chemistry seekers</strong>
-              </div>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-4">
@@ -505,17 +495,9 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
                     <h3 className="text-2xl font-editorial italic font-semibold text-ink mb-3 group-hover:text-marigold transition-colors">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6">
+                    <p className="text-sm text-muted-foreground font-light leading-relaxed">
                       {step.description}
                     </p>
-                  </div>
-
-                  <div className="pt-5 border-t border-border/40 flex items-center justify-between text-xs font-mono text-ink/70">
-                    <span className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-marigold" />
-                      {step.metric}
-                    </span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-marigold" />
                   </div>
                 </div>
               </div>
