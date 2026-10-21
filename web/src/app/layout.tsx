@@ -23,6 +23,29 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: "Good Karma",
   description: "A Trusted Friend, Backed By Science",
+  icons: {
+    icon: [
+      {
+        url: "/favicon-dark.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/favicon-light.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: "/favicon-dark.png",
+      },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
