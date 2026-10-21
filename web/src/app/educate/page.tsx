@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowDown, Sparkles, Sprout, ShieldCheck, HeartPulse, Shield, Leaf, Factory, Scissors, UserCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FAQSection } from "@/components/educate/FAQSection";
+import { AboutStrip } from "@/components/educate/AboutStrip";
 import { FAQS_DATA } from "@/data/faqs";
 import { SHOW_OEKO_TEX } from "@/config/features";
 
@@ -342,6 +343,9 @@ export default function EducateHubPage() {
           ))}
         </div>
       </section>
+
+      {/* Brand About Strip */}
+      <AboutStrip className="mb-24" />
 
       {/* 5. Short Content */}
       <section className="px-6 max-w-[1400px] mx-auto w-full mb-24 md:mb-36">

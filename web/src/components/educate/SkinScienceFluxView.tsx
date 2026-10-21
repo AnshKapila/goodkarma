@@ -7,6 +7,7 @@ import { FAQSection } from "@/components/educate/FAQSection";
 import { SourcesList, type SourceItem } from "@/components/educate/SourcesList";
 import { ShareBar } from "@/components/educate/ShareBar";
 import { TrustStrip } from "@/components/educate/TrustStrip";
+import { AboutStrip } from "@/components/educate/AboutStrip";
 import { RelatedPages, type RelatedPageItem } from "@/components/educate/RelatedPages";
 import { FAQS_DATA } from "@/data/faqs";
 import { 
@@ -319,6 +320,9 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
           </div>
         </div>
       </section>
+
+      {/* Brand About Strip with Dark Logo */}
+      <AboutStrip className="my-8" />
 
       {/* ========================================================================= */}
       {/* 4. DARK BREAKOUT: Synthetic Occlusion vs Natural Equilibrium */}
