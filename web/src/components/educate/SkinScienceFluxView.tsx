@@ -105,11 +105,12 @@ const DEEP_TOPICS: DeepTopic[] = [
 
 interface ManifestoAccordionCard {
   number: string;
-  category: string;
-  title: string;
-  text: string;
-  detail: string;
+  label: string;
+  heading: string;
+  supportingLine: string;
+  body: string;
   image: string;
+  scaleClass: string;
   accent: "mauve" | "marigold" | "sage";
   bgClass: string;
   plate: string;
@@ -119,39 +120,42 @@ interface ManifestoAccordionCard {
 const MANIFESTO_ACCORDION_CARDS: ManifestoAccordionCard[] = [
   {
     number: "01",
-    category: "Definition",
-    title: "Transepidermal Water Loss (TEWL)",
-    text: "The continuous physiological diffusion of water from the dermis into ambient air. Elevated TEWL correlates with barrier permeability and contact vulnerability.",
-    detail: "Non-breathable synthetic textiles trap humidity next to the skin, destabilizing the stratum corneum gradient and leaving the barrier susceptible to irritation.",
-    image: "/images/tewl-diffusion.jpg",
+    label: "MECHANISM 01",
+    heading: "Transepidermal Water Loss (TEWL)",
+    supportingLine: "How skin naturally loses moisture",
+    body: "Your skin naturally releases small amounts of water into the air. This process is called transepidermal water loss (TEWL). Higher-than-normal water loss can be a sign that the skin’s protective barrier is not working as well as it should.",
+    image: "/images/media_1792804684885_bf458a16.jpg",
+    scaleClass: "scale-100 hover:scale-105",
     accent: "mauve",
     bgClass: "bg-[#7B535B]",
-    plate: "Plate 2.1 — Stratum Corneum Moisture Evaporation",
-    tag: "Epidermal moisture evaporation & stratum corneum permeability"
+    plate: "Plate 2.1 — Skin and Moisture",
+    tag: "Natural epidermal hydration & skin barrier surface"
   },
   {
     number: "02",
-    category: "Mechanism",
-    title: "Epidermal Maceration",
-    text: "Prolonged exposure to non-ventilated sweat causes corneal cells to over-hydrate and soften, allowing friction to compromise protective lipid bilayers.",
-    detail: "When perspiration remains trapped against delicate tissue, corneocytes swell and soften. Everyday mechanical friction then shears the protective lipid matrix.",
-    image: "/images/epidermal-maceration.jpg",
+    label: "MECHANISM 02",
+    heading: "Epidermal Maceration",
+    supportingLine: "When skin stays damp",
+    body: "When skin stays damp for too long, its outer layer can absorb excess moisture and become softer. Repeated rubbing against clothing may then irritate the skin. Managing moisture and choosing comfortable fabrics can help reduce unnecessary friction.",
+    image: "/images/media_1792804748572_b23f9de0.jpg",
+    scaleClass: "scale-[1.15] hover:scale-[1.20]",
     accent: "marigold",
     bgClass: "bg-[#B06B1E]",
-    plate: "Plate 2.2 — Corneocyte Swelling & Lipid Shear",
-    tag: "Occluded sweat micro-droplets & swollen corneal cell shear"
+    plate: "Plate 2.2 — Skin, Fabric and Innerwear",
+    tag: "Soft blush-pink cotton innerwear & delicate skin contact"
   },
   {
     number: "03",
-    category: "Solution",
-    title: "Cellulose Breathability",
-    text: "Hollow organic cotton fibers facilitate convective air exchange, wicking humidity and maintaining a stable microclimate equilibrium.",
-    detail: "Natural cotton fibers feature hollow internal lumens that passively absorb moisture vapor while allowing ambient convective airflow, preserving natural barrier equilibrium.",
-    image: "/images/cellulose-breathability.jpg",
+    label: "SOLUTION 03",
+    heading: "Cellulose Breathability",
+    supportingLine: "Why fabric structure matters",
+    body: "The way a fabric is made affects how air and moisture move through it. Good Karma uses GOTS-certified organic cotton for its innerwear. Its fabric structure and construction are part of how we think about everyday comfort and the way clothing sits against your skin.",
+    image: "/images/media_1792804805170_66808d94.jpg",
+    scaleClass: "scale-[1.15] hover:scale-[1.20]",
     accent: "sage",
     bgClass: "bg-[#4D5749]",
-    plate: "Plate 2.3 — Hollow Cellulose Lumen Air Exchange",
-    tag: "Hollow natural cotton lumen & passive convective airflow"
+    plate: "Plate 2.3 — Cotton Material and Texture",
+    tag: "Natural ribbed cotton texture, soft waistband & fine stitching"
   }
 ];
 
@@ -297,7 +301,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                 <div
                   key={card.number}
                   onMouseEnter={() => setExpandedManifestoIndex(idx)}
-                  className={`group relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-between ${card.bgClass} text-white ${
+                  className={`group relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-start items-start ${card.bgClass} text-white ${
                     isExpanded
                       ? "lg:flex-[2.6]"
                       : isCollapsed
@@ -305,57 +309,51 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                         : "lg:flex-1"
                   }`}
                 >
-                  <div className="flex flex-col lg:flex-row h-full w-full">
+                  <div className="flex flex-col lg:flex-row h-full w-full items-start justify-start">
                     
-                    {/* Left Info Panel */}
-                    <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-center transition-all duration-500 ${
+                    {/* Left Info Panel (Top-aligned) */}
+                    <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-start items-start text-left transition-all duration-500 h-full ${
                       isExpanded ? "lg:w-[50%] shrink-0" : "w-full"
                     }`}>
-                      <div>
-                        {/* Category & number label styled in brand p2 */}
-                        <div className="mb-3">
-                          <span className="text-p2 font-normal text-white/85 block">
-                            {card.category} {card.number}
-                          </span>
-                        </div>
+                      <div className="w-full text-left flex flex-col justify-start items-start">
+                        {/* Label in brand p2 */}
+                        <span className="text-p2 font-normal text-white/85 block mb-2">
+                          {card.label}
+                        </span>
 
-                        {/* Title */}
-                        <h3 className={`font-editorial italic font-semibold text-white mb-3 transition-all duration-300 ${
+                        {/* Heading */}
+                        <h3 className={`font-editorial italic font-semibold text-white mb-2 transition-all duration-300 ${
                           isExpanded 
                             ? "text-2xl sm:text-3xl lg:text-[30px] leading-tight" 
                             : "text-xl sm:text-2xl leading-snug"
                         }`}>
-                          {card.title}
+                          {card.heading}
                         </h3>
 
-                        {/* Main text content (preserved word-for-word) */}
-                        <p className="text-sm sm:text-base text-white/90 font-light leading-relaxed mb-4">
-                          {card.text}
+                        {/* Supporting line */}
+                        <p className="text-sm sm:text-base text-white/90 font-medium mb-3 sm:mb-4">
+                          {card.supportingLine}
                         </p>
 
-                        {/* Extra deep biological rationale revealed on expansion */}
-                        <div className={`overflow-hidden transition-all duration-500 ease-out ${
-                          isExpanded ? "max-h-40 opacity-100 mt-3 pt-3 border-t border-white/20" : "max-h-0 opacity-0"
-                        }`}>
-                          <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                            {card.detail}
-                          </p>
-                        </div>
+                        {/* Body copy */}
+                        <p className="text-sm sm:text-base text-white/85 font-light leading-relaxed">
+                          {card.body}
+                        </p>
                       </div>
                     </div>
 
                     {/* Right Image Accordion Panel (expands in width horizontally on hover) */}
-                    <div className={`relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    <div className={`relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] self-stretch ${
                       isExpanded
-                        ? "h-[240px] lg:h-full lg:w-[50%] opacity-100 visible"
+                        ? "h-[260px] lg:h-full lg:w-[50%] opacity-100 visible"
                         : "h-0 lg:h-full lg:w-0 opacity-0 overflow-hidden invisible pointer-events-none"
                     }`}>
                       <img
                         src={card.image}
-                        alt={card.title}
-                        className="w-full h-full object-cover object-center transform transition-transform duration-1000 scale-100 hover:scale-105"
+                        alt={card.heading}
+                        className={`w-full h-full object-cover object-center transform transition-transform duration-1000 ${card.scaleClass}`}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                       
                       {/* Image Caption Label */}
                       <div className="absolute bottom-5 left-5 right-5 text-white z-10">
