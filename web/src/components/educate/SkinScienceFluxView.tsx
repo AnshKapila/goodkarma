@@ -86,7 +86,7 @@ const DEEP_TOPICS: DeepTopic[] = [
     label: "05 Cumulative Exposure",
     tag: "Ingredient Transparency",
     title: "Lowering your cumulative chemical exposure.",
-    lead: "Certified organic cotton, plant-derived botanical dyes, and natural fixatives like alum and iron mean fewer synthetic dyes and finishes against your skin. Conventional apparel often conceals proprietary trade-secret chemical washes, softener baths, and fluorinated repellents behind simple fiber labels. Good Karma operates with complete transparency: our elastic contains natural rubber latex, and every material is listed on the box. By prioritizing untreated organic fibres and plant pigments, we provide a clean, non-sensitizing alternative designed to lower everyday dermal chemical contact.",
+    lead: "Certified organic cotton, plant-derived botanical dyes, and natural fixatives like alum and iron mean fewer synthetic dyes and finishes against your skin. Conventional apparel often conceals proprietary trade-secret chemical washes, softener baths, and fluorinated repellents behind simple fiber labels. Good Karma operates with complete transparency: our elastic contains natural rubber latex, and every material is listed on the box. By prioritizing untreated organic fibres and plant pigments, we provide a gentle, considered alternative designed to lower everyday dermal chemical contact.",
     image: "/images/cotton-hand.png",
     figureLabel: "Fig 1.5 — Untreated 100% GOTS organic cotton hand feel",
     source: "Global Organic Textile Standard (GOTS) v7.0; ECHA."
@@ -213,17 +213,15 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
       {/* 1. HERO SECTION: Clean Integrated Skin Science Hero Banner */}
       {/* ========================================================================= */}
       <section className="relative w-full pt-28 md:pt-36 lg:pt-40 pb-8 px-4 sm:px-6 lg:px-10 max-w-[1440px] mx-auto">
-        {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="mb-6 flex items-center text-xs text-muted-foreground font-light">
-          <Link href="/" className="hover:text-ink transition-colors">Home</Link>
-          <ChevronRight className="w-3.5 h-3.5 mx-2 text-border" />
-          <Link href="/educate" className="hover:text-ink transition-colors">Educate</Link>
-          <ChevronRight className="w-3.5 h-3.5 mx-2 text-border" />
-          <span className="text-ink font-medium">Skin Science</span>
-        </nav>
-
-        {/* Screen-reader accessible semantic heading without duplicate visual text */}
-        <h1 className="sr-only">Skin Science — Cutaneous Barrier Biology & Cotton Comfort</h1>
+        {/* Editorial Heading and Subheading */}
+        <div className="max-w-[820px] mb-8 md:mb-12">
+          <h1 className="font-editorial italic font-semibold text-ink text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.05] tracking-tight mb-4">
+            Skin Science
+          </h1>
+          <p className="text-p1 text-ink/75 font-light leading-relaxed max-w-[620px]">
+            A considered exploration of how fabrics interact with your cutaneous barrier, daily microclimates, and everyday comfort.
+          </p>
+        </div>
 
         {/* Hero Banner Container */}
         <div className="w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-sm border border-border/40 bg-paper">
@@ -810,7 +808,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                 <Activity className="w-6 h-6 text-mauve mb-4" />
                 <h3 className="text-base font-medium text-ink mb-2">Chemical Non-Reactivity</h3>
                 <p className="text-xs text-muted-foreground font-light leading-relaxed">
-                  Zero synthetic resins or formaldehyde anti-crease treatments means the fabric remains non-sensitizing on delicate cutaneous barriers.
+                  Zero synthetic resins or formaldehyde anti-crease treatments means the fabric remains gentle on delicate cutaneous barriers.
                 </p>
               </div>
             </div>

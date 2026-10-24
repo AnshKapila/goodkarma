@@ -32,71 +32,55 @@ interface NaturalDyeingDeltaViewProps {
   relatedPages: [RelatedPageItem, RelatedPageItem];
 }
 
-interface PolaroidItem {
-  id: string;
+interface ManifestoAccordionCard {
   number: string;
-  title: string;
-  caption: string;
+  label: string;
+  heading: string;
+  supportingLine: string;
+  body: string;
   image: string;
-  rotation: number;
+  plate: string;
+  tag: string;
+  bgClass: string;
+  scaleClass: string;
 }
 
-const POLAROIDS: PolaroidItem[] = [
+const MANIFESTO_ACCORDION_CARDS: ManifestoAccordionCard[] = [
   {
-    id: "roots-alum",
     number: "01",
-    title: "Madder & Natural Alum",
-    caption: "Wild Rubia cordifolia roots & crystalline mineral alum rocks",
-    image: "/images/madder-roots-alum.jpg",
-    rotation: -5
-  },
-  {
-    id: "marigold-pot",
-    number: "02",
-    title: "Marigold Decoction",
-    caption: "Simmering temple blossom petals releasing warm sunshine ochre",
+    label: "PROCESS 01",
+    heading: "Water Extraction",
+    supportingLine: "Decoction: 60°C – 80°C",
+    body: "Sun-dried flowers, roots, and fruit rinds are simmered in filtered water at low temperatures, gently releasing active botanical colorants without petroleum solvents or petrochemical carriers.",
     image: "/images/marigold-extraction.jpg",
-    rotation: 1.5
-  },
-  {
-    id: "finished-textile",
-    number: "03",
-    title: "Botanical Palette",
-    caption: "100% GOTS organic cotton garments infused with earth pigments",
-    image: "/images/natural-dye-stack.jpg",
-    rotation: 6
-  }
-];
-
-interface ProcessStep {
-  number: string;
-  title: string;
-  tagline: string;
-  description: string;
-  image: string;
-}
-
-const PROCESS_STEPS: ProcessStep[] = [
-  {
-    number: "01",
-    title: "Gentle Water Extraction",
-    tagline: "Decoction: 60°C – 80°C",
-    description: "Sun-dried flowers, roots, and fruit rinds are simmered in filtered water at low temperatures, gently releasing active botanical colorants without petroleum solvents or chemical carriers.",
-    image: "/images/marigold-extraction.jpg"
+    plate: "BOTANICAL DECOCTION",
+    tag: "Simmered marigold blossom extraction in pure water",
+    bgClass: "bg-[#5A6056]",
+    scaleClass: "scale-100"
   },
   {
     number: "02",
-    title: "Clean Mineral Binding",
-    tagline: "Alum & Iron Mordanting",
-    description: "We use food-grade mineral salts—specifically natural Alum and Iron—to create permanent molecular bonds between botanical pigments and cotton cellulose, avoiding synthetic resin binders.",
-    image: "/images/madder-roots-alum.jpg"
+    label: "PROCESS 02",
+    heading: "Mineral Binding",
+    supportingLine: "Food-grade alum & iron mordants",
+    body: "We use food-grade mineral salts—specifically natural alum and iron—to create lasting molecular bonds between botanical pigments and cotton cellulose, avoiding synthetic resin binders.",
+    image: "/images/madder-roots-alum.jpg",
+    plate: "MINERAL FIXATION",
+    tag: "Natural alum and madder root crystallization",
+    bgClass: "bg-[#B06B1E]",
+    scaleClass: "scale-100"
   },
   {
     number: "03",
-    title: "Responsible Biological Effluent",
-    tagline: "Circular Water Stewardship",
-    description: "Because our dye baths consist solely of organic plant residues and safe mineral salts, process water undergoes multi-stage biological oxygen filtration before clean re-use or safe discharge.",
-    image: "/images/natural-dye-hero.jpg"
+    label: "PROCESS 03",
+    heading: "Circular Effluent",
+    supportingLine: "Pure agricultural water return",
+    body: "Because our dye baths consist solely of organic plant residues and safe mineral salts, process water undergoes multi-stage biological oxygen filtration before clean re-use or safe discharge.",
+    image: "/images/natural-dye-stack.jpg",
+    plate: "CIRCULAR STEWARDSHIP",
+    tag: "Folded botanical cotton with zero synthetic sludge",
+    bgClass: "bg-[#7B535B]",
+    scaleClass: "scale-100"
   }
 ];
 
@@ -221,21 +205,17 @@ const EXCLUSION_ITEMS: ExclusionItem[] = [
 ];
 
 export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingDeltaViewProps) {
-  // 1. Polaroid Hover State
-  const [isPolaroidHovered, setIsPolaroidHovered] = useState(false);
-  const [activePolaroidIndex, setActivePolaroidIndex] = useState<number | null>(null);
-
-  // 2. Manifesto Scroll Word Reveal
+  // 1. Manifesto Scroll Word Reveal
   const manifestoRef = useRef<HTMLDivElement>(null);
   const [manifestoProgress, setManifestoProgress] = useState(0);
 
-  // 3. Process Cards Hover State
-  const [activeProcessStep, setActiveProcessStep] = useState(0);
+  // 2. Continuous 3-Card Accordion Hover State
+  const [expandedManifestoIndex, setExpandedManifestoIndex] = useState<number | null>(null);
 
-  // 4. Botanical Dye Selector State
+  // 3. Botanical Dye Selector State
   const [selectedDye, setSelectedDye] = useState<DyeBotanical>(DYE_BOTANICALS[0]);
 
-  // 5. Exclusions Accordion State
+  // 4. Exclusions Accordion State
   const [expandedExclusion, setExpandedExclusion] = useState<number | null>(null);
 
   // Scroll tracking for manifesto
@@ -259,128 +239,30 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
   const totalWords = words1.length + words2.length;
 
   return (
-    <div className="flex flex-col w-full bg-background overflow-x-hidden">
+    <div className="flex flex-col w-full bg-white text-ink overflow-x-clip selection:bg-marigold/20">
       
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION WITH DELTA-INSPIRED INTERACTIVE POLAROIDS CLUSTER */}
+      {/* 1. HERO SECTION: Clean Integrated Botanical Dyeing Hero Banner */}
       {/* ========================================================================= */}
-      <section className="relative w-full bg-white pt-10 pb-16 md:pb-28 px-6 lg:px-12 border-b border-border/40">
-        <div className="max-w-[1440px] mx-auto w-full">
-          
-          {/* Breadcrumb & Technical Eyebrow */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-10 pt-4">
-            <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
-              <Link href="/educate" className="hover:text-ink transition-colors">Educate</Link>
-              <span>/</span>
-              <span className="text-marigold font-semibold">Natural Dyeing</span>
-            </div>
+      <section className="relative w-full pt-28 md:pt-36 lg:pt-40 pb-8 px-4 sm:px-6 lg:px-10 max-w-[1440px] mx-auto">
+        {/* Editorial Heading and Subheading */}
+        <div className="max-w-[820px] mb-8 md:mb-12">
+          <h1 className="font-editorial italic font-semibold text-ink text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.05] tracking-tight mb-4">
+            Colours Drawn Directly From Nature
+          </h1>
+          <p className="text-p1 text-ink/75 font-light leading-relaxed max-w-[620px]">
+            Marigold blossoms, wild madder roots, and sun-dried pomegranate peels. We replace petroleum synthetics with living plant pigments, bringing gentle, plant-derived textile chemistry to everyday garments.
+          </p>
+        </div>
 
-            <div className="flex items-center gap-2 text-xs font-mono text-ink/70 bg-paper px-3.5 py-1.5 rounded-full border border-border/60">
-              <span className="w-2 h-2 rounded-full bg-marigold animate-pulse" />
-              <span>Botanical Craft // 100% Plant Pigments</span>
-            </div>
-          </div>
-
-          {/* Main Hero Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center mb-12">
-            
-            {/* Left Column: Bold Typography & Promise */}
-            <div className="lg:col-span-7 flex flex-col items-start z-10">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-4">
-                Section 01 · Botanical Chemistry
-              </span>
-
-              <h1 className="text-[clamp(36px,5.8vw,80px)] font-editorial italic font-semibold leading-[0.95] tracking-tight text-ink mb-6">
-                Colours drawn directly from nature.
-              </h1>
-
-              <p className="text-p1 text-ink/80 font-light max-w-[580px] leading-relaxed mb-8">
-                Marigold blossoms, wild madder roots, and sun-dried pomegranate peels. We replace petroleum aniline colorants with living plant pigments, ensuring non-sensitizing textile chemistry touches your skin.
-              </p>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap gap-4">
-                <Button href="#dye-library" variant="primary">
-                  Explore Dye Library
-                </Button>
-                <Button href="#process" variant="secondary">
-                  The Sourcing Process
-                </Button>
-              </div>
-            </div>
-
-            {/* Right Column: Signature Delta-Inspired Interactive Polaroid Cluster */}
-            <div 
-              className="lg:col-span-5 relative flex items-center justify-center min-h-[360px] sm:min-h-[440px] lg:min-h-[500px]"
-              onMouseEnter={() => setIsPolaroidHovered(true)}
-              onMouseLeave={() => {
-                setIsPolaroidHovered(false);
-                setActivePolaroidIndex(null);
-              }}
-            >
-              {/* Central Glowing Aura */}
-              <div className="absolute w-72 h-72 rounded-full bg-marigold/10 blur-3xl pointer-events-none" />
-
-              {/* Interactive Polaroid Stack */}
-              <div className="relative w-full max-w-[380px] h-[340px] flex items-center justify-center">
-                {POLAROIDS.map((p, idx) => {
-                  const isActive = activePolaroidIndex === idx;
-
-                  // Dynamic transformation styles when cluster is hovered
-                  let transformClass = "";
-                  if (isPolaroidHovered) {
-                    if (idx === 0) transformClass = "-translate-x-16 sm:-translate-x-24 -translate-y-4 -rotate-12 scale-100";
-                    if (idx === 1) transformClass = "translate-y-[-16px] rotate-0 scale-105 z-20";
-                    if (idx === 2) transformClass = "translate-x-16 sm:translate-x-24 -translate-y-2 rotate-12 scale-100";
-                  } else {
-                    if (idx === 0) transformClass = "-translate-x-6 rotate-[-5deg]";
-                    if (idx === 1) transformClass = "translate-y-0 rotate-[1.5deg] z-10";
-                    if (idx === 2) transformClass = "translate-x-6 rotate-[7deg]";
-                  }
-
-                  if (isActive) {
-                    transformClass += " scale-110 z-30 shadow-2xl";
-                  }
-
-                  return (
-                    <div
-                      key={p.id}
-                      onMouseEnter={() => setActivePolaroidIndex(idx)}
-                      className={`absolute w-[220px] sm:w-[260px] p-3 sm:p-3.5 bg-white rounded-lg shadow-lg border border-black/10 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer ${transformClass}`}
-                    >
-                      {/* Photo Container with white border */}
-                      <div className="aspect-[4/3] w-full rounded overflow-hidden mb-3 relative bg-paper">
-                        <img 
-                          src={p.image} 
-                          alt={p.title} 
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                        <div className="absolute top-2 left-2 bg-black/60 text-white font-mono text-[9px] px-2 py-0.5 rounded uppercase tracking-wider backdrop-blur-xs">
-                          Plate {p.number}
-                        </div>
-                      </div>
-
-                      {/* Polaroid Caption */}
-                      <div className="px-1">
-                        <h4 className="font-editorial italic font-semibold text-ink text-sm sm:text-base leading-snug">
-                          {p.title}
-                        </h4>
-                        <p className="text-[10px] sm:text-[11px] text-muted-foreground font-light line-clamp-1 mt-0.5">
-                          {p.caption}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Hover Cue */}
-              <div className="absolute -bottom-2 text-center text-xs font-mono text-muted-foreground/80 tracking-wide pointer-events-none">
-                ✦ Hover to explore botanical specimens
-              </div>
-            </div>
-
-          </div>
+        {/* Hero Banner Container */}
+        <div className="w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-sm border border-border/40 bg-paper">
+          <img 
+            src="/images/natural-dye-hero.jpg" 
+            alt="Artisan dyer hands working with marigold, madder root, and botanical pigments in soft daylight" 
+            className="w-full h-auto aspect-[16/9] object-cover object-center block"
+            loading="eager"
+          />
         </div>
       </section>
 
@@ -389,11 +271,11 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
       {/* ========================================================================= */}
       <section 
         ref={manifestoRef}
-        className="relative w-full bg-white pt-16 md:pt-28 pb-16 md:pb-24 border-b border-border/40"
+        className="relative w-full bg-white pt-16 md:pt-28 pb-16 md:pb-24 border-t border-border/40 overflow-hidden"
       >
-        <div className="px-6 lg:px-12 max-w-[1440px] mx-auto">
+        <div className="px-6 lg:px-12 max-w-[1440px] mx-auto mb-14 md:mb-20">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-6">
-            02 · Ancient Heritage & Clean Chemistry
+            01 · Botanical Manifesto
           </span>
 
           <h2 className="text-[clamp(28px,3.8vw,56px)] font-medium leading-[1.18] tracking-[-0.03em] text-ink max-w-[1200px]">
@@ -434,81 +316,100 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
             </span>
           </h2>
         </div>
-      </section>
 
-      {/* Brand About Strip with Dark Logo */}
-      <AboutStrip className="my-8" />
+        {/* Full Viewport-Width Section: 3 Expandable / Collapsible Horizontal Hover Accordion Cards (Continuous Brand-Colored Banner) */}
+        <div 
+          className="w-full px-4 sm:px-6 lg:px-10 max-w-[1440px] mx-auto"
+          onMouseLeave={() => setExpandedManifestoIndex(null)}
+        >
+          <div className="w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row items-stretch min-h-[480px] lg:h-[520px]">
+            {MANIFESTO_ACCORDION_CARDS.map((card, idx) => {
+              const isExpanded = expandedManifestoIndex === idx;
+              const isAnyExpanded = expandedManifestoIndex !== null;
+              const isCollapsed = isAnyExpanded && !isExpanded;
 
-      {/* ========================================================================= */}
-      {/* 3. RESPONSIBLE DYEING CYCLE (Delta Course Cards-Inspired Architecture) */}
-      {/* ========================================================================= */}
-      <section id="process" className="relative w-full bg-paper py-20 md:py-32 px-6 lg:px-12 border-b border-border/40">
-        <div className="max-w-[1440px] mx-auto w-full">
-          
-          {/* Section Header */}
-          <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-16">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
-                03 · Sourcing & Production Cycle
-              </span>
-              <h2 className="text-[clamp(32px,4.5vw,60px)] font-editorial italic font-semibold leading-[0.98] tracking-tight text-ink">
-                How nature becomes colour.
-              </h2>
-            </div>
-            <p className="max-w-[460px] text-p1 text-muted-foreground font-light leading-relaxed">
-              Our 3-step closed-loop production replaces synthetic azo baths with low-temperature decoction, gentle mineral mordants, and responsible biological effluent handling.
-            </p>
-          </div>
+              return (
+                <div
+                  key={card.number}
+                  onMouseEnter={() => setExpandedManifestoIndex(idx)}
+                  className={`group relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col justify-start items-start ${card.bgClass} text-white ${
+                    isExpanded
+                      ? "lg:flex-[2.6]"
+                      : isCollapsed
+                        ? "lg:flex-[0.7]"
+                        : "lg:flex-1"
+                  }`}
+                >
+                  <div className="flex flex-col lg:flex-row h-full w-full items-start justify-start">
+                    
+                    {/* Left Info Panel (Top-aligned) */}
+                    <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-start items-start text-left transition-all duration-500 h-full ${
+                      isExpanded ? "lg:w-[50%] shrink-0" : "w-full"
+                    }`}>
+                      <div className="w-full text-left flex flex-col justify-start items-start">
+                        {/* Label in brand p2 */}
+                        <span className="text-p2 font-normal text-white/85 block mb-2">
+                          {card.label}
+                        </span>
 
-          {/* Delta-Inspired Vertical Process Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-            {PROCESS_STEPS.map((step, idx) => (
-              <div
-                key={step.number}
-                className="group relative bg-white rounded-2xl overflow-hidden border border-border/60 hover:border-marigold/60 transition-all duration-500 hover:shadow-xl flex flex-col justify-between"
-              >
-                {/* Image Showcase */}
-                <div className="relative aspect-[16/11] w-full overflow-hidden bg-muted">
-                  <img 
-                    src={step.image} 
-                    alt={step.title} 
-                    className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                  
-                  {/* Floating Step Number */}
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-xs text-ink font-mono text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                    Step {step.number}
-                  </div>
+                        {/* Heading */}
+                        <h3 className={`font-editorial italic font-semibold text-white mb-2 transition-all duration-300 ${
+                          isExpanded 
+                            ? "text-2xl sm:text-3xl lg:text-[30px] leading-tight" 
+                            : "text-xl sm:text-2xl leading-snug"
+                        }`}>
+                          {card.heading}
+                        </h3>
 
-                  {/* Bottom Metric Pill */}
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <span className="text-[11px] font-mono text-white/90 uppercase tracking-widest block mb-0.5">
-                      {step.tagline}
-                    </span>
+                        {/* Supporting line */}
+                        <p className="text-sm sm:text-base text-white/90 font-medium mb-3 sm:mb-4">
+                          {card.supportingLine}
+                        </p>
+
+                        {/* Body copy */}
+                        <p className="text-sm sm:text-base text-white/85 font-light leading-relaxed">
+                          {card.body}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Right Image Accordion Panel (expands in width horizontally on hover) */}
+                    <div className={`relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] self-stretch ${
+                      isExpanded
+                        ? "h-[260px] lg:h-full lg:w-[50%] opacity-100 visible"
+                        : "h-0 lg:h-full lg:w-0 opacity-0 overflow-hidden invisible pointer-events-none"
+                    }`}>
+                      <img
+                        src={card.image}
+                        alt={card.heading}
+                        className={`w-full h-full object-cover object-center transform transition-transform duration-1000 ${card.scaleClass}`}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                      
+                      {/* Image Caption Label */}
+                      <div className="absolute bottom-5 left-5 right-5 text-white z-10">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-white/80 block mb-1">
+                          {card.plate}
+                        </span>
+                        <p className="text-xs sm:text-sm font-editorial italic text-white drop-shadow-sm">
+                          {card.tag}
+                        </p>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
-
-                {/* Card Content */}
-                <div className="p-8 flex flex-col justify-between flex-1">
-                  <div>
-                    <h3 className="text-2xl font-editorial italic font-semibold text-ink mb-3 group-hover:text-marigold transition-colors">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground font-light leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
-
         </div>
       </section>
 
+      {/* Brand About Strip with White Logo */}
+      <AboutStrip className="my-8" />
+
       {/* ========================================================================= */}
-      {/* 4. THE BOTANICAL DYE LIBRARY BENTO (Modular 6-Source Bento Grid) */}
+      {/* 3. THE BOTANICAL DYE LIBRARY BENTO (Modular 6-Source Bento Grid) */}
       {/* ========================================================================= */}
       <section id="dye-library" className="relative w-full bg-white py-20 md:py-32 px-6 lg:px-12 border-b border-border/40">
         <div className="max-w-[1440px] mx-auto w-full">
@@ -517,7 +418,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
           <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-6 mb-16">
             <div>
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
-                04 · Living Palette Bento
+                02 · Living Palette Bento
               </span>
               <h2 className="text-[clamp(32px,4.5vw,60px)] font-editorial italic font-semibold leading-[0.98] tracking-tight text-ink">
                 The Botanical Dye Library.
@@ -627,7 +528,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
             {/* Left Massive Typography Collage */}
             <div className="lg:col-span-8">
               <span className="text-xs font-bold uppercase tracking-[0.25em] text-marigold block mb-6">
-                05 · Botanical Kinetic Statement
+                03 · Botanical Kinetic Statement
               </span>
               
               <h2 className="text-[clamp(34px,5.2vw,72px)] font-editorial italic font-semibold leading-[0.98] tracking-tight text-white mb-8">
@@ -687,7 +588,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
           <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-6 mb-16">
             <div>
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
-                06 · Transparency & Exclusions
+                04 · Transparency & Exclusions
               </span>
               <h2 className="text-[clamp(32px,4.5vw,60px)] font-editorial italic font-semibold leading-[0.98] tracking-tight text-ink">
                 What we leave out.
@@ -770,7 +671,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
           
           <div className="mb-14">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
-              07 · Clear Science
+              05 · Clear Science
             </span>
             <h2 className="text-[clamp(28px,3.8vw,52px)] font-editorial italic font-semibold leading-[1.05] tracking-tight text-ink mb-4">
               Technical terms, defined plainly.

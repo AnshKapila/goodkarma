@@ -167,15 +167,6 @@ export function ForDoctorsEditorialView({ sources, relatedPages }: ForDoctorsEdi
       {/* 1. HERO SECTION: Editorial Display Typography + Interactive Polaroid Stack */}
       {/* ========================================================================= */}
       <section className="relative w-full pt-28 md:pt-36 lg:pt-40 pb-16 px-6 lg:px-12 max-w-[1440px] mx-auto">
-        {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="mb-8 flex items-center text-xs text-muted-foreground font-light">
-          <Link href="/" className="hover:text-ink transition-colors">Home</Link>
-          <ChevronRight className="w-3.5 h-3.5 mx-2 text-border" />
-          <Link href="/educate" className="hover:text-ink transition-colors">Educate</Link>
-          <ChevronRight className="w-3.5 h-3.5 mx-2 text-border" />
-          <span className="text-ink font-medium">For Clinicians</span>
-        </nav>
-
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center mb-12">
           {/* Left Column: Bold Typography & Rationale */}
           <div className="lg:col-span-7 flex flex-col items-start z-10">
