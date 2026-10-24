@@ -308,13 +308,13 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                   <div className="flex flex-col lg:flex-row h-full w-full">
                     
                     {/* Left Info Panel */}
-                    <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-between transition-all duration-500 ${
+                    <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-center transition-all duration-500 ${
                       isExpanded ? "lg:w-[50%] shrink-0" : "w-full"
                     }`}>
                       <div>
-                        {/* Clean unboxed category & number label without pills */}
-                        <div className="mb-4">
-                          <span className="text-[11px] font-mono uppercase tracking-[0.2em] font-semibold text-white/80 block">
+                        {/* Category & number label styled in brand p2 */}
+                        <div className="mb-3">
+                          <span className="text-p2 font-normal text-white/85 block">
                             {card.category} {card.number}
                           </span>
                         </div>
@@ -340,19 +340,6 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                           <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
                             {card.detail}
                           </p>
-                        </div>
-                      </div>
-
-                      {/* Card Bottom Indicator */}
-                      <div className="pt-4 mt-4 border-t border-white/20 flex items-center justify-between">
-                        <span className="text-xs font-mono uppercase tracking-wider font-medium flex items-center gap-2 text-white/90">
-                          <span className={`w-2 h-2 rounded-full bg-white ${isExpanded ? "animate-ping" : "opacity-75"}`} />
-                          <span>{isExpanded ? "Active Clinical View" : "Hover to explore"}</span>
-                        </span>
-                        <div className={`w-8 h-8 rounded-full border border-white/30 flex items-center justify-center transition-all duration-500 ${
-                          isExpanded ? "rotate-90 bg-white text-ink" : "text-white bg-white/10"
-                        }`}>
-                          <ArrowRight className="w-3.5 h-3.5" />
                         </div>
                       </div>
                     </div>
