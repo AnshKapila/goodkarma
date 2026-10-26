@@ -376,81 +376,68 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
       <AboutStrip className="my-8" />
 
       {/* ========================================================================= */}
-      {/* 4. DARK BREAKOUT: Synthetic Occlusion vs Natural Equilibrium */}
+      {/* 4. EDITORIAL FEATURE: Fabric, Skin & Everyday Comfort (Marigold & Microclimates) */}
       {/* ========================================================================= */}
-      <section className="relative w-full bg-ink text-white py-20 md:py-32 px-6 lg:px-12 overflow-hidden my-16">
-        <div className="max-w-[1440px] mx-auto relative z-10">
+      <section className="relative w-full py-16 md:py-24 lg:py-28 px-4 sm:px-6 lg:px-10 max-w-[1440px] mx-auto my-8">
+        <div className="bg-paper rounded-3xl p-6 sm:p-10 lg:p-14 border border-border/60 shadow-xs">
           
-          <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-8 mb-16 pb-8 border-b border-white/15">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-mauve block mb-3">
-                Comparative Pathology
-              </span>
-              <h2 className="text-[clamp(32px,5vw,68px)] font-editorial italic font-semibold leading-[0.95] tracking-tight text-white">
-                <span className="block">Synthetic Occlusion.</span>
-                <span className="block text-white/50">Natural Equilibrium.</span>
-              </h2>
-            </div>
-            <p className="max-w-[420px] text-sm text-white/75 font-light leading-relaxed">
-              Standard commercial innerwear blends petroleum polyester with 5% to 10% elastane. This non-porous synthetic film acts as an unventilated barrier directly next to sensitive tissue.
-            </p>
-          </div>
-
-          {/* Tri-Column Problem / Situation / Solution Bento */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* The Problem */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:bg-white/8 transition-colors">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+            
+            {/* Left Column: Substantial Marigold Editorial Panel (~42% visual area) */}
+            <div className="lg:col-span-5 bg-marigold text-ink rounded-2xl md:rounded-3xl p-8 sm:p-10 lg:p-12 flex flex-col justify-between shadow-sm relative overflow-hidden min-h-[420px] lg:min-h-[500px]">
+              
+              {/* Top: Section Label & Dominant Title */}
               <div>
-                <span className="text-[11px] font-mono uppercase tracking-wider text-rose-400 block mb-3">
-                  The Problem
+                <span className="text-xs font-mono uppercase tracking-[0.2em] text-ink/80 font-semibold block mb-6">
+                  FABRIC, SKIN & EVERYDAY COMFORT
                 </span>
-                <h3 className="text-2xl font-editorial italic text-white mb-3">
-                  Occlusive Microclimates
-                </h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed mb-6">
-                  Synthetic innerwear made of polyester and elastane traps body heat and prevents moisture vapor from evaporating, producing localized humidity spikes throughout the day.
+
+                <h2 className="text-[clamp(2.25rem,4vw,3.5rem)] font-editorial italic font-semibold leading-[1.05] tracking-tight text-ink mb-6">
+                  <span className="block">Synthetic Occlusion.</span>
+                  <span className="block text-ink/75">Natural Equilibrium.</span>
+                </h2>
+              </div>
+
+              {/* Bottom: Natural Sign-off with Optional Closing Line */}
+              <div className="pt-8 border-t border-ink/15">
+                <p className="text-xs sm:text-sm font-editorial italic text-ink/85 leading-relaxed">
+                  Understand the conditions. Make a more informed choice.
                 </p>
               </div>
-              <div className="pt-4 border-t border-white/10 text-[11px] font-mono text-white/50">
-                Factor: Non-porous petroleum filaments
-              </div>
+
             </div>
 
-            {/* The Situation */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:bg-white/8 transition-colors">
-              <div>
-                <span className="text-[11px] font-mono uppercase tracking-wider text-amber-300 block mb-3">
-                  The Situation
-                </span>
-                <h3 className="text-2xl font-editorial italic text-white mb-3">
-                  Barrier Permeability
+            {/* Right Column: Tactile Photograph & Editorial Reading Column */}
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-8">
+              
+              {/* Tactile Photograph Generated via Nano Banana */}
+              <div className="w-full overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 shadow-sm aspect-[3/2] relative bg-paper group">
+                <img 
+                  src="/images/skin-science-fabric-microclimate.jpg" 
+                  alt="South Asian adult handling soft natural cotton fabric beside folded blush-pink innerwear resting on bedding with a rich marigold textile backdrop" 
+                  className="w-full h-full object-cover object-center block transition-transform duration-700 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Editorial Reading Area */}
+              <div className="space-y-4 px-1 sm:px-2">
+                <h3 className="text-xl sm:text-2xl lg:text-[28px] font-editorial italic font-semibold text-ink leading-snug">
+                  Your skin responds to more than the fabric label.
                 </h3>
-                <p className="text-xs text-white/70 font-light leading-relaxed mb-6">
-                  When sweat remains trapped against the skin, the stratum corneum swells and weakens. Macerated tissue exhibits elevated permeability to dye resins and friction irritation.
-                </p>
+
+                <div className="space-y-4 text-p1 text-ink/80 font-light leading-relaxed">
+                  <p>
+                    Skin is affected by the conditions around it, not just by the material touching it. Warmth, moisture, the way a garment fits and repeated movement can all influence the microclimate at the skin’s surface. When moisture lingers, the outer layer of skin can become softer, and repeated friction may contribute to discomfort.
+                  </p>
+                  <p>
+                    Fabric construction influences how air and moisture move through a garment, but fibre type alone does not determine how it performs. We consider the fabric, its construction and the materials used in our GOTS-certified organic cotton innerwear as part of a more thoughtful approach to everyday wear.
+                  </p>
+                </div>
               </div>
-              <div className="pt-4 border-t border-white/10 text-[11px] font-mono text-white/50">
-                Factor: Stratum corneum swelling (maceration)
-              </div>
+
             </div>
 
-            {/* The Solution */}
-            <div className="bg-mauve/15 border border-mauve/40 rounded-2xl p-8 flex flex-col justify-between hover:bg-mauve/20 transition-colors">
-              <div>
-                <span className="text-[11px] font-mono uppercase tracking-wider text-mauve block mb-3">
-                  The Solution
-                </span>
-                <h3 className="text-2xl font-editorial italic text-white mb-3">
-                  Unblended Organic Cotton
-                </h3>
-                <p className="text-xs text-white/90 font-light leading-relaxed mb-6">
-                  Good Karma uses 100% GOTS-certified organic cotton. Its hollow cellulose structure naturally breathes and wicks perspiration without synthetic elastane or petrochemical finishes.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-mauve/30 text-[11px] font-mono text-mauve">
-                Factor: Zero elastane · 100% natural breathability
-              </div>
-            </div>
           </div>
 
         </div>
