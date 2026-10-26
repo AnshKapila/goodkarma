@@ -159,6 +159,46 @@ const MANIFESTO_ACCORDION_CARDS: ManifestoAccordionCard[] = [
   }
 ];
 
+interface FabricMeetsSkinCard {
+  id: string;
+  label: string;
+  heading: string;
+  supportingLine: string;
+  body: string;
+  image: string;
+  imageAlt: string;
+}
+
+const FABRIC_MEETS_SKIN_CARDS: FabricMeetsSkinCard[] = [
+  {
+    id: "skin-and-moisture",
+    label: "01 · Skin & Moisture",
+    heading: "When Skin Holds on to Moisture",
+    supportingLine: "Understanding your skin's natural barrier",
+    body: "Your skin constantly exchanges moisture with its surroundings. When the outer skin layer stays damp for extended periods, it can soften. This may make the skin more susceptible to friction, especially where clothing fits closely.",
+    image: "/images/skin-science-card-moisture.jpg",
+    imageAlt: "Close-up photograph of a South Asian adult forearm and hand resting on natural linen with soft window light",
+  },
+  {
+    id: "fabric-and-movement",
+    label: "02 · Everyday Movement",
+    heading: "The Conditions Beneath Your Clothes",
+    supportingLine: "Warmth, moisture and movement work together",
+    body: "During everyday wear, warmth, perspiration, garment fit and repeated movement can influence the conditions at the skin's surface. If moisture persists, friction may become more noticeable. These effects vary with the person, the activity and how the garment is made.",
+    image: "/images/skin-science-card-movement.jpg",
+    imageAlt: "Folded blush-pink cotton innerwear resting on warm bedding with a rich marigold textile backdrop",
+  },
+  {
+    id: "fabric-construction",
+    label: "03 · Fabric Construction",
+    heading: "More Than Just the Fibre",
+    supportingLine: "How a fabric is made matters too",
+    body: "Fibre type is only one part of how a textile behaves. Yarn, weave or knit structure, fabric weight and garment construction can influence how air and moisture move through it. Good Karma uses GOTS-certified organic cotton in its innerwear and considers the materials that come into contact with the skin.",
+    image: "/images/skin-science-card-construction.jpg",
+    imageAlt: "Tactile close-up photograph of blush-pink ribbed cotton fabric, precise stitching, and waistband construction against a marigold backdrop",
+  },
+];
+
 export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxViewProps) {
   // 1. Manifesto Scroll Word Reveal
   const manifestoRef = useRef<HTMLDivElement>(null);
@@ -376,68 +416,80 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
       <AboutStrip className="my-8" />
 
       {/* ========================================================================= */}
-      {/* 4. EDITORIAL FEATURE: Fabric, Skin & Everyday Comfort (Marigold & Microclimates) */}
+      {/* 4. RESTORED BREAKOUT: What Happens When Fabric Meets Skin? */}
       {/* ========================================================================= */}
-      <section className="relative w-full py-16 md:py-24 lg:py-28 px-4 sm:px-6 lg:px-10 max-w-[1440px] mx-auto my-8">
-        <div className="bg-paper rounded-3xl p-6 sm:p-10 lg:p-14 border border-border/60 shadow-xs">
+      <section className="relative w-full bg-ink text-white py-20 md:py-32 px-6 lg:px-12 overflow-hidden my-16">
+        <div className="max-w-[1440px] mx-auto relative z-10">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-            
-            {/* Left Column: Substantial Marigold Editorial Panel (~42% visual area) */}
-            <div className="lg:col-span-5 bg-marigold text-ink rounded-2xl md:rounded-3xl p-8 sm:p-10 lg:p-12 flex flex-col justify-between shadow-sm relative overflow-hidden min-h-[420px] lg:min-h-[500px]">
-              
-              {/* Top: Section Label & Dominant Title */}
-              <div>
-                <span className="text-xs font-mono uppercase tracking-[0.2em] text-ink/80 font-semibold block mb-6">
-                  FABRIC, SKIN & EVERYDAY COMFORT
-                </span>
-
-                <h2 className="text-[clamp(2.25rem,4vw,3.5rem)] font-editorial italic font-semibold leading-[1.05] tracking-tight text-ink mb-6">
-                  <span className="block">Synthetic Occlusion.</span>
-                  <span className="block text-ink/75">Natural Equilibrium.</span>
-                </h2>
-              </div>
-
-              {/* Bottom: Natural Sign-off with Optional Closing Line */}
-              <div className="pt-8 border-t border-ink/15">
-                <p className="text-xs sm:text-sm font-editorial italic text-ink/85 leading-relaxed">
-                  Understand the conditions. Make a more informed choice.
-                </p>
-              </div>
-
+          {/* Section Header: Preserved Header Layout with Accessible Language */}
+          <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-8 mb-16 pb-8 border-b border-white/15">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
+                Fabric, Skin & Everyday Comfort
+              </span>
+              <h2 className="text-[clamp(32px,5vw,56px)] font-editorial italic font-semibold leading-[1.05] tracking-tight text-white">
+                What Happens When Fabric Meets Skin?
+              </h2>
             </div>
+            <p className="max-w-[460px] text-sm md:text-base text-white/80 font-light leading-relaxed">
+              Your skin responds to the fabric you wear, the moisture around it and the way your clothes move with you.
+            </p>
+          </div>
 
-            {/* Right Column: Tactile Photograph & Editorial Reading Column */}
-            <div className="lg:col-span-7 flex flex-col justify-between space-y-8">
-              
-              {/* Tactile Photograph Generated via Nano Banana */}
-              <div className="w-full overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 shadow-sm aspect-[3/2] relative bg-paper group">
-                <img 
-                  src="/images/skin-science-fabric-microclimate.jpg" 
-                  alt="South Asian adult handling soft natural cotton fabric beside folded blush-pink innerwear resting on bedding with a rich marigold textile backdrop" 
-                  className="w-full h-full object-cover object-center block transition-transform duration-700 group-hover:scale-[1.02]"
-                  loading="lazy"
-                />
-              </div>
+          {/* Tri-Column Restored Cards with Dedicated Generated Background Imagery & Subtle Hover */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+            {FABRIC_MEETS_SKIN_CARDS.map((card) => (
+              <div 
+                key={card.id}
+                tabIndex={0}
+                className="group relative rounded-2xl md:rounded-3xl overflow-hidden border border-white/15 hover:border-marigold/60 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-marigold transition-all duration-500 flex flex-col justify-between min-h-[480px] sm:min-h-[500px] lg:min-h-[520px] p-8 sm:p-10 shadow-lg"
+              >
+                {/* Dedicated Background Image with subtle zoom on hover */}
+                <div className="absolute inset-0 z-0 overflow-hidden">
+                  <img 
+                    src={card.image} 
+                    alt={card.imageAlt} 
+                    className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  {/* Controlled gradient overlay to preserve high text contrast while showcasing tactile detail */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/75 to-ink/40 transition-opacity duration-500 group-hover:from-ink/95 group-hover:via-ink/80" />
+                  {/* Subtle Marigold ambient tint on hover */}
+                  <div className="absolute inset-0 bg-marigold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                </div>
 
-              {/* Editorial Reading Area */}
-              <div className="space-y-4 px-1 sm:px-2">
-                <h3 className="text-xl sm:text-2xl lg:text-[28px] font-editorial italic font-semibold text-ink leading-snug">
-                  Your skin responds to more than the fabric label.
-                </h3>
+                {/* Card Content */}
+                <div className="relative z-10 flex flex-col justify-between h-full">
+                  {/* Top: Category Tag & Heading */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-marigold group-hover:scale-125 transition-transform duration-300" />
+                      <span className="text-[11px] font-mono uppercase tracking-widest text-marigold font-medium">
+                        {card.label}
+                      </span>
+                    </div>
 
-                <div className="space-y-4 text-p1 text-ink/80 font-light leading-relaxed">
-                  <p>
-                    Skin is affected by the conditions around it, not just by the material touching it. Warmth, moisture, the way a garment fits and repeated movement can all influence the microclimate at the skin’s surface. When moisture lingers, the outer layer of skin can become softer, and repeated friction may contribute to discomfort.
-                  </p>
-                  <p>
-                    Fabric construction influences how air and moisture move through a garment, but fibre type alone does not determine how it performs. We consider the fabric, its construction and the materials used in our GOTS-certified organic cotton innerwear as part of a more thoughtful approach to everyday wear.
-                  </p>
+                    <h3 className="text-2xl sm:text-[26px] font-editorial italic font-semibold text-white leading-snug group-hover:text-amber-200 transition-colors duration-300 mb-2">
+                      {card.heading}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm font-medium text-white/90">
+                      {card.supportingLine}
+                    </p>
+                  </div>
+
+                  {/* Bottom: Body Copy & Marigold Accent Bar */}
+                  <div className="pt-6 border-t border-white/15 group-hover:border-marigold/40 transition-colors duration-500">
+                    <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed group-hover:text-white/95 transition-colors duration-300">
+                      {card.body}
+                    </p>
+                    
+                    {/* Subtle bottom marigold accent line */}
+                    <div className="mt-5 h-0.5 w-8 bg-marigold/50 group-hover:w-16 group-hover:bg-marigold transition-all duration-500 rounded-full" />
+                  </div>
                 </div>
               </div>
-
-            </div>
-
+            ))}
           </div>
 
         </div>
