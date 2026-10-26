@@ -205,7 +205,10 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
   const [manifestoProgress, setManifestoProgress] = useState(0);
   const [expandedManifestoIndex, setExpandedManifestoIndex] = useState<number | null>(null);
 
-  // 2. Horizontal Pinned Scroll Track
+  // 2. What Happens When Fabric Meets Skin Cards State
+  const [activeFabricCardId, setActiveFabricCardId] = useState<string | null>(null);
+
+  // 3. Horizontal Pinned Scroll Track
   const pinSectionRef = useRef<HTMLElement>(null);
   const pinTrackRef = useRef<HTMLDivElement>(null);
   const [activeTopicIndex, setActiveTopicIndex] = useState(0);
@@ -436,60 +439,106 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
             </p>
           </div>
 
-          {/* Tri-Column Restored Cards with Dedicated Generated Background Imagery & Subtle Hover */}
+          {/* Tri-Column Restored Cards with Dedicated Generated Background Imagery & Hover Reveal Animation */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-            {FABRIC_MEETS_SKIN_CARDS.map((card) => (
-              <div 
-                key={card.id}
-                tabIndex={0}
-                className="group relative rounded-2xl md:rounded-3xl overflow-hidden border border-white/15 hover:border-marigold/60 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-marigold transition-all duration-500 flex flex-col justify-between min-h-[480px] sm:min-h-[500px] lg:min-h-[520px] p-8 sm:p-10 shadow-lg"
-              >
-                {/* Dedicated Background Image with subtle zoom on hover */}
-                <div className="absolute inset-0 z-0 overflow-hidden">
-                  <img 
-                    src={card.image} 
-                    alt={card.imageAlt} 
-                    className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  {/* Controlled gradient overlay to preserve high text contrast while showcasing tactile detail */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/75 to-ink/40 transition-opacity duration-500 group-hover:from-ink/95 group-hover:via-ink/80" />
-                  {/* Subtle Marigold ambient tint on hover */}
-                  <div className="absolute inset-0 bg-marigold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                </div>
+            {FABRIC_MEETS_SKIN_CARDS.map((card) => {
+              const isToggled = activeFabricCardId === card.id;
 
-                {/* Card Content */}
-                <div className="relative z-10 flex flex-col justify-between h-full">
-                  {/* Top: Category Tag & Heading */}
-                  <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-marigold group-hover:scale-125 transition-transform duration-300" />
-                      <span className="text-[11px] font-mono uppercase tracking-widest text-marigold font-medium">
-                        {card.label}
-                      </span>
+              return (
+                <div 
+                  key={card.id}
+                  tabIndex={0}
+                  onClick={() => setActiveFabricCardId(isToggled ? null : card.id)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setActiveFabricCardId(isToggled ? null : card.id);
+                    }
+                  }}
+                  className="group relative rounded-2xl md:rounded-3xl overflow-hidden border border-white/15 hover:border-marigold/60 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-marigold transition-all duration-500 flex flex-col justify-between min-h-[460px] sm:min-h-[490px] lg:min-h-[520px] p-8 sm:p-10 shadow-lg cursor-pointer select-none"
+                >
+                  {/* Dedicated Background Image with subtle zoom on hover */}
+                  <div className="absolute inset-0 z-0 overflow-hidden">
+                    <img 
+                      src={card.image} 
+                      alt={card.imageAlt} 
+                      className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    {/* Controlled gradient overlay: gentle in default state to highlight imagery, deepening on hover for text contrast */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/65 to-ink/20 transition-opacity duration-500 group-hover:from-ink/95 group-hover:via-ink/80 group-hover:to-ink/35" />
+                    {/* Subtle Marigold ambient tint on hover */}
+                    <div className="absolute inset-0 bg-marigold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    {/* Top: Category Tag & Heading (Always visible without hover) */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="w-1.5 h-1.5 rounded-full bg-marigold group-hover:scale-125 transition-transform duration-300" />
+                        <span className="text-[11px] font-mono uppercase tracking-widest text-marigold font-medium">
+                          {card.label}
+                        </span>
+                      </div>
+
+                      <h3 className="text-2xl sm:text-[26px] font-editorial italic font-semibold text-white leading-snug group-hover:text-amber-200 transition-colors duration-300 mb-2">
+                        {card.heading}
+                      </h3>
+
+                      <p className="text-xs sm:text-sm font-medium text-white/90">
+                        {card.supportingLine}
+                      </p>
                     </div>
 
-                    <h3 className="text-2xl sm:text-[26px] font-editorial italic font-semibold text-white leading-snug group-hover:text-amber-200 transition-colors duration-300 mb-2">
-                      {card.heading}
-                    </h3>
+                    {/* Bottom: Description Container with Hover Reveal Animation */}
+                    <div className="mt-auto pt-4">
+                      {/* Animated expandable container for description body copy */}
+                      <div 
+                        className={`grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                          isToggled 
+                            ? "grid-rows-[1fr]" 
+                            : "grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus-visible:grid-rows-[1fr]"
+                        }`}
+                      >
+                        <div className="overflow-hidden">
+                          <div 
+                            className={`pt-4 border-t border-white/15 group-hover:border-marigold/40 transition-all duration-500 ${
+                              isToggled 
+                                ? "opacity-100 translate-y-0" 
+                                : "opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 translate-y-3 group-hover:translate-y-0 group-focus-visible:translate-y-0"
+                            }`}
+                          >
+                            <p className="text-xs sm:text-sm text-white/85 font-light leading-relaxed">
+                              {card.body}
+                            </p>
+                            
+                            {/* Subtle bottom marigold accent line */}
+                            <div className="mt-4 h-0.5 w-8 bg-marigold/50 group-hover:w-16 group-hover:bg-marigold transition-all duration-500 rounded-full" />
+                          </div>
+                        </div>
+                      </div>
 
-                    <p className="text-xs sm:text-sm font-medium text-white/90">
-                      {card.supportingLine}
-                    </p>
-                  </div>
+                      {/* Collapsed state prompt (visible when NOT hovered) */}
+                      <div 
+                        className={`flex items-center justify-between pt-4 border-t border-white/15 transition-all duration-300 ${
+                          isToggled 
+                            ? "opacity-0 h-0 pt-0 overflow-hidden" 
+                            : "group-hover:opacity-0 group-hover:h-0 group-hover:pt-0 group-hover:overflow-hidden group-focus-visible:opacity-0 group-focus-visible:h-0 group-focus-visible:pt-0 group-focus-visible:overflow-hidden"
+                        }`}
+                      >
+                        <span className="text-[11px] font-mono uppercase tracking-widest text-white/60 flex items-center gap-1.5">
+                          <span>Read details</span>
+                          <span className="text-marigold transition-transform duration-300 group-hover:translate-x-1">→</span>
+                        </span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-marigold/60" />
+                      </div>
+                    </div>
 
-                  {/* Bottom: Body Copy & Marigold Accent Bar */}
-                  <div className="pt-6 border-t border-white/15 group-hover:border-marigold/40 transition-colors duration-500">
-                    <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed group-hover:text-white/95 transition-colors duration-300">
-                      {card.body}
-                    </p>
-                    
-                    {/* Subtle bottom marigold accent line */}
-                    <div className="mt-5 h-0.5 w-8 bg-marigold/50 group-hover:w-16 group-hover:bg-marigold transition-all duration-500 rounded-full" />
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>
