@@ -575,11 +575,6 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                 alt="Skin barrier stratum corneum matrix" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 text-white">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-white/80 block">Perspective 01</span>
-                <h4 className="text-2xl font-editorial italic">Your Skin & Dermal Comfort</h4>
-              </div>
             </div>
 
             {/* Content Col */}
