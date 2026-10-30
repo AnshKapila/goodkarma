@@ -94,6 +94,7 @@ interface DyeBotanical {
   activeCompound: string;
   description: string;
   category: "Rescued Waste" | "Ayurvedic Heritage" | "Wild Harvest";
+  image: string;
 }
 
 const DYE_BOTANICALS: DyeBotanical[] = [
@@ -106,7 +107,8 @@ const DYE_BOTANICALS: DyeBotanical[] = [
     source: "Rescued temple floral offerings & local market harvests",
     activeCompound: "Lutein & Carotenoid Flavonoids",
     description: "Rescued from temple offerings and local markets. Rich in lutein and carotenoids, producing warm sunshine yellows and rich ochre undertones without synthetic pigments.",
-    category: "Rescued Waste"
+    category: "Rescued Waste",
+    image: "/images/botanicals/marigold.jpg"
   },
   {
     id: "madder",
@@ -117,7 +119,8 @@ const DYE_BOTANICALS: DyeBotanical[] = [
     source: "Cultivated on regenerative Indian organic farms",
     activeCompound: "Natural Alizarin & Purpurin Glycosides",
     description: "Known as Manjistha in Ayurvedic traditions. Yields gentle blush rose, terracotta, and rich crimson hues via natural alizarin compounds known for millennia.",
-    category: "Ayurvedic Heritage"
+    category: "Ayurvedic Heritage",
+    image: "/images/botanicals/madder.jpg"
   },
   {
     id: "pomegranate",
@@ -128,7 +131,8 @@ const DYE_BOTANICALS: DyeBotanical[] = [
     source: "Upcycled fruit rinds from juice artisans & processing",
     activeCompound: "Ellagitannins & Punicalagin Polyphenols",
     description: "Upcycled from fruit-processing and juice vendors. High natural tannin concentration functions as both a gentle mordant and soft khaki-chartreuse pigment.",
-    category: "Rescued Waste"
+    category: "Rescued Waste",
+    image: "/images/botanicals/pomegranate.jpg"
   },
   {
     id: "indigo",
@@ -139,7 +143,8 @@ const DYE_BOTANICALS: DyeBotanical[] = [
     source: "Biodynamic organic indigo fields in Tamil Nadu",
     activeCompound: "Indigotin via Natural Microbial Reduction",
     description: "Naturally fermented organic indigo leaves. Creates deep, living botanical blues without caustic sodium hydrosulfite or toxic petroleum-derived chemical reducing agents.",
-    category: "Wild Harvest"
+    category: "Wild Harvest",
+    image: "/images/botanicals/indigo.jpg"
   },
   {
     id: "harda",
@@ -150,7 +155,8 @@ const DYE_BOTANICALS: DyeBotanical[] = [
     source: "Wild-harvested forest drupes in Central India",
     activeCompound: "Chebulinic Acid & Gallic Tannins",
     description: "A wild forest fruit historically revered in traditional botanicals. Functions as a natural tannin-rich pre-treatment and gentle buff colorant.",
-    category: "Wild Harvest"
+    category: "Wild Harvest",
+    image: "/images/botanicals/harda.jpg"
   },
   {
     id: "katha",
@@ -161,7 +167,8 @@ const DYE_BOTANICALS: DyeBotanical[] = [
     source: "Indigenous sustainably pruned acacia heartwood",
     activeCompound: "Catechin & Catechutannic Acid",
     description: "Extracted sustainably from indigenous acacia tree heartwood. Imparts rich cinnamon fawn and warm earthy brown tones with excellent natural lightfastness.",
-    category: "Ayurvedic Heritage"
+    category: "Ayurvedic Heritage",
+    image: "/images/botanicals/katha.jpg"
   }
 ];
 
@@ -212,8 +219,8 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
   // 2. Continuous 3-Card Accordion Hover State
   const [expandedManifestoIndex, setExpandedManifestoIndex] = useState<number | null>(null);
 
-  // 3. Botanical Dye Selector State
-  const [selectedDye, setSelectedDye] = useState<DyeBotanical>(DYE_BOTANICALS[0]);
+  // 3. Botanical Dye Hover/Tap State (Living Palette Bento)
+  const [activeBotanicalId, setActiveBotanicalId] = useState<string | null>(null);
 
   // 4. Exclusions Accordion State
   const [expandedExclusion, setExpandedExclusion] = useState<number | null>(null);
@@ -425,93 +432,77 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
               </h2>
             </div>
             <p className="max-w-[500px] text-p1 text-muted-foreground font-light leading-relaxed">
-              Our formulation begins with 6 core Indian botanical sources, expanding modularly as new natural shade recipes are mastered. Select any plant to inspect its chemistry and sourcing.
+              Our formulation begins with 6 core Indian botanical sources, expanding modularly as new natural shade recipes are mastered. Hover over each source to explore its properties.
             </p>
           </div>
 
-          {/* Interactive Library Bento Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {/* Living Palette Bento Grid - Real Stock Photography Backgrounds & Hover Description Reveal */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-4">
             {DYE_BOTANICALS.map((dye) => {
-              const isSelected = selectedDye.id === dye.id;
+              const isExpanded = activeBotanicalId === dye.id;
 
               return (
                 <div
                   key={dye.id}
-                  onClick={() => setSelectedDye(dye)}
-                  className={`group relative p-8 rounded-2xl border transition-all duration-500 cursor-pointer flex flex-col justify-between ${
-                    isSelected 
-                      ? "bg-white border-marigold shadow-xl ring-2 ring-marigold/20" 
-                      : "bg-paper/80 border-border/60 hover:bg-white hover:border-border hover:shadow-md"
-                  }`}
+                  tabIndex={0}
+                  onClick={() => setActiveBotanicalId(isExpanded ? null : dye.id)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setActiveBotanicalId(isExpanded ? null : dye.id);
+                    }
+                  }}
+                  className="group relative rounded-2xl md:rounded-3xl overflow-hidden border border-white/15 hover:border-marigold/60 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-marigold transition-all duration-500 flex flex-col justify-end min-h-[400px] sm:min-h-[440px] p-8 shadow-lg select-none cursor-default"
                 >
-                  <div>
-                    {/* Top Swatch & Category */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center gap-3">
-                        <div 
-                          className="w-10 h-10 rounded-full shadow-inner border border-black/10 transition-transform duration-500 group-hover:scale-110" 
-                          style={{ backgroundColor: dye.colorHex }} 
-                        />
-                        <div>
-                          <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground block">
-                            {dye.latin}
-                          </span>
-                          <span className="text-xs font-semibold text-ink block" style={{ color: dye.colorHex }}>
-                            {dye.colorName}
-                          </span>
-                        </div>
-                      </div>
-
-                      <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-paper border border-border/50 text-muted-foreground">
-                        {dye.category}
-                      </span>
-                    </div>
-
-                    {/* Dye Common Name */}
-                    <h3 className="text-2xl font-editorial italic font-semibold text-ink mb-3 group-hover:text-marigold transition-colors">
-                      {dye.name}
-                    </h3>
-
-                    {/* Short Description */}
-                    <p className="text-xs sm:text-sm text-muted-foreground font-light leading-relaxed mb-6">
-                      {dye.description}
-                    </p>
+                  {/* Real stock photo background (not AI generated) */}
+                  <div className="absolute inset-0 z-0 overflow-hidden">
+                    <img
+                      src={dye.image}
+                      alt={dye.name}
+                      className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    {/* Gradient scrim ensuring high contrast and pristine text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/65 to-ink/20 transition-opacity duration-500 group-hover:from-ink/95 group-hover:via-ink/80 group-hover:to-ink/30" />
+                    {/* Subtle warm marigold ambient hover tint */}
+                    <div className="absolute inset-0 bg-marigold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   </div>
 
-                  {/* Sourcing / Chemical Compound Tag */}
-                  <div className="pt-5 border-t border-border/40 text-[11px] font-mono text-muted-foreground flex items-center justify-between">
-                    <span>{dye.activeCompound}</span>
-                    <span className="text-marigold font-bold text-xs">Explore →</span>
+                  {/* Content: Only the color name and description */}
+                  <div className="relative z-10">
+                    <h3 className="text-2xl sm:text-3xl font-editorial italic font-semibold text-white drop-shadow-sm leading-tight mb-1">
+                      {dye.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm font-medium text-amber-200/90 drop-shadow-xs mb-3">
+                      {dye.colorName}
+                    </p>
+
+                    {/* Expandable description container: Revealed on hover */}
+                    <div
+                      className={`grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                        isExpanded
+                          ? "grid-rows-[1fr]"
+                          : "grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus-visible:grid-rows-[1fr]"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div
+                          className={`pt-3 border-t border-white/20 transition-all duration-500 ${
+                            isExpanded
+                              ? "opacity-100 translate-y-0"
+                              : "opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 translate-y-3 group-hover:translate-y-0 group-focus-visible:translate-y-0"
+                          }`}
+                        >
+                          <p className="text-xs sm:text-sm text-white/90 font-light leading-relaxed">
+                            {dye.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               );
             })}
-          </div>
-
-          {/* Active Botanical Detail Banner */}
-          <div className="bg-paper rounded-2xl p-8 lg:p-12 border border-border/60 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-sm">
-            <div className="flex items-center gap-6">
-              <div 
-                className="w-16 h-16 sm:w-20 sm:h-20 rounded-full shadow-md shrink-0 border-2 border-white ring-1 ring-black/10" 
-                style={{ backgroundColor: selectedDye.colorHex }} 
-              />
-              <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-marigold block mb-1">
-                  Active Botanical Formulation · {selectedDye.category}
-                </span>
-                <h4 className="text-2xl sm:text-3xl font-editorial italic font-semibold text-ink mb-2">
-                  {selectedDye.name} ({selectedDye.latin})
-                </h4>
-                <p className="text-sm text-muted-foreground font-light max-w-[650px] leading-relaxed">
-                  <strong>Sourcing Origin:</strong> {selectedDye.source}. <br/>
-                  <strong>Phytochemical Agent:</strong> {selectedDye.activeCompound}.
-                </p>
-              </div>
-            </div>
-
-            <Button href="/products" variant="secondary" className="shrink-0">
-              Shop {selectedDye.name} Shades
-            </Button>
           </div>
 
         </div>

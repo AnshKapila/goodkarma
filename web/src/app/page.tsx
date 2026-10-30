@@ -158,207 +158,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Beyond the Product (Science Bento Grid) */}
-      <section className="px-6 max-w-[1400px] mx-auto w-full">
-        <div className="mb-10 max-w-[800px]">
-          <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-3 block">
-            GOOD KARMA · BEYOND THE PRODUCT
-          </span>
-          <h2 className="text-h2 font-editorial italic text-ink leading-tight mb-4">
-            The science behind everyday life.
-          </h2>
-          <p className="text-sm sm:text-base text-muted-foreground font-light leading-relaxed max-w-[700px]">
-            From the air we breathe to the products we use, explore the environmental exposures, chemical interactions and scientific questions that shape our understanding of wellbeing.
-          </p>
+      {/* 6.5 Skin Science Teaser */}
+      <section className="w-full bg-mauve text-white">
+        <div className="w-full flex flex-col md:flex-row items-center">
+          <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-[700px] bg-[url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center relative order-2 md:order-1">
+          </div>
+          <div className="w-full md:w-1/2 p-12 md:p-20 lg:p-24 flex-1 order-1 md:order-2 flex flex-col justify-center max-w-[700px] mx-auto">
+            <span className="text-white/80 font-bold text-xs uppercase tracking-widest mb-6 block">Skin Science</span>
+            <h2 className="text-h2 font-editorial italic text-white mb-8">
+              The science of breathing.
+            </h2>
+            <p className="text-p1 text-white/90 mb-10 font-light max-w-[450px]">
+              We design for the body's largest organ. Discover exactly how synthetic fabrics interact with your skin compared to pure, unblended organic cotton.
+            </p>
+            <Button href="/educate/skin-science" variant="primary" fullWidthMobile={true}>
+              Read the Research
+            </Button>
+          </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[auto] lg:auto-rows-[340px]">
-          
-          {/* Card 01: Air Pollution & Human Health (Featured Card: 2 cols x 2 rows on desktop) */}
-          <Link
-            href="/educate/environmental-health"
-            className="group relative rounded-[20px] overflow-hidden border border-border/60 hover:border-marigold/60 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-marigold transition-all duration-300 md:col-span-2 lg:col-span-2 lg:row-span-2 min-h-[440px] lg:min-h-[704px] p-8 md:p-10 lg:p-12 flex flex-col justify-between shadow-xs hover:shadow-lg bg-ink"
-          >
-            {/* Full-bleed authentic documentary image */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-              <img
-                src="/images/air-pollution-health.jpg"
-                alt="Documentary photograph of an Indian city with atmospheric haze"
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 motion-reduce:transform-none"
-                loading="lazy"
-              />
-              {/* Carefully tuned gradient scrim preserving atmospheric depth while ensuring pristine text contrast */}
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/65 to-ink/25" />
-            </div>
-
-            <div className="relative z-10">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-marigold font-semibold flex items-center gap-2 mb-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-marigold group-hover:scale-125 transition-transform duration-300" />
-                ENVIRONMENTAL HEALTH
-              </span>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-editorial italic text-white leading-snug mt-2 max-w-[500px]">
-                Air Pollution & Human Health
-              </h3>
-            </div>
-
-            <div className="relative z-10 pt-6">
-              <p className="text-sm sm:text-base text-white/90 font-light leading-relaxed max-w-[540px] mb-6">
-                PM2.5, nitrogen dioxide and other air pollutants affect more than the air we breathe. Explore how exposure influences human health, what research suggests about the skin, and where scientific uncertainty remains.
-              </p>
-              <span className="inline-flex items-center gap-2 text-sm font-semibold text-marigold group-hover:text-amber-200 transition-colors">
-                <span>Explore the science</span>
-                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300 motion-reduce:transform-none" />
-              </span>
-            </div>
-          </Link>
-
-          {/* Card 02: Chemicals & Hormone Health (Standard Card: 1 col x 1 row) */}
-          <Link
-            href="/educate/endocrine-science"
-            className="group relative rounded-[20px] overflow-hidden border border-border/60 hover:border-mauve/60 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-mauve transition-all duration-300 lg:col-span-1 lg:row-span-1 min-h-[340px] p-7 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md bg-[#FAF7F6]"
-          >
-            {/* Thoughtful editorial still life with subtle mauve / paper wash */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-              <img
-                src="/images/endocrine-science.jpg"
-                alt="Editorial still life with laboratory glassware, dropper bottle and cosmetic container"
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 opacity-30 group-hover:opacity-40 motion-reduce:transform-none"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F6]/98 via-[#FAF7F6]/88 to-[#FAF7F6]/65" />
-            </div>
-
-            <div className="relative z-10">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-mauve font-semibold block mb-2">
-                ENDOCRINE SCIENCE
-              </span>
-              <h3 className="text-xl sm:text-[22px] font-editorial italic text-ink leading-snug mb-3">
-                Chemicals & Hormone Health
-              </h3>
-              <p className="text-xs sm:text-[13px] text-muted-foreground font-light leading-relaxed">
-                Some chemicals can interfere with the body's hormone signalling. Learn how endocrine-disrupting chemicals are studied, where exposure can occur, and what the evidence tells us about potential health effects.
-              </p>
-            </div>
-
-            <div className="relative z-10 pt-4">
-              <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-mauve group-hover:text-ink transition-colors">
-                <span>Understand the evidence</span>
-                <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300 motion-reduce:transform-none" />
-              </span>
-            </div>
-          </Link>
-
-          {/* Card 03: Personal-Care Product Exposure (Standard Card: 1 col x 1 row) */}
-          <Link
-            href="/educate/personal-care-exposure"
-            className="group relative rounded-[20px] overflow-hidden border border-border/60 hover:border-marigold/50 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-marigold transition-all duration-300 lg:col-span-1 lg:row-span-1 min-h-[340px] p-7 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md bg-ink"
-          >
-            {/* Realistic editorial photograph of skincare and personal-care products */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-              <img
-                src="/images/personal-care-exposure.jpg"
-                alt="Editorial photograph of skincare and personal care essentials on a wooden dressing shelf"
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 motion-reduce:transform-none"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/80 to-ink/40" />
-            </div>
-
-            <div className="relative z-10">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-marigold font-semibold block mb-2">
-                EVERYDAY EXPOSURE
-              </span>
-              <h3 className="text-xl sm:text-[22px] font-editorial italic text-white leading-snug mb-3">
-                What's in Your Daily Routine?
-              </h3>
-              <p className="text-xs sm:text-[13px] text-white/85 font-light leading-relaxed">
-                Skincare, fragrances and everyday personal-care products can be sources of exposure to certain chemicals. Learn how ingredients are assessed, why dose and frequency matter, and how to read product information more critically.
-              </p>
-            </div>
-
-            <div className="relative z-10 pt-4">
-              <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-marigold group-hover:text-amber-200 transition-colors">
-                <span>Explore everyday ingredients</span>
-                <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300 motion-reduce:transform-none" />
-              </span>
-            </div>
-          </Link>
-
-          {/* Card 04: The Science of Everyday Exposure (Standard Card with Marigold Accent: 1 col x 1 row) */}
-          <Link
-            href="/educate/everyday-toxicology"
-            className="group relative rounded-[20px] overflow-hidden border border-marigold/35 hover:border-marigold focus:outline-hidden focus-visible:ring-2 focus-visible:ring-marigold transition-all duration-300 lg:col-span-1 lg:row-span-1 min-h-[340px] p-7 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md bg-[#FCF8F2]"
-          >
-            {/* Editorial home still life with marigold ceramics and natural textiles */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-              <img
-                src="/images/everyday-toxicology.jpg"
-                alt="Editorial still life of marigold vessel and natural materials on a wooden table"
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 opacity-30 group-hover:opacity-45 motion-reduce:transform-none"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#FCF8F2]/98 via-[#FCF8F2]/88 to-[#FCF8F2]/60" />
-            </div>
-
-            <div className="relative z-10">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-marigold font-bold bg-marigold/10 border border-marigold/20 px-2.5 py-0.5 rounded-full">
-                  TOXICOLOGY
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-marigold" />
-              </div>
-              <h3 className="text-xl sm:text-[22px] font-editorial italic text-ink leading-snug mb-3">
-                The Science of Everyday Exposure
-              </h3>
-              <p className="text-xs sm:text-[13px] text-ink/80 font-light leading-relaxed">
-                People encounter substances through different routes and in different amounts. Explore how exposure, duration and chemical mixtures are evaluated, and why context matters when interpreting risk.
-              </p>
-            </div>
-
-            <div className="relative z-10 pt-4">
-              <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-marigold group-hover:text-ink transition-colors">
-                <span>Learn how exposure works</span>
-                <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300 motion-reduce:transform-none" />
-              </span>
-            </div>
-          </Link>
-
-          {/* Card 05: Environmental Releases & Pollution (Standard Card: 1 col x 1 row) */}
-          <Link
-            href="/blog/textile-effluent-and-environmental-stewardship"
-            className="group relative rounded-[20px] overflow-hidden border border-border/60 hover:border-sage/70 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-sage transition-all duration-300 lg:col-span-1 lg:row-span-1 min-h-[340px] p-7 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md bg-ink"
-          >
-            {/* Realistic documentary photograph of industrial water treatment infrastructure */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-              <img
-                src="/images/environmental-releases.jpg"
-                alt="Documentary photograph of modern industrial water treatment infrastructure"
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 motion-reduce:transform-none"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/80 to-ink/40" />
-            </div>
-
-            <div className="relative z-10">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-[#98b093] font-semibold block mb-2">
-                ENVIRONMENTAL IMPACT
-              </span>
-              <h3 className="text-xl sm:text-[22px] font-editorial italic text-white leading-snug mb-3">
-                What We Release Into the Environment
-              </h3>
-              <p className="text-xs sm:text-[13px] text-white/85 font-light leading-relaxed">
-                Chemical use doesn't end when a product leaves the factory. Explore how production, wastewater treatment and waste management influence what enters the wider environment.
-              </p>
-            </div>
-
-            <div className="relative z-10 pt-4">
-              <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-white/90 group-hover:text-marigold transition-colors">
-                <span>Explore environmental impact</span>
-                <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300 motion-reduce:transform-none" />
-              </span>
-            </div>
-          </Link>
-
+      {/* 7. "For sight of every new piece" (Natural Dyeing) */}
+      <section className="px-6 py-6 max-w-[1400px] mx-auto w-full">
+        <div className="bg-ink rounded-xl overflow-hidden text-white flex flex-col md:flex-row items-stretch shadow-xl">
+          <div className="p-8 md:p-14 lg:p-20 flex-1 flex flex-col justify-center">
+            <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">Our Process</span>
+            <h2 className="text-h2 font-editorial italic mb-8 drop-shadow-sm">
+              Colours drawn <br /> directly from nature.
+            </h2>
+            <p className="text-p1 text-white/80 mb-10 max-w-[450px] font-light">
+              Marigold, Madder root, and Pomegranate. We use real ingredients to create our palette, ensuring no harmful chemicals ever touch your skin.
+            </p>
+            <Button href="/educate/natural-dyeing" variant="primary" fullWidthMobile={true}>
+              Explore the Dye Library
+            </Button>
+          </div>
+          <div className="w-full md:w-1/2 min-h-[420px] md:min-h-full aspect-square md:aspect-auto relative overflow-hidden bg-cover bg-center" style={{ backgroundImage: "url('/images/natural-dye-stack.jpg')" }}>
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-ink via-ink/20 to-transparent opacity-80 md:opacity-50" />
+          </div>
         </div>
       </section>
 
@@ -397,45 +234,124 @@ export default function Home() {
           ))}
         </div>
       </section>
-      
-      {/* 6.5 Skin Science Teaser */}
-      <section className="w-full bg-mauve text-white">
-        <div className="w-full flex flex-col md:flex-row items-center">
-          <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-[700px] bg-[url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center relative order-2 md:order-1">
-          </div>
-          <div className="w-full md:w-1/2 p-12 md:p-20 lg:p-24 flex-1 order-1 md:order-2 flex flex-col justify-center max-w-[700px] mx-auto">
-            <span className="text-white/80 font-bold text-xs uppercase tracking-widest mb-6 block">Skin Science</span>
-            <h2 className="text-h2 font-editorial italic text-white mb-8">
-              The science of breathing.
-            </h2>
-            <p className="text-p1 text-white/90 mb-10 font-light max-w-[450px]">
-              We design for the body's largest organ. Discover exactly how synthetic fabrics interact with your skin compared to pure, unblended organic cotton.
-            </p>
-            <Button href="/educate/skin-science" variant="primary" fullWidthMobile={true}>
-              Read the Research
-            </Button>
-          </div>
+
+      {/* Science Behind Everyday Life Bento Grid */}
+      <section className="px-6 max-w-[1400px] mx-auto w-full">
+        <div className="mb-10 max-w-[800px]">
+          <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-3 block">
+            GOOD KARMA · BEYOND THE PRODUCT
+          </span>
+          <h2 className="text-h2 font-editorial italic text-ink leading-tight mb-4">
+            The science behind everyday life.
+          </h2>
+          <p className="text-sm sm:text-base text-muted-foreground font-light leading-relaxed max-w-[700px]">
+            From the air we breathe to the products we use, explore the environmental exposures, chemical interactions and scientific questions that shape our understanding of wellbeing.
+          </p>
         </div>
-      </section>
-      
-      {/* 7. "For sight of every new piece" (Natural Dyeing) */}
-      <section className="px-6 py-6 max-w-[1400px] mx-auto w-full">
-        <div className="bg-ink rounded-xl overflow-hidden text-white flex flex-col md:flex-row items-stretch shadow-xl">
-          <div className="p-8 md:p-14 lg:p-20 flex-1 flex flex-col justify-center">
-            <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">Our Process</span>
-            <h2 className="text-h2 font-editorial italic mb-8 drop-shadow-sm">
-              Colours drawn <br /> directly from nature.
-            </h2>
-            <p className="text-p1 text-white/80 mb-10 max-w-[450px] font-light">
-              Marigold, Madder root, and Pomegranate. We use real ingredients to create our palette, ensuring no harmful chemicals ever touch your skin.
-            </p>
-            <Button href="/educate/natural-dyeing" variant="primary" fullWidthMobile={true}>
-              Explore the Dye Library
-            </Button>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[auto] lg:auto-rows-[340px]">
+          
+          {/* Card 01: Air Pollution & Human Health (Featured Card: 2 cols x 2 rows on desktop - No link, eyebrow removed) */}
+          <div className="group relative rounded-[20px] overflow-hidden border border-border/60 md:col-span-2 lg:col-span-2 lg:row-span-2 min-h-[440px] lg:min-h-[704px] p-8 md:p-10 lg:p-12 flex flex-col justify-between shadow-xs bg-ink select-none">
+            {/* Full-bleed authentic documentary image */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+              <img
+                src="/images/air-pollution-health.jpg"
+                alt="Documentary photograph of an Indian city with atmospheric haze"
+                className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 motion-reduce:transform-none"
+                loading="lazy"
+              />
+              {/* Carefully tuned gradient scrim preserving atmospheric depth while ensuring pristine text contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/65 to-ink/25" />
+            </div>
+
+            <div className="relative z-10">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-editorial italic text-white leading-snug mt-2 max-w-[500px]">
+                Air Pollution & Human Health
+              </h3>
+            </div>
+
+            <div className="relative z-10 pt-6">
+              <p className="text-sm sm:text-base text-white/90 font-light leading-relaxed max-w-[540px]">
+                PM2.5, nitrogen dioxide and other air pollutants affect more than the air we breathe. Explore how exposure influences human health, what research suggests about the skin, and where scientific uncertainty remains.
+              </p>
+            </div>
           </div>
-          <div className="w-full md:w-1/2 min-h-[420px] md:min-h-full aspect-square md:aspect-auto relative overflow-hidden bg-cover bg-center" style={{ backgroundImage: "url('/images/natural-dye-stack.jpg')" }}>
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-ink via-ink/20 to-transparent opacity-80 md:opacity-50" />
+
+          {/* Card 02: Chemicals & Hormone Health (Standard Card: 1 col x 1 row - No link, background removed) */}
+          <div className="group relative rounded-[20px] overflow-hidden border border-border/60 lg:col-span-1 lg:row-span-1 min-h-[340px] p-7 sm:p-8 flex flex-col justify-between shadow-xs bg-[#FAF7F6] select-none">
+            <div className="relative z-10">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-mauve font-semibold block mb-2">
+                ENDOCRINE SCIENCE
+              </span>
+              <h3 className="text-xl sm:text-[22px] font-editorial italic text-ink leading-snug mb-3">
+                Chemicals & Hormone Health
+              </h3>
+              <p className="text-xs sm:text-[13px] text-muted-foreground font-light leading-relaxed">
+                Some chemicals can interfere with the body's hormone signalling. Learn how endocrine-disrupting chemicals are studied, where exposure can occur, and what the evidence tells us about potential health effects.
+              </p>
+            </div>
           </div>
+
+          {/* Card 03: Personal-Care Product Exposure (Standard Card: 1 col x 1 row - No link) */}
+          <div className="group relative rounded-[20px] overflow-hidden border border-border/60 lg:col-span-1 lg:row-span-1 min-h-[340px] p-7 sm:p-8 flex flex-col justify-between shadow-xs bg-ink select-none">
+            {/* Realistic editorial photograph of skincare and personal-care products */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+              <img
+                src="/images/personal-care-exposure.jpg"
+                alt="Editorial photograph of skincare and personal care essentials on a wooden dressing shelf"
+                className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 motion-reduce:transform-none"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/80 to-ink/40" />
+            </div>
+
+            <div className="relative z-10">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-marigold font-semibold block mb-2">
+                EVERYDAY EXPOSURE
+              </span>
+              <h3 className="text-xl sm:text-[22px] font-editorial italic text-white leading-snug mb-3">
+                What's in Your Daily Routine?
+              </h3>
+              <p className="text-xs sm:text-[13px] text-white/85 font-light leading-relaxed">
+                Skincare, fragrances and everyday personal-care products can be sources of exposure to certain chemicals. Learn how ingredients are assessed, why dose and frequency matter, and how to read product information more critically.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 04: The Science of Everyday Exposure (Standard Card: Solid green #485646 background fill - No link) */}
+          <div className="group relative rounded-[20px] overflow-hidden border border-[#485646]/80 lg:col-span-1 lg:row-span-1 min-h-[340px] p-7 sm:p-8 flex flex-col justify-between shadow-xs bg-[#485646] text-white select-none">
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[11px] font-mono uppercase tracking-widest text-white/80 font-bold bg-white/15 px-2.5 py-0.5 rounded-full border border-white/20">
+                  TOXICOLOGY
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-white/80" />
+              </div>
+              <h3 className="text-xl sm:text-[22px] font-editorial italic text-white leading-snug mb-3">
+                The Science of Everyday Exposure
+              </h3>
+              <p className="text-xs sm:text-[13px] text-white/90 font-light leading-relaxed">
+                People encounter substances through different routes and in different amounts. Explore how exposure, duration and chemical mixtures are evaluated, and why context matters when interpreting risk.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 05: Environmental Releases & Pollution (Standard Card: 1 col x 1 row - No link, background removed) */}
+          <div className="group relative rounded-[20px] overflow-hidden border border-border/60 lg:col-span-1 lg:row-span-1 min-h-[340px] p-7 sm:p-8 flex flex-col justify-between shadow-xs bg-[#FAF7F6] select-none">
+            <div className="relative z-10">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-sage font-semibold block mb-2">
+                ENVIRONMENTAL IMPACT
+              </span>
+              <h3 className="text-xl sm:text-[22px] font-editorial italic text-ink leading-snug mb-3">
+                What We Release Into the Environment
+              </h3>
+              <p className="text-xs sm:text-[13px] text-muted-foreground font-light leading-relaxed">
+                Chemical use doesn't end when a product leaves the factory. Explore how production, wastewater treatment and waste management influence what enters the wider environment.
+              </p>
+            </div>
+          </div>
+
         </div>
       </section>
 
