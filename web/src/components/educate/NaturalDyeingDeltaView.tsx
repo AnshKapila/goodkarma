@@ -178,36 +178,41 @@ interface ExclusionItem {
   type: "Excluded" | "Included";
   lead: string;
   detail: string;
+  image: string;
 }
 
 const EXCLUSION_ITEMS: ExclusionItem[] = [
   {
-    number: "001",
+    number: "01",
     title: "Synthetic Azo Dyes",
     type: "Excluded",
     lead: "Roughly 70% of commercial garments rely on petroleum-derived synthetic azo colorants.",
-    detail: "Under body heat and sweat, specific azo chemical bonds can cleave into aromatic amines known to provoke cutaneous irritation and allergic contact dermatitis. Good Karma is 100% azo-free."
+    detail: "Under body heat and sweat, specific azo chemical bonds can cleave into aromatic amines known to provoke cutaneous irritation and allergic contact dermatitis. Good Karma is 100% azo-free.",
+    image: "/images/exclusions/synthetic-azo-dyes.jpg"
   },
   {
-    number: "002",
+    number: "02",
     title: "Elastane, Spandex & Polyurethane",
     type: "Excluded",
     lead: "Even '95% cotton' underwear blends contain synthetic polyurethane stretch filaments.",
-    detail: "These plastic threads shed microscopic and nanoscopic polymer filaments against the skin and create a non-porous moisture trap. We craft our underwear with 100% unblended cotton cellulose."
+    detail: "These plastic threads shed microscopic and nanoscopic polymer filaments against the skin and create a non-porous moisture trap. We craft our underwear with 100% unblended cotton cellulose.",
+    image: "/images/exclusions/elastane-polyurethane.jpg"
   },
   {
-    number: "003",
+    number: "03",
     title: "PFAS & Fluorinated Finishes",
     type: "Excluded",
     lead: "Per- and polyfluoroalkyl substances are applied to textiles for artificial stain resistance.",
-    detail: "These persistent 'forever chemicals' resist environmental degradation and bioaccumulate. Our garments are finished without stain-repellent coatings or fluorinated chemistry."
+    detail: "These persistent 'forever chemicals' resist environmental degradation and bioaccumulate. Our garments are finished without stain-repellent coatings or fluorinated chemistry.",
+    image: "/images/exclusions/pfas-fluorinated-finishes.jpg"
   },
   {
-    number: "004",
+    number: "04",
     title: "Toxic Heavy-Metal Mordants",
     type: "Included",
     lead: "We never use toxic chrome, copper, or tin salts to artificially force pigment adhesion.",
-    detail: "We rely exclusively on food-grade Alum (potassium aluminum sulfate) and natural Iron mineral salts. These safe earth minerals bind natural pigments to cotton permanently."
+    detail: "We rely exclusively on food-grade Alum (potassium aluminum sulfate) and natural Iron mineral salts. These safe earth minerals bind natural pigments to cotton permanently.",
+    image: "/images/exclusions/heavy-metal-mordants.jpg"
   }
 ];
 
@@ -570,7 +575,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
       </section>
 
       {/* ========================================================================= */}
-      {/* 6. WHAT WE LEAVE OUT (Delta Academy Directory-Inspired Accordion) */}
+      {/* 6. WHAT WE LEAVE OUT (Garment Industry Exclusions & Hover Accordion) */}
       {/* ========================================================================= */}
       <section id="what-we-leave-out" className="relative w-full bg-white py-20 md:py-32 px-6 lg:px-12 border-b border-border/40">
         <div className="max-w-[1440px] mx-auto w-full">
@@ -581,71 +586,96 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
                 04 · Transparency & Exclusions
               </span>
-              <h2 className="text-[clamp(32px,4.5vw,60px)] font-editorial italic font-semibold leading-[0.98] tracking-tight text-ink">
+              <h2 className="text-h2 font-editorial italic font-semibold text-ink leading-tight mb-4">
                 What we leave out.
               </h2>
             </div>
-            <p className="max-w-[460px] text-p1 text-muted-foreground font-light leading-relaxed">
+            <p className="max-w-[480px] text-p1 text-muted-foreground font-light leading-relaxed">
               Clean textile chemistry is defined as much by what is excluded as what is included. Review our uncompromising standard of exclusions.
             </p>
           </div>
 
-          {/* Directory List (Delta Academy Item Architecture) */}
-          <div className="divide-y divide-border/60 border-y border-border/60">
+          {/* Exclusions Cards with Practical Garment Industry Background Photography & Hover Accordion */}
+          <div className="space-y-4 sm:space-y-6">
             {EXCLUSION_ITEMS.map((item, idx) => {
-              const isExpanded = expandedExclusion === idx;
+              const isToggled = expandedExclusion === idx;
 
               return (
                 <div 
                   key={item.number}
-                  className="py-8 transition-colors hover:bg-paper/40 cursor-pointer"
-                  onClick={() => setExpandedExclusion(isExpanded ? null : idx)}
+                  tabIndex={0}
+                  onClick={() => setExpandedExclusion(isToggled ? null : idx)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setExpandedExclusion(isToggled ? null : idx);
+                    }
+                  }}
+                  className="group relative rounded-2xl md:rounded-3xl overflow-hidden border border-border/60 hover:border-marigold/60 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-marigold transition-all duration-500 p-6 sm:p-8 lg:p-10 shadow-sm hover:shadow-xl select-none cursor-pointer"
                 >
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    
-                    {/* Number and Title */}
-                    <div className="flex items-center gap-6">
-                      <span className="text-xs font-mono text-muted-foreground/70 tracking-widest">
-                        ({item.number})
-                      </span>
-                      <h3 className="text-xl sm:text-2xl font-editorial italic font-semibold text-ink">
-                        {item.title}
-                      </h3>
-                    </div>
+                  {/* Practical Garment Industry Implementation Background Image */}
+                  <div className="absolute inset-0 z-0 overflow-hidden">
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    {/* Dark gradient scrim ensuring high contrast and pristine text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/85 to-ink/60 transition-opacity duration-500 group-hover:from-ink/95 group-hover:via-ink/80" />
+                    {/* Subtle warm marigold ambient tint on hover */}
+                    <div className="absolute inset-0 bg-marigold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  </div>
 
-                    {/* Status Pill & Toggle */}
-                    <div className="flex items-center gap-4">
-                      <span className={`text-[11px] font-mono uppercase tracking-widest px-3 py-1 rounded-full border ${
-                        item.type === "Excluded" 
-                          ? "bg-rose-50 text-rose-800 border-rose-200" 
-                          : "bg-emerald-50 text-emerald-800 border-emerald-200"
-                      }`}>
-                        {item.type === "Excluded" ? "Strictly Prohibited" : "Sole Mineral Fixative"}
-                      </span>
+                  <div className="relative z-10">
+                    {/* Top Row: Number, Title, and Animated Chevron Indicator */}
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-4 sm:gap-6">
+                        <span className="text-xs sm:text-sm font-mono font-bold tracking-widest text-marigold bg-marigold/15 border border-marigold/30 px-2.5 py-1 rounded-md">
+                          {item.number}
+                        </span>
+                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-editorial italic font-semibold text-white drop-shadow-sm leading-snug">
+                          {item.title}
+                        </h3>
+                      </div>
 
-                      <div className={`w-8 h-8 rounded-full border border-border/60 flex items-center justify-center transition-transform duration-300 ${
-                        isExpanded ? "rotate-180 bg-ink text-white" : "text-ink"
+                      {/* Animated Toggle Indicator */}
+                      <div className={`w-9 h-9 rounded-full border border-white/25 flex items-center justify-center text-white transition-all duration-300 transform ${
+                        isToggled 
+                          ? "rotate-180 bg-marigold text-ink border-marigold" 
+                          : "group-hover:rotate-180 group-hover:bg-marigold group-hover:text-ink group-hover:border-marigold"
                       }`}>
                         <ChevronDown className="w-4 h-4" />
                       </div>
                     </div>
 
-                  </div>
-
-                  {/* Expandable Explanation Drawer */}
-                  <div className={`overflow-hidden transition-all duration-500 ease-out ${
-                    isExpanded ? "max-h-48 opacity-100 mt-6 pt-6 border-t border-border/40" : "max-h-0 opacity-0"
-                  }`}>
-                    <div className="max-w-[900px] space-y-2 pl-0 md:pl-16">
-                      <p className="text-sm font-medium text-ink leading-relaxed">
-                        {item.lead}
-                      </p>
-                      <p className="text-xs sm:text-sm text-muted-foreground font-light leading-relaxed">
-                        {item.detail}
-                      </p>
+                    {/* Expandable Explanation Accordion: Opens on hover, closes on hover remove */}
+                    <div 
+                      className={`grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                        isToggled 
+                          ? "grid-rows-[1fr]" 
+                          : "grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus-visible:grid-rows-[1fr]"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div 
+                          className={`pt-5 mt-5 border-t border-white/20 max-w-[940px] space-y-2 transition-all duration-500 ${
+                            isToggled 
+                              ? "opacity-100 translate-y-0" 
+                              : "opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 translate-y-2 group-hover:translate-y-0"
+                          }`}
+                        >
+                          <p className="text-p1 font-medium text-white leading-relaxed">
+                            {item.lead}
+                          </p>
+                          <p className="text-p2 text-white/90 font-light leading-relaxed">
+                            {item.detail}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
 
+                  </div>
                 </div>
               );
             })}
