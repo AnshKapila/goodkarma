@@ -120,7 +120,7 @@ const DYE_BOTANICALS: DyeBotanical[] = [
     activeCompound: "Natural Alizarin & Purpurin Glycosides",
     description: "Known as Manjistha in Ayurvedic traditions. Yields gentle blush rose, terracotta, and rich crimson hues via natural alizarin compounds known for millennia.",
     category: "Ayurvedic Heritage",
-    image: "/images/botanicals/madder.jpg"
+    image: "/images/botanicals/madder.png"
   },
   {
     id: "pomegranate",
@@ -132,7 +132,7 @@ const DYE_BOTANICALS: DyeBotanical[] = [
     activeCompound: "Ellagitannins & Punicalagin Polyphenols",
     description: "Upcycled from fruit-processing and juice vendors. High natural tannin concentration functions as both a gentle mordant and soft khaki-chartreuse pigment.",
     category: "Rescued Waste",
-    image: "/images/botanicals/pomegranate.jpg"
+    image: "/images/botanicals/pomegranate.png"
   },
   {
     id: "indigo",
