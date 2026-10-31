@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Public_Sans, Baloo_2, Lora } from "next/font/google";
+import { Public_Sans, Baloo_2, Lora, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 const publicSans = Public_Sans({
   variable: "--font-sans",
@@ -56,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${publicSans.variable} ${baloo.variable} ${lora.variable} antialiased`}
+      className={`${publicSans.variable} ${baloo.variable} ${lora.variable} ${inter.variable} antialiased`}
     >
       <body className="min-h-[100dvh] flex flex-col font-sans">
         <Header />

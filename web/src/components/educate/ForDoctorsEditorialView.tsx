@@ -170,12 +170,11 @@ export function ForDoctorsEditorialView({ sources, relatedPages }: ForDoctorsEdi
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center mb-12">
           {/* Left Column: Bold Typography & Rationale */}
           <div className="lg:col-span-7 flex flex-col items-start z-10">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-sage">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-xs font-inter font-bold uppercase tracking-[0.2em] text-sage">
                 Section 01 · Clinical Dialogue & Practice Integration
               </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-sage" />
-              <span className="text-[11px] font-mono text-muted-foreground uppercase tracking-widest hidden sm:inline">
+              <span className="text-[11px] font-inter font-bold text-muted-foreground uppercase tracking-widest hidden sm:inline">
                 Dermatology & Gynaecology
               </span>
             </div>

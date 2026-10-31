@@ -286,7 +286,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
         className="relative w-full bg-white pt-16 md:pt-28 pb-16 md:pb-24 border-t border-border/40 overflow-hidden"
       >
         <div className="px-6 lg:px-12 max-w-[1440px] mx-auto mb-14 md:mb-20">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-6">
+          <span className="text-xs font-inter font-bold uppercase tracking-[0.2em] text-marigold block mb-6">
             01 · Botanical Manifesto
           </span>
 
@@ -400,7 +400,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
                       
                       {/* Image Caption Label */}
                       <div className="absolute bottom-5 left-5 right-5 text-white z-10">
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-white/80 block mb-1">
+                        <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-white/90 block mb-1">
                           {card.plate}
                         </span>
                         <p className="text-xs sm:text-sm font-editorial italic text-white drop-shadow-sm">
@@ -429,7 +429,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-6 mb-16">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
+              <span className="text-xs font-inter font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
                 02 · Living Palette Bento
               </span>
               <h2 className="text-[clamp(32px,4.5vw,60px)] font-editorial italic font-semibold leading-[0.98] tracking-tight text-ink">
@@ -523,7 +523,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
             
             {/* Left Massive Typography Collage */}
             <div className="lg:col-span-8">
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-marigold block mb-6">
+              <span className="text-xs font-inter font-bold uppercase tracking-[0.25em] text-marigold block mb-6">
                 03 · Botanical Kinetic Statement
               </span>
               
@@ -536,13 +536,13 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
               </p>
 
               <div className="flex flex-wrap gap-3 pt-4">
-                <span className="text-xs font-mono uppercase bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-white/90">
+                <span className="text-xs font-inter font-bold uppercase bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-white/90">
                   100% Biodegradable Cellulose
                 </span>
-                <span className="text-xs font-mono uppercase bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-white/90">
+                <span className="text-xs font-inter font-bold uppercase bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-white/90">
                   Alum & Iron Mordanting
                 </span>
-                <span className="text-xs font-mono uppercase bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-white/90">
+                <span className="text-xs font-inter font-bold uppercase bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-white/90">
                   Biological Water Treatment
                 </span>
               </div>
@@ -559,7 +559,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-marigold block mb-1">
+                  <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-marigold block mb-1">
                     Plate 4.0 · The Earth Palette
                   </span>
                   <p className="text-xs text-white/85 font-light">
@@ -583,7 +583,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-6 mb-16">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
+              <span className="text-xs font-inter font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
                 04 · Transparency & Exclusions
               </span>
               <h2 className="text-h2 font-editorial italic font-semibold text-ink leading-tight mb-4">
@@ -631,7 +631,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
                     {/* Top Row: Number, Title, and Animated Chevron Indicator */}
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex items-center gap-4 sm:gap-6">
-                        <span className="text-xs sm:text-sm font-mono font-bold tracking-widest text-marigold bg-marigold/15 border border-marigold/30 px-2.5 py-1 rounded-md">
+                        <span className="text-xs sm:text-sm font-inter font-bold tracking-widest text-marigold bg-marigold/15 border border-marigold/30 px-2.5 py-1 rounded-md">
                           {item.number}
                         </span>
                         <h3 className="text-xl sm:text-2xl lg:text-3xl font-editorial italic font-semibold text-white drop-shadow-sm leading-snug">
@@ -691,7 +691,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
         <div className="max-w-[1440px] mx-auto w-full">
           
           <div className="mb-14">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
+            <span className="text-xs font-inter font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
               05 · Clear Science
             </span>
             <h2 className="text-[clamp(28px,3.8vw,52px)] font-editorial italic font-semibold leading-[1.05] tracking-tight text-ink mb-4">
@@ -704,7 +704,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white p-8 rounded-2xl border border-border/60 shadow-2xs hover:shadow-md transition-shadow">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-marigold block mb-2">
+              <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-marigold block mb-2">
                 Concept 01
               </span>
               <h4 className="text-lg font-editorial italic font-semibold text-ink mb-2">
@@ -716,7 +716,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
             </div>
 
             <div className="bg-white p-8 rounded-2xl border border-border/60 shadow-2xs hover:shadow-md transition-shadow">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-marigold block mb-2">
+              <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-marigold block mb-2">
                 Concept 02
               </span>
               <h4 className="text-lg font-editorial italic font-semibold text-ink mb-2">
@@ -728,7 +728,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
             </div>
 
             <div className="bg-white p-8 rounded-2xl border border-border/60 shadow-2xs hover:shadow-md transition-shadow">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-marigold block mb-2">
+              <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-marigold block mb-2">
                 Concept 03
               </span>
               <h4 className="text-lg font-editorial italic font-semibold text-ink mb-2">
@@ -785,7 +785,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
             className="absolute inset-0 bg-cover bg-center opacity-20 pointer-events-none" 
             style={{ backgroundImage: "url('/images/hero-bg.png')" }} 
           />
-          <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-4 block relative z-10">
+          <span className="text-marigold font-inter font-bold text-xs uppercase tracking-widest mb-4 block relative z-10">
             Natural Palette
           </span>
           <h2 className="text-h2 font-editorial italic text-white mb-6 max-w-[700px] relative z-10">

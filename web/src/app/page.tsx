@@ -164,7 +164,7 @@ export default function Home() {
           <div className="w-full md:w-1/2 aspect-square md:aspect-auto md:h-[700px] bg-[url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center relative order-2 md:order-1">
           </div>
           <div className="w-full md:w-1/2 p-12 md:p-20 lg:p-24 flex-1 order-1 md:order-2 flex flex-col justify-center max-w-[700px] mx-auto">
-            <span className="text-white/80 font-bold text-xs uppercase tracking-widest mb-6 block">Skin Science</span>
+            <span className="text-white/80 font-inter font-bold text-xs uppercase tracking-widest mb-6 block">Skin Science</span>
             <h2 className="text-h2 font-editorial italic text-white mb-8">
               The science of breathing.
             </h2>
@@ -182,7 +182,7 @@ export default function Home() {
       <section className="px-6 py-6 max-w-[1400px] mx-auto w-full">
         <div className="bg-ink rounded-xl overflow-hidden text-white flex flex-col md:flex-row items-stretch shadow-xl">
           <div className="p-8 md:p-14 lg:p-20 flex-1 flex flex-col justify-center">
-            <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-6 block">Our Process</span>
+            <span className="text-marigold font-inter font-bold text-xs uppercase tracking-widest mb-6 block">Our Process</span>
             <h2 className="text-h2 font-editorial italic mb-8 drop-shadow-sm">
               Colours drawn <br /> directly from nature.
             </h2>
@@ -238,7 +238,7 @@ export default function Home() {
       {/* Science Behind Everyday Life Bento Grid */}
       <section className="px-6 max-w-[1400px] mx-auto w-full">
         <div className="mb-10 max-w-[800px]">
-          <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-3 block">
+          <span className="text-marigold font-inter font-bold text-xs uppercase tracking-widest mb-3 block">
             GOOD KARMA · BEYOND THE PRODUCT
           </span>
           <h2 className="text-h2 font-editorial italic text-ink leading-tight mb-4">
@@ -281,7 +281,7 @@ export default function Home() {
           {/* Card 02: Chemicals & Hormone Health (Standard Card: 1 col x 1 row - No link, background removed) */}
           <div className="group relative rounded-[20px] overflow-hidden border border-border/60 lg:col-span-1 lg:row-span-1 min-h-[340px] p-7 sm:p-8 flex flex-col justify-between shadow-xs bg-[#FAF7F6] select-none">
             <div className="relative z-10">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-mauve font-semibold block mb-2">
+              <span className="text-[11px] font-inter font-bold uppercase tracking-widest text-mauve block mb-2">
                 ENDOCRINE SCIENCE
               </span>
               <h3 className="text-xl sm:text-[22px] font-editorial italic text-ink leading-snug mb-3">
@@ -307,7 +307,7 @@ export default function Home() {
             </div>
 
             <div className="relative z-10">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-marigold font-semibold block mb-2">
+              <span className="text-[11px] font-inter font-bold uppercase tracking-widest text-marigold block mb-2">
                 EVERYDAY EXPOSURE
               </span>
               <h3 className="text-xl sm:text-[22px] font-editorial italic text-white leading-snug mb-3">
@@ -322,11 +322,10 @@ export default function Home() {
           {/* Card 04: The Science of Everyday Exposure (Standard Card: Solid green #485646 background fill - No link) */}
           <div className="group relative rounded-[20px] overflow-hidden border border-[#485646]/80 lg:col-span-1 lg:row-span-1 min-h-[340px] p-7 sm:p-8 flex flex-col justify-between shadow-xs bg-[#485646] text-white select-none">
             <div className="relative z-10">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-white/80 font-bold bg-white/15 px-2.5 py-0.5 rounded-full border border-white/20">
+              <div className="mb-2">
+                <span className="text-[11px] font-inter font-bold uppercase tracking-widest text-white/90 bg-white/15 px-2.5 py-0.5 rounded-full border border-white/20">
                   TOXICOLOGY
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-white/80" />
               </div>
               <h3 className="text-xl sm:text-[22px] font-editorial italic text-white leading-snug mb-3">
                 The Science of Everyday Exposure
@@ -340,7 +339,7 @@ export default function Home() {
           {/* Card 05: Environmental Releases & Pollution (Standard Card: 1 col x 1 row - No link, background removed) */}
           <div className="group relative rounded-[20px] overflow-hidden border border-border/60 lg:col-span-1 lg:row-span-1 min-h-[340px] p-7 sm:p-8 flex flex-col justify-between shadow-xs bg-[#FAF7F6] select-none">
             <div className="relative z-10">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-sage font-semibold block mb-2">
+              <span className="text-[11px] font-inter font-bold uppercase tracking-widest text-sage block mb-2">
                 ENVIRONMENTAL IMPACT
               </span>
               <h3 className="text-xl sm:text-[22px] font-editorial italic text-ink leading-snug mb-3">
@@ -361,7 +360,7 @@ export default function Home() {
           
           {/* Left: Content */}
           <div className="p-8 md:p-14 lg:p-20 flex-1 z-10 flex flex-col justify-center max-w-[650px]">
-            <span className="text-white/80 font-bold text-xs uppercase tracking-widest mb-4 block">
+            <span className="text-white/80 font-inter font-bold text-xs uppercase tracking-widest mb-4 block">
               Clinical Partnership
             </span>
             <h2 className="text-h2 font-editorial italic text-white mb-6 leading-tight drop-shadow-sm">
@@ -450,7 +449,7 @@ export default function Home() {
               >
                 <div className="absolute inset-0 bg-ink/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <span className="text-marigold font-bold text-xs uppercase tracking-widest mb-3 block">{article.cat}</span>
+              <span className="text-marigold font-inter font-bold text-xs uppercase tracking-widest mb-3 block">{article.cat}</span>
               <h3 className="text-h3 font-medium text-ink mb-3 group-hover:text-marigold transition-colors">{article.title}</h3>
               <p className="text-p3 text-muted-foreground flex items-center gap-2 font-medium">
                 Read article <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />

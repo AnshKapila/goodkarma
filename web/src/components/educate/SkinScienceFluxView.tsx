@@ -286,7 +286,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
       >
         {/* Full-width Manifesto Statement Header */}
         <div className="px-6 lg:px-12 max-w-[1440px] mx-auto mb-14 md:mb-20">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-mauve block mb-6">
+          <span className="text-xs font-inter font-bold uppercase tracking-[0.2em] text-mauve block mb-6">
             01 · Cutaneous Manifesto
           </span>
           
@@ -398,7 +398,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                       
                       {/* Image Caption Label */}
                       <div className="absolute bottom-5 left-5 right-5 text-white z-10">
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-white/80 block mb-1">
+                        <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-white/90 block mb-1">
                           {card.plate}
                         </span>
                         <p className="text-xs sm:text-sm font-editorial italic text-white drop-shadow-sm">
@@ -427,7 +427,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
           {/* Section Header: Preserved Header Layout with Accessible Language */}
           <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-8 mb-16 pb-8 border-b border-white/15">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
+              <span className="text-xs font-inter font-bold uppercase tracking-[0.2em] text-marigold block mb-3">
                 Fabric, Skin & Everyday Comfort
               </span>
               <h2 className="text-[clamp(32px,5vw,56px)] font-editorial italic font-semibold leading-[1.05] tracking-tight text-white">
@@ -475,9 +475,8 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                   <div className="relative z-10 flex flex-col justify-between h-full">
                     {/* Top: Category Tag & Heading (Always visible without hover) */}
                     <div>
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-marigold group-hover:scale-125 transition-transform duration-300" />
-                        <span className="text-[11px] font-mono uppercase tracking-widest text-marigold font-medium">
+                      <div className="mb-3">
+                        <span className="text-[11px] font-inter font-bold uppercase tracking-widest text-marigold">
                           {card.label}
                         </span>
                       </div>
@@ -527,11 +526,10 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                             : "group-hover:opacity-0 group-hover:h-0 group-hover:pt-0 group-hover:overflow-hidden group-focus-visible:opacity-0 group-focus-visible:h-0 group-focus-visible:pt-0 group-focus-visible:overflow-hidden"
                         }`}
                       >
-                        <span className="text-[11px] font-mono uppercase tracking-widest text-white/60 flex items-center gap-1.5">
+                        <span className="text-[11px] font-inter font-bold uppercase tracking-widest text-white/70 flex items-center gap-1.5">
                           <span>Read details</span>
                           <span className="text-marigold transition-transform duration-300 group-hover:translate-x-1">→</span>
                         </span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-marigold/60" />
                       </div>
                     </div>
 
@@ -549,7 +547,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
       {/* ========================================================================= */}
       <section id="four-perspectives" className="relative w-full bg-white px-6 lg:px-12 py-16 md:py-28 max-w-[1440px] mx-auto">
         <div className="mb-14">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-mauve block mb-3">
+          <span className="text-xs font-inter font-bold uppercase tracking-[0.2em] text-mauve block mb-3">
             02 · Systemic View
           </span>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-border/40">
@@ -579,7 +577,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
 
             {/* Content Col */}
             <div className="lg:col-span-5 p-4 lg:p-8 space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-mauve">01 · Cutaneous Barrier</span>
+              <span className="text-xs font-inter font-bold uppercase tracking-wider text-mauve">01 · Cutaneous Barrier</span>
               <h3 className="text-2xl font-editorial italic text-ink">
                 Exposure & daily friction.
               </h3>
@@ -601,7 +599,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
               style={{ backgroundImage: "url('/images/hero-bg.png')" }} 
             />
             <div className="relative z-10 max-w-[900px]">
-              <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-marigold block mb-3">
+              <span className="text-[11px] font-inter font-bold uppercase tracking-[0.25em] text-marigold block mb-3">
                 Core Good Karma Axiom
               </span>
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-editorial italic text-white uppercase leading-tight tracking-tight">
@@ -614,7 +612,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Content Col */}
             <div className="lg:col-span-5 p-4 lg:p-8 space-y-4 order-2 lg:order-1">
-              <span className="text-xs font-bold uppercase tracking-wider text-marigold">02 · Chemical Toxicology</span>
+              <span className="text-xs font-inter font-bold uppercase tracking-wider text-marigold">02 · Chemical Toxicology</span>
               <h3 className="text-2xl font-editorial italic text-ink">
                 Conventional processing residues.
               </h3>
@@ -637,7 +635,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 text-white">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-white/80 block">Perspective 02</span>
+                <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-white/90 block">Perspective 02</span>
                 <h4 className="text-2xl font-editorial italic">Toxicology & Limit Values</h4>
               </div>
             </div>
@@ -648,13 +646,13 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
             {/* Card 3: Workers */}
             <div className="bg-paper p-8 rounded-2xl border border-border/60 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-sage block mb-2">03 · Human Equity</span>
+                <span className="text-xs font-inter font-bold uppercase tracking-wider text-sage block mb-2">03 · Human Equity</span>
                 <h4 className="text-xl font-editorial italic text-ink mb-3">The People Who Make It</h4>
                 <p className="text-xs text-muted-foreground font-light leading-relaxed mb-6">
                   Industrial dyehouses and finishing mills often expose workers to synthetic chemical vapours, corrosive bleaches, and synthetic dye powders. Choosing plant-based dyeing and certified organic agricultural cotton supports safe, fair working environments audited under International Labour Organization (ILO) standards.
                 </p>
               </div>
-              <div className="text-[11px] font-mono text-sage pt-3 border-t border-border/40">
+              <div className="text-[11px] font-inter font-bold uppercase tracking-wider text-sage pt-3 border-t border-border/40">
                 Ethical Audit: GOTS Social Criteria & NGRBC
               </div>
             </div>
@@ -662,13 +660,13 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
             {/* Card 4: Planet */}
             <div className="bg-paper p-8 rounded-2xl border border-border/60 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-ink/70 block mb-2">04 · Ecosystem Stewardship</span>
+                <span className="text-xs font-inter font-bold uppercase tracking-wider text-ink/70 block mb-2">04 · Ecosystem Stewardship</span>
                 <h4 className="text-xl font-editorial italic text-ink mb-3">The Planet & Water Cycles</h4>
                 <p className="text-xs text-muted-foreground font-light leading-relaxed mb-6">
                   Conventional textile dyeing generates substantial boiler fuel emissions, complex wastewater effluent, and chemical sludge containing concentrated residues. Natural dyeing avoids petrochemical synthesis, though it still requires thoughtful water usage, land management, and responsible effluent treatment.
                 </p>
               </div>
-              <div className="text-[11px] font-mono text-ink/70 pt-3 border-t border-border/40">
+              <div className="text-[11px] font-inter font-bold uppercase tracking-wider text-ink/70 pt-3 border-t border-border/40">
                 Ecological Practice: Biological ETP Remediation
               </div>
             </div>
@@ -692,7 +690,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
           {/* Top Bar with Section Title and Topic Tabs */}
           <div className="flex items-center justify-between pb-6 border-b border-border/60">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-mauve block mb-1">
+              <span className="text-xs font-inter font-bold uppercase tracking-[0.2em] text-mauve block mb-1">
                 03 · Go Deeper
               </span>
               <h2 className="text-3xl font-editorial italic text-ink">
@@ -730,7 +728,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 text-white">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-white/80 block mb-1">
+                <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-white/90 block mb-1">
                   {DEEP_TOPICS[activeTopicIndex].tag}
                 </span>
                 <h4 className="text-xl font-editorial italic text-white drop-shadow-sm">
@@ -742,7 +740,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
             {/* Right: Detailed Text Panel */}
             <div className="col-span-5 flex flex-col justify-between h-full max-h-[520px] p-6 bg-white rounded-2xl border border-border/60">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-mauve block mb-2">
+                <span className="text-xs font-inter font-bold uppercase tracking-wider text-mauve block mb-2">
                   Topic 0{activeTopicIndex + 1} · {DEEP_TOPICS[activeTopicIndex].tag}
                 </span>
                 <h3 className="text-2xl font-editorial italic text-ink mb-4 leading-tight">
@@ -753,7 +751,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-border/40 flex items-center justify-between text-xs text-muted-foreground font-mono">
+              <div className="pt-4 border-t border-border/40 flex items-center justify-between text-xs text-muted-foreground font-inter font-bold">
                 <span>{DEEP_TOPICS[activeTopicIndex].source}</span>
                 <span className="font-semibold text-ink">0{activeTopicIndex + 1} / 0{DEEP_TOPICS.length}</span>
               </div>
@@ -773,7 +771,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
         {/* Mobile Stacked Articles View */}
         <div className="lg:hidden px-6 space-y-12">
           <div className="mb-8">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-mauve block mb-1">
+            <span className="text-xs font-inter font-bold uppercase tracking-[0.2em] text-mauve block mb-1">
               03 · Go Deeper
             </span>
             <h2 className="text-2xl font-editorial italic text-ink">
@@ -791,7 +789,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                 <img src={topic.image} alt={topic.title} className="w-full h-full object-cover" />
               </div>
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-mauve block mb-1">
+                <span className="text-[11px] font-inter font-bold uppercase tracking-wider text-mauve block mb-1">
                   Topic 0{idx + 1} · {topic.tag}
                 </span>
                 <h3 className="text-xl font-editorial italic text-ink mb-2">
@@ -800,7 +798,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
                 <p className="text-xs text-muted-foreground font-light leading-relaxed mb-4">
                   {topic.lead}
                 </p>
-                <span className="text-[11px] font-mono text-muted-foreground block pt-3 border-t border-border/40">
+                <span className="text-[11px] font-inter font-bold text-muted-foreground block pt-3 border-t border-border/40">
                   {topic.source}
                 </span>
               </div>
@@ -816,7 +814,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
           
           <div className="lg:col-span-5">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-mauve block mb-3">
+            <span className="text-xs font-inter font-bold uppercase tracking-[0.2em] text-mauve block mb-3">
               04 · Scientific Transparency
             </span>
             <h2 className="text-3xl md:text-4xl font-editorial italic text-ink mb-6">
@@ -858,7 +856,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
 
         {/* 4 Pillars of Dermatological Research */}
         <div id="research-library" className="scroll-mt-28 pt-12 border-t border-border/40">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-mauve block mb-3">
+          <span className="text-xs font-inter font-bold uppercase tracking-[0.2em] text-mauve block mb-3">
             05 · Clinical Foundations
           </span>
           <h2 className="text-3xl font-editorial italic text-ink mb-8">
@@ -951,7 +949,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
             className="absolute inset-0 bg-cover bg-center opacity-20 pointer-events-none" 
             style={{ backgroundImage: "url('/images/hero-bg.png')" }} 
           />
-          <span className="text-mauve font-bold text-xs uppercase tracking-widest mb-4 block relative z-10">
+          <span className="text-mauve font-inter font-bold text-xs uppercase tracking-widest mb-4 block relative z-10">
             Designed For The Body
           </span>
           <h2 className="text-h2 font-editorial italic text-white mb-6 max-w-[700px] relative z-10">
