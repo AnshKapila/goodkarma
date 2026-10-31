@@ -156,7 +156,7 @@ const DYE_BOTANICALS: DyeBotanical[] = [
     activeCompound: "Chebulinic Acid & Gallic Tannins",
     description: "A wild forest fruit historically revered in traditional botanicals. Functions as a natural tannin-rich pre-treatment and gentle buff colorant.",
     category: "Wild Harvest",
-    image: "/images/botanicals/harda.jpg"
+    image: "/images/botanicals/harda.png"
   },
   {
     id: "katha",
