@@ -556,16 +556,6 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
                   alt="Folded naturally dyed garments in clean artisan palette" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-                
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-marigold block mb-1">
-                    Plate 4.0 · The Earth Palette
-                  </span>
-                  <p className="text-xs text-white/85 font-light">
-                    Every pigment originates from harvested roots, blossoms, and peels.
-                  </p>
-                </div>
               </div>
             </div>
 
