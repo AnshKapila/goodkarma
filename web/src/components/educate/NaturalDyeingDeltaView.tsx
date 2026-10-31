@@ -168,7 +168,7 @@ const DYE_BOTANICALS: DyeBotanical[] = [
     activeCompound: "Catechin & Catechutannic Acid",
     description: "Extracted sustainably from indigenous acacia tree heartwood. Imparts rich cinnamon fawn and warm earthy brown tones with excellent natural lightfastness.",
     category: "Ayurvedic Heritage",
-    image: "/images/botanicals/katha.jpg"
+    image: "/images/botanicals/katha-cakes.jpg"
   }
 ];
 
