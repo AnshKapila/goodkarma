@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "Good Karma",
     images: [
       {
-        url: "https://goodkarmabrand.com/images/natural-dye-hero.jpg",
+        url: "https://goodkarmabrand.com/images/natural-dye-hero-bowls.jpg",
         width: 1200,
         height: 630,
         alt: "Natural botanical dye bowls with pigments, alum crystals, and dried botanicals in clay vessels",
