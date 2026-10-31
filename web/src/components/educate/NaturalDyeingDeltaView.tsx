@@ -271,7 +271,7 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
         <div className="w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-sm border border-border/40 bg-paper">
           <img 
             src="/images/natural-dye-hero.jpg" 
-            alt="Artisan dyer hands working with marigold, madder root, and botanical pigments in soft daylight" 
+            alt="Natural botanical dye bowls with pigments, alum crystals, and dried botanicals in clay vessels" 
             className="w-full h-auto aspect-[16/9] object-cover object-center block"
             loading="eager"
           />

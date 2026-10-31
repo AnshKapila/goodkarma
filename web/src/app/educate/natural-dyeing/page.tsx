@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "https://goodkarmabrand.com/images/natural-dye-hero.jpg",
         width: 1200,
         height: 630,
-        alt: "Artisan dyer hands with marigold, madder, and botanical pigments",
+        alt: "Natural botanical dye bowls with pigments, alum crystals, and dried botanicals in clay vessels",
       },
     ],
     locale: "en_US",
