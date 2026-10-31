@@ -581,7 +581,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
               <h2 className="text-2xl font-editorial italic text-ink">
                 Exposure & daily friction.
               </h2>
-              <p className="text-xs text-muted-foreground font-light leading-relaxed">
+              <p className="text-p2 text-muted-foreground font-light leading-relaxed">
                 Your skin is a living, permeable organ that interacts continuously with the microclimate created by your clothing. Prioritizing pure, breathable organic cotton lowers mechanical friction and supports natural moisture dissipation, providing daily comfort free from synthetic resin coatings and occlusive plastic traps.
               </p>
               <div className="pt-2">
@@ -616,7 +616,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
               <h2 className="text-2xl font-editorial italic text-ink">
                 Conventional processing residues.
               </h2>
-              <p className="text-xs text-muted-foreground font-light leading-relaxed">
+              <p className="text-p2 text-muted-foreground font-light leading-relaxed">
                 Conventional textiles can carry hundreds of processing auxiliaries, including azo dyes, PFAS, and formaldehyde finishes. While most substances are regulated at established statutory limits, our aim is to lower daily cumulative exposure by using unblended organic cotton, plant-based dyes, and safe mineral fixatives.
               </p>
               <div className="pt-2">
@@ -648,7 +648,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
               <div>
                 <span className="text-xs font-inter font-bold uppercase tracking-wider text-sage block mb-2">03 · Human Equity</span>
                 <h2 className="text-xl font-editorial italic text-ink mb-3">The People Who Make It</h2>
-                <p className="text-xs text-muted-foreground font-light leading-relaxed mb-6">
+                <p className="text-p2 text-muted-foreground font-light leading-relaxed mb-6">
                   Industrial dyehouses and finishing mills often expose workers to synthetic chemical vapours, corrosive bleaches, and synthetic dye powders. Choosing plant-based dyeing and certified organic agricultural cotton supports safe, fair working environments audited under International Labour Organization (ILO) standards.
                 </p>
               </div>
@@ -662,7 +662,7 @@ export function SkinScienceFluxView({ sources, relatedPages }: SkinScienceFluxVi
               <div>
                 <span className="text-xs font-inter font-bold uppercase tracking-wider text-ink/70 block mb-2">04 · Ecosystem Stewardship</span>
                 <h2 className="text-xl font-editorial italic text-ink mb-3">The Planet & Water Cycles</h2>
-                <p className="text-xs text-muted-foreground font-light leading-relaxed mb-6">
+                <p className="text-p2 text-muted-foreground font-light leading-relaxed mb-6">
                   Conventional textile dyeing generates substantial boiler fuel emissions, complex wastewater effluent, and chemical sludge containing concentrated residues. Natural dyeing avoids petrochemical synthesis, though it still requires thoughtful water usage, land management, and responsible effluent treatment.
                 </p>
               </div>
