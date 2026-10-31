@@ -52,9 +52,9 @@ const MANIFESTO_ACCORDION_CARDS: ManifestoAccordionCard[] = [
     heading: "Water Extraction",
     supportingLine: "Decoction: 60°C – 80°C",
     body: "Sun-dried flowers, roots, and fruit rinds are simmered in filtered water at low temperatures, gently releasing active botanical colorants without petroleum solvents or petrochemical carriers.",
-    image: "/images/marigold-extraction.jpg",
+    image: "/images/process-step-01.jpg",
     plate: "BOTANICAL DECOCTION",
-    tag: "Simmered marigold blossom extraction in pure water",
+    tag: "Artisan hands immersing fabric in botanical dye bath",
     bgClass: "bg-[#5A6056]",
     scaleClass: "scale-100"
   },
@@ -64,9 +64,9 @@ const MANIFESTO_ACCORDION_CARDS: ManifestoAccordionCard[] = [
     heading: "Mineral Binding",
     supportingLine: "Food-grade alum & iron mordants",
     body: "We use food-grade mineral salts—specifically natural alum and iron—to create lasting molecular bonds between botanical pigments and cotton cellulose, avoiding synthetic resin binders.",
-    image: "/images/madder-roots-alum.jpg",
+    image: "/images/process-step-02.jpg",
     plate: "MINERAL FIXATION",
-    tag: "Natural alum and madder root crystallization",
+    tag: "Natural mineral salts and raw botanical ingredients",
     bgClass: "bg-[#B06B1E]",
     scaleClass: "scale-100"
   },
@@ -76,9 +76,9 @@ const MANIFESTO_ACCORDION_CARDS: ManifestoAccordionCard[] = [
     heading: "Circular Effluent",
     supportingLine: "Pure agricultural water return",
     body: "Because our dye baths consist solely of organic plant residues and safe mineral salts, process water undergoes multi-stage biological oxygen filtration before clean re-use or safe discharge.",
-    image: "/images/natural-dye-stack.jpg",
+    image: "/images/process-step-03.jpg",
     plate: "CIRCULAR STEWARDSHIP",
-    tag: "Folded botanical cotton with zero synthetic sludge",
+    tag: "Continuous pure water rinse and clean circular washing",
     bgClass: "bg-[#7B535B]",
     scaleClass: "scale-100"
   }
