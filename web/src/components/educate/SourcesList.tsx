@@ -1,4 +1,4 @@
-import { BookOpen, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export interface SourceItem {
   citation: string;
@@ -20,8 +20,7 @@ export function SourcesList({
   return (
     <section className={`pt-12 mt-16 border-t border-border/60 ${className}`}>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-        <div className="flex items-center gap-2 text-ink">
-          <BookOpen className="w-4 h-4 text-marigold" />
+        <div className="text-ink">
           <h3 className="text-sm font-semibold tracking-wide uppercase text-ink">
             Clinical References & Sources
           </h3>

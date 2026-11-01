@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SHOW_OEKO_TEX } from "@/config/features";
 
 interface TrustStripProps {
@@ -51,8 +51,7 @@ export function TrustStrip({
       <div className="bg-paper rounded-xl p-8 md:p-12 border border-border/60 shadow-xs">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-8 border-b border-border/50">
           <div>
-            <div className="flex items-center gap-2 text-marigold text-xs font-bold uppercase tracking-widest mb-2">
-              <ShieldCheck className="w-4 h-4" />
+            <div className="text-marigold text-xs font-bold uppercase tracking-widest mb-2">
               <span>Independent Verification</span>
             </div>
             <h2 className="text-h2 font-editorial italic text-ink">

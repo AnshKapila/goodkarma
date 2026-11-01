@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import type { FAQItem } from "@/data/faqs";
 
 interface FAQSectionProps {
@@ -54,8 +54,7 @@ export function FAQSection({
       />
 
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <HelpCircle className={`w-4 h-4 ${accentColorClass}`} />
+        <div className="mb-2">
           <span className={`text-xs font-inter font-bold uppercase tracking-widest ${accentColorClass}`}>
             Common Questions
           </span>
