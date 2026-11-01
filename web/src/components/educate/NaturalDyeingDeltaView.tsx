@@ -556,8 +556,8 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
             <div className="lg:col-span-4 relative">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                 <img 
-                  src="/images/natural-dye-stack.jpg" 
-                  alt="Folded naturally dyed garments in clean artisan palette" 
+                  src="/images/botanical-chemistry-swatches.jpg" 
+                  alt="Natural botanical dye ingredients, alum crystals, and dyed cotton swatches" 
                   className="w-full h-full object-cover"
                 />
               </div>
