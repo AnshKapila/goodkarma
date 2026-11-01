@@ -684,41 +684,74 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-8 rounded-2xl border border-border/60 shadow-2xs hover:shadow-md transition-shadow">
-              <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-marigold block mb-2">
-                Concept 01
-              </span>
-              <h4 className="text-lg font-editorial italic font-semibold text-ink mb-2">
-                What is a Mordant?
-              </h4>
-              <p className="text-xs sm:text-sm text-muted-foreground font-light leading-relaxed">
-                A mineral compound that forms a chemical bond with natural dye molecules and textile fibers, anchoring the pigment so it resists washing and sunlight without synthetic resins.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {/* Concept 01 */}
+            <div className="bg-white rounded-2xl border border-border/60 shadow-2xs hover:shadow-md transition-shadow overflow-hidden flex flex-col group">
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-paper border-b border-border/40">
+                <img 
+                  src="/images/concept-mordant.jpg" 
+                  alt="Natural alum mineral crystals and plant-dyed organic yarns in artisan studio" 
+                  className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6 sm:p-8 flex-1 flex flex-col">
+                <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-marigold block mb-2">
+                  Concept 01
+                </span>
+                <h4 className="text-lg font-editorial italic font-semibold text-ink mb-2">
+                  What is a Mordant?
+                </h4>
+                <p className="text-xs sm:text-sm text-muted-foreground font-light leading-relaxed">
+                  A mineral compound that forms a chemical bond with natural dye molecules and textile fibers, anchoring the pigment so it resists washing and sunlight without synthetic resins.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl border border-border/60 shadow-2xs hover:shadow-md transition-shadow">
-              <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-marigold block mb-2">
-                Concept 02
-              </span>
-              <h4 className="text-lg font-editorial italic font-semibold text-ink mb-2">
-                What are PFAS?
-              </h4>
-              <p className="text-xs sm:text-sm text-muted-foreground font-light leading-relaxed">
-                Per- and polyfluoroalkyl substances: synthetic chemical compounds with carbon-fluorine bonds that do not break down easily in the environment or human body, commonly used in textile stain-resistant finishes.
-              </p>
+            {/* Concept 02 */}
+            <div className="bg-white rounded-2xl border border-border/60 shadow-2xs hover:shadow-md transition-shadow overflow-hidden flex flex-col group">
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-paper border-b border-border/40">
+                <img 
+                  src="/images/concept-pfas.jpg" 
+                  alt="Macro photography of fluorochemical PFAS water repellency on synthetic technical textile" 
+                  className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6 sm:p-8 flex-1 flex flex-col">
+                <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-marigold block mb-2">
+                  Concept 02
+                </span>
+                <h4 className="text-lg font-editorial italic font-semibold text-ink mb-2">
+                  What are PFAS?
+                </h4>
+                <p className="text-xs sm:text-sm text-muted-foreground font-light leading-relaxed">
+                  Per- and polyfluoroalkyl substances: synthetic chemical compounds with carbon-fluorine bonds that do not break down easily in the environment or human body, commonly used in textile stain-resistant finishes.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl border border-border/60 shadow-2xs hover:shadow-md transition-shadow">
-              <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-marigold block mb-2">
-                Concept 03
-              </span>
-              <h4 className="text-lg font-editorial italic font-semibold text-ink mb-2">
-                Why Conventional Dyes Smell?
-              </h4>
-              <p className="text-xs sm:text-sm text-muted-foreground font-light leading-relaxed">
-                Petroleum-derived dyes require formaldehyde fixatives, heavy metals, and carrier solvents to bond with synthetic fabrics, off-gassing volatile organic compounds (VOCs) that can irritate sensitive skin.
-              </p>
+            {/* Concept 03 */}
+            <div className="bg-white rounded-2xl border border-border/60 shadow-2xs hover:shadow-md transition-shadow overflow-hidden flex flex-col group">
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-paper border-b border-border/40">
+                <img 
+                  src="/images/concept-conventional-dyes.jpg" 
+                  alt="Industrial petrochemical dyeing vat with solvent off-gassing and synthetic textile processing" 
+                  className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6 sm:p-8 flex-1 flex flex-col">
+                <span className="text-[10px] font-inter font-bold uppercase tracking-widest text-marigold block mb-2">
+                  Concept 03
+                </span>
+                <h4 className="text-lg font-editorial italic font-semibold text-ink mb-2">
+                  Why Conventional Dyes Smell?
+                </h4>
+                <p className="text-xs sm:text-sm text-muted-foreground font-light leading-relaxed">
+                  Petroleum-derived dyes require formaldehyde fixatives, heavy metals, and carrier solvents to bond with synthetic fabrics, off-gassing volatile organic compounds (VOCs) that can irritate sensitive skin.
+                </p>
+              </div>
             </div>
           </div>
 
