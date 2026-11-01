@@ -21,28 +21,14 @@ export function FAQSection({
   id = "faq",
   className = "",
 }: FAQSectionProps) {
-  const [openIndices, setOpenIndices] = useState<number[]>([0]);
-
-  const toggleIndex = (index: number) => {
-    if (openIndices.includes(index)) {
-      setOpenIndices(openIndices.filter((i) => i !== index));
-    } else {
-      setOpenIndices([...openIndices, index]);
-    }
-  };
+  // Hover expansion state: null when mouse is not hovering any item
+  const [activeHoverIndex, setActiveHoverIndex] = useState<number | null>(null);
 
   const accentColorClass = {
     mauve: "text-mauve",
     marigold: "text-marigold",
     sage: "text-sage",
     ink: "text-ink",
-  }[accentColor];
-
-  const borderActiveClass = {
-    mauve: "border-mauve/40",
-    marigold: "border-marigold/40",
-    sage: "border-sage/40",
-    ink: "border-ink/40",
   }[accentColor];
 
   // Schema for Google Rich Results FAQPage
@@ -70,7 +56,7 @@ export function FAQSection({
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-2">
           <HelpCircle className={`w-4 h-4 ${accentColorClass}`} />
-          <span className={`text-xs font-bold uppercase tracking-widest ${accentColorClass}`}>
+          <span className={`text-xs font-inter font-bold uppercase tracking-widest ${accentColorClass}`}>
             Common Questions
           </span>
         </div>
@@ -84,43 +70,69 @@ export function FAQSection({
         )}
       </div>
 
-      <div className="space-y-4">
+      {/* Borderless FAQ List with Hover Expansion */}
+      <div 
+        className="space-y-3"
+        onMouseLeave={() => setActiveHoverIndex(null)}
+      >
         {items.map((item, idx) => {
-          const isOpen = openIndices.includes(idx);
+          const isOpen = activeHoverIndex === idx;
+
           return (
             <div
               key={idx}
-              className={`rounded-xl border transition-all duration-200 overflow-hidden bg-paper ${
-                isOpen ? borderActiveClass : "border-border/60 hover:border-border"
+              onMouseEnter={() => setActiveHoverIndex(idx)}
+              onMouseLeave={() => setActiveHoverIndex(null)}
+              onClick={() => setActiveHoverIndex((prev) => (prev === idx ? null : idx))}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setActiveHoverIndex((prev) => (prev === idx ? null : idx));
+                }
+              }}
+              tabIndex={0}
+              role="button"
+              aria-expanded={isOpen}
+              aria-controls={`faq-answer-${idx}`}
+              className={`rounded-2xl transition-all duration-300 overflow-hidden cursor-pointer select-none focus:outline-hidden focus-visible:ring-2 focus-visible:ring-marigold ${
+                isOpen 
+                  ? "bg-[#EFEFEF] shadow-xs" 
+                  : "bg-paper hover:bg-[#F2F2F2]"
               }`}
             >
-              <button
-                type="button"
-                onClick={() => toggleIndex(idx)}
-                aria-expanded={isOpen}
-                aria-controls={`faq-answer-${idx}`}
-                className="w-full text-left p-6 flex items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-marigold"
-              >
-                <span className="text-base sm:text-lg font-medium text-ink pr-4 leading-snug">
+              <div className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4">
+                <span className={`text-base sm:text-lg font-medium pr-4 leading-snug transition-colors duration-200 ${
+                  isOpen ? "text-ink font-semibold" : "text-ink/90"
+                }`}>
                   {item.question}
                 </span>
+                
+                {/* Borderless Chevron Indicator */}
                 <span
-                  className={`w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 border border-border/50 text-ink/70 transition-transform duration-200 ${
-                    isOpen ? "rotate-180 text-marigold" : ""
+                  className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                    isOpen 
+                      ? "rotate-180 bg-marigold text-white shadow-xs" 
+                      : "bg-white text-ink/70"
                   }`}
                 >
                   <ChevronDown className="w-4 h-4" />
                 </span>
-              </button>
-              {isOpen && (
-                <div
-                  id={`faq-answer-${idx}`}
-                  role="region"
-                  className="px-6 pb-6 pt-1 text-sm text-ink/80 font-light leading-relaxed border-t border-border/30 mt-1"
-                >
-                  <p>{item.answer}</p>
+              </div>
+
+              {/* Animated Accordion Content: Expands on hover, collapses on hover remove */}
+              <div
+                id={`faq-answer-${idx}`}
+                role="region"
+                className={`grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-6 sm:px-7 pb-6 pt-0 text-sm sm:text-base text-ink/80 font-light leading-relaxed">
+                    <p>{item.answer}</p>
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           );
         })}
