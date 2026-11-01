@@ -535,18 +535,6 @@ export function NaturalDyeingDeltaView({ sources, relatedPages }: NaturalDyeingD
                 Botanical dyes contain naturally occurring colour compounds, including carotenoids, anthraquinones, tannins and indigoids. Their interaction with cotton depends on the extraction process, the properties of the colourant and the use of mineral mordants such as alum and iron. Together, these factors influence how colour develops, binds to the fibre and changes in tone.
               </p>
 
-              <div className="flex flex-wrap gap-3 pt-2 mb-6">
-                <span className="text-xs font-inter font-bold uppercase bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-white/90 tracking-wider">
-                  Botanical Pigments
-                </span>
-                <span className="text-xs font-inter font-bold uppercase bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-white/90 tracking-wider">
-                  Fibre Interactions
-                </span>
-                <span className="text-xs font-inter font-bold uppercase bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-white/90 tracking-wider">
-                  Mineral Mordanting
-                </span>
-              </div>
-
               <p className="text-sm sm:text-base font-editorial italic text-amber-200/90 tracking-wide">
                 Colour shaped by plant chemistry, material science and traditional craft.
               </p>
