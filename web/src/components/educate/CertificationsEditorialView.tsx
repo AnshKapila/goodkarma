@@ -132,8 +132,8 @@ export function CertificationsEditorialView({ sources, relatedPages }: Certifica
         {/* Hero Banner Container */}
         <div className="w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-sm border border-border/40 bg-paper">
           <img 
-            src="/images/certifications-hero.jpg" 
-            alt="Good Karma organic cotton textile certification proof and botanical purity audit" 
+            src="/images/certifications-banner.jpg" 
+            alt="Good Karma workshop artisans inspecting and preparing natural cotton textiles on cutting tables" 
             className="w-full h-auto aspect-[16/9] object-cover object-center block"
             loading="eager"
           />

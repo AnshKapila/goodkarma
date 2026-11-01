@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     siteName: "Good Karma",
     images: [
       {
-        url: "https://goodkarmabrand.com/images/certifications-hero.jpg",
+        url: "https://goodkarmabrand.com/images/certifications-banner.jpg",
         width: 1200,
         height: 630,
-        alt: "Good Karma Third-Party Textile Certification Proof",
+        alt: "Good Karma workshop artisans inspecting and preparing natural cotton textiles on cutting tables",
       },
     ],
     locale: "en_US",
@@ -83,7 +83,7 @@ export default function CertificationsPage() {
         headline="Proof You Can Check: Verified Organic & Standards Disclosure"
         description="Comprehensive third-party certification breakdown for Good Karma: GOTS, BRSR disclosure, and cruelty-free botanical dyeing."
         url="/educate/certifications"
-        image="/images/certifications-hero.jpg"
+        image="/images/certifications-banner.jpg"
         datePublished="2026-01-20"
         dateModified="2026-10-16"
       />
